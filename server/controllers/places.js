@@ -48,7 +48,76 @@ const deletePlace = async (req, res) => {
   }
 };
 
+
+// cover: {
+//     url: { type: String, required: false },
+//     // public_id: { type: String, required: false, unique: true },
+//     signature: { type: String, required: false },
+//   },
+//   title: { type: String, required: true, unique: true },
+//   subtitle: { type: String, required: false },
+//   description: [
+//     {
+//       header: { type: String, required: false },
+//       descriptionText: { type: String, required: false },
+//       pictures: [], // if needed
+//     },
+//   ],
+//   tags: [
+//     {
+//       type: String,
+//       required: true,
+//       enum: ["free", "museum", "landscape", "view"],
+//     },
+//   ], //categories/tags
+//   location: { type: String, required: true, unique: true },
+//   hours: { type: String, required: true },
+//   price: { type: String, required: true },
+//   photos: [
+//     {
+//       url: { type: String, required: false },
+//       // public_id: { type: String, required: false, unique: true },
+//       signature: { type: String, required: false },
+//     },
+//   ],
+
+//   //rating
+//   //official site
+//   //google map with pin
+//   //comments block
+//   //buttons to share link
+// });
+const updatePlace = async (req, res) => {
+    try {
+      const { oldtitle} = req.params;
+      const {title} = req.body;
+      const uniqePlace = await Places.findOne({title:title})
+      console.log(uniqePlace);
+      const updates = {};
+      if (username) updates.username = username;
+      if (password) updates.password = password;
+      if (about) updates.about = about;
+    
+      if (!uniqeUser) {
+        await Users.findOneAndUpdate(
+            { username: oldusername },
+            { $set: updates },
+            { new: true, runValidators: true }
+          );
+        res.status(200).send({ ok: true, data: `User '${username}' was updated` });
+      }
+      
+       else{
+          res.status(200).send({ ok: true, data: `Username '${username}' is already taken ` });
+      }
+    } catch (error) {
+      res.status(400).send({ ok: false, data: error.message });
+      console.log(error.message);
+    }
+  };
+
 module.exports = {
   addPlace,
   deletePlace,
+  updatePlace,
 };
