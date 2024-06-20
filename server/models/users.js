@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const placeSchema = new mongoose.Schema({
+const userSchema = new mongoose.Schema({
   photo: {
     url: { type: String, required: false },
     public_id: { type: String, required: false, unique: true },
@@ -35,7 +35,7 @@ const placeSchema = new mongoose.Schema({
 
 
 
-module.exports = mongoose.model("user", placeSchema);
+module.exports = mongoose.model("user", userSchema);
 
 
 
