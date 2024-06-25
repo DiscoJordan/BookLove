@@ -1,38 +1,256 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: "Poppins", sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.container {
+  width: 1200px;
+  padding: 0 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+a {
+  color: #FF471F;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+}
+a:hover {
+  color: white;
+}
+
+.navigation__button {
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 5px 16px;
+  border: 1px white solid;
+  border-radius: 50px;
+  transition: all 0.2s ease-in;
+}
+.navigation__button:hover {
+  background-color: white;
+  color: black;
+}
+
+header.scrolled {
+  background-color: rgba(255, 255, 255, 0.9);
+  height: 80px;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+header.scrolled .logo {
+  filter: brightness(0);
+}
+header.scrolled .navigation .navbar a {
+  color: black;
+}
+header.scrolled .navigation__button {
+  border: 1px solid black;
+  color: black;
+}
+header.scrolled .navigation__button:hover {
+  background-color: black;
+  color: white;
+}
+
+header {
+  transition: all 0.3s ease-in-out;
+  width: -webkit-fill-available;
+  position: fixed;
+  height: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  z-index: 5;
+}
+header .navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .navigation .logo {
+  width: 200px;
+  height: 40px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+header .navigation .logo img {
+  width: 100%;
+  height: 100%;
+}
+header .navigation .navbar {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+header .navigation .navbar a {
+  font-size: 24px;
+  color: white;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+header .navigation .navbar a.active {
+  color: #FF471F;
+}
+header .navigation .navbar a:hover {
+  color: #FF471F;
+}
+
+.footer {
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  background-image: url("/public/images/footer.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 80px;
+}
+.footer .container {
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  gap: 30px;
+}
+.footer .footer__tabs {
+  display: flex;
+  gap: 30px;
+}
+.footer .footer__tabs a {
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.footer .footer__tabs a:hover {
+  color: #FF471F;
+}
+.footer .footer__email {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.footer .footer__label {
+  font-size: 40px;
+  font-weight: 100;
+  display: flex;
+  align-items: center;
+}
+.footer .footer__label .logo {
+  display: flex;
+  width: 200px;
+  height: 40px;
+}
+.footer .footer__label .logo img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.footer .footer__rights {
+  display: flex;
+  justify-content: space-between;
+  width: -webkit-fill-available;
+  align-items: center;
+  font-weight: 600;
+}
+.footer .footer__rights .footer__backlink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer .footer__rights .footer__logo {
+  width: 100px;
+  height: 100px;
+}
+.footer .footer__rights .footer__logo img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  filter: brightness(100);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.registration__wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-image: url("/public/images/signinbg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
+.registration__wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+.registration__wrapper .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  gap: 30px;
+  position: relative;
+  z-index: 2;
+}
+.registration__wrapper .form__fields {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.registration__wrapper .form__fields .navigation__button {
+  width: 300px;
+}
+.registration__wrapper .terms {
+  font-size: 14px;
+  display: flex;
+  gap: 5px;
+}
+
+.form__input {
+  border: 0;
+  font-size: 1.2em;
+  background-color: rgba(255, 255, 255, 0.7);
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+  padding: 0 20px;
+  height: 50px;
+  width: 300px;
+  border-radius: 50px;
+}
+.form__input:focus {
+  color: #FF471F;
+  border: 1px solid #FF471F;
+  outline: none;
+  background-color: rgba(0, 0, 0, 0.237);
+}
+.form__input:focus::-moz-placeholder {
+  color: white;
+}
+.form__input:focus::placeholder {
+  color: white;
+}/*# sourceMappingURL=App.css.map */

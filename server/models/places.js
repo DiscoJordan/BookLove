@@ -8,13 +8,12 @@ const placeSchema = new mongoose.Schema({
   },
   title: { type: String, required: true, unique: true },
   subtitle: { type: String, required: false },
-  description: [
+  description: 
     {
       header: { type: String, required: false },
       descriptionText: { type: String, required: false },
       pictures: [], // if needed
     },
-  ],
   tags: [
     {
       type: String,

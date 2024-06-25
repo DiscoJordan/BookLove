@@ -18,7 +18,7 @@ const addPlace = async (req, res) => {
       cover: cover,
       title: title,
       subtitle: subtitle || "",
-      description: description || [],
+      description: description || {},
       tags: tags,
       location: location,
       hours: hours,
@@ -49,66 +49,62 @@ const deletePlace = async (req, res) => {
 };
 
 
-// cover: {
-//     url: { type: String, required: false },
-//     // public_id: { type: String, required: false, unique: true },
-//     signature: { type: String, required: false },
-//   },
-//   title: { type: String, required: true, unique: true },
-//   subtitle: { type: String, required: false },
-//   description: [
-//     {
-//       header: { type: String, required: false },
-//       descriptionText: { type: String, required: false },
-//       pictures: [], // if needed
-//     },
-//   ],
-//   tags: [
-//     {
-//       type: String,
-//       required: true,
-//       enum: ["free", "museum", "landscape", "view"],
-//     },
-//   ], //categories/tags
-//   location: { type: String, required: true, unique: true },
-//   hours: { type: String, required: true },
-//   price: { type: String, required: true },
-//   photos: [
-//     {
-//       url: { type: String, required: false },
-//       // public_id: { type: String, required: false, unique: true },
-//       signature: { type: String, required: false },
-//     },
-//   ],
-
-//   //rating
-//   //official site
-//   //google map with pin
-//   //comments block
-//   //buttons to share link
-// });
 const updatePlace = async (req, res) => {
+  try {
+    const { oldtitle } = req.params;
+
+    const uniqePlace = await Places.findOne({ title: oldtitle });
+
+    if (!uniqePlace) {
+      const result = await Users.findOneAndUpdate(
+        { username: oldusername },
+        { $set: req.body },
+        { new: true, runValidators: true }
+      );
+      res.status(200).send({
+        ok: true,
+        msg: `User '${username}' was updated`,
+        result:result
+      });
+    } else {
+      res
+        .status(200)
+        .send({ ok: true, data: `Username '${username}' is already taken ` });
+    }
+  } catch (error) {
+    res.status(400).send({ ok: false, data: error.message });
+    console.log(error.message);
+  }
+};
+
+const getPlace = async (req, res) => {
     try {
-      const { oldtitle} = req.params;
-      const {title} = req.body;
-      const uniqePlace = await Places.findOne({title:title})
-      console.log(uniqePlace);
-      const updates = {};
-      if (username) updates.username = username;
-      if (password) updates.password = password;
-      if (about) updates.about = about;
-    
-      if (!uniqeUser) {
-        await Users.findOneAndUpdate(
-            { username: oldusername },
-            { $set: updates },
-            { new: true, runValidators: true }
-          );
-        res.status(200).send({ ok: true, data: `User '${username}' was updated` });
+      const { title } = req.body;
+      const uniqePlace = await Places.findOne({ title: title });
+  
+      if (uniqePlace) {
+        res.status(200).send({ ok: true, data: uniqePlace });
+      } else {
+        res
+          .status(200)
+          .send({ ok: true, data: `Place '${title}' was not found ` });
       }
-      
-       else{
-          res.status(200).send({ ok: true, data: `Username '${username}' is already taken ` });
+    } catch (error) {
+      res.status(400).send({ ok: false, data: error.message });
+      console.log(error.message);
+    }
+  };
+  const getAllPlaces = async (req, res) => {
+    try {
+
+        let places = await Places.find({})
+        places = JSON.parse(JSON.stringify(places))
+      if (places) {
+        res.status(200).send({ ok: true, data: places });
+      } else {
+        res
+          .status(200)
+          .send({ ok: true, data: `Places was not found ` });
       }
     } catch (error) {
       res.status(400).send({ ok: false, data: error.message });
@@ -116,8 +112,12 @@ const updatePlace = async (req, res) => {
     }
   };
 
+
 module.exports = {
   addPlace,
   deletePlace,
   updatePlace,
+  getPlace,
+  getAllPlaces,
+
 };

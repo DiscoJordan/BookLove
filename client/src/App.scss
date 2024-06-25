@@ -1,0 +1,258 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+  }
+$primary-orange: #FF471F;
+
+.container{
+    width: 1200px;
+    padding: 0 20px;
+}
+a{
+    color:$primary-orange;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s ease-in-out;
+    &:hover{
+        color: white;
+    }
+}
+
+//Button
+.navigation__button{
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 5px 16px;
+    border: 1px white solid;
+    border-radius: 50px;
+    transition: all 0.2s ease-in;
+    &:hover{
+        background-color: white;
+        color: black;
+    }
+   
+  }
+//header
+header.scrolled{
+    background-color: rgba(255, 255, 255, 0.9);
+    height: 80px;
+    backdrop-filter: blur(5px);
+    .logo{
+        filter: brightness(0);
+    }
+    .navigation .navbar a{
+        color: black;
+    }
+    .navigation__button{
+        
+        border: 1px  solid black;
+        color: black;
+        &:hover{
+            background-color: black;
+            color: white;
+        }
+    }    
+}
+header{
+    transition: all 0.3s ease-in-out;
+    width: -webkit-fill-available;
+    position: fixed;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    
+    .navigation{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      .logo{
+        width: 200px;
+        height: 40px;
+        object-fit: cover;
+        img{
+            width: 100%;
+        height: 100%;
+        }
+      }  
+      .navbar{
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        a{
+            font-size: 24px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.2s ease-in-out;
+            &.active{
+                color: $primary-orange;
+            }
+            &:hover{
+                color: $primary-orange;
+            }
+        }
+      }
+      
+    }
+}
+//footer
+.footer{
+    
+    width: 100%;
+    height: fit-content;
+    background-image: url('/public/images/footer.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 80px;
+  
+   
+    .container {
+        padding-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: white;
+        gap: 30px;
+    }
+    .footer__tabs{
+        a{
+            color: white;
+            &:hover{
+                color: $primary-orange;
+            }
+        }
+        display: flex;
+        gap: 30px;
+    }
+    .footer__email{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+    .footer__label{
+        font-size: 40px;
+        font-weight: 100;
+        display: flex;
+        align-items: center;
+        .logo{
+            display: flex;
+
+            width: 200px;
+            height: 40px;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+    .footer__rights{
+        display: flex;
+        justify-content: space-between;
+        width: -webkit-fill-available;
+            align-items: center;
+            font-weight: 600;
+        .footer__backlink{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .footer__logo{
+            width: 100px;
+            height: 100px;
+            img{
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                filter: brightness(100);
+            }
+        }
+    }
+   
+}
+//registration
+.registration__wrapper {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url('/public/images/signinbg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 1;
+    }
+  
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: white;
+        gap: 30px;
+      position: relative;
+      z-index: 2; 
+    }
+    .form__fields{
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        .navigation__button{
+            width: 300px;
+        }
+    }
+    .terms{
+        font-size: 14px;
+        display: flex;
+        gap: 5px;
+    }
+  }
+//input
+.form__input{
+    border: 0;
+    font-size: 1.2em;
+    background-color: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(4px);
+    padding: 0 20px;
+    height: 50px;
+    width: 300px;
+    border-radius: 50px;
+    &:focus{
+        color: $primary-orange;
+        border: 1px solid $primary-orange;
+        outline: none;
+        background-color: rgba(0, 0, 0, 0.237);
+        &::placeholder{
+            color: white;
+        }
+    }
+  }
+  
