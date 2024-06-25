@@ -10,7 +10,7 @@ function Footer() {
         <Link to={"/contacts"}>Contacts</Link>
         </div>
         <div className="footer__email">
-          <span class="material-symbols-outlined">mail</span>
+          <span className="material-symbols-outlined">mail</span>
           <a href="mailto:barcelove@gmail.com">barcelove@gmail.com</a>
         </div>
         <div className="footer__label">
