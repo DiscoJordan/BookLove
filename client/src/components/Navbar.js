@@ -1,15 +1,18 @@
 import React, {useEffect,useState} from "react";
 import { Link, NavLink } from "react-router-dom";
 import Button from "./Button";
-
-function Navbar({ isLoggedIn }) {
+import { useLocation } from 'react-router-dom';
+function Navbar({ isLoggedIn, logout }) {
     const [isScrolled, setIsScrolled] = useState(false);
+    const [isProfile, setIsProfile] = useState(false);
+    const location = useLocation();
 
+   
     useEffect(() => {
+     
       const handleScroll = () => {
         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-  
-        if (scrollTop > 0) {
+        if (scrollTop > 0 ) {
           setIsScrolled(true);
         } else {
           setIsScrolled(false);
@@ -17,14 +20,24 @@ function Navbar({ isLoggedIn }) {
       };
   
       window.addEventListener('scroll', handleScroll);
-  
+
+
+    
+
       return () => {
         window.removeEventListener('scroll', handleScroll);
       };
     }, []);
+
+    let ProfileHeader = ()=>{
+        if (location.pathname === '/profile') {
+            console.log(location.pathname);
+            return true;
+        }
+    }
   
   return (
-    <header className={isScrolled ? 'scrolled' : ''}>
+    <header  className={(ProfileHeader()||isScrolled)?  "scrolled" : '' }>
       <div className="container">
         <nav className="navigation">
           <div className="logo">
@@ -50,7 +63,7 @@ function Navbar({ isLoggedIn }) {
               </Link>
             )}
             {isLoggedIn && (
-              <Link to={"/logout"}>
+              <Link onClick={logout} to={"/login"}>
                 <Button content={"Log Out"} />
               </Link>
             )}

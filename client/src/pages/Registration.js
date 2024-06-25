@@ -50,7 +50,6 @@ function Registration() {
     <div className="registration__wrapper">
       <div className="container">
         <h1 className={message ? 'message' : ''}>{message||'Get Started'}</h1>
-        <h1></h1>
         <div className="form">
           <form onSubmit={handleSubmit} onChange={handleChange} className="form__fields" action="">
             <input

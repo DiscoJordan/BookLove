@@ -6,7 +6,7 @@ function Button({ content }) {
       {(content ==='Log In'||content ==='Continue') && <span class="material-symbols-outlined">login</span>}
       {content ==='Sign In' && <span class="material-symbols-outlined">how_to_reg</span>}
       {content ==='Log Out' && <span class="material-symbols-outlined">logout</span>}
-      {content ==='Log Profile' &&  <span class="material-symbols-outlined">account_circle</span>}
+      {content ==='Profile' &&  <span class="material-symbols-outlined">account_circle</span>}
       <p>{content}</p>
 
     </div>

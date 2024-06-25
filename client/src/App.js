@@ -7,6 +7,8 @@ import {
   Navigate,
 } from "react-router-dom";
 import Registration from "./pages/Registration.js";
+import Profile from "./pages/Profile.js";
+import Login from "./pages/Login.js";
 import Navbar from "./components/Navbar.js";
 import { URL } from "./config";
 import * as jose from "jose";
@@ -15,18 +17,17 @@ import Footer from "./components/Footer.js";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(null);
-  const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")));
-  const [token, setToken] = useState(JSON.parse(localStorage.getItem("token")));
+  const [user, setUser] = useState();
+  const [token, setToken] = useState();
 
   useEffect(() => {
     const verify_token = async () => {
-      debugger
       try {
         if (!token) {
           setIsLoggedIn(false);
         } else {
           axios.defaults.headers.common["Authorization"] = token;
-          const response = await axios.post(`${URL}/users/verify_token`);
+          const response = await axios.post(`${URL}/user/verify_token`);
           return response.data.ok ? login(token) : logout();
         }
       } catch (error) {
@@ -36,8 +37,13 @@ function App() {
     verify_token();
   }, [token]);
 
+  useEffect(() => {
+    // Whenever we are log in or verify the token, set a user and token state
+    setUser(JSON.parse(localStorage.getItem("user")));
+    setToken(JSON.parse(localStorage.getItem("token")));
+  }, [token, isLoggedIn]);
+
   const login = (token) => {
-   debugger
     let decodedToken = jose.decodeJwt(token);
     // composing a user object based on what data we included in our token (login controller - jwt.sign() first argument)
     let user = {
@@ -47,22 +53,27 @@ function App() {
     localStorage.setItem("user", JSON.stringify(user));
     setIsLoggedIn(true);
   };
-  
+
   const logout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
     setIsLoggedIn(false);
   };
 
-
   return (
     <Router>
-      <Navbar isLoggedIn={isLoggedIn} />
+      <Navbar isLoggedIn={isLoggedIn} logout={logout} />
       <Routes>
-      <Route path="/registration" element={<Registration/>} />
-
+        <Route path="/registration" element={<Registration />} />
+        <Route
+          path={"/login"}
+          element={
+            isLoggedIn ? <Login login={login} /> : <Login login={login} />
+          }
+        />
+        <Route path="/profile" element={<Profile user={user} />} />
       </Routes>
-      <Footer/>
+      <Footer />
     </Router>
   );
 }

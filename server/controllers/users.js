@@ -52,10 +52,10 @@ const loginUser = async (req, res) => {
   
       const match = bcrypt.compareSync(password, user.password);
       if (match) {
-        const token = jwt.sign({ username: user.userName }, jwt_secret, {
+        const token = jwt.sign({ userName: user.username }, jwt_secret, {
           expiresIn: "1h",
         });
-        res.json({ ok: true, message: "welcome back", token:token, user:user });
+        res.json({ ok: true, message: "Succsessful!", token:token, user:user });
       } else return res.json({ ok: false, message: "Invalid data provided" });
     } catch (error) {
       res.json({ ok: false, error });

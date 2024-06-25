@@ -110,6 +110,7 @@ header .navigation .navbar {
 }
 header .navigation .navbar a {
   font-size: 24px;
+  font-weight: 400;
   color: white;
   text-decoration: none;
   transition: all 0.2s ease-in-out;
@@ -200,11 +201,18 @@ header .navigation .navbar a:hover {
   filter: brightness(100);
 }
 
+.login__wrapper {
+  background-image: url("/public/images/loginbg.png");
+}
+
 .registration__wrapper {
+  background-image: url("/public/images/signinbg.png");
+}
+
+.registration__wrapper, .login__wrapper {
   position: relative;
   width: 100%;
   height: 100vh;
-  background-image: url("/public/images/signinbg.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -213,7 +221,7 @@ header .navigation .navbar a:hover {
   align-items: center;
   justify-content: center;
 }
-.registration__wrapper::before {
+.registration__wrapper::before, .login__wrapper::before {
   content: "";
   position: absolute;
   top: 0;
@@ -223,7 +231,7 @@ header .navigation .navbar a:hover {
   background: rgba(0, 0, 0, 0.7);
   z-index: 1;
 }
-.registration__wrapper .container {
+.registration__wrapper .container, .login__wrapper .container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -232,16 +240,16 @@ header .navigation .navbar a:hover {
   position: relative;
   z-index: 2;
 }
-.registration__wrapper .form__fields {
+.registration__wrapper .form__fields, .login__wrapper .form__fields {
   align-items: center;
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
-.registration__wrapper .form__fields .navigation__button {
+.registration__wrapper .form__fields .navigation__button, .login__wrapper .form__fields .navigation__button {
   width: 300px;
 }
-.registration__wrapper .terms {
+.registration__wrapper .terms, .login__wrapper .terms {
   font-size: 14px;
   display: flex;
   gap: 5px;
@@ -269,4 +277,46 @@ header .navigation .navbar a:hover {
 }
 .form__input:focus::placeholder {
   color: white;
+}
+
+.profile__wrapper {
+  padding: 150px 0 100px 0;
+  display: flex;
+  justify-content: center;
+}
+.profile__wrapper .container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+.profile__wrapper .container .profile__info {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+}
+.profile__wrapper .container .profile__info .profile__avatar {
+  width: 200px;
+  height: 200px;
+}
+.profile__wrapper .container .profile__info .profile__avatar img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 100px;
+}
+.profile__wrapper .container .profile__info .profile__username {
+  font-size: 32px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+.profile__wrapper .container .profile__info .profile__username .profile__badge {
+  color: white;
+  text-align: center;
+  background-color: #FF471F;
+  width: 100px;
+  border-radius: 20px;
 }/*# sourceMappingURL=App.css.map */
