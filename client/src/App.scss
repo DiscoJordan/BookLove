@@ -7,7 +7,9 @@ body {
     font-family: 'Poppins', sans-serif;
   }
 $primary-orange: #FF471F;
-
+.message{
+    color: $primary-orange;
+}
 .container{
     width: 1200px;
     padding: 0 20px;
@@ -29,6 +31,9 @@ button {
     cursor: pointer;
     &:focus {
         outline: none;
+    }
+    &:disabled{
+        opacity: 0.5;
     }
 }
 

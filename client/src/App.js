@@ -20,6 +20,7 @@ function App() {
 
   useEffect(() => {
     const verify_token = async () => {
+      debugger
       try {
         if (!token) {
           setIsLoggedIn(false);
@@ -36,11 +37,11 @@ function App() {
   }, [token]);
 
   const login = (token) => {
-    debugger
+   debugger
     let decodedToken = jose.decodeJwt(token);
     // composing a user object based on what data we included in our token (login controller - jwt.sign() first argument)
     let user = {
-      email: decodedToken.userEmail,
+      username: decodedToken.userName,
     };
     localStorage.setItem("token", JSON.stringify(token));
     localStorage.setItem("user", JSON.stringify(user));

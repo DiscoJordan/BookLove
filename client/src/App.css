@@ -8,6 +8,10 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+.message {
+  color: #FF471F;
+}
+
 .container {
   width: 1200px;
   padding: 0 20px;
@@ -30,6 +34,9 @@ button {
 }
 button:focus {
   outline: none;
+}
+button:disabled {
+  opacity: 0.5;
 }
 
 .navigation__button {
