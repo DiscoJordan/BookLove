@@ -23,6 +23,15 @@ a{
 }
 
 //Button
+button {
+    all: unset;
+    display: inline-block; 
+    cursor: pointer;
+    &:focus {
+        outline: none;
+    }
+}
+
 .navigation__button{
     font-size: 24px;
     cursor: pointer;

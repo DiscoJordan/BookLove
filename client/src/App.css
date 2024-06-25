@@ -23,6 +23,15 @@ a:hover {
   color: white;
 }
 
+button {
+  all: unset;
+  display: inline-block;
+  cursor: pointer;
+}
+button:focus {
+  outline: none;
+}
+
 .navigation__button {
   font-size: 24px;
   cursor: pointer;
