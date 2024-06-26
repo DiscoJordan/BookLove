@@ -15,11 +15,11 @@ import * as jose from "jose";
 import "./App.css";
 import Footer from "./components/Footer.js";
 import AddNewPlace from "./pages/AddNewPlace.js";
+import { ContextProvider } from "./context/PlacesContext.js";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(null);
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")));
-  const [isAdmin, setIsAdmin] = useState(JSON.parse(localStorage.getItem("isAdmin")));
   const [token, setToken] = useState(JSON.parse(localStorage.getItem("token")));
 
 
@@ -49,10 +49,9 @@ function App() {
     };
     localStorage.setItem("token", JSON.stringify(token));
     localStorage.setItem("user", JSON.stringify(user));
-    localStorage.setItem("isAdmin", JSON.stringify(isAdmin));
+
     setIsLoggedIn(true);
     setUser(user);
-    setIsAdmin(user.isAdmin);
   
     };
 
@@ -63,6 +62,7 @@ function App() {
   };
   
   return (
+    <ContextProvider>
     <Router>
       <Navbar isLoggedIn={isLoggedIn} logout={logout} user={user} />
       <Routes>
@@ -95,12 +95,13 @@ function App() {
         <Route
           path={`/addnewplace`}
           element={
-            isAdmin ? <AddNewPlace /> : <Navigate to={`/`} />
+            user.isAdmin ? <AddNewPlace /> : <Navigate to={`/`} />
           }
         />
       </Routes>
       <Footer />
     </Router>
+    </ContextProvider>
   );
 }
 

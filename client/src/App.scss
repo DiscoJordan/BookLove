@@ -401,3 +401,28 @@ textarea.form__input{
     padding: 30px;
     resize: none;
 }
+
+//AdminPanel
+
+    .admin__buttons{
+        display: flex;
+        gap: 20px;
+        a{
+            color: black;
+        } 
+        .navigation__button{
+        font-weight: 400;
+        border: 1px black solid;
+        border-radius: 50px;
+        transition: all 0.2s ease-in;
+        &:hover{
+            background-color: black;
+            color: white;
+        }
+       
+      }
+    }
+   
+        
+
+

@@ -399,4 +399,22 @@ textarea.form__input {
   height: 500px;
   padding: 30px;
   resize: none;
+}
+
+.admin__buttons {
+  display: flex;
+  gap: 20px;
+}
+.admin__buttons a {
+  color: black;
+}
+.admin__buttons .navigation__button {
+  font-weight: 400;
+  border: 1px black solid;
+  border-radius: 50px;
+  transition: all 0.2s ease-in;
+}
+.admin__buttons .navigation__button:hover {
+  background-color: black;
+  color: white;
 }/*# sourceMappingURL=App.css.map */

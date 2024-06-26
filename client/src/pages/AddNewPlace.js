@@ -22,15 +22,7 @@ function AddNewPlace() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`${URL}/place/add`, {
-        title: placeData.title,
-        subtitle: placeData.subtitle,
-        header: placeData.header,
-        location: placeData.location,
-        hours: placeData.hours,
-        price: placeData.price,
-        descriptionText: placeData.descriptionText,
-      });
+      const response = await axios.post(`${URL}/place/add`, placeData);
       setMessage(response.data.data);
       setTimeout(() => {
         setMessage("");
