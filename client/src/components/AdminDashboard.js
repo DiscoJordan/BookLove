@@ -1,18 +1,20 @@
 import React from "react";
 import Button from "./Button";
 import { Link } from "react-router-dom";
-import { useContext } from "react";
+import { useContext,useEffect } from "react";
 import { PlacesContext } from "../context/PlacesContext";
 import PlaceCard from "./PlaceCard";
 
 function AdminDashboard() {
-  const { places } = useContext(PlacesContext);
-  console.log(places);
+  const { places,getPlaces } = useContext(PlacesContext);
+  useEffect(() => {
+    getPlaces();
+  }, []);
   return (
     <>
       <div className="admin__buttons">
         <Link to={"/addnewplace"}>
-          <Button content={"Add new Place"} />
+          <Button content={"Add new Place"} onClick={()=>localStorage.removeItem("editTitle")}/>
         </Link>
       </div>
       <hr />

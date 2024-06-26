@@ -35,12 +35,13 @@ const addPlace = async (req, res) => {
 const deletePlace = async (req, res) => {
   try {
     const { title } = req.body;
+    console.log( req.body);
     const placeExist = await Places.findOne({ title: title });
     if (placeExist) {
       await placeExist.deleteOne();
       res.send({ ok: true, data: `Place '${title}' was deleted` });
     } else {
-      res.send({ ok: true, data: `Place '${title}' was  not found` });
+      res.send({ ok: true, data: `Place '${title}' was not found` });
     }
   } catch (error) {
     res.send({ ok: false, data: error.message });

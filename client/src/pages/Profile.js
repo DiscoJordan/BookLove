@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { URL } from "../config";
 import axios from "axios";
-import { Link } from "react-router-dom";
+
 import Button from "../components/Button";
 import UserDashboard from "../components/UserDashboard";
 import AdminDashboard from "../components/AdminDashboard";

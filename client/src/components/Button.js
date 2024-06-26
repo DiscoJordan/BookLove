@@ -1,6 +1,6 @@
 import React from "react";
 
-const Button = ({ content }) => {
+const Button = ({ content, onClick }) => {
     const iconMap = {
       "Log In": "login",
       "Continue": "login",
@@ -12,7 +12,7 @@ const Button = ({ content }) => {
     };
   
     return (
-      <div className="navigation__button">
+      <div className="navigation__button" onClick={onClick ? onClick : null}>
         {iconMap[content] && (
           <span className="material-symbols-outlined">{iconMap[content]}</span>
         )}

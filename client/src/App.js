@@ -14,7 +14,7 @@ import { URL } from "./config";
 import * as jose from "jose";
 import "./App.css";
 import Footer from "./components/Footer.js";
-import AddNewPlace from "./pages/AddNewPlace.js";
+import AddOrEditPlace from "./pages/AddOrEditPlace.js";
 import { ContextProvider } from "./context/PlacesContext.js";
 
 function App() {
@@ -95,9 +95,10 @@ function App() {
         <Route
           path={`/addnewplace`}
           element={
-            user.isAdmin ? <AddNewPlace /> : <Navigate to={`/`} />
+            user?.isAdmin ? <AddOrEditPlace /> : <Navigate to={`/`} />
           }
         />
+
       </Routes>
       <Footer />
     </Router>

@@ -1,23 +1,48 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import Button from "../components/Button";
 import axios from "axios";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { URL } from "../config";
+import { PlacesContext } from "../context/PlacesContext";
 
-function AddNewPlace() {
+function AddOrEditPlace() {
+  const { editTitle, setEditTitle, places } = useContext(PlacesContext);
+
+  const beingEdited =
+    editTitle && places.find((place) => place.title === editTitle);
+
   const navigate = useNavigate();
   const [message, setMessage] = useState("");
   const [placeData, setPlaceData] = useState({
     title: "",
     subtitle: "",
-    header: "",
     location: "",
     hours: "",
     price: "",
-    descriptionText: "",
+    description: {
+      header: "",
+      descriptionText: "",
+    },
   });
+
+  useEffect(() => {
+    if (beingEdited) {
+      setPlaceData({ ...beingEdited });
+    }
+   if(localStorage.getItem("editTitle")) {
+      setEditTitle(JSON.parse(localStorage.getItem("editTitle")))
+    }
+  }, [places]);
+
+
   let handleChange = (e) => {
-    setPlaceData({ ...placeData, [e.target.name]: e.target.value });
+    if (e.target.name === "header" || e.target.name === "descriptionText") {
+      let copy = { ...placeData };
+      copy.description[e.target.name] = e.target.value;
+      setPlaceData(copy);
+    } else {
+      setPlaceData({ ...placeData, [e.target.name]: e.target.value });
+    }
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -30,8 +55,7 @@ function AddNewPlace() {
       console.log(response);
       if (response.data.ok) {
         setTimeout(() => {
-            
-            navigate(`/}`);
+          navigate(-1);
         }, 2000);
       }
     } catch (error) {
@@ -45,12 +69,18 @@ function AddNewPlace() {
           {message || "Create new Place"}
         </h1>
         <div className="form">
-          <form onSubmit={handleSubmit} onChange={handleChange} className="form__fields" action="">
+          <form
+            onSubmit={handleSubmit}
+            onChange={handleChange}
+            className="form__fields"
+            action=""
+          >
             <div className="form__sides">
               <div className="leftside__fields">
                 <input
                   className="form__input"
                   placeholder="Title*"
+                  value={placeData.title}
                   name="title"
                   type="text"
                 />
@@ -58,30 +88,35 @@ function AddNewPlace() {
                 <input
                   className="form__input"
                   placeholder="Subtitle"
+                  value={placeData.subtitle}
                   name="subtitle"
                   type="text"
                 />
                 <input
                   className="form__input"
                   placeholder="Header"
+                  value={placeData.description.header}
                   name="header"
                   type="text"
                 />
                 <input
                   className="form__input"
                   placeholder="Location*"
+                  value={placeData.location}
                   name="location"
                   type="text"
                 />
                 <input
                   className="form__input"
                   placeholder="Hours*"
+                  value={placeData.hours}
                   name="hours"
                   type="text"
                 />
                 <input
                   className="form__input"
                   placeholder="Price*"
+                  value={placeData.price}
                   name="price"
                   type="text"
                 />
@@ -90,6 +125,7 @@ function AddNewPlace() {
                 <textarea
                   className="form__input"
                   placeholder="Description"
+                  value={placeData.description.descriptionText}
                   name="descriptionText"
                   rows="40"
                   cols="40"
@@ -112,4 +148,4 @@ function AddNewPlace() {
   );
 }
 
-export default AddNewPlace;
+export default AddOrEditPlace;
