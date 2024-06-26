@@ -202,14 +202,18 @@ header{
     }
    
 }
-//registration and login
+//registration, login, newPlace
 .login__wrapper {
     background-image: url('/public/images/loginbg.png');
 }
+
 .registration__wrapper{
     background-image: url('/public/images/signinbg.png');
 }
-.registration__wrapper, .login__wrapper {
+.newPlace__wrapper{
+    background-image: url('/public/images/addnewplace.png');
+}
+.registration__wrapper, .login__wrapper,.newPlace__wrapper {
     position: relative;
     width: 100%;
     height: 100vh;
@@ -302,9 +306,13 @@ header{
             }
         }
         .profile__username{
+            span{
+                font-size: 42px;
+            }
             font-size: 32px;
             display: flex;
             justify-content: center;
+            align-items: center;
             gap: 20px;
             .profile__badge{
                 color: white;
@@ -314,6 +322,82 @@ header{
                 border-radius: 20px;
             }
         }
+        .profile__buttons{
+            display: flex;
+            gap: 20px;
+            a{
+                color: black;
+            }
+        }
+        .navigation__button{
+            border: 1px black solid;
+            border-radius: 50px;
+            transition: all 0.2s ease-in;
+            &:hover{
+                background-color: black;
+                color: white;
+            }
+           
+          }
+        }
+        .profile__collections{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            .profile__options{
+                button{
+                    display: flex;
+                    gap: 10px;
+                    align-items: center;
+                }
+                button:hover{
+                    color: $primary-orange;
+                }
+                .active{
+                    color: $primary-orange;
+                }
+                display: flex;
+                gap:20px;
+                .vertical-line {
+                    border-left: 1px solid black;
+                    height: 100%;
+                  }
+
+            }
+
         }
     }
+}
+//newPlace
+.newPlace__wrapper{
+   height: fit-content;
+   padding: 150px 0 50px 0;
+    .form__fields{
+        font-style: normal;
+        align-items: center;
+        display: flex;
+        
+        .form__sides{
+            display: flex;
+            gap: 30px;
+            .leftside__fields{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            }
+            .rightside__fields{
+                height: 500px;
+                
+            }
+        .navigation__button{
+            width: 300px;
+        }
+        }
+        
+    }
+}
+textarea.form__input{
+    height: 500px;
+    padding: 30px;
+    resize: none;
 }

@@ -12,7 +12,6 @@ const placeSchema = new mongoose.Schema({
     {
       header: { type: String, required: false },
       descriptionText: { type: String, required: false },
-      pictures: [], // if needed
     },
   tags: [
     {

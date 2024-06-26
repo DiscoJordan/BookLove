@@ -31,7 +31,7 @@ const registerUser = async (req, res) => {
       username:username,  
       email:email,
       password: hash,
-      isAdmin: username === "admin"
+      isAdmin: false,
     };
     await Users.create(newUser);
     res.json({ ok: true, message: "Successfully registered" });
@@ -52,10 +52,10 @@ const loginUser = async (req, res) => {
   
       const match = bcrypt.compareSync(password, user.password);
       if (match) {
-        const token = jwt.sign({ userName: user.username }, jwt_secret, {
+        const token = jwt.sign({ userName: user.username, isAdmin: user.isAdmin }, jwt_secret, {
           expiresIn: "1h",
         });
-        res.json({ ok: true, message: "Succsessful!", token:token, user:user });
+        res.json({ ok: true, message: "Succsessfull!", token:token, user:user });
       } else return res.json({ ok: false, message: "Invalid data provided" });
     } catch (error) {
       res.json({ ok: false, error });
@@ -100,7 +100,7 @@ const updateUser = async (req, res) => {
     if (!uniqeUser) {
      const user =  await Users.findOneAndUpdate(
         { username: oldusername },
-        { $set: req.bod },
+        { $set: req.body },
         { new: true, runValidators: true }
       );
       if (!username) {
@@ -125,7 +125,7 @@ const updateUser = async (req, res) => {
 
 const getUser = async (req, res) => {
   try {
-    const { username } = req.body;
+    const { username } = req.params;
     const uniqeUser = await Users.findOne({ username: username });
 
     if (uniqeUser) {

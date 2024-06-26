@@ -3,9 +3,9 @@ import Button from "../components/Button";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { URL } from "../config";
-import * as jose from "jose";
 
-const Login =({login}) =>{
+
+const Login =({login }) =>{
 
   const navigate = useNavigate();
   const [message, setMessage] = useState('');
@@ -25,6 +25,7 @@ const Login =({login}) =>{
             username: userData.username,
             password: userData.password,
         });
+        debugger
         setMessage(response.data.message);
         setTimeout(() => {
             setMessage('')
@@ -34,7 +35,7 @@ const Login =({login}) =>{
 
             setTimeout(() => {
                 login(response.data.token);
-                navigate('/profile');
+                navigate(`/profile/${response.data.user.username}`);
             }, 2000);
         }
     } catch (error) {

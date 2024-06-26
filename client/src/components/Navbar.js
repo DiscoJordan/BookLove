@@ -2,7 +2,7 @@ import React, {useEffect,useState} from "react";
 import { Link, NavLink } from "react-router-dom";
 import Button from "./Button";
 import { useLocation } from 'react-router-dom';
-function Navbar({ isLoggedIn, logout }) {
+function Navbar({ isLoggedIn, logout, user }) {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isProfile, setIsProfile] = useState(false);
     const location = useLocation();
@@ -30,8 +30,7 @@ function Navbar({ isLoggedIn, logout }) {
     }, []);
 
     let ProfileHeader = ()=>{
-        if (location.pathname === '/profile') {
-            console.log(location.pathname);
+        if (location.pathname.startsWith('/profile/')) {
             return true;
         }
     }
@@ -58,7 +57,7 @@ function Navbar({ isLoggedIn, logout }) {
               </Link>
             )}
             {isLoggedIn && (
-              <Link to={"/profile"}>
+              <Link to={`/profile/${user.username}`}>
                 <Button content={"Profile"} />
               </Link>
             )}

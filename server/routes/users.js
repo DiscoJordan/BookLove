@@ -7,7 +7,7 @@ router.post('/login', loginUser);
 router.post('/verify_token',verifyToken);
 router.post('/:oldusername/update', updateUser)   
 router.post('/delete', deleteUser)   
-router.get('/get', getUser)   
+router.get('/get/:username', getUser)   
  
 
 module.exports = router;

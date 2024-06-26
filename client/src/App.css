@@ -209,7 +209,11 @@ header .navigation .navbar a:hover {
   background-image: url("/public/images/signinbg.png");
 }
 
-.registration__wrapper, .login__wrapper {
+.newPlace__wrapper {
+  background-image: url("/public/images/addnewplace.png");
+}
+
+.registration__wrapper, .login__wrapper, .newPlace__wrapper {
   position: relative;
   width: 100%;
   height: 100vh;
@@ -221,7 +225,7 @@ header .navigation .navbar a:hover {
   align-items: center;
   justify-content: center;
 }
-.registration__wrapper::before, .login__wrapper::before {
+.registration__wrapper::before, .login__wrapper::before, .newPlace__wrapper::before {
   content: "";
   position: absolute;
   top: 0;
@@ -231,7 +235,7 @@ header .navigation .navbar a:hover {
   background: rgba(0, 0, 0, 0.7);
   z-index: 1;
 }
-.registration__wrapper .container, .login__wrapper .container {
+.registration__wrapper .container, .login__wrapper .container, .newPlace__wrapper .container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -240,16 +244,16 @@ header .navigation .navbar a:hover {
   position: relative;
   z-index: 2;
 }
-.registration__wrapper .form__fields, .login__wrapper .form__fields {
+.registration__wrapper .form__fields, .login__wrapper .form__fields, .newPlace__wrapper .form__fields {
   align-items: center;
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
-.registration__wrapper .form__fields .navigation__button, .login__wrapper .form__fields .navigation__button {
+.registration__wrapper .form__fields .navigation__button, .login__wrapper .form__fields .navigation__button, .newPlace__wrapper .form__fields .navigation__button {
   width: 300px;
 }
-.registration__wrapper .terms, .login__wrapper .terms {
+.registration__wrapper .terms, .login__wrapper .terms, .newPlace__wrapper .terms {
   font-size: 14px;
   display: flex;
   gap: 5px;
@@ -311,7 +315,11 @@ header .navigation .navbar a:hover {
   font-size: 32px;
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 20px;
+}
+.profile__wrapper .container .profile__info .profile__username span {
+  font-size: 42px;
 }
 .profile__wrapper .container .profile__info .profile__username .profile__badge {
   color: white;
@@ -319,4 +327,76 @@ header .navigation .navbar a:hover {
   background-color: #FF471F;
   width: 100px;
   border-radius: 20px;
+}
+.profile__wrapper .container .profile__info .profile__buttons {
+  display: flex;
+  gap: 20px;
+}
+.profile__wrapper .container .profile__info .profile__buttons a {
+  color: black;
+}
+.profile__wrapper .container .profile__info .navigation__button {
+  border: 1px black solid;
+  border-radius: 50px;
+  transition: all 0.2s ease-in;
+}
+.profile__wrapper .container .profile__info .navigation__button:hover {
+  background-color: black;
+  color: white;
+}
+.profile__wrapper .container .profile__collections {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.profile__wrapper .container .profile__collections .profile__options {
+  display: flex;
+  gap: 20px;
+}
+.profile__wrapper .container .profile__collections .profile__options button {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.profile__wrapper .container .profile__collections .profile__options button:hover {
+  color: #FF471F;
+}
+.profile__wrapper .container .profile__collections .profile__options .active {
+  color: #FF471F;
+}
+.profile__wrapper .container .profile__collections .profile__options .vertical-line {
+  border-left: 1px solid black;
+  height: 100%;
+}
+
+.newPlace__wrapper {
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 150px 0 50px 0;
+}
+.newPlace__wrapper .form__fields {
+  font-style: normal;
+  align-items: center;
+  display: flex;
+}
+.newPlace__wrapper .form__fields .form__sides {
+  display: flex;
+  gap: 30px;
+}
+.newPlace__wrapper .form__fields .form__sides .leftside__fields {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.newPlace__wrapper .form__fields .form__sides .rightside__fields {
+  height: 500px;
+}
+.newPlace__wrapper .form__fields .form__sides .navigation__button {
+  width: 300px;
+}
+
+textarea.form__input {
+  height: 500px;
+  padding: 30px;
+  resize: none;
 }/*# sourceMappingURL=App.css.map */

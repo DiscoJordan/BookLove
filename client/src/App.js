@@ -14,11 +14,14 @@ import { URL } from "./config";
 import * as jose from "jose";
 import "./App.css";
 import Footer from "./components/Footer.js";
+import AddNewPlace from "./pages/AddNewPlace.js";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(null);
-  const [user, setUser] = useState();
-  const [token, setToken] = useState();
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")));
+  const [isAdmin, setIsAdmin] = useState(JSON.parse(localStorage.getItem("isAdmin")));
+  const [token, setToken] = useState(JSON.parse(localStorage.getItem("token")));
+
 
   useEffect(() => {
     const verify_token = async () => {
@@ -29,6 +32,7 @@ function App() {
           axios.defaults.headers.common["Authorization"] = token;
           const response = await axios.post(`${URL}/user/verify_token`);
           return response.data.ok ? login(token) : logout();
+          
         }
       } catch (error) {
         console.log(error);
@@ -37,41 +41,63 @@ function App() {
     verify_token();
   }, [token]);
 
-  useEffect(() => {
-    // Whenever we are log in or verify the token, set a user and token state
-    setUser(JSON.parse(localStorage.getItem("user")));
-    setToken(JSON.parse(localStorage.getItem("token")));
-  }, [token, isLoggedIn]);
-
   const login = (token) => {
     let decodedToken = jose.decodeJwt(token);
     // composing a user object based on what data we included in our token (login controller - jwt.sign() first argument)
     let user = {
-      username: decodedToken.userName,
+      username: decodedToken.userName, isAdmin:decodedToken.isAdmin 
     };
     localStorage.setItem("token", JSON.stringify(token));
     localStorage.setItem("user", JSON.stringify(user));
+    localStorage.setItem("isAdmin", JSON.stringify(isAdmin));
     setIsLoggedIn(true);
-  };
+    setUser(user);
+    setIsAdmin(user.isAdmin);
+  
+    };
 
   const logout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
     setIsLoggedIn(false);
   };
-
+  
   return (
     <Router>
-      <Navbar isLoggedIn={isLoggedIn} logout={logout} />
+      <Navbar isLoggedIn={isLoggedIn} logout={logout} user={user} />
       <Routes>
-        <Route path="/registration" element={<Registration />} />
+        <Route
+          path="/registration"
+          element={
+            !isLoggedIn ? (
+              <Registration />
+            ) : (
+              <Navigate to={`/profile/${user.username}`} />
+            )
+          }
+        />
         <Route
           path={"/login"}
           element={
-            isLoggedIn ? <Login login={login} /> : <Login login={login} />
+            !isLoggedIn ? (
+              <Login login={login} user={user} />
+            ) : (
+              <Navigate to={`/profile/${user.username}`} />
+            )
           }
         />
-        <Route path="/profile" element={<Profile user={user} />} />
+        <Route
+          path={`/profile/:username`}
+          element={
+            isLoggedIn ? <Profile user={user} /> : <Navigate to={`/login`} />
+          }
+        />
+        <Route
+          path={`/addnewplace`}
+          element={
+            isAdmin ? <AddNewPlace /> : <Navigate to={`/`} />
+          }
+        />
       </Routes>
       <Footer />
     </Router>
