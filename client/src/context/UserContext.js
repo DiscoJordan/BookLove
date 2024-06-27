@@ -43,6 +43,7 @@ export const UserProvider = ({ children }) => {
     };
 
   const logout = () => {
+    getUserData()
     localStorage.removeItem("token");
     localStorage.removeItem("user");
     setIsLoggedIn(false);

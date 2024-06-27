@@ -6,6 +6,7 @@ import {
   Navigate,
 } from "react-router-dom";
 import Registration from "./pages/Registration.js";
+import CurrentPlace from "./pages/CurrentPlace.js";
 import Profile from "./pages/Profile.js";
 import Login from "./pages/Login.js";
 import Navbar from "./components/Navbar.js";
@@ -73,6 +74,12 @@ function App() {
           path={`/`}
           element={
              <Places user={user}/> 
+          }
+        />
+          <Route
+          path={`/place/:title/`}
+          element={
+             <CurrentPlace />
           }
         />
 

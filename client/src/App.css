@@ -405,7 +405,6 @@ textarea.form__input {
   display: grid;
   gap: 2em;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
 }
 .grid__places .place__card {
   aspect-ratio: 1/1;
@@ -420,6 +419,14 @@ textarea.form__input {
   justify-content: center;
   border-radius: 20px;
   overflow: hidden;
+}
+.grid__places .place__card h3 {
+  font-size: 18px;
+  font-weight: 600;
+}
+.grid__places .place__card p {
+  font-size: 16px;
+  font-weight: 400;
 }
 .grid__places .place__card::before {
   content: "";
@@ -441,32 +448,6 @@ textarea.form__input {
   color: white;
   position: relative;
   z-index: 2;
-}
-.grid__places .place__card .place__info .place__buttons {
-  padding: 16px;
-  display: flex;
-  justify-content: flex-end;
-  gap: 10px;
-}
-.grid__places .place__card .place__info .place__buttons .circle__button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50px;
-  width: 40px;
-  height: 40px;
-  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.25));
-  color: black;
-  background-color: white;
-  transition: all 0.1s ease-in-out;
-}
-.grid__places .place__card .place__info .place__buttons .circle__button:hover {
-  background-color: #FF471F;
-  color: white;
-}
-.grid__places .place__card .place__info .place__buttons .active__circle__button {
-  background-color: #FF471F;
-  color: white;
 }
 .grid__places .place__card .place__info .place__footer {
   transition: all 0.2s ease-in-out;
@@ -523,4 +504,98 @@ textarea.form__input {
   padding: 150px 0 100px 0;
   display: flex;
   justify-content: center;
+}
+
+.place__wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 100px 0;
+  gap: 50px;
+  align-items: center;
+}
+.place__wrapper h1 {
+  font-size: 64px;
+  font-weight: 800;
+}
+.place__wrapper h2 {
+  font-size: 48px;
+  font-weight: 800;
+}
+.place__wrapper h3 {
+  font-size: 32px;
+  font-weight: 600;
+}
+.place__wrapper p {
+  font-size: 16px;
+  font-weight: 600;
+}
+.place__wrapper .container {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+.place__wrapper .container .place__subtitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.place__cover {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  background-size: cover;
+  background-image: url("/public/images/signinbg.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.place__cover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+.place__cover .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  gap: 50px;
+  position: relative;
+  z-index: 2;
+}
+
+.place__buttons {
+  padding: 16px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+.place__buttons .circle__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  width: 40px;
+  height: 40px;
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.25));
+  color: black;
+  background-color: white;
+  transition: all 0.1s ease-in-out;
+}
+.place__buttons .circle__button:hover {
+  background-color: #FF471F;
+  color: white;
+}
+.place__buttons .active__circle__button {
+  background-color: #FF471F;
+  color: white;
 }/*# sourceMappingURL=App.css.map */

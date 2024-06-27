@@ -3,9 +3,12 @@ import Button from "../components/Button";
 import UserDashboard from "../components/UserDashboard";
 import AdminDashboard from "../components/AdminDashboard";
 import { UserContext } from "../context/UserContext";
+
 function Profile() {
 
   const {userData,getUserData} = useContext(UserContext);
+
+
   useEffect(() => {
     getUserData();
     console.log(userData);
