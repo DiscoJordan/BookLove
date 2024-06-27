@@ -1,13 +1,18 @@
 import React, { useState, useContext, useEffect } from "react";
 import Button from "../components/Button";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,useParams } from "react-router-dom";
 import { URL } from "../config";
 import { PlacesContext } from "../context/PlacesContext";
 
 function AddOrEditPlace() {
   const { editTitle, setEditTitle, places } = useContext(PlacesContext);
 
+
+
+  const { oldtitle } = useParams()
+
+  console.log(editTitle);
   const beingEdited =
     editTitle && places.find((place) => place.title === editTitle);
 
@@ -24,16 +29,13 @@ function AddOrEditPlace() {
       descriptionText: "",
     },
   });
-
+ 
   useEffect(() => {
     if (beingEdited) {
       setPlaceData({ ...beingEdited });
     }
-   if(localStorage.getItem("editTitle")) {
-      setEditTitle(JSON.parse(localStorage.getItem("editTitle")))
-    }
+    setEditTitle(JSON.parse(localStorage.getItem("editTitle")));
   }, [places]);
-
 
   let handleChange = (e) => {
     if (e.target.name === "header" || e.target.name === "descriptionText") {
@@ -48,6 +50,7 @@ function AddOrEditPlace() {
     e.preventDefault();
     try {
       const response = await axios.post(`${URL}/place/add`, placeData);
+      console.log(response);
       setMessage(response.data.data);
       setTimeout(() => {
         setMessage("");
@@ -62,15 +65,38 @@ function AddOrEditPlace() {
       console.log(error);
     }
   };
+
+  const handleUpdate = async (e) => {
+    e.preventDefault();
+    try {
+      debugger
+      const response = await axios.post(`${URL}/place/${oldtitle}/update`, placeData);
+      setMessage(response.data.data);
+      console.log(response.data);
+      setTimeout(() => {
+        setMessage("");
+      }, 2000);
+      console.log(response);
+      if (response.data.ok) {
+        
+        setTimeout(() => {
+          navigate(-1);
+        }, 2000);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div className="newPlace__wrapper">
       <div className="container">
         <h1 className={message ? "message" : ""}>
-          {message || "Create new Place"}
+          {message || (editTitle ? "Edit Place" : "Create new Place")}
         </h1>
         <div className="form">
           <form
-            onSubmit={handleSubmit}
+            onSubmit={editTitle ? handleUpdate : handleSubmit}
             onChange={handleChange}
             className="form__fields"
             action=""
@@ -139,7 +165,7 @@ function AddOrEditPlace() {
             <h4>here you could add photos</h4>
 
             <button>
-              <Button content={"Continue"} />
+              <Button content={editTitle ?"Update":"Continue"} />
             </button>
           </form>
         </div>

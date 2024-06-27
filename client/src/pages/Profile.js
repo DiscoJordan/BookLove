@@ -47,7 +47,7 @@ function Profile({ user }) {
           </div>
         </div>
         {userData?.isAdmin ? (
-          <AdminDashboard userData={userData} />
+          <AdminDashboard user={user} userData={userData} />
         ) : (
           <UserDashboard userData={userData} />
         )}

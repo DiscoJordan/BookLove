@@ -16,12 +16,12 @@ import "./App.css";
 import Footer from "./components/Footer.js";
 import AddOrEditPlace from "./pages/AddOrEditPlace.js";
 import { ContextProvider } from "./context/PlacesContext.js";
+import Places from "./pages/Places.js";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(null);
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")));
   const [token, setToken] = useState(JSON.parse(localStorage.getItem("token")));
-
 
   useEffect(() => {
     const verify_token = async () => {
@@ -96,6 +96,18 @@ function App() {
           path={`/addnewplace`}
           element={
             user?.isAdmin ? <AddOrEditPlace /> : <Navigate to={`/`} />
+          }
+        />
+         <Route
+          path={`/:oldtitle/addnewplace`}
+          element={
+            user?.isAdmin ? <AddOrEditPlace /> : <Navigate to={`/`} />
+          }
+        />
+          <Route
+          path={`/`}
+          element={
+             <Places user={user}/> 
           }
         />
 

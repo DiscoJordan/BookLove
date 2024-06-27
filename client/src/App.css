@@ -401,13 +401,13 @@ textarea.form__input {
   resize: none;
 }
 
-.admin__places {
+.grid__places {
   display: grid;
   gap: 2em;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
 }
-.admin__places .place__card {
+.grid__places .place__card {
   aspect-ratio: 1/1;
   background-image: url("/public/images/signinbg.png");
   background-size: cover;
@@ -421,7 +421,7 @@ textarea.form__input {
   border-radius: 20px;
   overflow: hidden;
 }
-.admin__places .place__card::before {
+.grid__places .place__card::before {
   content: "";
   position: absolute;
   top: 0;
@@ -432,7 +432,7 @@ textarea.form__input {
   z-index: 1;
   transition: 0.2s all ease-in-out;
 }
-.admin__places .place__card .place__info {
+.grid__places .place__card .place__info {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -442,13 +442,13 @@ textarea.form__input {
   position: relative;
   z-index: 2;
 }
-.admin__places .place__card .place__info .place__buttons {
+.grid__places .place__card .place__info .place__buttons {
   padding: 16px;
   display: flex;
   justify-content: flex-end;
   gap: 10px;
 }
-.admin__places .place__card .place__info .place__buttons .circle__button {
+.grid__places .place__card .place__info .place__buttons .circle__button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -460,11 +460,11 @@ textarea.form__input {
   background-color: white;
   transition: all 0.1s ease-in-out;
 }
-.admin__places .place__card .place__info .place__buttons .circle__button:hover {
+.grid__places .place__card .place__info .place__buttons .circle__button:hover {
   background-color: #FF471F;
   color: white;
 }
-.admin__places .place__card .place__info .place__footer {
+.grid__places .place__card .place__info .place__footer {
   transition: all 0.2s ease-in-out;
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
@@ -478,15 +478,21 @@ textarea.form__input {
   overflow: hidden;
   background-color: rgba(0, 0, 0, 0.5);
 }
-.admin__places .place__card .place__info .place__footer .place__price, .admin__places .place__card .place__info .place__footer .place__location {
-  transition: all 1s ease-in-out;
+.grid__places .place__card .place__info .place__footer .place__price, .grid__places .place__card .place__info .place__footer .place__location {
+  transition: all 0.2s ease-in-out;
   display: flex;
   gap: 10px;
 }
-.admin__places .place__card:hover .place__footer {
+.grid__places .place__card .place__info .place__footer hr {
+  transition: all 0.2s ease-in-out;
+}
+.grid__places .place__card:hover .place__footer {
   height: 16%;
 }
-.admin__places .place__card:hover::before {
+.grid__places .place__card:hover hr {
+  opacity: 0;
+}
+.grid__places .place__card:hover::before {
   background: rgba(0, 0, 0, 0);
 }
 
@@ -506,4 +512,11 @@ textarea.form__input {
 .admin__buttons .navigation__button:hover {
   background-color: black;
   color: white;
+}
+
+.places__wrapper {
+  background-color: gray;
+  padding: 150px 0 100px 0;
+  display: flex;
+  justify-content: center;
 }/*# sourceMappingURL=App.css.map */

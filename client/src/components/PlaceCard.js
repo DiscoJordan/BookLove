@@ -6,7 +6,8 @@ import { PlacesContext } from "../context/PlacesContext";
 import { useNavigate } from "react-router-dom";
 
 
-function PlaceCard({ place }) {
+function PlaceCard({ place,user }) {
+  console.log(user);
   const navigate = useNavigate()
   const { getPlaces, setEditTitle } = useContext(PlacesContext);
   const deletePlace = async (e) => {
@@ -31,9 +32,9 @@ function PlaceCard({ place }) {
   };
 
   const editPlace = ()=>{
-    navigate("/addnewplace")
+    navigate(`/${place.title}/addnewplace`)
     setEditTitle(place.title)
-    localStorage.setItem("editTitle", place.title)
+    localStorage.setItem("editTitle", JSON.stringify(place.title))
   }
   
 
@@ -43,20 +44,20 @@ function PlaceCard({ place }) {
     <div className="place__card">
       <div className="place__info">
         <div className="place__buttons">
-          <CircleButton  content={"wish_off"} />
-          <CircleButton  content={"visited_off"} />
+          {!user?.isAdmin && <CircleButton  content={"wish_off"} />}
+        { !user?.isAdmin &&  <CircleButton  content={"visited_off"} />}
           
-          <button onClick={editPlace}>
+          {user?.isAdmin && <button onClick={editPlace}>
             {" "}
             <CircleButton  content={"edit"} />
-          </button>
-          <button onClick={deletePlace}>
+          </button>}
+          {user?.isAdmin && <button onClick={deletePlace}>
             {" "}
             <CircleButton
              
               content={"delete"}
             />
-          </button>
+          </button>}
         </div>
         <div className="place__footer">
           <h3>{place.title}</h3>

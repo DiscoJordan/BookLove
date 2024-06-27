@@ -368,7 +368,7 @@ header{
         }
     }
 }
-//newPlace
+//newPlace 
 .newPlace__wrapper{
    height: fit-content;
    padding: 150px 0 50px 0;
@@ -402,8 +402,8 @@ textarea.form__input{
     resize: none;
 }
 
-//AdminPanel
-    .admin__places{
+//AdminPanel //Places //place
+    .grid__places{
         display: grid;
         gap: 2em;
         grid-template-columns: 1fr 1fr 1fr;
@@ -482,16 +482,20 @@ textarea.form__input{
             overflow: hidden;
             background-color: rgba(0, 0, 0, 0.5);
             .place__price, .place__location{
-                transition: all 1s ease-in-out;
+                transition: all 0.2s ease-in-out;
                  display: flex;
                  gap: 10px;
                 
             }
+            hr{transition: all 0.2s ease-in-out;}
         }
     }
     &:hover {
         .place__footer   {
             height: 16%;
+        }
+        hr{
+            opacity: 0;
         }
         &::before {
             background: rgba(0, 0, 0, 0);
@@ -521,8 +525,13 @@ textarea.form__input{
        
       }
     }
-    
-   
+//Places
+.places__wrapper{
+    background-color: gray;
+    padding: 150px 0 100px 0;
+    display: flex;
+    justify-content: center;
+}
         
 
 
