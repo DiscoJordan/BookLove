@@ -464,6 +464,10 @@ textarea.form__input {
   background-color: #FF471F;
   color: white;
 }
+.grid__places .place__card .place__info .place__buttons .active__circle__button {
+  background-color: #FF471F;
+  color: white;
+}
 .grid__places .place__card .place__info .place__footer {
   transition: all 0.2s ease-in-out;
   -webkit-backdrop-filter: blur(5px);

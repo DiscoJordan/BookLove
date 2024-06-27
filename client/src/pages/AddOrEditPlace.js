@@ -8,8 +8,6 @@ import { PlacesContext } from "../context/PlacesContext";
 function AddOrEditPlace() {
   const { editTitle, setEditTitle, places } = useContext(PlacesContext);
 
-
-
   const { oldtitle } = useParams()
 
   console.log(editTitle);
@@ -34,7 +32,7 @@ function AddOrEditPlace() {
     if (beingEdited) {
       setPlaceData({ ...beingEdited });
     }
-    setEditTitle(JSON.parse(localStorage.getItem("editTitle")));
+    setEditTitle(JSON.parse(localStorage.getItem("editTitle")) || "");
   }, [places]);
 
   let handleChange = (e) => {

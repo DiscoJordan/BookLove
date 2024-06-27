@@ -14,9 +14,9 @@ const CircleButton = ({ content }) => {
     
   
     return (
-      <div className="circle__button">
+      <div className={(iconMap[content]==='visibility_off' ||iconMap[content]==='heart_check')? "circle__button active__circle__button": "circle__button "}>
         {iconMap[content] && (
-          <span className="material-symbols-outlined">{iconMap[content]}</span>
+          <span className='material-symbols-outlined'>{iconMap[content]}</span>
         )}
       </div>
     );

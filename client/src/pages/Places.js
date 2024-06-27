@@ -4,9 +4,12 @@ import PlaceCard from "../components/PlaceCard";
 
 function Places({user}) {
   const { places, getPlaces } = useContext(PlacesContext);
+
   useEffect(() => {
     getPlaces();
   }, []);
+
+  
   return (
     <>
       <div className="places__wrapper">

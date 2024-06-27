@@ -1,28 +1,16 @@
-import React, { useEffect, useState } from "react";
-import { URL } from "../config";
-import axios from "axios";
-
+import React, { useEffect, useContext } from "react";
 import Button from "../components/Button";
 import UserDashboard from "../components/UserDashboard";
 import AdminDashboard from "../components/AdminDashboard";
+import { UserContext } from "../context/UserContext";
+function Profile() {
 
-function Profile({ user }) {
-  console.log(user);
-  const [userData, setUserData] = useState();
-
-  const getUser = async (req, res) => {
-    try {
-      const response = await axios.get(`${URL}/user/get/${user.username}`);
-      setUserData(response.data.data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  const {userData,getUserData} = useContext(UserContext);
   useEffect(() => {
-    getUser();
+    getUserData();
+    console.log(userData);
   }, []);
 
-  console.log(userData);
   return (
     <div className="profile__wrapper">
       <div className="container">
@@ -47,9 +35,9 @@ function Profile({ user }) {
           </div>
         </div>
         {userData?.isAdmin ? (
-          <AdminDashboard user={user} userData={userData} />
+          <AdminDashboard  />
         ) : (
-          <UserDashboard userData={userData} />
+          <UserDashboard  />
         )}
       </div>
     </div>

@@ -468,6 +468,10 @@ textarea.form__input{
                     color: white
                 }
             }
+            .active__circle__button{
+                background-color: $primary-orange;
+                color: white;
+            }
         }
         .place__footer{
             transition: all 0.2s ease-in-out;

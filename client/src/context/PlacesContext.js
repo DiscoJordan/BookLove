@@ -6,6 +6,8 @@ export const PlacesContext = React.createContext();
 export const ContextProvider = ({ children }) => {
   const [places, setPlaces] = useState([]);
   const [editTitle, setEditTitle] = useState();
+  // const [userData, setUserData] = useState();
+  
 
   const getPlaces = async () => {
     try {
@@ -17,14 +19,15 @@ export const ContextProvider = ({ children }) => {
     }
   };
 
+
+
   useEffect(() => {
     getPlaces();
-    setEditTitle(localStorage.getItem("editTitle") || "");
   }, []);
 
   return (
     <PlacesContext.Provider
-      value={{ places, getPlaces, setEditTitle, editTitle }}
+      value={{ places, getPlaces, setEditTitle, editTitle}}
     >
       {children}
     </PlacesContext.Provider>

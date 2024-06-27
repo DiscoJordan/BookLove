@@ -5,11 +5,14 @@ import { useContext,useEffect } from "react";
 import { PlacesContext } from "../context/PlacesContext";
 import PlaceCard from "./PlaceCard";
 
-function AdminDashboard({user}) {
+function AdminDashboard() {
   const { places,getPlaces } = useContext(PlacesContext);
+
+
   useEffect(() => {
     getPlaces();
   }, []);
+
   return (
     <>
       <div className="admin__buttons">
@@ -20,7 +23,7 @@ function AdminDashboard({user}) {
       <hr />
       <div className="grid__places">
         {places.map((place) => (
-          <PlaceCard user={user} place={place} />
+          <PlaceCard place={place} />
         ))}
       </div>
     </>
