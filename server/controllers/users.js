@@ -146,15 +146,15 @@ const editPlaceList = async (req, res) => {
 
 const updateUser = async (req, res) => {
   try {
-    const { newUserData, oldusername } =
-      req.body;
-      const {username, email, password, password2, about,oldpassword} = newUserData
+    const { newUserData, oldusername } = req.body;
+    const { username, email, password, password2, about, oldpassword } =
+      newUserData;
     const uniqeUser = await Users.findOne({ username: oldusername });
-    let isUserExist = false
-    if (username!==oldusername) {
+    let isUserExist = false;
+    if (username !== oldusername) {
       isUserExist = await Users.findOne({ username: username });
     }
-    
+
     if (!username || !email) {
       return res.json({ ok: false, message: "Not all required fields filled" });
     }
@@ -167,11 +167,14 @@ const updateUser = async (req, res) => {
     if (!validator.isEmail(email)) {
       return res.json({ ok: false, message: "Invalid email" });
     }
-
+    // Generate a salt
+    const salt = bcrypt.genSaltSync(10);
+    // Hash the password with the salt
+    const hash = bcrypt.hashSync(password, salt);
     const updateUser = {
       username: username,
       email: email,
-      password: password ? password.hash:oldpassword,
+      password: password ? hash : oldpassword,
       about: about,
     };
 
@@ -184,11 +187,18 @@ const updateUser = async (req, res) => {
 
       res
         .status(200)
-        .send({ ok: true, data: `User '${username}' was updated`, user: user });
-    } else if(!isUserExist) {
+        .send({
+          ok: true,
+          message: `User '${username}' was updated`,
+          user: user,
+        });
+    } else if (!isUserExist) {
       res
         .status(200)
-        .send({ ok: true, data: `Username '${username}' is already taken ` });
+        .send({
+          ok: true,
+          message: `Username '${username}' is already taken `,
+        });
     }
   } catch (error) {
     res.status(400).send({ ok: false, data: error.message });
@@ -206,9 +216,10 @@ const getUser = async (req, res) => {
     if (uniqeUser) {
       res.status(200).send({ ok: true, data: uniqeUser });
     } else {
-      res
-        .status(200)
-        .send({ ok: true, data: `Username '${uniqeUser.username}' was not found ` });
+      res.status(200).send({
+        ok: true,
+        data: `Username '${uniqeUser.username}' was not found `,
+      });
     }
   } catch (error) {
     res.status(400).send({ ok: false, data: error.message });

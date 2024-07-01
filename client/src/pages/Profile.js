@@ -7,52 +7,59 @@ import { URL } from "../config";
 import axios from "axios";
 
 function Profile() {
-  const { userData, getUserData,setUser,user } = useContext(UserContext);
+  const { userData, getUserData, setUser, user } = useContext(UserContext);
   const [isEditting, setIsEditting] = useState(false);
 
-  const [message, setMessage] = useState('');
+  const [message, setMessage] = useState("");
+
+  const [newUserData, setNewUserData] = useState({
+    username: "",
+    email: "",
+    password: "",
+    password2: "",
+    about: "",
+  });
+  console.log("user", user);
+  console.log("userData", userData);
+  console.log("newUserData", newUserData);
+
+  useEffect(() => {
+    getUserData();
+  }, []);
+
+  useEffect(() => {
+    setNewUserData({
+      username: userData?.username,
+      email: userData?.email,
+      password: "",
+      password2: "",
+      about: userData?.about,
+    });
+  }, [userData]);
 
   let handleChange = (e) => {
     setNewUserData({ ...newUserData, [e.target.name]: e.target.value });
   };
-  const [newUserData, setNewUserData] = useState({
-   username: userData?.username,
-   email: userData?.email,
-   password: '',
-   password2: '',
-   about:userData?.about
-  });
-
-  useEffect(() => {
-    getUserData();
-    console.log(userData);
-  }, []);
-
-  console.log(newUserData);
-
-
-
 
   const handleUpdate = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(
-        `${URL}/user/update`,
-       { newUserData, oldusername:userData.username, oldpassword: userData.password }
-      );
-      setMessage(response.data.data);
-      
-      getUserData()
+      const response = await axios.post(`${URL}/user/update`, {
+        newUserData,
+        oldusername: userData.username,
+        oldpassword: userData.password,
+      });
+      setMessage(response.data.message);
 
-      console.log(response.data.user.username);
+      getUserData();
+
       setTimeout(() => {
         setMessage("");
       }, 2000);
 
-      setUser({...user, username:response.data.user.username})
+      setUser({ ...user, username: response.data.user.username });
 
-      setIsEditting(false)
-     
+      setIsEditting(false);
     } catch (error) {
       console.log(error);
     }
@@ -91,50 +98,54 @@ function Profile() {
             </>
           ) : (
             <>
-            <h2>{message||'Update Profile'}</h2>
-            <form onChange={handleChange} onSubmit={handleUpdate} className="profile__info">
-              <input
-                className="navigation__button"
-                type="text"
-                name="username"
-                placeholder="Username*"
-                value={newUserData?.username}
-              />
-               <input
-                className="navigation__button"
-                type="text"
-                name="email"
-                placeholder="Email*"
-                value={newUserData?.email}
-              />
-              <input
-                className="navigation__button"
-                type="password"
-                name="password"
-                value={newUserData?.password}
-                placeholder="New password*"
-              />
-              <input
-                className="navigation__button"
-                type="password"
-                name="password2"
-                value={newUserData?.password2}
-                placeholder="Repeat password*"
-              />
-              <input
-                className="navigation__button"
-                type="text"
-                name="about"
-                placeholder="About"
-                value={newUserData?.about}
-              />
-              <div className="profile__buttons">
-                <button >
-                  <Button
-                    content={isEditting ? "Save Changes" : "Edit Profile"}
-                  />
-                </button>
-              </div>
+              <h2>{message || "Update Profile"}</h2>
+              <form
+                onChange={handleChange}
+                onSubmit={handleUpdate}
+                className="profile__info"
+              >
+                <input
+                  className="navigation__button"
+                  type="text"
+                  name="username"
+                  placeholder="Username*"
+                  value={newUserData?.username}
+                />
+                <input
+                  className="navigation__button"
+                  type="text"
+                  name="email"
+                  placeholder="Email*"
+                  value={newUserData?.email}
+                />
+                <input
+                  className="navigation__button"
+                  type="password"
+                  name="password"
+                  value={newUserData?.password}
+                  placeholder="New password*"
+                />
+                <input
+                  className="navigation__button"
+                  type="password"
+                  name="password2"
+                  value={newUserData?.password2}
+                  placeholder="Repeat password*"
+                />
+                <input
+                  className="navigation__button"
+                  type="text"
+                  name="about"
+                  placeholder="About"
+                  value={newUserData?.about}
+                />
+                <div className="profile__buttons">
+                  <button>
+                    <Button
+                      content={isEditting ? "Save Changes" : "Edit Profile"}
+                    />
+                  </button>
+                </div>
               </form>
             </>
           )}

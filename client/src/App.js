@@ -19,78 +19,65 @@ import Places from "./pages/Places.js";
 import { UserContext } from "./context/UserContext.js";
 
 function App() {
-  const {isLoggedIn,logout,user,login,getUserData,verify_token  } = useContext(UserContext);
+  const { isLoggedIn, logout, user, login, getUserData, verify_token } =
+    useContext(UserContext);
 
   useEffect(() => {
-    getUserData()
+    getUserData();
     verify_token();
   }, []);
 
-  
   return (
-  
     <TagsProvider>
-    <ContextProvider>
-    <Router>
-      <Navbar isLoggedIn={isLoggedIn} logout={logout} user={user} />
-      <Routes>
-        <Route
-          path="/registration"
-          element={
-            !isLoggedIn ? (
-              <Registration />
-            ) : (
-              <Navigate to={`/profile/${user.username}`} />
-            )
-          }
-        />
-        <Route
-          path={"/login"}
-          element={
-            !isLoggedIn ? (
-              <Login login={login} user={user} />
-            ) : (
-              <Navigate to={`/profile/${user.username}`} />
-            )
-          }
-        />
-        <Route
-          path={`/profile/:username`}
-          element={
-            isLoggedIn ? <Profile user={user} /> : <Navigate to={`/login`} />
-          }
-        />
-        <Route
-          path={`/addnewplace`}
-          element={
-            user?.isAdmin ? <AddOrEditPlace /> : <Navigate to={`/`} />
-          }
-        />
-         <Route
-          path={`/:oldtitle/addnewplace`}
-          element={
-            user?.isAdmin ? <AddOrEditPlace /> : <Navigate to={`/`} />
-          }
-        />
-          <Route
-          path={`/`}
-          element={
-             <Places user={user}/> 
-          }
-        />
-          <Route
-          path={`/place/:title/`}
-          element={
-             <CurrentPlace />
-          }
-        />
-
-      </Routes>
-      <Footer />
-    </Router>
-    </ContextProvider>
+      <ContextProvider>
+        <Router>
+          <Navbar isLoggedIn={isLoggedIn} logout={logout} user={user} />
+          <Routes>
+            <Route
+              path="/registration"
+              element={
+                !isLoggedIn ? <Registration /> : <Navigate to={`/profile`} />
+              }
+            />
+            <Route
+              path={"/login"}
+              element={
+                !isLoggedIn ? (
+                  <Login login={login} user={user} />
+                ) : (
+                  <Navigate to={`/profile`} />
+                )
+              }
+            />
+            <Route
+              path={`/profile`}
+              element={
+                isLoggedIn ? (
+                  <Profile user={user} />
+                ) : (
+                  <Navigate to={`/login`} />
+                )
+              }
+            />
+            <Route
+              path={`/addnewplace`}
+              element={
+                user?.isAdmin ? <AddOrEditPlace /> : <Navigate to={`/`} />
+              }
+            />
+            <Route
+              path={`/:oldtitle/addnewplace`}
+              element={
+                user?.isAdmin ? <AddOrEditPlace /> : <Navigate to={`/`} />
+              }
+            />
+            <Route path={`/`} element={<Places user={user} />} />
+            <Route path={`/place/:title/`} element={<CurrentPlace />} />
+          </Routes>
+          <Footer />
+        </Router>
+      </ContextProvider>
     </TagsProvider>
-
   );
 }
 

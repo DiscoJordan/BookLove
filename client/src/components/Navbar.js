@@ -1,42 +1,38 @@
-import React, {useEffect,useState} from "react";
+import React, { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import Button from "./Button";
-import { useLocation } from 'react-router-dom';
+import { useLocation } from "react-router-dom";
 function Navbar({ isLoggedIn, logout, user }) {
-    const [isScrolled, setIsScrolled] = useState(false);
-    const [isProfile, setIsProfile] = useState(false);
-    const location = useLocation();
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isProfile, setIsProfile] = useState(false);
+  const location = useLocation();
 
-   
-    useEffect(() => {
-     
-      const handleScroll = () => {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        if (scrollTop > 0 ) {
-          setIsScrolled(true);
-        } else {
-          setIsScrolled(false);
-        }
-      };
-  
-      window.addEventListener('scroll', handleScroll);
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop =
+        window.pageYOffset || document.documentElement.scrollTop;
+      if (scrollTop > 0) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
 
+    window.addEventListener("scroll", handleScroll);
 
-    
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
-      return () => {
-        window.removeEventListener('scroll', handleScroll);
-      };
-    }, []);
-
-    let ProfileHeader = ()=>{
-        if (location.pathname.startsWith('/profile/')) {
-            return true;
-        }
+  let ProfileHeader = () => {
+    if (location.pathname.startsWith("/profile")) {
+      return true;
     }
-  
+  };
+
   return (
-    <header  className={(ProfileHeader()||isScrolled)?  "scrolled" : '' }>
+    <header className={ProfileHeader() || isScrolled ? "scrolled" : ""}>
       <div className="container">
         <nav className="navigation">
           <div className="logo">
@@ -57,7 +53,7 @@ function Navbar({ isLoggedIn, logout, user }) {
               </Link>
             )}
             {isLoggedIn && (
-              <Link to={`/profile/${user.username}`}>
+              <Link to={`/profile`}>
                 <Button reversed={true} content={"Profile"} />
               </Link>
             )}
