@@ -308,6 +308,10 @@ header .navigation .navbar a:hover {
   color: white;
 }
 
+input {
+  height: 48px;
+}
+
 .profile__wrapper {
   padding: 150px 0 100px 0;
   display: flex;

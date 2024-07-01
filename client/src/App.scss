@@ -38,6 +38,7 @@ button {
 }
 
 .navigation__button{
+  
     &.reversed{
         border: 1px white solid;
         &:hover{
@@ -122,6 +123,7 @@ header{
                 color: $primary-orange;
             }
             &:hover{
+                
                 color: $primary-orange;
             }
         }
@@ -305,6 +307,9 @@ header{
     }
   }
 //profile
+input{
+    height: 48px;
+}
 .profile__wrapper{
     padding: 150px 0 100px 0;
     display: flex;

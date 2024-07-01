@@ -5,7 +5,7 @@ import { URL } from "../config";
 import axios from "axios";
 import { PlacesContext } from "../context/PlacesContext";
 import { UserContext } from "../context/UserContext";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
@@ -31,6 +31,7 @@ function ManageButtons({ place }) {
   };
 
   const navigate = useNavigate();
+  const location = useLocation();
 
   const deletePlace = async (e) => {
     e.preventDefault();
@@ -49,7 +50,11 @@ function ManageButtons({ place }) {
         //   setTimeout(() => {
         //       navigate(`/}`);
         //   }, 2000);
+        if(location.pathname.includes('place')){
+            navigate(-1);
+        }
       }
+
       getPlaces();
     } catch (error) {
       console.log(error);

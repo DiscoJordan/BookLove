@@ -31,7 +31,8 @@ export const UserProvider = ({ children }) => {
     let decodedToken = jose.decodeJwt(token);
     // composing a user object based on what data we included in our token (login controller - jwt.sign() first argument)
     let user = {
-      username: decodedToken.userName, isAdmin:decodedToken.isAdmin 
+      username: decodedToken.userName, isAdmin:decodedToken.isAdmin,
+      id:decodedToken.id 
     };
     localStorage.setItem("token", JSON.stringify(token));
     localStorage.setItem("user", JSON.stringify(user));
@@ -51,8 +52,10 @@ export const UserProvider = ({ children }) => {
 
   const getUserData = async () => {
     try {
-      const response = await axios.get(`${URL}/user/get/${user.username}`);
+      const response = await axios.get(`${URL}/user/get/${user._id}`);
       setUserData(response.data.data);
+      localStorage.setItem("user", JSON.stringify(response.data.data));
+
     } catch (error) {
       console.log(error);
     }

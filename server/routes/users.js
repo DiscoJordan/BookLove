@@ -5,7 +5,7 @@ const {registerUser,updateUser,getUser,deleteUser, loginUser, verifyToken,editPl
 router.post('/reg', registerUser)   /* trigger certain function*/
 router.post('/login', loginUser);
 router.post('/verify_token',verifyToken);
-router.post('/:oldusername/update', updateUser)   
+router.post('/update', updateUser)   
 router.post('/delete', deleteUser)   
 router.get('/get/:username', getUser)   
 

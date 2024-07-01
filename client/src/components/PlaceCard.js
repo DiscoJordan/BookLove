@@ -1,12 +1,8 @@
 import React, { useContext, useEffect } from "react";
-import { UserContext } from "../context/UserContext";
 import { useNavigate } from "react-router-dom";
 import ManageButtons from "./ManageButtons";
 
 function PlaceCard({ place }) {
-  const { getUserData } = useContext(UserContext);
-
-
   const navigate = useNavigate();
 
 

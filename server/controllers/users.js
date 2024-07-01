@@ -55,7 +55,7 @@ const loginUser = async (req, res) => {
     const match = bcrypt.compareSync(password, user.password);
     if (match) {
       const token = jwt.sign(
-        { userName: user.username, isAdmin: user.isAdmin },
+        { userName: user.username, isAdmin: user.isAdmin, id: user._id },
         jwt_secret,
         {
           expiresIn: "1h",
@@ -112,7 +112,9 @@ const editPlaceList = async (req, res) => {
     const foundUser = await Users.findOne({ username });
     const objectPlaceId = new ObjectId(placeId);
     if (foundUser[opposite].some((e) => e._id.equals(objectPlaceId))) {
-      foundUser[opposite] = foundUser[opposite].filter((e) => !e._id.equals(objectPlaceId));
+      foundUser[opposite] = foundUser[opposite].filter(
+        (e) => !e._id.equals(objectPlaceId)
+      );
     }
     if (value) {
       // adding
@@ -144,27 +146,46 @@ const editPlaceList = async (req, res) => {
 
 const updateUser = async (req, res) => {
   try {
-    const { oldusername } = req.params;
-    const uniqeUser = await Users.findOne({ username: username });
+    const { newUserData, oldusername } =
+      req.body;
+      const {username, email, password, password2, about,oldpassword} = newUserData
+    const uniqeUser = await Users.findOne({ username: oldusername });
+    let isUserExist = false
+    if (username!==oldusername) {
+      isUserExist = await Users.findOne({ username: username });
+    }
+    
+    if (!username || !email) {
+      return res.json({ ok: false, message: "Not all required fields filled" });
+    }
+    if (isUserExist) {
+      return res.json({ ok: false, message: "Username already exist" });
+    }
+    if (password !== password2) {
+      return res.json({ ok: false, message: "Passwords must match" });
+    }
+    if (!validator.isEmail(email)) {
+      return res.json({ ok: false, message: "Invalid email" });
+    }
 
-    if (!uniqeUser) {
+    const updateUser = {
+      username: username,
+      email: email,
+      password: password ? password.hash:oldpassword,
+      about: about,
+    };
+
+    if (uniqeUser && !isUserExist) {
       const user = await Users.findOneAndUpdate(
         { username: oldusername },
-        { $set: req.body },
+        { $set: updateUser },
         { new: true, runValidators: true }
       );
-      if (!username) {
-        res.status(200).send({
-          ok: true,
-          data: `User '${oldusername}' was updated`,
-          user: user,
-        });
-      } else {
-        res
-          .status(200)
-          .send({ ok: true, data: `User '${username}' was updated` });
-      }
-    } else {
+
+      res
+        .status(200)
+        .send({ ok: true, data: `User '${username}' was updated`, user: user });
+    } else if(!isUserExist) {
       res
         .status(200)
         .send({ ok: true, data: `Username '${username}' is already taken ` });
@@ -177,8 +198,8 @@ const updateUser = async (req, res) => {
 
 const getUser = async (req, res) => {
   try {
-    const { username } = req.params;
-    const uniqeUser = await Users.findOne({ username: username })
+    const { id } = req.params;
+    const uniqeUser = await Users.findOne({ id: id })
       .populate("wishes")
       .populate("visited");
 
@@ -187,7 +208,7 @@ const getUser = async (req, res) => {
     } else {
       res
         .status(200)
-        .send({ ok: true, data: `Username '${username}' was not found ` });
+        .send({ ok: true, data: `Username '${uniqeUser.username}' was not found ` });
     }
   } catch (error) {
     res.status(400).send({ ok: false, data: error.message });

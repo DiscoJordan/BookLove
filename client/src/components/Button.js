@@ -12,6 +12,7 @@ const Button = ({ content, onClick, close, arrow,reversed }) => {
       "Search": "search",
       "Update": "update",
       "Explore Barcelona with us": "how_to_reg",
+      'Save Changes': "update",
 
       //////////////////// tags
       "Select tags": "shoppingmode",

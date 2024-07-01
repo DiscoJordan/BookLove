@@ -155,7 +155,7 @@ function AddOrEditPlace() {
                 <input
                   className="form__input"
                   placeholder="Title*"
-                  value={placeData.title}
+                  value={placeData?.title}
                   name="title"
                   type="text"
                 />
@@ -163,44 +163,44 @@ function AddOrEditPlace() {
                 <input
                   className="form__input"
                   placeholder="Subtitle"
-                  value={placeData.subtitle}
+                  value={placeData?.subtitle}
                   name="subtitle"
                   type="text"
                 />
                 <input
                   className="form__input"
                   placeholder="Header"
-                  value={placeData.description.header}
+                  value={placeData?.description.header}
                   name="header"
                   type="text"
                 />
                 <input
                   className="form__input"
                   placeholder="Location*"
-                  value={placeData.location}
+                  value={placeData?.location}
                   name="location"
                   type="text"
                 />
                 <input
                   className="form__input"
                   placeholder="Hours*"
-                  value={placeData.hours}
+                  value={placeData?.hours}
                   name="hours"
                   type="text"
                 />
                 <input
                   className="form__input"
                   placeholder="Price*"
-                  value={placeData.price}
+                  value={placeData?.price}
                   name="price"
-                  type="text"
+                  type="number"
                 />
               </div>
               <div className="rightside__fields">
                 <textarea
                   className="form__input"
                   placeholder="Description"
-                  value={placeData.description.descriptionText}
+                  value={placeData?.description.descriptionText}
                   name="descriptionText"
                   rows="40"
                   cols="40"
