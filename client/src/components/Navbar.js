@@ -48,22 +48,22 @@ function Navbar({ isLoggedIn, logout, user }) {
             <NavLink to={"/contacts"}>Contacts</NavLink>
             {!isLoggedIn && (
               <Link to={"/login"}>
-                <Button content={"Log In"} />
+                <Button reversed={true} content={"Log In"} />
               </Link>
             )}
             {!isLoggedIn && (
               <Link to={"/registration"}>
-                <Button content={"Sign In"} />
+                <Button reversed={true} content={"Sign In"} />
               </Link>
             )}
             {isLoggedIn && (
               <Link to={`/profile/${user.username}`}>
-                <Button content={"Profile"} />
+                <Button reversed={true} content={"Profile"} />
               </Link>
             )}
             {isLoggedIn && (
               <Link onClick={logout} to={"/login"}>
-                <Button content={"Log Out"} />
+                <Button reversed={true} content={"Log Out"} />
               </Link>
             )}
           </div>

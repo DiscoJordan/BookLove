@@ -6,7 +6,7 @@ const CircleButton = ({ content }) => {
       "visited_off": "visibility_off",
       "visited": "visibility",
       "wish_off": "favorite",
-      "wish": "heart_check",
+      "wish": "heart_broken",
       "edit": "edit",
       "delete": "delete",
       
@@ -14,7 +14,7 @@ const CircleButton = ({ content }) => {
     
   
     return (
-      <div className={(iconMap[content]==='visibility_off' ||iconMap[content]==='heart_check')? "circle__button active__circle__button": "circle__button "}>
+      <div className={(iconMap[content]==='visibility_off' ||iconMap[content]==='heart_broken')? "circle__button active__circle__button": "circle__button "}>
         {iconMap[content] && (
           <span className='material-symbols-outlined'>{iconMap[content]}</span>
         )}

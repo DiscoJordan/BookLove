@@ -1,16 +1,19 @@
 import React, { useState, useContext, useEffect } from "react";
 import Button from "../components/Button";
 import axios from "axios";
-import { useNavigate,useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { URL } from "../config";
 import { PlacesContext } from "../context/PlacesContext";
+import { TagsContext } from "../context/TagsContext";
+import InputOfTags from "../components/InputOfTags";
 
 function AddOrEditPlace() {
-  const { editTitle, setEditTitle, places } = useContext(PlacesContext);
+  const { editTitle, setEditTitle, places, getPlaces } =
+    useContext(PlacesContext);
+  const { currentTag, setCurrentTag, tags,getTags } = useContext(TagsContext);
 
-  const { oldtitle } = useParams()
-
-  console.log(editTitle);
+  const { oldtitle } = useParams();
+  console.log(places);
   const beingEdited =
     editTitle && places.find((place) => place.title === editTitle);
 
@@ -26,8 +29,9 @@ function AddOrEditPlace() {
       header: "",
       descriptionText: "",
     },
+    tags: [],
   });
- 
+
   useEffect(() => {
     if (beingEdited) {
       setPlaceData({ ...beingEdited });
@@ -46,10 +50,35 @@ function AddOrEditPlace() {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     try {
       const response = await axios.post(`${URL}/place/add`, placeData);
       console.log(response);
       setMessage(response.data.data);
+      setTimeout(() => {
+        setMessage("");
+      }, 2000);
+      getPlaces();
+      if (response.data.ok) {
+        setTimeout(() => {
+          navigate(-1);
+        }, 2000);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const handleUpdate = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post(
+        `${URL}/place/${oldtitle}/update`,
+        placeData
+      );
+  
+      getPlaces();
+      console.log(response.data);
       setTimeout(() => {
         setMessage("");
       }, 2000);
@@ -64,27 +93,49 @@ function AddOrEditPlace() {
     }
   };
 
-  const handleUpdate = async (e) => {
+  const handleTags = async (e) => {
     e.preventDefault();
-    try {
-      debugger
-      const response = await axios.post(`${URL}/place/${oldtitle}/update`, placeData);
-      setMessage(response.data.data);
-      console.log(response.data);
-      setTimeout(() => {
-        setMessage("");
-      }, 2000);
-      console.log(response);
-      if (response.data.ok) {
-        
+    if (!currentTag) return alert("No skill specified!");
+    if (!tags.some((tag) => tag.tagTitle === currentTag)) {
+      try {
+        const response = await axios.post(`${URL}/tag/add`, {tagTitle:currentTag});
+        console.log(response);
+        setMessage(response.data.data);
         setTimeout(() => {
-          navigate(-1);
+          setMessage("");
         }, 2000);
+        getTags();
+      
+      } catch (error) {
+        console.log(error);
       }
-    } catch (error) {
-      console.log(error);
     }
+    if (placeData.tags.some((tag) => tag.tag === currentTag)) {
+      setCurrentTag("");
+      alert("tag already exist");
+    } else {
+      setPlaceData((prevState) => {
+        return {
+          ...prevState,
+          tags: [...prevState.tags, { tag: currentTag }],
+        };
+      });
+    }
+    setCurrentTag("");
   };
+
+  const deleteTag = (e, tag) => {
+    e.preventDefault();
+
+    setPlaceData((prevState) => ({
+      ...prevState,
+      tags: prevState.tags.filter((addedTag) => addedTag.tag !== tag.tag),
+    }));
+  };
+
+  useEffect(() => {
+    console.log(placeData);
+  }, [placeData]);
 
   return (
     <div className="newPlace__wrapper">
@@ -157,13 +208,27 @@ function AddOrEditPlace() {
                 />
               </div>
             </div>
+            <hr width="100%" color="white" />
+            <div className="manageTags">
+              <InputOfTags />
 
+              <button onClick={handleTags}>
+                <Button reversed={true} content={"Add tag"} />
+              </button>
+            </div>
+            <div className="tagsList">
+              {placeData.tags.map((tag) => (
+                <button onClick={(e) => deleteTag(e, tag)}>
+                  <Button reversed={true} close={true} content={tag.tag} />
+                </button>
+              ))}
+            </div>
             <h4>here you could add cover photo</h4>
             <h4>here you could add tags</h4>
             <h4>here you could add photos</h4>
 
             <button>
-              <Button content={editTitle ?"Update":"Continue"} />
+              <Button reversed={true} content={editTitle ? "Update" : "Continue"} />
             </button>
           </form>
         </div>

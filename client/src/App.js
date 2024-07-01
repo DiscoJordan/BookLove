@@ -14,6 +14,7 @@ import "./App.css";
 import Footer from "./components/Footer.js";
 import AddOrEditPlace from "./pages/AddOrEditPlace.js";
 import { ContextProvider } from "./context/PlacesContext.js";
+import { TagsProvider } from "./context/TagsContext.js";
 import Places from "./pages/Places.js";
 import { UserContext } from "./context/UserContext.js";
 
@@ -28,6 +29,7 @@ function App() {
   
   return (
   
+    <TagsProvider>
     <ContextProvider>
     <Router>
       <Navbar isLoggedIn={isLoggedIn} logout={logout} user={user} />
@@ -87,6 +89,7 @@ function App() {
       <Footer />
     </Router>
     </ContextProvider>
+    </TagsProvider>
 
   );
 }

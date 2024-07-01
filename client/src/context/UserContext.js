@@ -12,7 +12,6 @@ export const UserProvider = ({ children }) => {
      const [userData, setUserData] = useState();
 
 
-
   const verify_token = async () => {
     try {
       if (!token) {
@@ -43,10 +42,11 @@ export const UserProvider = ({ children }) => {
     };
 
   const logout = () => {
-    getUserData()
     localStorage.removeItem("token");
     localStorage.removeItem("user");
     setIsLoggedIn(false);
+    setUserData()
+
   };
 
   const getUserData = async () => {
@@ -62,7 +62,7 @@ export const UserProvider = ({ children }) => {
 
   return (
     <UserContext.Provider
-      value={{isLoggedIn,setIsLoggedIn,user,setUser, token, userData, getUserData, setUserData, login,logout,verify_token}}
+      value={{isLoggedIn,setIsLoggedIn,user,setUser, token, userData, getUserData, setUserData, login,logout,verify_token,}}
     >
       {children}
     </UserContext.Provider>

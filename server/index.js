@@ -23,6 +23,7 @@ async function connecting() {
   connecting();
   app.use('/place', require('./routes/places'))
   app.use('/user', require('./routes/users'))
+  app.use('/tag', require('./routes/tags'))
 
   app.listen(port, () => console.log(`server listening on port ${port}`));
 

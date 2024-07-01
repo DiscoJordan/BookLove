@@ -15,10 +15,9 @@ const placeSchema = new mongoose.Schema({
     },
   tags: [
     {
-      type: String,
-      required: true,
-      enum: ["free", "museum", "landscape", "view"],
-    },
+    tag: {type: String,required: true},
+    id: {type: String,required: false},
+    }
   ], //categories/tags
   location: { type: String, required: true, unique: true },
   hours: { type: String, required: true },

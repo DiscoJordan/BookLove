@@ -59,11 +59,11 @@ const Login =({login }) =>{
             className="form__input"
             placeholder="Password*"
             name="password"
-            type="text"
+            type="password"
           />
           
           <button>
-            <Button content={"Continue"} />
+            <Button reversed={true} content={"Continue"} />
           </button>
           <p className="terms">
             Dont have an account? <Link to="/registration"> Register now</Link>

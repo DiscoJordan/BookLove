@@ -9,10 +9,6 @@ function PlaceCard({ place }) {
 
   const navigate = useNavigate();
 
-  useEffect(() => {
-    console.log('on');
-    getUserData();
-  }, []);
 
   const navigateToPlace = (e) => {
     e.stopPropagation();
@@ -28,7 +24,7 @@ function PlaceCard({ place }) {
           <hr color="#FF471F" />
           <div className="place__price">
             <span className="material-symbols-outlined">payments</span>
-            <p>{!isNaN(place.price) ? `From ${place.price}€` : place.price}</p>
+            <p>{place.price=='0' ?'Free': `From ${place.price}€` }</p>
           </div>
           <div className="place__location">
             <span className="material-symbols-outlined">location_on</span>

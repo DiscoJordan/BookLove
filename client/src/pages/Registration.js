@@ -7,7 +7,7 @@ import { URL } from "../config";
 function Registration() {
   const navigate = useNavigate();
   const [message, setMessage] = useState('');
-  const [isChecked, setIsChecked] = useState('');
+  const [isChecked, setIsChecked] = useState(false);
   const [userData, setUserData] = useState({
     username: "",
     email: "",
@@ -19,6 +19,7 @@ function Registration() {
   }
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
+    console.log(isChecked);
   };
 
 
@@ -68,23 +69,24 @@ function Registration() {
               className="form__input"
               placeholder="Password*"
               name="password"
-              type="text"
+              type="password"
             />
             <input
               className="form__input"
               placeholder="Repeat Password*"
               name="password2"
-              type="text"
+              type="password"
             />
-            <div className="terms">
-              <input name="terms"  checked={isChecked} onChange={handleCheckboxChange}  type="checkbox" />
-              <p>
-                By checking the box you agree to our{" "}
-                <Link to="/terms">Terms and Conditions</Link>
-              </p>
+            <div onChange={()=>handleCheckboxChange()} className="terms">
+              <label >
+              <input name="terms"  checked={isChecked}   type="checkbox" />
+              By checking the box you agree to our
+              <Link to="/terms">Terms and Conditions</Link>
+              </label>
+            
             </div>
             <button disabled={!isChecked} >
-              <Button content={"Continue"} />
+              <Button reversed={true} content={"Continue"} />
             </button>
             <p className="terms">
               Already a member? <Link to="/login"> Log In</Link>

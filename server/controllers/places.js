@@ -20,7 +20,7 @@ const addPlace = async (req, res) => {
       title: title,
       subtitle: subtitle || "",
       description: description || {},
-      tags: tags,
+      tags: tags||[],
       location: location,
       hours: hours,
       price: price,
