@@ -22,7 +22,6 @@ const Login = ({ login }) => {
         username: userData.username,
         password: userData.password,
       });
-      debugger;
       setMessage(response.data.message);
       setTimeout(() => {
         setMessage("");

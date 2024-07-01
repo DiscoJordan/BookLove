@@ -23,7 +23,9 @@ function App() {
     useContext(UserContext);
 
   useEffect(() => {
-    getUserData();
+    if (user) {
+      getUserData();
+    }
     verify_token();
   }, []);
 

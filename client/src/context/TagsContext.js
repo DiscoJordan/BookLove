@@ -6,20 +6,17 @@ export const TagsContext = React.createContext();
 export const TagsProvider = ({ children }) => {
   const [tags, setTags] = useState([]);
   const [currentTag, setCurrentTag] = useState();
-  
+
   // const [userData, setUserData] = useState();
-  
 
   const getTags = async () => {
     try {
       const response = await axios.get(`${URL}/tag/getall`);
-      console.log(response.data.data);
       setTags(response.data.data);
     } catch (error) {
       console.log(error);
     }
   };
-
 
   useEffect(() => {
     getTags();
@@ -27,7 +24,7 @@ export const TagsProvider = ({ children }) => {
 
   return (
     <TagsContext.Provider
-      value={{getTags,tags,setTags,currentTag,setCurrentTag}}
+      value={{ getTags, tags, setTags, currentTag, setCurrentTag }}
     >
       {children}
     </TagsContext.Provider>

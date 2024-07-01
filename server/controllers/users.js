@@ -185,23 +185,19 @@ const updateUser = async (req, res) => {
         { new: true, runValidators: true }
       );
 
-      res
-        .status(200)
-        .send({
-          ok: true,
-          message: `User '${username}' was updated`,
-          user: user,
-        });
+      res.status(200).send({
+        ok: true,
+        message: `User '${username}' was updated`,
+        user: user,
+      });
     } else if (!isUserExist) {
-      res
-        .status(200)
-        .send({
-          ok: true,
-          message: `Username '${username}' is already taken `,
-        });
+      res.status(200).send({
+        ok: true,
+        message: `Username '${username}' is already taken `,
+      });
     }
   } catch (error) {
-    res.status(400).send({ ok: false, data: error.message });
+    res.status(400).send({ ok: false, message: error.message });
     console.log(error.message);
   }
 };
@@ -209,7 +205,7 @@ const updateUser = async (req, res) => {
 const getUser = async (req, res) => {
   try {
     const { id } = req.params;
-    const uniqeUser = await Users.findOne({ id: id })
+    const uniqeUser = await Users.findOne({ _id: id })
       .populate("wishes")
       .populate("visited");
 

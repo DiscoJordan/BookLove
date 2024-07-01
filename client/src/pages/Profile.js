@@ -50,7 +50,6 @@ function Profile() {
         oldpassword: userData.password,
       });
       setMessage(response.data.message);
-
       getUserData();
 
       setTimeout(() => {
@@ -61,6 +60,11 @@ function Profile() {
 
       setIsEditting(false);
     } catch (error) {
+      setMessage(error?.response?.data?.message);
+      setTimeout(() => {
+        setMessage("");
+      }, 2500);
+      getUserData();
       console.log(error);
     }
   };

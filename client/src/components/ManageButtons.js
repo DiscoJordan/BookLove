@@ -14,8 +14,9 @@ import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 
 function ManageButtons({ place }) {
-  const { userData, getUserData,isLoggedIn } = useContext(UserContext);
+  const { userData, getUserData, isLoggedIn } = useContext(UserContext);
   const { getPlaces, setEditTitle } = useContext(PlacesContext);
+
   const wishMatch = userData?.wishes?.some((e) => e.title === place.title);
   const visitedMatch = userData?.visited?.some((e) => e.title === place.title);
 
@@ -50,8 +51,8 @@ function ManageButtons({ place }) {
         //   setTimeout(() => {
         //       navigate(`/}`);
         //   }, 2000);
-        if(location.pathname.includes('place')){
-            navigate(-1);
+        if (location.pathname.includes("place")) {
+          navigate(-1);
         }
       }
 
@@ -141,56 +142,60 @@ function ManageButtons({ place }) {
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
         sx={{
-            "& .MuiDialog-paper": {
-                padding:'10px',
-              borderRadius: "20px", 
-            },
-          }}
+          "& .MuiDialog-paper": {
+            padding: "10px",
+            borderRadius: "20px",
+          },
+        }}
       >
         <DialogTitle id="alert-dialog-title">
           {"Want to use full functionality? "}
         </DialogTitle>
         <hr color="#FF471F" />
-       
+
         <DialogContent>
-            
           <DialogContentText id="alert-dialog-description">
             To get full access to all site features, register an account
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-            
-          <Button onClick={handleClose}
-           sx={{
-            color: "black",
-            border:'1px black solid',
-            fontWeight:'600',
-            borderRadius:'50px',
-            padding:'8px 16px',
-            "&:hover": {
-                color: "#FF471F",
-                border:'1px #FF471F solid',
-              backgroundColor: "white",
-            },
-          }}>Later</Button>
-          <Link to={'/registration'}>
           <Button
-          sx={{
-            color: "white",
-            backgroundColor: "black",
-            border:'1px black solid',
-            fontWeight:'600',
-            borderRadius:'50px',
-            padding:'8px 16px',
-            "&:hover": {
-             
-              backgroundColor: "#FF471F",
-              border:'1px #FF471F solid',
-            },
-          }} onClick={handleClose} autoFocus>
-            Register
+            onClick={handleClose}
+            sx={{
+              color: "black",
+              border: "1px black solid",
+              fontWeight: "600",
+              borderRadius: "50px",
+              padding: "8px 16px",
+              "&:hover": {
+                color: "#FF471F",
+                border: "1px #FF471F solid",
+                backgroundColor: "white",
+              },
+            }}
+          >
+            Later
           </Button>
-            </Link>
+          <Link to={"/registration"}>
+            <Button
+              sx={{
+                color: "white",
+                backgroundColor: "black",
+                border: "1px black solid",
+                fontWeight: "600",
+                borderRadius: "50px",
+                padding: "8px 16px",
+                "&:hover": {
+                  backgroundColor: "#FF471F",
+                  border: "1px #FF471F solid",
+                },
+              }}
+              onClick={handleClose}
+              autoFocus
+            >
+              Register
+            </Button>
+          </Link>
         </DialogActions>
       </Dialog>
     </div>

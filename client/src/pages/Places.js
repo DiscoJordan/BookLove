@@ -46,6 +46,7 @@ function Places() {
   const handleSearch = (e) => {
     setSearchData(e.target.value);
   };
+
   const filteredList = places.filter((place) => {
     const matchesSearch = place.title
       .toLowerCase()
@@ -56,7 +57,6 @@ function Places() {
       }
       return false;
     });
-
     return matchesSearch && (matchesTags || !checkedTags.includes(true));
   });
 
@@ -72,7 +72,6 @@ function Places() {
         pagination={{
           clickable: true,
         }}
-    
         modules={[Autoplay, Pagination]}
         onAutoplayTimeLeft={onAutoplayTimeLeft}
         className="mySwiper"
@@ -83,7 +82,7 @@ function Places() {
             <h4>
               WELCOME TO <span className="orange"> BARCELONA</span>
             </h4>
-            <Link to={'/registration'}>
+            <Link to={"/registration"}>
               <Button reversed={true} content={"Explore Barcelona with us"} />
             </Link>
           </div>
@@ -94,12 +93,11 @@ function Places() {
             <h4>
               WELCOME TO <span className="orange"> BARCELONA</span>
             </h4>
-            <Link to={'/registration'}>
+            <Link to={"/registration"}>
               <Button reversed={true} content={"Explore Barcelona with us"} />
             </Link>
           </div>
         </SwiperSlide>
-        
 
         <div className="autoplay-progress" slot="container-end">
           <svg viewBox="0 0 48px 48px" ref={progressCircle}>
@@ -156,9 +154,7 @@ function Places() {
               {tags.map(
                 (tag, index) =>
                   checkedTags[index] && (
-                    <button
-                      onClick={() => toggleCheckBox(tag.tagTitle)}
-                    >
+                    <button onClick={() => toggleCheckBox(tag.tagTitle)}>
                       <Button content={tag.tagTitle} close={true} />
                     </button>
                   )
