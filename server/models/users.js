@@ -1,13 +1,14 @@
 const mongoose = require("mongoose");
 
 const userSchema = new mongoose.Schema({
+  
     username: { type: String, required: true, unique: true },
     email: { type: String, required: true, unique: true },
     password: { type: String, required: true, unique: false },
     isAdmin: { type: Boolean, default: false },
     photo: {
-    url: { type: String, required: false },
-    // public_id: { type: String, required: false, unique: true },
+    photo_url: { type: String, required: false },
+    public_id: { type: String, required: false, unique: true },
     signature: { type: String, required: false },
   },
   about: { type: String, required: false },

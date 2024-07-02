@@ -8,6 +8,8 @@ const {
   loginUser,
   verifyToken,
   editPlaceList,
+  uploadAvatarOrPlaceCover,
+  
 } = require("../controllers/users");
 
 router.post("/reg", registerUser); /* trigger certain function*/
@@ -16,6 +18,7 @@ router.post("/verify_token", verifyToken);
 router.post("/update", updateUser);
 router.post("/delete", deleteUser);
 router.get("/get/:id", getUser);
+router.post("/upload", uploadAvatarOrPlaceCover);
 
 router.post("/editList", editPlaceList);
 

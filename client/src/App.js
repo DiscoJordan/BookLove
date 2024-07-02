@@ -17,6 +17,7 @@ import { ContextProvider } from "./context/PlacesContext.js";
 import { TagsProvider } from "./context/TagsContext.js";
 import Places from "./pages/Places.js";
 import { UserContext } from "./context/UserContext.js";
+import ScrollToTop from "./components/ScrollToTop.js";
 
 function App() {
   const { isLoggedIn, logout, user, login, getUserData, verify_token } =
@@ -33,6 +34,7 @@ function App() {
     <TagsProvider>
       <ContextProvider>
         <Router>
+        <ScrollToTop/>
           <Navbar isLoggedIn={isLoggedIn} logout={logout} user={user} />
           <Routes>
             <Route
@@ -74,6 +76,7 @@ function App() {
               }
             />
             <Route path={`/`} element={<Places user={user} />} />
+      
             <Route path={`/place/:title/`} element={<CurrentPlace />} />
           </Routes>
           <Footer />

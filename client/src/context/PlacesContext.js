@@ -6,7 +6,7 @@ export const PlacesContext = React.createContext();
 export const ContextProvider = ({ children }) => {
   const [places, setPlaces] = useState([]);
   const [editTitle, setEditTitle] = useState();
-
+  const [currentPlace, setCurrentPlace] = useState({});
 
   // const [userData, setUserData] = useState();
   
@@ -27,7 +27,7 @@ export const ContextProvider = ({ children }) => {
 
   return (
     <PlacesContext.Provider
-      value={{ places, getPlaces, setEditTitle, editTitle,setPlaces, }}
+      value={{ places, getPlaces, setEditTitle,setCurrentPlace,currentPlace, editTitle,setPlaces, }}
     >
       {children}
     </PlacesContext.Provider>

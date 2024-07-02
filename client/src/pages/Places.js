@@ -10,7 +10,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { Autoplay, Pagination } from "swiper/modules";
+import { Autoplay,Pagination } from "swiper/modules";
 
 function Places() {
   const { places } = useContext(PlacesContext); // getPlaces
@@ -62,17 +62,20 @@ function Places() {
 
   return (
     <>
+
       <Swiper
         spaceBetween={0}
         centeredSlides={true}
+        
         autoplay={{
           delay: 2500,
           disableOnInteraction: false,
         }}
+        
         pagination={{
           clickable: true,
         }}
-        modules={[Autoplay, Pagination]}
+        modules={[ Autoplay, Pagination]}
         onAutoplayTimeLeft={onAutoplayTimeLeft}
         className="mySwiper"
       >

@@ -64,7 +64,7 @@ const Login = ({ login }) => {
               type="password"
             />
 
-            <button>
+            <button  className="longbutton">
               <Button reversed={true} content={"Continue"} />
             </button>
             <p className="terms">

@@ -5,6 +5,65 @@ const jwt = require("jsonwebtoken");
 const validator = require("validator");
 const jwt_secret = process.env.JWT_SECRET;
 
+const cloudinary = require("cloudinary");
+// remember to add your credentials to .env file
+cloudinary.config({
+  cloud_name: process.env.CLOUD_NAME,
+  api_key: process.env.API_KEY,
+  api_secret: process.env.API_SECRET,
+});
+
+const uploadAvatarOrPlaceCover = async (req, res) => {
+  const { file, username, id } = req.body;
+  picture = {
+    public_id: file.uploadInfo?.public_id,
+    photo_url: file.uploadInfo?.secure_url,
+  };
+  if (username && !id) {
+    try {
+      const foundUser = await Users.findOne({ username });
+      foundUser.photo = picture;
+      await foundUser.save();
+      res.json({ ok: true, foundUser });
+    } catch (error) {
+      res.json({ ok: false });
+    }
+  } else {
+    try {
+      const foundPlace = await Places.findOne({ _id:id });
+      foundPlace.cover = picture;
+      await foundPlace.save();
+      res.json({ ok: true, result:foundPlace.cover });
+    } catch (error) {
+      res.json({ ok: false });
+    }
+  }
+};
+
+// const get_all = async (req, res) => {
+//   try {
+//     const pictures = await Pictures.find({});
+//     res.json({ ok: true, pictures });
+//   } catch (error) {
+//     res.json({ ok: false });
+//   }
+// };
+
+// const remove = async (req, res) => {
+//   const { _id } = req.params;
+//   try {
+//     const deleted = await Pictures.findByIdAndRemove({ _id: _id });
+//     if (deleted.public_id) {
+//       await cloudinary.v2.api.delete_resources([deleted.public_id]);
+//       res.json({ ok: true, deleted });
+//     } else {
+//       res.json({ ok: false });
+//     }
+//   } catch (error) {
+//     res.json({ ok: false });
+//   }
+// };
+
 const registerUser = async (req, res) => {
   const { username, email, password, password2 } = req.body;
   if (!username || !email || !password || !password2) {
@@ -231,4 +290,5 @@ module.exports = {
   loginUser,
   verifyToken,
   editPlaceList,
+  uploadAvatarOrPlaceCover,
 };

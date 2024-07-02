@@ -2,6 +2,29 @@
 const Places = require("../models/places");
 const Users = require("../models/users");
 
+const uploadPlacePhotos = async (req, res) => {
+  const { files, id } = req.body;
+  let pictures = files.map((pic) => {
+    return {
+      public_id: pic.uploadInfo?.public_id,
+      photo_url: pic.uploadInfo?.secure_url,
+    };
+  });
+  if (id) {
+    try {
+      const foundPlace = await Places.findOne({ _id:id });
+      foundPlace.photos.push(...pictures)
+      console.log(`foundPlace `+foundPlace);
+      await foundPlace.save();
+      console.log(`foundPlaceSa `+foundPlace);
+
+      res.json({ ok: true, result:foundPlace.photos });
+    } catch (error) {
+      res.json({ ok: false });
+    }
+  } 
+}
+
 const addPlace = async (req, res) => {
   try {
     const {
@@ -117,4 +140,5 @@ module.exports = {
   updatePlace,
   getPlace,
   getAllPlaces,
+  uploadPlacePhotos
 };

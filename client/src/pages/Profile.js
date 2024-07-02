@@ -5,6 +5,7 @@ import AdminDashboard from "../components/AdminDashboard";
 import { UserContext } from "../context/UserContext";
 import { URL } from "../config";
 import axios from "axios";
+import UploadImages from "../components/UploadImages";
 
 function Profile() {
   const { userData, getUserData, setUser, user } = useContext(UserContext);
@@ -56,14 +57,17 @@ function Profile() {
         setMessage("");
       }, 2000);
 
-      setUser({ ...user, username: response.data.user.username });
-
-      setIsEditting(false);
+      if (response.data.user) {
+        setUser({ ...user, username: response.data.user.username });
+        setTimeout(() => {
+          setIsEditting(false);
+        }, 500);
+      }
     } catch (error) {
       setMessage(error?.response?.data?.message);
       setTimeout(() => {
         setMessage("");
-      }, 2500);
+      }, 2000);
       getUserData();
       console.log(error);
     }
@@ -74,7 +78,7 @@ function Profile() {
       <div className="container">
         <div className="profile__info">
           <div className="profile__avatar">
-            <img src="/images/defaultavatar.png" alt="default avatar" />
+            <img src={userData?.photo?.photo_url||"/images/defaultavatar.png"} alt="default avatar" />
           </div>
           {!isEditting ? (
             <>
@@ -102,12 +106,14 @@ function Profile() {
             </>
           ) : (
             <>
+              <UploadImages content={'Update image'}/>
               <h2>{message || "Update Profile"}</h2>
               <form
                 onChange={handleChange}
                 onSubmit={handleUpdate}
-                className="profile__info"
+                className="change__info"
               >
+ <div className="subgrid">
                 <input
                   className="navigation__button"
                   type="text"
@@ -127,34 +133,37 @@ function Profile() {
                   type="password"
                   name="password"
                   value={newUserData?.password}
-                  placeholder="New password*"
+                  placeholder="New password"
                 />
                 <input
                   className="navigation__button"
                   type="password"
                   name="password2"
                   value={newUserData?.password2}
-                  placeholder="Repeat password*"
+                  placeholder="Repeat password"
                 />
-                <input
-                  className="navigation__button"
-                  type="text"
-                  name="about"
-                  placeholder="About"
-                  value={newUserData?.about}
-                />
-                <div className="profile__buttons">
-                  <button>
-                    <Button
-                      content={isEditting ? "Save Changes" : "Edit Profile"}
-                    />
-                  </button>
-                </div>
+               </div>
+                  <textarea
+                    className="navigation__button"
+                    type="text"
+                    name="about"
+                    placeholder="About"
+                    value={newUserData?.about}
+                  />
+                  <div className="profile__buttons">
+                    <button>
+                      <Button
+                        content={isEditting ? "Save Changes" : "Edit Profile"}
+                      />
+                    </button>
+                  </div>
+                
               </form>
             </>
           )}
         </div>
-        {userData?.isAdmin ? <AdminDashboard /> : <UserDashboard />}
+{!isEditting?(( userData?.isAdmin) ? <AdminDashboard /> : <UserDashboard />):''}
+        
       </div>
     </div>
   );

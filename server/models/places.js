@@ -2,30 +2,34 @@ const mongoose = require("mongoose");
 
 const placeSchema = new mongoose.Schema({
   cover: {
-    url: { type: String, required: false },
-    // public_id: { type: String, required: false, unique: true },
+    photo_url: {
+      type: String,
+      required: true,
+      default:
+        "https://storage.googleapis.com/aqacentor-corporativewebs-pro--corporative-web--wp--pro--static/1/2022/08/image1-5.jpg",
+    },
+    public_id: { type: String, required: false, unique: true },
     signature: { type: String, required: false },
   },
   title: { type: String, required: true, unique: true },
   subtitle: { type: String, required: false },
-  description: 
-    {
-      header: { type: String, required: false },
-      descriptionText: { type: String, required: false },
-    },
+  description: {
+    header: { type: String, required: false },
+    descriptionText: { type: String, required: false },
+  },
   tags: [
     {
-    tag: {type: String,required: true},
-    id: {type: String,required: false},
-    }
+      tag: { type: String, required: true },
+      id: { type: String, required: false },
+    },
   ], //categories/tags
   location: { type: String, required: true, unique: true },
   hours: { type: String, required: true },
   price: { type: String, required: true },
   photos: [
     {
-      url: { type: String, required: false },
-      // public_id: { type: String, required: false, unique: true },
+      photo_url: { type: String, required: false },
+      public_id: { type: String, required: false, unique: true },
       signature: { type: String, required: false },
     },
   ],

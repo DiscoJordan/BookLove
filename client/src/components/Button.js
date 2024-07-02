@@ -13,6 +13,10 @@ const Button = ({ content, onClick, close, arrow,reversed }) => {
       "Update": "update",
       "Explore Barcelona with us": "how_to_reg",
       'Save Changes': "update",
+      'Update image': "add_a_photo",
+      'Update cover': "add_a_photo",
+      'Add photos': "add_a_photo",
+      "Delete": "delete",
 
       //////////////////// tags
       "Select tags": "shoppingmode",

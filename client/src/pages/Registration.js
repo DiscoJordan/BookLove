@@ -85,7 +85,7 @@ function Registration() {
               </label>
             
             </div>
-            <button disabled={!isChecked} >
+            <button className="longbutton" disabled={!isChecked} >
               <Button reversed={true} content={"Continue"} />
             </button>
             <p className="terms">

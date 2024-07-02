@@ -36,7 +36,9 @@ button {
         opacity: 0.5;
     }
 }
-
+.longbutton{
+    width: 300px;
+}
 .navigation__button{
   
     &.reversed{
@@ -217,26 +219,59 @@ header{
     background: url('/public/images/loginbg.png') fixed;
 }
 
+
+.place__images img, .cover__image img {
+    background-color: white;
+    border-radius: 20px;
+    border: 1px white solid;
+    width: 250px;
+}
 .tagsList{
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     gap: 20px;
-    .navigation__button {
-        width: fit-content !important
+   
+}
+
+.cover__image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    
+}
+.place__images{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    
+   
+    .place__image{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        button{
+            width: 100%;
+        }
     }
 }
 
 .manageTags{
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    gap: 20px;
+    justify-content: center;
 }
 
 .registration__wrapper{
     background: url('/public/images/signinbg.png') fixed;
 }
 .newPlace__wrapper{
-    background: url('/public/images/addnewplace.png') fixed ;
+    background: url('/public/images/sagrada.png') fixed ;
 }
 .registration__wrapper, .login__wrapper,.newPlace__wrapper {
     background-attachment: fixed;
@@ -271,16 +306,16 @@ header{
       position: relative;
       z-index: 2; 
     }
-    .form__fields{
+    form{
+        width: inherit;
         align-items: center;
         display: flex;
         flex-direction: column;
         gap: 30px;
-        .navigation__button{
-            width: 300px;
-        }
+       
     }
     .terms label{
+        align-items: center;
         font-size: 14px;
         display: flex;
         gap: 5px;
@@ -309,6 +344,29 @@ header{
 //profile
 input{
     height: 48px;
+}
+.change__info{
+    
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+justify-content: center;
+align-items: center;
+}
+.subgrid{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+        
+}
+textarea{
+    resize: none;
+    width: 100%;
+    height: 300px;
+    font-family: inherit;
+    padding: 20px !important;
+
 }
 .profile__wrapper{
     padding: 150px 0 100px 0;
@@ -352,7 +410,10 @@ input{
             }
         }
         .profile__buttons{
-            display: flex;
+            button{
+                width: 100%;
+            }
+           
             gap: 20px;
             a{
                 color: black;
@@ -392,12 +453,13 @@ input{
 .newPlace__wrapper{
    height: fit-content;
    padding: 150px 0 50px 0;
-    .form__fields{
+    form{
         font-style: normal;
         align-items: center;
         display: flex;
         
         .form__sides{
+            width: inherit;
             display: flex;
             gap: 30px;
             .leftside__fields{
@@ -406,6 +468,7 @@ input{
             justify-content: space-between;
             }
             .rightside__fields{
+                width: 100%;
                 height: 500px;
                 
             }
@@ -417,6 +480,7 @@ input{
     }
 }
 textarea.form__input{
+    width: inherit;
     height: 500px;
     padding: 30px;
     resize: none;
@@ -428,6 +492,18 @@ textarea.form__input{
         gap: 2em;
         grid-template-columns: 1fr 1fr 1fr;
         .place__card {
+            img{
+                user-select: none;
+                -webkit-user-drag: none;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                object-fit: cover; 
+                
+            }
             h3{
             font-size: 18px;
             font-weight: 600;
@@ -437,10 +513,7 @@ textarea.form__input{
                 font-weight: 400;
                 }
             aspect-ratio: 1 / 1;
-            background-image: url('/public/images/signinbg.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
+            
             position: relative;
             display: flex;
             flex-direction: column;
@@ -663,14 +736,19 @@ textarea.form__input{
         }
 }
 .place__cover{
+    img{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+
+    }
     h1{font-size: 64px;
         font-weight: 800; }
 position: relative;
 width: 100%;
 height: 50vh;
-background-size: cover;
-background-image: url('/public/images/signinbg.png');
-background-attachment: fixed;
+
 display: flex;
 flex-direction: column;
 align-items: center;

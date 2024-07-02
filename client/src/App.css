@@ -39,6 +39,10 @@ button:disabled {
   opacity: 0.5;
 }
 
+.longbutton {
+  width: 300px;
+}
+
 .navigation__button {
   font-size: 24px;
   font-weight: 400;
@@ -213,20 +217,49 @@ header .navigation .navbar a:hover {
   background: url("/public/images/loginbg.png") fixed;
 }
 
+.place__images img, .cover__image img {
+  background-color: white;
+  border-radius: 20px;
+  border: 1px white solid;
+  width: 250px;
+}
+
 .tagsList {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   gap: 20px;
 }
-.tagsList .navigation__button {
-  width: -moz-fit-content !important;
-  width: fit-content !important;
+
+.cover__image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.place__images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+.place__images .place__image {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.place__images .place__image button {
+  width: 100%;
 }
 
 .manageTags {
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  gap: 20px;
+  justify-content: center;
 }
 
 .registration__wrapper {
@@ -234,7 +267,7 @@ header .navigation .navbar a:hover {
 }
 
 .newPlace__wrapper {
-  background: url("/public/images/addnewplace.png") fixed;
+  background: url("/public/images/sagrada.png") fixed;
 }
 
 .registration__wrapper, .login__wrapper, .newPlace__wrapper {
@@ -269,16 +302,15 @@ header .navigation .navbar a:hover {
   position: relative;
   z-index: 2;
 }
-.registration__wrapper .form__fields, .login__wrapper .form__fields, .newPlace__wrapper .form__fields {
+.registration__wrapper form, .login__wrapper form, .newPlace__wrapper form {
+  width: inherit;
   align-items: center;
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
-.registration__wrapper .form__fields .navigation__button, .login__wrapper .form__fields .navigation__button, .newPlace__wrapper .form__fields .navigation__button {
-  width: 300px;
-}
 .registration__wrapper .terms label, .login__wrapper .terms label, .newPlace__wrapper .terms label {
+  align-items: center;
   font-size: 14px;
   display: flex;
   gap: 5px;
@@ -310,6 +342,29 @@ header .navigation .navbar a:hover {
 
 input {
   height: 48px;
+}
+
+.change__info {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.subgrid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+textarea {
+  resize: none;
+  width: 100%;
+  height: 300px;
+  font-family: inherit;
+  padding: 20px !important;
 }
 
 .profile__wrapper {
@@ -358,8 +413,10 @@ input {
   border-radius: 20px;
 }
 .profile__wrapper .container .profile__info .profile__buttons {
-  display: flex;
   gap: 20px;
+}
+.profile__wrapper .container .profile__info .profile__buttons button {
+  width: 100%;
 }
 .profile__wrapper .container .profile__info .profile__buttons a {
   color: black;
@@ -394,28 +451,31 @@ input {
   height: fit-content;
   padding: 150px 0 50px 0;
 }
-.newPlace__wrapper .form__fields {
+.newPlace__wrapper form {
   font-style: normal;
   align-items: center;
   display: flex;
 }
-.newPlace__wrapper .form__fields .form__sides {
+.newPlace__wrapper form .form__sides {
+  width: inherit;
   display: flex;
   gap: 30px;
 }
-.newPlace__wrapper .form__fields .form__sides .leftside__fields {
+.newPlace__wrapper form .form__sides .leftside__fields {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-.newPlace__wrapper .form__fields .form__sides .rightside__fields {
+.newPlace__wrapper form .form__sides .rightside__fields {
+  width: 100%;
   height: 500px;
 }
-.newPlace__wrapper .form__fields .form__sides .navigation__button {
+.newPlace__wrapper form .form__sides .navigation__button {
   width: 300px;
 }
 
 textarea.form__input {
+  width: inherit;
   height: 500px;
   padding: 30px;
   resize: none;
@@ -428,10 +488,6 @@ textarea.form__input {
 }
 .grid__places .place__card {
   aspect-ratio: 1/1;
-  background-image: url("/public/images/signinbg.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -439,6 +495,18 @@ textarea.form__input {
   justify-content: center;
   border-radius: 20px;
   overflow: hidden;
+}
+.grid__places .place__card img {
+  user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .grid__places .place__card h3 {
   font-size: 18px;
@@ -651,14 +719,18 @@ textarea.form__input {
   position: relative;
   width: 100%;
   height: 50vh;
-  background-size: cover;
-  background-image: url("/public/images/signinbg.png");
-  background-attachment: fixed;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 50px;
+}
+.place__cover img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .place__cover h1 {
   font-size: 64px;
