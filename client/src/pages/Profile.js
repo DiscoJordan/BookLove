@@ -78,7 +78,7 @@ function Profile() {
       <div className="container">
         <div className="profile__info">
           <div className="profile__avatar">
-            <img src={userData?.photo?.photo_url||"/images/defaultavatar.png"} alt="default avatar" />
+            <img src={userData?.photo?.photo_url} alt="default avatar" />
           </div>
           {!isEditting ? (
             <>

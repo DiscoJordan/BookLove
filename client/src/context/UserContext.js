@@ -7,6 +7,7 @@ export const UserContext = React.createContext();
 export const UserProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(null);
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")));
+  const [users, setUsers] = useState([]);
   const [token, setToken] = useState(JSON.parse(localStorage.getItem("token")));
   const [userData, setUserData] = useState();
 
@@ -57,6 +58,18 @@ export const UserProvider = ({ children }) => {
     }
   };
 
+
+
+
+  const getUsers = async () => {
+    try {
+      const response = await axios.get(`${URL}/user/getall`);
+      setUsers(response.data.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   useEffect(() => {
     if (user) {
       getUserData();
@@ -77,6 +90,9 @@ export const UserProvider = ({ children }) => {
         login,
         logout,
         verify_token,
+        getUsers,
+        setUsers,
+        users
       }}
     >
       {children}

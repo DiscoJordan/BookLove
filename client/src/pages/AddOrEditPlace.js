@@ -256,6 +256,13 @@ function AddOrEditPlace() {
           </div>
           <hr width="100%" color="white" />
           <h2>Place images</h2>
+          <UploadImages
+              setPlaceData={setPlaceData}
+              placeData={placeData}
+              reversed={true}
+              content={"Add photos"}
+              id={currentPlace?._id}
+            />
           <div className="place__images">
             {currentPlace?.photos?.map((photo) => (
               <div className="place__image">
@@ -270,13 +277,7 @@ function AddOrEditPlace() {
               </div>
             ))}
 
-            <UploadImages
-              setPlaceData={setPlaceData}
-              placeData={placeData}
-              reversed={true}
-              content={"Add photos"}
-              id={currentPlace?._id}
-            />
+          
           </div>
           <hr width="100%" color="white" />
           <button>

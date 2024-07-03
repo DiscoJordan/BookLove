@@ -9,6 +9,8 @@ const {
   verifyToken,
   editPlaceList,
   uploadAvatarOrPlaceCover,
+  getAllUsers,
+  toggleAdminRights
   
 } = require("../controllers/users");
 
@@ -19,7 +21,8 @@ router.post("/update", updateUser);
 router.post("/delete", deleteUser);
 router.get("/get/:id", getUser);
 router.post("/upload", uploadAvatarOrPlaceCover);
-
+router.get("/getall", getAllUsers);
 router.post("/editList", editPlaceList);
+router.post("/toggleAdmin", toggleAdminRights);
 
 module.exports = router;

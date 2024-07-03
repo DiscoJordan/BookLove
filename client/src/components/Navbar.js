@@ -26,7 +26,7 @@ function Navbar({ isLoggedIn, logout, user }) {
   }, []);
 
   let ProfileHeader = () => {
-    if (location.pathname.startsWith("/profile")) {
+    if (location.pathname.startsWith("/profile")|| location.pathname.startsWith("/users")) {
       return true;
     }
   };
@@ -36,7 +36,8 @@ function Navbar({ isLoggedIn, logout, user }) {
       <div className="container">
         <nav className="navigation">
           <div className="logo">
-            <img src="/images/Logo.png" alt="logo" />
+          <NavLink to={"/"}><img src="/images/Logo.png" alt="logo" /></NavLink>
+            
           </div>
           <div className="navbar">
             <NavLink to={"/"}>Places</NavLink>

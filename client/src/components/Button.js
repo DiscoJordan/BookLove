@@ -9,6 +9,7 @@ const Button = ({ content, onClick, close, arrow,reversed }) => {
       "Profile": "account_circle",
       "Edit Profile": "tune",
       "Add new Place": "add_circle",
+      "Users": "group",
       "Search": "search",
       "Update": "update",
       "Explore Barcelona with us": "how_to_reg",

@@ -64,6 +64,9 @@ function Places() {
     <>
 
       <Swiper
+      style={{
+        '--swiper-pagination-color': '#FF471F',
+      }}
         spaceBetween={0}
         centeredSlides={true}
         

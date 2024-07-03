@@ -7,7 +7,7 @@ const userSchema = new mongoose.Schema({
     password: { type: String, required: true, unique: false },
     isAdmin: { type: Boolean, default: false },
     photo: {
-    photo_url: { type: String, required: false },
+    photo_url: { type: String, required: false, default:'https://res.cloudinary.com/dgfkzetcg/image/upload/v1719993202/i47o97255elhd3vhiptw.jpg' },
     public_id: { type: String, required: false, unique: true },
     signature: { type: String, required: false },
   },

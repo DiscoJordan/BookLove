@@ -40,29 +40,7 @@ const uploadAvatarOrPlaceCover = async (req, res) => {
   }
 };
 
-// const get_all = async (req, res) => {
-//   try {
-//     const pictures = await Pictures.find({});
-//     res.json({ ok: true, pictures });
-//   } catch (error) {
-//     res.json({ ok: false });
-//   }
-// };
 
-// const remove = async (req, res) => {
-//   const { _id } = req.params;
-//   try {
-//     const deleted = await Pictures.findByIdAndRemove({ _id: _id });
-//     if (deleted.public_id) {
-//       await cloudinary.v2.api.delete_resources([deleted.public_id]);
-//       res.json({ ok: true, deleted });
-//     } else {
-//       res.json({ ok: false });
-//     }
-//   } catch (error) {
-//     res.json({ ok: false });
-//   }
-// };
 
 const registerUser = async (req, res) => {
   const { username, email, password, password2 } = req.body;
@@ -152,6 +130,35 @@ const deleteUser = async (req, res) => {
         .status(200)
         .send({ ok: true, data: `Username '${username}' was deleted ` });
     } else {
+      res
+        .status(200)
+        .send({ ok: true, data: `Username '${username}' was not found` });
+    }
+  } catch (error) {
+    res.status(400).send({ ok: false, data: error.message });
+    console.log(error.message);
+  }
+};
+
+
+const toggleAdminRights = async (req, res) => {
+  try {
+    const { username } = req.body;
+    const uniqeUser = await Users.findOne({ username: username });
+
+    if (uniqeUser.isAdmin) {
+      uniqeUser.isAdmin=false;
+      await uniqeUser.save()
+      res
+        .status(200)
+        .send({ ok: true, data: `Admin Rights of '${username}' was turned off` });
+    } else  if (!uniqeUser.isAdmin) {
+      uniqeUser.isAdmin=true;
+      await uniqeUser.save()
+      res
+        .status(200)
+        .send({ ok: true, data: `Admin Rights of '${username}' was turned on` });
+    }else {
       res
         .status(200)
         .send({ ok: true, data: `Username '${username}' was not found` });
@@ -282,6 +289,21 @@ const getUser = async (req, res) => {
   }
 };
 
+const getAllUsers = async (req, res) => {
+  try {
+    let users = await Users.find({});
+    users = JSON.parse(JSON.stringify(users));
+    if (users) {
+      res.status(200).send({ ok: true, data: users });
+    } else {
+      res.status(200).send({ ok: true, data: `Users ` });
+    }
+  } catch (error) {
+    res.status(400).send({ ok: false, data: error.message });
+    console.log(error.message);
+  }
+};
+
 module.exports = {
   registerUser,
   updateUser,
@@ -291,4 +313,6 @@ module.exports = {
   verifyToken,
   editPlaceList,
   uploadAvatarOrPlaceCover,
+  getAllUsers,
+  toggleAdminRights,
 };

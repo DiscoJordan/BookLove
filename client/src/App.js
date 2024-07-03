@@ -18,6 +18,7 @@ import { TagsProvider } from "./context/TagsContext.js";
 import Places from "./pages/Places.js";
 import { UserContext } from "./context/UserContext.js";
 import ScrollToTop from "./components/ScrollToTop.js";
+import Users from "./pages/Users.js";
 
 function App() {
   const { isLoggedIn, logout, user, login, getUserData, verify_token } =
@@ -78,6 +79,12 @@ function App() {
             <Route path={`/`} element={<Places user={user} />} />
       
             <Route path={`/place/:title/`} element={<CurrentPlace />} />
+            <Route
+              path={`/users`}
+              element={
+                user?.isAdmin ? <Users /> : <Navigate to={`/`} />
+              }
+            />
           </Routes>
           <Footer />
         </Router>

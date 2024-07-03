@@ -19,6 +19,9 @@ function AdminDashboard() {
         <Link to={"/addnewplace"}>
           <Button content={"Add new Place"} onClick={()=>localStorage.removeItem("editTitle")}/>
         </Link>
+        <Link to={"/users"}>
+          <Button content={"Users"}/>
+        </Link>
       </div>
       <hr />
       <div className="grid__places">
