@@ -8,6 +8,7 @@ import { TagsContext } from "../context/TagsContext";
 import InputOfTags from "../components/InputOfTags";
 import UploadImages from "../components/UploadImages";
 import googlePlaces from "../googlePlaces.json";
+
 function AddOrEditPlace() {
   const {
     editTitle,
@@ -43,8 +44,9 @@ function AddOrEditPlace() {
     ],
     price: "",
     cover: {
-      photo_url:'https://res.cloudinary.com/dgfkzetcg/image/upload/v1720011996/pglltfymihkpt3ev5id7.jpg',
-      public_id:''
+      photo_url:
+        "https://res.cloudinary.com/dgfkzetcg/image/upload/v1720011996/pglltfymihkpt3ev5id7.jpg",
+      public_id: "",
     },
     description: {
       header: "",
@@ -53,7 +55,7 @@ function AddOrEditPlace() {
     tags: [],
     photos: [],
     website: "",
-    _id:0
+    _id: 0,
   });
   ////////////////////
 
@@ -114,7 +116,7 @@ function AddOrEditPlace() {
       console.log(response);
       if (response.data.ok) {
         setTimeout(() => {
-          navigate(-1);
+          navigate(`/place/${placeData.title}`);
         }, 2000);
       }
     } catch (error) {
@@ -170,7 +172,6 @@ function AddOrEditPlace() {
   };
 
   const handleChangeHours = (e, index) => {
-  
     e.stopPropagation();
     const newHours = [...placeData?.hours];
     newHours[index] = e.target.value;
@@ -178,8 +179,11 @@ function AddOrEditPlace() {
       ...prevData,
       hours: newHours,
     }));
-   
   };
+
+  useEffect(() => {
+    console.log(placeData);
+  }, [placeData]);
 
   return (
     <div className="newPlace__wrapper">
@@ -322,7 +326,12 @@ function AddOrEditPlace() {
           <hr width="100%" color="white" />
           <h2>Cover image</h2>
           <div className="cover__image">
-            <img src={currentPlace?.cover?.photo_url||placeData?.cover?.photo_url} alt="" />
+            <img
+              src={
+                currentPlace?.cover?.photo_url || placeData?.cover?.photo_url
+              }
+              alt=""
+            />
             <UploadImages
               reversed={true}
               setPlaceData={setPlaceData}

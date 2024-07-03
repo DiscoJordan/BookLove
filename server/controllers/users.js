@@ -19,6 +19,7 @@ const uploadAvatarOrPlaceCover = async (req, res) => {
     public_id: file.uploadInfo?.public_id,
     photo_url: file.uploadInfo?.secure_url,
   };
+
   if (username && !id) {
     try {
       const foundUser = await Users.findOne({ username });
@@ -29,18 +30,20 @@ const uploadAvatarOrPlaceCover = async (req, res) => {
       res.json({ ok: false });
     }
   } else {
-    try {
-      const foundPlace = await Places.findOne({ _id:id });
-      foundPlace.cover = picture;
-      await foundPlace.save();
-      res.json({ ok: true, result:foundPlace.cover });
-    } catch (error) {
-      res.json({ ok: false });
+    if (!id) {
+      // adding new
+    } else {
+      try {
+        const foundPlace = await Places.findOne({ _id: id });
+        foundPlace.cover = picture;
+        await foundPlace.save();
+        res.json({ ok: true, result: foundPlace.cover });
+      } catch (error) {
+        res.json({ ok: false });
+      }
     }
   }
 };
-
-
 
 const registerUser = async (req, res) => {
   const { username, email, password, password2 } = req.body;
@@ -140,25 +143,26 @@ const deleteUser = async (req, res) => {
   }
 };
 
-
 const toggleAdminRights = async (req, res) => {
   try {
     const { username } = req.body;
     const uniqeUser = await Users.findOne({ username: username });
 
     if (uniqeUser.isAdmin) {
-      uniqeUser.isAdmin=false;
-      await uniqeUser.save()
-      res
-        .status(200)
-        .send({ ok: true, data: `Admin Rights of '${username}' was turned off` });
-    } else  if (!uniqeUser.isAdmin) {
-      uniqeUser.isAdmin=true;
-      await uniqeUser.save()
-      res
-        .status(200)
-        .send({ ok: true, data: `Admin Rights of '${username}' was turned on` });
-    }else {
+      uniqeUser.isAdmin = false;
+      await uniqeUser.save();
+      res.status(200).send({
+        ok: true,
+        data: `Admin Rights of '${username}' was turned off`,
+      });
+    } else if (!uniqeUser.isAdmin) {
+      uniqeUser.isAdmin = true;
+      await uniqeUser.save();
+      res.status(200).send({
+        ok: true,
+        data: `Admin Rights of '${username}' was turned on`,
+      });
+    } else {
       res
         .status(200)
         .send({ ok: true, data: `Username '${username}' was not found` });

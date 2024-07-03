@@ -5,14 +5,20 @@ import { URL } from "../config";
 import { useContext } from "react";
 import { UserContext } from "../context/UserContext";
 import { PlacesContext } from "../context/PlacesContext";
-const UploadImages = ({ content,setPlaceData, placeData, fetch_pictures, id, reversed}) => {
+const UploadImages = ({
+  content,
+  setPlaceData,
+  placeData,
+  fetch_pictures,
+  id,
+  reversed,
+}) => {
   const { userData, getUserData } = useContext(UserContext);
 
   const { getPlaces } = useContext(PlacesContext);
   const uploadWidget = () => {
     // remember to add your credentials to the .env file
-    console.log(`//////////////`);
-   
+
     console.log(placeData);
     window.cloudinary.openUploadWidget(
       {
@@ -37,14 +43,19 @@ const UploadImages = ({ content,setPlaceData, placeData, fetch_pictures, id, rev
           if (result.event === "queues-end") {
             if (content === "Update image") {
               uploadProfilePicture(result);
-              
-            }
-            else if (content === "Update cover" && id) {
+            } else if (content === "Update cover" && id) {
               uploadPlaceCover(result);
-              
-            }
-            else if (content === "Add photos" && id) {
+            } else if (content === "Add photos" && id) {
               uploadPlacePhotos(result);
+            }
+            if (!id) {
+              setPlaceData({
+                ...placeData,
+                cover: {
+                  public_id: result.info.files[0]?.uploadInfo?.public_id,
+                  photo_url: result.info.files[0]?.uploadInfo?.secure_url,
+                },
+              });
             }
           }
         }
@@ -53,7 +64,6 @@ const UploadImages = ({ content,setPlaceData, placeData, fetch_pictures, id, rev
   };
 
   const uploadProfilePicture = async (result) => {
-
     try {
       const response = await axios.post(`${URL}/user/upload`, {
         file: result.info.files[0],
@@ -66,30 +76,33 @@ const UploadImages = ({ content,setPlaceData, placeData, fetch_pictures, id, rev
     }
   };
   const uploadPlaceCover = async (result) => {
+    debugger;
 
-   
     try {
       const response = await axios.post(`${URL}/user/upload`, {
         file: result.info.files[0],
         id: id,
       });
-      response.data.ok ? setPlaceData({...placeData, cover:response.data.result}) : alert("Something went wrong");
-      getPlaces()
+      response.data.ok
+        ? setPlaceData({ ...placeData, cover: response.data.result })
+        : alert("Something went wrong");
+      getPlaces();
     } catch (error) {
       console.log(error);
     }
   };
 
   const uploadPlacePhotos = async (result) => {
-
     try {
       const response = await axios.post(`${URL}/place/uploadPhotos`, {
         files: result.info.files,
         id: id,
       });
-  console.log(response.data.result);
-      response.data.ok ? setPlaceData({...placeData, photos:response.data.result}) : alert("Something went wrong");
-      getPlaces()
+      console.log(response.data.result);
+      response.data.ok
+        ? setPlaceData({ ...placeData, photos: response.data.result })
+        : alert("Something went wrong");
+      getPlaces();
     } catch (error) {
       console.log(error);
     }

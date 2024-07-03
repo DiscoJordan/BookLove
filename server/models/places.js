@@ -1,4 +1,3 @@
-const { number } = require("mathjs");
 const mongoose = require("mongoose");
 
 const placeSchema = new mongoose.Schema({
@@ -29,9 +28,7 @@ const placeSchema = new mongoose.Schema({
     lat: { type: Number, required: false },
     lng: { type: Number, required: false },
   },
-  hours: [
-    { type: String, required: false }
-  ],
+  hours: [{ type: String, required: false }],
   price: { type: Number, required: true },
   website: { type: String, required: false },
   photos: [
