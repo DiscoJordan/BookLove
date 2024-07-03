@@ -464,11 +464,12 @@ textarea {
 .newPlace__wrapper form .form__sides .leftside__fields {
   display: flex;
   flex-direction: column;
+  gap: 20px;
   justify-content: space-between;
 }
 .newPlace__wrapper form .form__sides .rightside__fields {
   width: 100%;
-  height: 500px;
+  height: 100%;
 }
 .newPlace__wrapper form .form__sides .navigation__button {
   width: 300px;
@@ -476,7 +477,7 @@ textarea {
 
 textarea.form__input {
   width: inherit;
-  height: 500px;
+  height: inherit;
   padding: 30px;
   resize: none;
 }

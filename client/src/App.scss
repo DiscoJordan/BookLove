@@ -465,11 +465,12 @@ textarea{
             .leftside__fields{
             display: flex;
             flex-direction: column;
+            gap: 20px;
             justify-content: space-between;
             }
             .rightside__fields{
                 width: 100%;
-                height: 500px;
+                height: 100%;
                 
             }
         .navigation__button{
@@ -481,7 +482,7 @@ textarea{
 }
 textarea.form__input{
     width: inherit;
-    height: 500px;
+    height: inherit;
     padding: 30px;
     resize: none;
 }

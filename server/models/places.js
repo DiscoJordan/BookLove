@@ -1,10 +1,11 @@
+const { number } = require("mathjs");
 const mongoose = require("mongoose");
 
 const placeSchema = new mongoose.Schema({
   cover: {
     photo_url: {
       type: String,
-      required: true,
+      required: false,
       default:
         "https://storage.googleapis.com/aqacentor-corporativewebs-pro--corporative-web--wp--pro--static/1/2022/08/image1-5.jpg",
     },
@@ -24,8 +25,15 @@ const placeSchema = new mongoose.Schema({
     },
   ], //categories/tags
   location: { type: String, required: true, unique: true },
-  hours: { type: String, required: true },
-  price: { type: String, required: true },
+  cordinates: {
+    lat: { type: Number, required: false },
+    lng: { type: Number, required: false },
+  },
+  hours: [
+    { type: String, required: false }
+  ],
+  price: { type: Number, required: true },
+  website: { type: String, required: false },
   photos: [
     {
       photo_url: { type: String, required: false },

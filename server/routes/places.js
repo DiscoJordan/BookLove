@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const {addPlace,deletePlace,updatePlace,getPlace,getAllPlaces,uploadPlacePhotos} = require('../controllers/places')
+const {addPlace,deletePlace,updatePlace,getPlace,getAllPlaces,uploadPlacePhotos,addPlacesFromGoogle} = require('../controllers/places')
 
 // http://localhost:4050/category/categories
 router.post('/add', addPlace)   /* trigger certain function*/
@@ -10,6 +10,7 @@ router.get('/get', getPlace)
 router.get('/getall', getAllPlaces)
 
 router.post('/uploadPhotos', uploadPlacePhotos)
+router.post('/fetch', addPlacesFromGoogle)
 
 
 module.exports = router;

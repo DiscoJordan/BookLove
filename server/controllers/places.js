@@ -2,6 +2,41 @@
 const Places = require("../models/places");
 const Users = require("../models/users");
 
+const addPlacesFromGoogle = async (req, res) => {
+  try {
+    const  googlePlaces = req.body;
+    console.log(googlePlaces);
+    let places = googlePlaces.map((place)=>{
+      return{
+      title: place?.title,
+      cordinates:place?.location|| {},
+      subtitle: place?.subtitle || "",
+      description: {
+        header: '',
+        descriptionText: place?.description || ''
+      },
+      tags: place?.tags||[],
+      location: place?.adress,
+      price: 0,
+      website:place?.website
+      }
+    })
+
+for (let place of places) {
+const exist  = await Places.findOne({title:place.title})
+  if(!exist){
+    await Places.create(place);
+  }
+  
+}
+
+    res.send({ ok: true, data: `Places was created` });
+  } catch (error) {
+    res.send({ ok: false, data: error.message });
+    console.log(error.message);
+  }
+};
+
 const uploadPlacePhotos = async (req, res) => {
   const { files, id } = req.body;
   let pictures = files.map((pic) => {
@@ -140,5 +175,6 @@ module.exports = {
   updatePlace,
   getPlace,
   getAllPlaces,
-  uploadPlacePhotos
+  uploadPlacePhotos,
+  addPlacesFromGoogle
 };

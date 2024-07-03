@@ -7,7 +7,7 @@ import { PlacesContext } from "../context/PlacesContext";
 import { TagsContext } from "../context/TagsContext";
 import InputOfTags from "../components/InputOfTags";
 import UploadImages from "../components/UploadImages";
-
+import googlePlaces from "../googlePlaces.json";
 function AddOrEditPlace() {
   const {
     editTitle,
@@ -32,17 +32,31 @@ function AddOrEditPlace() {
     title: "",
     subtitle: "",
     location: "",
-    hours: "",
+    hours: [
+      "01:00-20:00",
+      "02:00-20:00",
+      "03:00-20:00",
+      "04:00-20:00",
+      "05:00-20:00",
+      "06:00-20:00",
+      "07:00-20:00",
+    ],
     price: "",
-    cover: "",
+    cover: {
+      photo_url:'https://res.cloudinary.com/dgfkzetcg/image/upload/v1720011996/pglltfymihkpt3ev5id7.jpg',
+      public_id:''
+    },
     description: {
       header: "",
       descriptionText: "",
     },
     tags: [],
     photos: [],
+    website: "",
+    _id:0
   });
   ////////////////////
+
   editTitle
     ? setCurrentPlace(places.find((place) => place.title === oldtitle))
     : setCurrentPlace(places.find((place) => place.title === placeData?.title));
@@ -149,11 +163,22 @@ function AddOrEditPlace() {
   };
 
   const deletePhoto = (id) => {
-    console.log(`111`);
     setPlaceData((prevState) => ({
       ...prevState,
       photos: prevState.photos.filter((photo) => photo._id !== id),
     }));
+  };
+
+  const handleChangeHours = (e, index) => {
+  
+    e.stopPropagation();
+    const newHours = [...placeData?.hours];
+    newHours[index] = e.target.value;
+    setPlaceData((prevData) => ({
+      ...prevData,
+      hours: newHours,
+    }));
+   
   };
 
   return (
@@ -202,9 +227,9 @@ function AddOrEditPlace() {
               />
               <input
                 className="form__input"
-                placeholder="Hours*"
-                value={placeData?.hours}
-                name="hours"
+                placeholder="Website"
+                value={placeData?.website}
+                name="website"
                 type="text"
               />
               <input
@@ -213,6 +238,58 @@ function AddOrEditPlace() {
                 value={placeData?.price}
                 name="price"
                 type="number"
+              />
+              <h3>Opening Hours</h3>
+              <input
+                className="form__input"
+                placeholder="Monday"
+                value={placeData?.hours[0]}
+                onChange={(e) => handleChangeHours(e, 0)}
+                name="0"
+                type="text"
+              />
+              <input
+                className="form__input"
+                placeholder="Tuesday"
+                value={placeData?.hours[1]}
+                onChange={(e) => handleChangeHours(e, 1)}
+                type="text"
+              />
+              <input
+                className="form__input"
+                placeholder="Wednesday"
+                value={placeData?.hours[2]}
+                onChange={(e) => handleChangeHours(e, 2)}
+                type="text"
+              />
+              <input
+                className="form__input"
+                placeholder="Thursday"
+                value={placeData?.hours[3]}
+                onChange={(e) => handleChangeHours(e, 3)}
+                type="text"
+              />
+              <input
+                className="form__input"
+                placeholder="Friday"
+                value={placeData?.hours[4]}
+                onChange={(e) => handleChangeHours(e, 4)}
+                type="text"
+              />
+              <input
+                className="form__input"
+                placeholder="Saturday"
+                value={placeData?.hours[5]}
+                onChange={(e) => handleChangeHours(e, 5)}
+                type="text"
+              />
+              <input
+                className="form__input"
+                placeholder="Sunday"
+                value={placeData?.hours[6]}
+                onChange={(e) => handleChangeHours(e, 6)}
+                name="6"
+                type="text"
               />
             </div>
             <div className="rightside__fields">
@@ -245,39 +322,33 @@ function AddOrEditPlace() {
           <hr width="100%" color="white" />
           <h2>Cover image</h2>
           <div className="cover__image">
-            <img src={currentPlace?.cover?.photo_url} alt="" />
+            <img src={currentPlace?.cover?.photo_url||placeData?.cover?.photo_url} alt="" />
             <UploadImages
               reversed={true}
               setPlaceData={setPlaceData}
               content={"Update cover"}
               placeData={placeData}
-              id={currentPlace?._id}
+              id={placeData?._id}
             />
           </div>
           <hr width="100%" color="white" />
           <h2>Place images</h2>
           <UploadImages
-              setPlaceData={setPlaceData}
-              placeData={placeData}
-              reversed={true}
-              content={"Add photos"}
-              id={currentPlace?._id}
-            />
+            setPlaceData={setPlaceData}
+            placeData={placeData}
+            reversed={true}
+            content={"Add photos"}
+            id={currentPlace?._id}
+          />
           <div className="place__images">
             {currentPlace?.photos?.map((photo) => (
               <div className="place__image">
                 <img src={photo.photo_url} alt="photo" />
-                <button  onClick={() => deletePhoto(photo._id)}>
-                  <Button
-                    reversed={true}
-                    close={true}
-                    content={"Delete"}
-                  />
+                <button onClick={() => deletePhoto(photo._id)}>
+                  <Button reversed={true} close={true} content={"Delete"} />
                 </button>
               </div>
             ))}
-
-          
           </div>
           <hr width="100%" color="white" />
           <button>

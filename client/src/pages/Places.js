@@ -1,7 +1,6 @@
-import React, { useContext, useEffect, useRef, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { PlacesContext } from "../context/PlacesContext";
-import { UserContext } from "../context/UserContext";
 import { TagsContext } from "../context/TagsContext";
 import PlaceCard from "../components/PlaceCard";
 import Button from "../components/Button";
@@ -10,7 +9,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { Autoplay,Pagination } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
+
+
+
 
 function Places() {
   const { places } = useContext(PlacesContext); // getPlaces
@@ -62,23 +64,20 @@ function Places() {
 
   return (
     <>
-
       <Swiper
-      style={{
-        '--swiper-pagination-color': '#FF471F',
-      }}
+        style={{
+          "--swiper-pagination-color": "#FF471F",
+        }}
         spaceBetween={0}
         centeredSlides={true}
-        
         autoplay={{
           delay: 2500,
           disableOnInteraction: false,
         }}
-        
         pagination={{
           clickable: true,
         }}
-        modules={[ Autoplay, Pagination]}
+        modules={[Autoplay, Pagination]}
         onAutoplayTimeLeft={onAutoplayTimeLeft}
         className="mySwiper"
       >

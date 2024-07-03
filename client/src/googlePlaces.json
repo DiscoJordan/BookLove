@@ -1,0 +1,4320 @@
+[
+    {
+      "title": "Casa Batlló",
+      "subtitle": "Passeig de Gràcia, 43, Barcelona",
+      "description": "Fantastical, curving dragon-roofed apartment block, now a museum, created by architect Antoni Gaudi.",
+      "tags": [
+        {
+          "id": "e1f6ee21-c28f-477e-a7ed-27101370bf6f",
+          "tag": "tourist_attraction"
+        },
+        {
+          "id": "f1d8451e-e11c-4cf6-8d51-908436a7871e",
+          "tag": "point_of_interest"
+        },
+        {
+          "id": "12b80885-b15b-4d4f-91a5-545bef2a3e6a",
+          "tag": "establishment"
+        }
+      ],
+      "location": {
+        "lat": 41.3917,
+        "lng": 2.164918
+      },
+      "hours": [
+        "Monday: 9:00 AM – 10:00 PM",
+        "Tuesday: 9:00 AM – 10:00 PM",
+        "Wednesday: 9:00 AM – 10:00 PM",
+        "Thursday: 9:00 AM – 10:00 PM",
+        "Friday: 9:00 AM – 10:00 PM",
+        "Saturday: 9:00 AM – 10:00 PM",
+        "Sunday: 9:00 AM – 10:00 PM"
+      ],
+      "hoursArray": [
+        {
+          "close": {
+            "day": 0,
+            "time": "2200"
+          },
+          "open": {
+            "day": 0,
+            "time": "0900"
+          }
+        },
+        {
+          "close": {
+            "day": 1,
+            "time": "2200"
+          },
+          "open": {
+            "day": 1,
+            "time": "0900"
+          }
+        },
+        {
+          "close": {
+            "day": 2,
+            "time": "2200"
+          },
+          "open": {
+            "day": 2,
+            "time": "0900"
+          }
+        },
+        {
+          "close": {
+            "day": 3,
+            "time": "2200"
+          },
+          "open": {
+            "day": 3,
+            "time": "0900"
+          }
+        },
+        {
+          "close": {
+            "day": 4,
+            "time": "2200"
+          },
+          "open": {
+            "day": 4,
+            "time": "0900"
+          }
+        },
+        {
+          "close": {
+            "day": 5,
+            "time": "2200"
+          },
+          "open": {
+            "day": 5,
+            "time": "0900"
+          }
+        },
+        {
+          "close": {
+            "day": 6,
+            "time": "2200"
+          },
+          "open": {
+            "day": 6,
+            "time": "0900"
+          }
+        }
+      ],
+      "adress": "Pg. de Gràcia, 43, L'Eixample, 08007 Barcelona, Spain",
+      "phone_number": "+34 932 16 03 06",
+      "rating": 4.7,
+      "url": "https://maps.google.com/?cid=4670927909449256463",
+      "website": "https://www.casabatllo.es/"
+    },
+    {
+      "title": "La Pedrera - Casa Milà",
+      "subtitle": "Passeig de Gràcia, 92, Barcelona",
+      "description": "Gaudi's Catalan art nouveau period building with quarrylike facade, hosting exhibitions & concerts.",
+      "tags": [
+        {
+          "id": "4dd42c1a-3afb-4658-937e-04f4b19d2a06",
+          "tag": "tourist_attraction"
+        },
+        {
+          "id": "4e8523db-3e86-47e8-9180-de9fd75aa3cf",
+          "tag": "museum"
+        },
+        {
+          "id": "90ab32fa-dce5-46ab-9448-73d308b108d3",
+          "tag": "point_of_interest"
+        },
+        {
+          "id": "cd4b9173-c3b6-4999-9ea6-d27489ac8f65",
+          "tag": "establishment"
+        }
+      ],
+      "location": {
+        "lat": 41.3952155,
+        "lng": 2.1619024
+      },
+      "hours": [
+        "Monday: 9:00 AM – 8:00 PM, 9:00 – 11:00 PM",
+        "Tuesday: 9:00 AM – 8:00 PM, 9:00 – 11:00 PM",
+        "Wednesday: 9:00 AM – 8:00 PM, 9:00 – 11:00 PM",
+        "Thursday: 9:00 AM – 8:00 PM, 9:00 – 11:00 PM",
+        "Friday: 9:00 AM – 8:00 PM, 9:00 – 11:00 PM",
+        "Saturday: 9:00 AM – 8:00 PM, 9:00 – 11:00 PM",
+        "Sunday: 9:00 AM – 8:00 PM, 9:00 – 11:00 PM"
+      ],
+      "hoursArray": [
+        {
+          "close": {
+            "day": 0,
+            "time": "2000"
+          },
+          "open": {
+            "day": 0,
+            "time": "0900"
+          }
+        },
+        {
+          "close": {
+            "day": 0,
+            "time": "2300"
+          },
+          "open": {
+            "day": 0,
+            "time": "2100"
+          }
+        },
+        {
+          "close": {
+            "day": 1,
+            "time": "2000"
+          },
+          "open": {
+            "day": 1,
+            "time": "0900"
+          }
+        },
+        {
+          "close": {
+            "day": 1,
+            "time": "2300"
+          },
+          "open": {
+            "day": 1,
+            "time": "2100"
+          }
+        },
+        {
+          "close": {
+            "day": 2,
+            "time": "2000"
+          },
+          "open": {
+            "day": 2,
+            "time": "0900"
+          }
+        },
+        {
+          "close": {
+            "day": 2,
+            "time": "2300"
+          },
+          "open": {
+            "day": 2,
+            "time": "2100"
+          }
+        },
+        {
+          "close": {
+            "day": 3,
+            "time": "2000"
+          },
+          "open": {
+            "day": 3,
+            "time": "0900"
+          }
+        },
+        {
+          "close": {
+            "day": 3,
+            "time": "2300"
+          },
+          "open": {
+            "day": 3,
+            "time": "2100"
+          }
+        },
+        {
+          "close": {
+            "day": 4,
+            "time": "2000"
+          },
+          "open": {
+            "day": 4,
+            "time": "0900"
+          }
+        },
+        {
+          "close": {
+            "day": 4,
+            "time": "2300"
+          },
+          "open": {
+            "day": 4,
+            "time": "2100"
+          }
+        },
+        {
+          "close": {
+            "day": 5,
+            "time": "2000"
+          },
+          "open": {
+            "day": 5,
+            "time": "0900"
+          }
+        },
+        {
+          "close": {
+            "day": 5,
+            "time": "2300"
+          },
+          "open": {
+            "day": 5,
+            "time": "2100"
+          }
+        },
+        {
+          "close": {
+            "day": 6,
+            "time": "2000"
+          },
+          "open": {
+            "day": 6,
+            "time": "0900"
+          }
+        },
+        {
+          "close": {
+            "day": 6,
+            "time": "2300"
+          },
+          "open": {
+            "day": 6,
+            "time": "2100"
+          }
+        }
+      ],
+      "adress": "Pg. de Gràcia, 92, L'Eixample, 08008 Barcelona, Spain",
+      "phone_number": "+34 932 14 25 76",
+      "rating": 4.6,
+      "url": "https://maps.google.com/?cid=14168222595362004586",
+      "website": "https://www.lapedrera.com/es?utm_source=google&utm_medium=organic&utm_campaign=myb"
+    },
+    {
+      "title": "Park Güell",
+      "subtitle": "Barcelona",
+      "description": "Mosaic-covered buildings, steps & sculptures in verdant park with Gaudi museum & panoramic views.",
+      "tags": [
+        {
+          "id": "e8b6c6b5-2668-4266-9e18-db74bc8cb48e",
+          "tag": "park"
+        },
+        {
+          "id": "b93ef599-04ff-4ae4-af44-962cc39e717b",
+          "tag": "tourist_attraction"
+        },
+        {
+          "id": "2eefa8d8-915a-4ba3-b0ad-59edc41da83b",
+          "tag": "point_of_interest"
+        },
+        {
+          "id": "2a25c44f-cb8b-4825-98c4-22175ea92fc0",
+          "tag": "establishment"
+        }
+      ],
+      "location": {
+        "lat": 41.41449480000001,
+        "lng": 2.1526945
+      },
+      "hours": [
+        "Monday: 9:30 AM – 7:30 PM",
+        "Tuesday: 9:30 AM – 7:30 PM",
+        "Wednesday: 9:30 AM – 7:30 PM",
+        "Thursday: 9:30 AM – 7:30 PM",
+        "Friday: 9:30 AM – 7:30 PM",
+        "Saturday: 9:30 AM – 7:30 PM",
+        "Sunday: 9:30 AM – 7:30 PM"
+      ],
+      "hoursArray": [
+        {
+          "close": {
+            "day": 0,
+            "time": "1930"
+          },
+          "open": {
+            "day": 0,
+            "time": "0930"
+          }
+        },
+        {
+          "close": {
+            "day": 1,
+            "time": "1930"
+          },
+          "open": {
+            "day": 1,
+            "time": "0930"
+          }
+        },
+        {
+          "close": {
+            "day": 2,
+            "time": "1930"
+          },
+          "open": {
+            "day": 2,
+            "time": "0930"
+          }
+        },
+        {
+          "close": {
+            "day": 3,
+            "time": "1930"
+          },
+          "open": {
+            "day": 3,
+            "time": "0930"
+          }
+        },
+        {
+          "close": {
+            "day": 4,
+            "time": "1930"
+          },
+          "open": {
+            "day": 4,
+            "time": "0930"
+          }
+        },
+        {
+          "close": {
+            "day": 5,
+            "time": "1930"
+          },
+          "open": {
+            "day": 5,
+            "time": "0930"
+          }
+        },
+        {
+          "close": {
+            "day": 6,
+            "time": "1930"
+          },
+          "open": {
+            "day": 6,
+            "time": "0930"
+          }
+        }
+      ],
+      "adress": "Gràcia, 08024 Barcelona, Spain",
+      "phone_number": "+34 934 09 18 31",
+      "rating": 4.4,
+      "url": "https://maps.google.com/?cid=9915250311879642712",
+      "website": "https://parkguell.barcelona/"
+    },
+    {
+      "title": "Rambla De Mar",
+      "subtitle": "Rambla de Mar, s/n, Barcelona",
+      "description": "Designed in 1994 by Albert Viaplana & Helio Piñón, this modern walkway stretches over the sea.",
+      "tags": [
+        {
+          "id": "9a067883-dd27-4a48-9e8e-ba83cd8bf66d",
+          "tag": "tourist_attraction"
+        },
+        {
+          "id": "9055de3a-8f02-4801-b2e8-7b52093351ee",
+          "tag": "point_of_interest"
+        },
+        {
+          "id": "44584252-458b-4a4e-be66-db825dfd8c4f",
+          "tag": "establishment"
+        }
+      ],
+      "location": {
+        "lat": 41.37515819999999,
+        "lng": 2.1806792
+      },
+      "hours": [
+        "Monday: Open 24 hours",
+        "Tuesday: Open 24 hours",
+        "Wednesday: Open 24 hours",
+        "Thursday: Open 24 hours",
+        "Friday: Open 24 hours",
+        "Saturday: Open 24 hours",
+        "Sunday: Open 24 hours"
+      ],
+      "hoursArray": [
+        {
+          "open": {
+            "day": 0,
+            "time": "0000"
+          }
+        }
+      ],
+      "adress": "Rambla de Mar, s/n, 08039 Barcelona, Spain",
+      "phone_number": "+34 933 17 61 35",
+      "rating": 4.6,
+      "url": "https://maps.google.com/?cid=10372258037623540111",
+      "website": "https://www.barcelona.cat/en/what-to-do-in-bcn/get-fit/detall/passarel-la-rambla-del-mar_96285125037.html"
+    },
+    {
+      "title": "Tibidabo",
+      "subtitle": "Plaça del Tibidabo, 3, 4, Barcelona",
+      "description": "Amusement park, opened in 1868, with 25 rides, restaurants & picnic areas, plus views over the city.",
+      "tags": [
+        {
+          "id": "9e2c647c-0979-4c35-9ee5-edb5fe95b2f3",
+          "tag": "amusement_park"
+        },
+        {
+          "id": "a4565b97-9ac9-4bf0-8775-b3dfef51445f",
+          "tag": "tourist_attraction"
+        },
+        {
+          "id": "ad17baaf-cb8c-4d90-8bd3-84123962f5c2",
+          "tag": "park"
+        },
+        {
+          "id": "c9dfb685-3d55-4373-95e5-ef055e6e50a7",
+          "tag": "point_of_interest"
+        },
+        {
+          "id": "ce158845-84e5-47a2-95d9-e64bd3d16f86",
+          "tag": "establishment"
+        }
+      ],
+      "location": {
+        "lat": 41.42163199999999,
+        "lng": 2.1194491
+      },
+      "hours": [
+        "Monday: Closed",
+        "Tuesday: Closed",
+        "Wednesday: Closed",
+        "Thursday: Closed",
+        "Friday: Closed",
+        "Saturday: 11:00 AM – 9:00 PM",
+        "Sunday: 11:00 AM – 9:00 PM"
+      ],
+      "hoursArray": [
+        {
+          "close": {
+            "day": 0,
+            "time": "2100"
+          },
+          "open": {
+            "day": 0,
+            "time": "1100"
+          }
+        },
+        {
+          "close": {
+            "day": 6,
+            "time": "2100"
+          },
+          "open": {
+            "day": 6,
+            "time": "1100"
+          }
+        }
+      ],
+      "adress": "Pl. del Tibidabo, 3, 4, Sarrià-Sant Gervasi, 08035 Barcelona, Spain",
+      "rating": 4.4,
+      "url": "https://maps.google.com/?cid=3450981380963188171",
+      "website": "https://www.tibidabo.cat/"
+    },
+    {
+      "title": "Picasso Museum Barcelona",
+      "subtitle": "Carrer de Montcada, 15-23, Barcelona",
+      "description": "Medieval mansions housing extensive collection of influential Spanish cubist's works & masterpieces.",
+      "tags": [
+        {
+          "id": "bdef62b4-b496-4183-8735-707b0bc82b69",
+          "tag": "tourist_attraction"
+        },
+        {
+          "id": "30346f6f-0870-48bd-989d-01e0c947e904",
+          "tag": "museum"
+        },
+        {
+          "id": "c33b29a6-c7ed-4d7b-a868-ee0c4ba3c320",
+          "tag": "point_of_interest"
+        },
+        {
+          "id": "5d227fc1-0a37-4350-98bd-16c1b9d6a148",
+          "tag": "establishment"
+        }
+      ],
+      "location": {
+        "lat": 41.3852706,
+        "lng": 2.1809472
+      },
+      "hours": [
+        "Monday: Closed",
+        "Tuesday: 9:00 AM – 8:00 PM",
+        "Wednesday: 9:00 AM – 8:00 PM",
+        "Thursday: 9:00 AM – 9:00 PM",
+        "Friday: 9:00 AM – 9:00 PM",
+        "Saturday: 9:00 AM – 9:00 PM",
+        "Sunday: 9:00 AM – 8:00 PM"
+      ],
+      "hoursArray": [
+        {
+          "close": {
+            "day": 0,
+            "time": "2000"
+          },
+          "open": {
+            "day": 0,
+            "time": "0900"
+          }
+        },
+        {
+          "close": {
+            "day": 2,
+            "time": "2000"
+          },
+          "open": {
+            "day": 2,
+            "time": "0900"
+          }
+        },
+        {
+          "close": {
+            "day": 3,
+            "time": "2000"
+          },
+          "open": {
+            "day": 3,
+            "time": "0900"
+          }
+        },
+        {
+          "close": {
+            "day": 4,
+            "time": "2100"
+          },
+          "open": {
+            "day": 4,
+            "time": "0900"
+          }
+        },
+        {
+          "close": {
+            "day": 5,
+            "time": "2100"
+          },
+          "open": {
+            "day": 5,
+            "time": "0900"
+          }
+        },
+        {
+          "close": {
+            "day": 6,
+            "time": "2100"
+          },
+          "open": {
+            "day": 6,
+            "time": "0900"
+          }
+        }
+      ],
+      "adress": "C/ de Montcada, 15-23, Ciutat Vella, 08003 Barcelona, Spain",
+      "phone_number": "+34 932 56 30 00",
+      "rating": 4.4,
+      "url": "https://maps.google.com/?cid=2810561113253530723",
+      "website": "https://museupicassobcn.cat/"
+    },
+    {
+      "title": "Palau Güell",
+      "subtitle": "Carrer Nou de la Rambla, 3-5, Barcelona",
+      "description": "Ornate modernist mansion that is a historically significant example of early Gaudí architecture.",
+      "tags": [
+        {
+          "id": "27b0cde9-bf0b-4b92-a319-2b0a09b5f815",
+          "tag": "museum"
+        },
+        {
+          "id": "ed22f147-b2b5-431a-a848-e17a6544621c",
+          "tag": "tourist_attraction"
+        },
+        {
+          "id": "9d090cba-b572-474a-b320-02670b57a38b",
+          "tag": "point_of_interest"
+        },
+        {
+          "id": "e77055a3-24a3-4cd9-9e47-670d28ec0ecc",
+          "tag": "establishment"
+        }
+      ],
+      "location": {
+        "lat": 41.3788851,
+        "lng": 2.1742398
+      },
+      "hours": [
+        "Monday: Closed",
+        "Tuesday: 10:00 AM – 8:00 PM",
+        "Wednesday: 10:00 AM – 8:00 PM",
+        "Thursday: 10:00 AM – 8:00 PM",
+        "Friday: 10:00 AM – 8:00 PM",
+        "Saturday: 10:00 AM – 8:00 PM",
+        "Sunday: 10:00 AM – 8:00 PM"
+      ],
+      "hoursArray": [
+        {
+          "close": {
+            "day": 0,
+            "time": "2000"
+          },
+          "open": {
+            "day": 0,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 2,
+            "time": "2000"
+          },
+          "open": {
+            "day": 2,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 3,
+            "time": "2000"
+          },
+          "open": {
+            "day": 3,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 4,
+            "time": "2000"
+          },
+          "open": {
+            "day": 4,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 5,
+            "time": "2000"
+          },
+          "open": {
+            "day": 5,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 6,
+            "time": "2000"
+          },
+          "open": {
+            "day": 6,
+            "time": "1000"
+          }
+        }
+      ],
+      "adress": "C/ Nou de la Rambla, 3-5, Ciutat Vella, 08001 Barcelona, Spain",
+      "phone_number": "+34 934 72 57 75",
+      "rating": 4.6,
+      "url": "https://maps.google.com/?cid=10853745408962897316",
+      "website": "https://inici.palauguell.cat/"
+    },
+    {
+      "title": "Basílica de Santa Maria del Mar",
+      "subtitle": "Plaça de Santa Maria, 1, Barcelona",
+      "description": "14th-century, Gothic-style church with soaring columns & 3 naves, plus grand stained glass windows.",
+      "tags": [
+        {
+          "id": "367c4c4d-7456-468f-bb15-d19d9ce170d6",
+          "tag": "tourist_attraction"
+        },
+        {
+          "id": "07f9cfb2-2d1a-4088-95f4-ef64154d964c",
+          "tag": "church"
+        },
+        {
+          "id": "13ed27e6-2c56-419c-9f2e-7ade844f7b90",
+          "tag": "place_of_worship"
+        },
+        {
+          "id": "184c5de4-952c-42fc-ad5c-280a10aa8c68",
+          "tag": "point_of_interest"
+        },
+        {
+          "id": "e5c95a91-7e9d-43c3-be28-ac3ad74445f3",
+          "tag": "establishment"
+        }
+      ],
+      "location": {
+        "lat": 41.3838871,
+        "lng": 2.1820711
+      },
+      "hours": [
+        "Monday: 10:00 AM – 8:30 PM",
+        "Tuesday: 10:00 AM – 8:30 PM",
+        "Wednesday: 10:00 AM – 8:30 PM",
+        "Thursday: 10:00 AM – 8:30 PM",
+        "Friday: 10:00 AM – 8:30 PM",
+        "Saturday: 10:00 AM – 8:30 PM",
+        "Sunday: 10:00 AM – 8:30 PM"
+      ],
+      "hoursArray": [
+        {
+          "close": {
+            "day": 0,
+            "time": "2030"
+          },
+          "open": {
+            "day": 0,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 1,
+            "time": "2030"
+          },
+          "open": {
+            "day": 1,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 2,
+            "time": "2030"
+          },
+          "open": {
+            "day": 2,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 3,
+            "time": "2030"
+          },
+          "open": {
+            "day": 3,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 4,
+            "time": "2030"
+          },
+          "open": {
+            "day": 4,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 5,
+            "time": "2030"
+          },
+          "open": {
+            "day": 5,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 6,
+            "time": "2030"
+          },
+          "open": {
+            "day": 6,
+            "time": "1000"
+          }
+        }
+      ],
+      "adress": "Plaça de Santa Maria, 1, Ciutat Vella, 08003 Barcelona, Spain",
+      "phone_number": "+34 933 10 23 90",
+      "rating": 4.7,
+      "url": "https://maps.google.com/?cid=13023447345839268192",
+      "website": "http://www.santamariadelmarbarcelona.org/"
+    },
+    {
+      "title": "Basílica de la Sagrada Família",
+      "subtitle": "Barcelona",
+      "description": "Antoni Gaudí's renowned unfinished church, started in the 1880s, with museum and city views.",
+      "tags": [
+        {
+          "id": "718ccb75-a233-4525-a70b-a7f91064422f",
+          "tag": "tourist_attraction"
+        },
+        {
+          "id": "6303e08e-814f-442b-b8bf-adc4ea79e78b",
+          "tag": "church"
+        },
+        {
+          "id": "7ba49d12-ccf2-4ded-9312-de83d551bc63",
+          "tag": "place_of_worship"
+        },
+        {
+          "id": "f6d1b759-5add-4cbb-828d-8b76aa2208c1",
+          "tag": "point_of_interest"
+        },
+        {
+          "id": "b7ad652e-328b-44a4-8fcb-1478b480eb24",
+          "tag": "establishment"
+        }
+      ],
+      "location": {
+        "lat": 41.4036299,
+        "lng": 2.1743558
+      },
+      "hours": [
+        "Monday: 9:00 AM – 8:00 PM",
+        "Tuesday: 9:00 AM – 8:00 PM",
+        "Wednesday: 9:00 AM – 8:00 PM",
+        "Thursday: 9:00 AM – 8:00 PM",
+        "Friday: 9:00 AM – 8:00 PM",
+        "Saturday: 9:00 AM – 6:00 PM",
+        "Sunday: 10:30 AM – 8:00 PM"
+      ],
+      "hoursArray": [
+        {
+          "close": {
+            "day": 0,
+            "time": "2000"
+          },
+          "open": {
+            "day": 0,
+            "time": "1030"
+          }
+        },
+        {
+          "close": {
+            "day": 1,
+            "time": "2000"
+          },
+          "open": {
+            "day": 1,
+            "time": "0900"
+          }
+        },
+        {
+          "close": {
+            "day": 2,
+            "time": "2000"
+          },
+          "open": {
+            "day": 2,
+            "time": "0900"
+          }
+        },
+        {
+          "close": {
+            "day": 3,
+            "time": "2000"
+          },
+          "open": {
+            "day": 3,
+            "time": "0900"
+          }
+        },
+        {
+          "close": {
+            "day": 4,
+            "time": "2000"
+          },
+          "open": {
+            "day": 4,
+            "time": "0900"
+          }
+        },
+        {
+          "close": {
+            "day": 5,
+            "time": "2000"
+          },
+          "open": {
+            "day": 5,
+            "time": "0900"
+          }
+        },
+        {
+          "close": {
+            "day": 6,
+            "time": "1800"
+          },
+          "open": {
+            "day": 6,
+            "time": "0900"
+          }
+        }
+      ],
+      "adress": "Eixample, 08013 Barcelona, Spain",
+      "phone_number": "+34 932 08 04 14",
+      "rating": 4.8,
+      "url": "https://maps.google.com/?cid=11229913421514525008",
+      "website": "https://sagradafamilia.org/"
+    },
+    {
+      "title": "Plaça de Catalunya",
+      "subtitle": "Plaça de Catalunya, Barcelona",
+      "description": "Central, tree-lined, sculpture-filled square lined with shops & cafes, used for special events.",
+      "tags": [
+        {
+          "id": "9b414b1b-1789-486b-8b7e-6bf1385d5d1e",
+          "tag": "tourist_attraction"
+        },
+        {
+          "id": "9b9f9fa3-bb01-4c68-b4ee-5c8bce22d61c",
+          "tag": "point_of_interest"
+        },
+        {
+          "id": "aeb282f0-07f2-4a2f-be55-f5b98f7836df",
+          "tag": "establishment"
+        }
+      ],
+      "location": {
+        "lat": 41.3870154,
+        "lng": 2.1700471
+      },
+      "adress": "Plaça de Catalunya, L'Eixample, 08002 Barcelona, Spain",
+      "rating": 4.5,
+      "url": "https://maps.google.com/?cid=2228369972992726603",
+      "website": "https://www.meet.barcelona/ca/visita-la-i-estima-la/punts-dinteres-de-la-ciutat/la-placa-de-catalunya-99400356287"
+    },
+    {
+      "title": "Escalinata monumental",
+      "subtitle": "Carrer d'Olot, 78, Barcelona",
+      "tags": [
+        {
+          "id": "6aaf57a4-59ac-45f0-9856-ee5c50f9ea60",
+          "tag": "tourist_attraction"
+        },
+        {
+          "id": "35d32979-ee9f-4fa5-9168-c16baa332c70",
+          "tag": "park"
+        },
+        {
+          "id": "3a5d862f-c33e-462e-b704-10fe36f5217e",
+          "tag": "point_of_interest"
+        },
+        {
+          "id": "e142db7b-3928-41d2-af95-862369aa52a5",
+          "tag": "establishment"
+        }
+      ],
+      "location": {
+        "lat": 41.41371309999999,
+        "lng": 2.152829499999999
+      },
+      "hours": [
+        "Monday: 9:30 AM – 7:30 PM",
+        "Tuesday: 9:30 AM – 7:30 PM",
+        "Wednesday: 9:30 AM – 7:30 PM",
+        "Thursday: 9:30 AM – 7:30 PM",
+        "Friday: 9:30 AM – 7:30 PM",
+        "Saturday: 9:30 AM – 7:30 PM",
+        "Sunday: 9:30 AM – 7:30 PM"
+      ],
+      "hoursArray": [
+        {
+          "close": {
+            "day": 0,
+            "time": "1930"
+          },
+          "open": {
+            "day": 0,
+            "time": "0930"
+          }
+        },
+        {
+          "close": {
+            "day": 1,
+            "time": "1930"
+          },
+          "open": {
+            "day": 1,
+            "time": "0930"
+          }
+        },
+        {
+          "close": {
+            "day": 2,
+            "time": "1930"
+          },
+          "open": {
+            "day": 2,
+            "time": "0930"
+          }
+        },
+        {
+          "close": {
+            "day": 3,
+            "time": "1930"
+          },
+          "open": {
+            "day": 3,
+            "time": "0930"
+          }
+        },
+        {
+          "close": {
+            "day": 4,
+            "time": "1930"
+          },
+          "open": {
+            "day": 4,
+            "time": "0930"
+          }
+        },
+        {
+          "close": {
+            "day": 5,
+            "time": "1930"
+          },
+          "open": {
+            "day": 5,
+            "time": "0930"
+          }
+        },
+        {
+          "close": {
+            "day": 6,
+            "time": "1930"
+          },
+          "open": {
+            "day": 6,
+            "time": "0930"
+          }
+        }
+      ],
+      "adress": "C/ d'Olot, 78, Gràcia, 08024 Barcelona, Spain",
+      "phone_number": "+34 934 09 18 31",
+      "rating": 4.5,
+      "url": "https://maps.google.com/?cid=2470979365186577205",
+      "website": "https://parkguell.barcelona/ca/park-historic/espais-emblematics/escalinata-drac"
+    },
+    {
+      "title": "Bellesguard",
+      "subtitle": "Carrer de Bellesguard, 20, Barcelona",
+      "description": "Early 1900s neo-Gothic home & spire designed by Antoni Gaudí, with audio & guided tours.",
+      "tags": [
+        {
+          "id": "81d1d653-c16a-4867-b1e8-0448a012516e",
+          "tag": "tourist_attraction"
+        },
+        {
+          "id": "27d0bb49-7354-4341-a6e9-4b624235faf2",
+          "tag": "point_of_interest"
+        },
+        {
+          "id": "d64d96fe-3b35-4976-bb86-bed7bc3a8ee1",
+          "tag": "establishment"
+        }
+      ],
+      "location": {
+        "lat": 41.409599,
+        "lng": 2.126837699999999
+      },
+      "hours": [
+        "Monday: Closed",
+        "Tuesday: 10:00 AM – 3:00 PM",
+        "Wednesday: 10:00 AM – 3:00 PM",
+        "Thursday: 10:00 AM – 3:00 PM",
+        "Friday: 10:00 AM – 3:00 PM",
+        "Saturday: 10:00 AM – 3:00 PM",
+        "Sunday: 10:00 AM – 3:00 PM"
+      ],
+      "hoursArray": [
+        {
+          "close": {
+            "day": 0,
+            "time": "1500"
+          },
+          "open": {
+            "day": 0,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 2,
+            "time": "1500"
+          },
+          "open": {
+            "day": 2,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 3,
+            "time": "1500"
+          },
+          "open": {
+            "day": 3,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 4,
+            "time": "1500"
+          },
+          "open": {
+            "day": 4,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 5,
+            "time": "1500"
+          },
+          "open": {
+            "day": 5,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 6,
+            "time": "1500"
+          },
+          "open": {
+            "day": 6,
+            "time": "1000"
+          }
+        }
+      ],
+      "adress": "Carrer de Bellesguard, 20, Sarrià-Sant Gervasi, 08022 Barcelona, Spain",
+      "phone_number": "+34 932 50 40 93",
+      "rating": 4.6,
+      "url": "https://maps.google.com/?cid=10705589105373909586",
+      "website": "http://www.bellesguardgaudi.com/en"
+    },
+    {
+      "title": "El Pont del Bisbe",
+      "subtitle": "Carrer del Bisbe, Barcelona",
+      "description": "Marble crossing between 2 buildings in the Gothic Quarter, marked by a skull pierced with a dagger.",
+      "tags": [
+        {
+          "id": "3d7d76ea-8e3f-4333-8459-46e1bf4fcfc4",
+          "tag": "tourist_attraction"
+        },
+        {
+          "id": "d4d9e7bc-1df8-4aea-829a-13cca088ab75",
+          "tag": "point_of_interest"
+        },
+        {
+          "id": "c53cb40b-5eb5-4ce8-a1af-6c839c48d774",
+          "tag": "establishment"
+        }
+      ],
+      "location": {
+        "lat": 41.3833034,
+        "lng": 2.1764215
+      },
+      "adress": "C. del Bisbe, Ciutat Vella, 08002 Barcelona, Spain",
+      "rating": 4.7,
+      "url": "https://maps.google.com/?cid=7076128581345844409"
+    },
+    {
+      "title": "Saint James's Square",
+      "subtitle": "Plaça de Sant Jaume, 1, Barcelona",
+      "description": "Landmark city square & gathering point, home to the town hall & the Palau de la Generalitat.",
+      "tags": [
+        {
+          "id": "a4cbfbf2-cb50-4405-8e03-e4b1ae5a9b00",
+          "tag": "tourist_attraction"
+        },
+        {
+          "id": "fc1e28e1-8280-44be-a9ff-c69cd4d6c6a7",
+          "tag": "point_of_interest"
+        },
+        {
+          "id": "7d11056d-1384-4ffe-95da-a8dc359f295f",
+          "tag": "establishment"
+        }
+      ],
+      "location": {
+        "lat": 41.3826971,
+        "lng": 2.1770236
+      },
+      "hours": [
+        "Monday: Open 24 hours",
+        "Tuesday: Open 24 hours",
+        "Wednesday: Open 24 hours",
+        "Thursday: Open 24 hours",
+        "Friday: Open 24 hours",
+        "Saturday: Open 24 hours",
+        "Sunday: Open 24 hours"
+      ],
+      "hoursArray": [
+        {
+          "open": {
+            "day": 0,
+            "time": "0000"
+          }
+        }
+      ],
+      "adress": "Pl. de Sant Jaume, 1, Ciutat Vella, 08002 Barcelona, Spain",
+      "rating": 4.4,
+      "url": "https://maps.google.com/?cid=9755799218953007950",
+      "website": "http://www.bcn.cat/"
+    },
+    {
+      "title": "Plaça del Rei",
+      "subtitle": "Plaça del Rei, s/n, Barcelona",
+      "description": "Medieval building housing the city's history museum & archaeological finds including Roman streets.",
+      "tags": [
+        {
+          "id": "1dd4b60a-7016-4cab-878f-3e4b8611762c",
+          "tag": "tourist_attraction"
+        },
+        {
+          "id": "c5db1227-d595-464f-90b1-95134b5ff9f3",
+          "tag": "point_of_interest"
+        },
+        {
+          "id": "26cd664a-4e65-474b-9cd2-7fd9e06bef5e",
+          "tag": "establishment"
+        }
+      ],
+      "location": {
+        "lat": 41.3841972,
+        "lng": 2.1773925
+      },
+      "hours": [
+        "Monday: Open 24 hours",
+        "Tuesday: Open 24 hours",
+        "Wednesday: Open 24 hours",
+        "Thursday: Open 24 hours",
+        "Friday: Open 24 hours",
+        "Saturday: Open 24 hours",
+        "Sunday: Open 24 hours"
+      ],
+      "hoursArray": [
+        {
+          "open": {
+            "day": 0,
+            "time": "0000"
+          }
+        }
+      ],
+      "adress": "Pl. del Rei, s/n, Ciutat Vella, 08002 Barcelona, Spain",
+      "rating": 4.6,
+      "url": "https://maps.google.com/?cid=6556335731990508539",
+      "website": "https://www.barcelonaturisme.com/wv3/en/page/557/placa-del-rei.html"
+    },
+    {
+      "title": "Arc de Triomf",
+      "subtitle": "Passeig de Lluís Companys, Barcelona",
+      "description": "Classical archway built as the main entrance to the Universal Exhibition hosted by the city in 1888.",
+      "tags": [
+        {
+          "id": "720127c3-d749-41ba-a9cc-d6212ce346cd",
+          "tag": "tourist_attraction"
+        },
+        {
+          "id": "7f21ffa1-6c99-411e-9e17-9a96ac564434",
+          "tag": "point_of_interest"
+        },
+        {
+          "id": "65ee4631-b397-4563-b448-d88481d1e63a",
+          "tag": "establishment"
+        }
+      ],
+      "location": {
+        "lat": 41.3910524,
+        "lng": 2.1806449
+      },
+      "hours": [
+        "Monday: Open 24 hours",
+        "Tuesday: Open 24 hours",
+        "Wednesday: Open 24 hours",
+        "Thursday: Open 24 hours",
+        "Friday: Open 24 hours",
+        "Saturday: Open 24 hours",
+        "Sunday: Open 24 hours"
+      ],
+      "hoursArray": [
+        {
+          "open": {
+            "day": 0,
+            "time": "0000"
+          }
+        }
+      ],
+      "adress": "Passeig de Lluís Companys, Ciutat Vella, 08003 Barcelona, Spain",
+      "rating": 4.6,
+      "url": "https://maps.google.com/?cid=12249276071227659697",
+      "website": "https://www.barcelonaturisme.com/wv3/ca/page/1211/arc-de-triomf.html"
+    },
+    {
+      "title": "Illa de la Discòrdia",
+      "subtitle": "Passeig de Gràcia, 41, Barcelona",
+      "description": "City block with early-1900s houses designed in varying modernist styles by different architects.",
+      "tags": [
+        {
+          "id": "4e5c0ae3-a974-46ed-954a-5bbb2470b412",
+          "tag": "tourist_attraction"
+        },
+        {
+          "id": "59ce71d9-69e4-4fa2-96aa-541864167df2",
+          "tag": "point_of_interest"
+        },
+        {
+          "id": "05ee6961-09ba-40b4-abd6-5f29cd584ec3",
+          "tag": "establishment"
+        }
+      ],
+      "location": {
+        "lat": 41.3915608,
+        "lng": 2.1650349
+      },
+      "hours": [
+        "Monday: 11:00 AM – 7:00 PM",
+        "Tuesday: 11:00 AM – 7:00 PM",
+        "Wednesday: 11:00 AM – 7:00 PM",
+        "Thursday: 11:00 AM – 7:00 PM",
+        "Friday: 11:00 AM – 7:00 PM",
+        "Saturday: 11:00 AM – 7:00 PM",
+        "Sunday: Closed"
+      ],
+      "hoursArray": [
+        {
+          "close": {
+            "day": 1,
+            "time": "1900"
+          },
+          "open": {
+            "day": 1,
+            "time": "1100"
+          }
+        },
+        {
+          "close": {
+            "day": 2,
+            "time": "1900"
+          },
+          "open": {
+            "day": 2,
+            "time": "1100"
+          }
+        },
+        {
+          "close": {
+            "day": 3,
+            "time": "1900"
+          },
+          "open": {
+            "day": 3,
+            "time": "1100"
+          }
+        },
+        {
+          "close": {
+            "day": 4,
+            "time": "1900"
+          },
+          "open": {
+            "day": 4,
+            "time": "1100"
+          }
+        },
+        {
+          "close": {
+            "day": 5,
+            "time": "1900"
+          },
+          "open": {
+            "day": 5,
+            "time": "1100"
+          }
+        },
+        {
+          "close": {
+            "day": 6,
+            "time": "1900"
+          },
+          "open": {
+            "day": 6,
+            "time": "1100"
+          }
+        }
+      ],
+      "adress": "Pg. de Gràcia, 41, L'Eixample, 08007 Barcelona, Spain",
+      "rating": 4.6,
+      "url": "https://maps.google.com/?cid=5644656711353462325"
+    },
+    {
+      "title": "Cathedral of Barcelona",
+      "subtitle": "Pla de la Seu, s/n, Barcelona",
+      "description": "Imposing Gothic cathedral with geese-filled cloisters, offering guided tours & city-wide views.",
+      "tags": [
+        {
+          "id": "5e27c324-7cb9-4c7a-8402-3039157c5a58",
+          "tag": "tourist_attraction"
+        },
+        {
+          "id": "f6c751fd-ab66-4fb8-ae40-1c604562e2b6",
+          "tag": "church"
+        },
+        {
+          "id": "2e9e9688-a952-4181-9a2d-a1440babf3bd",
+          "tag": "place_of_worship"
+        },
+        {
+          "id": "af9c7dfb-93db-4575-845b-3fe4e68b552f",
+          "tag": "point_of_interest"
+        },
+        {
+          "id": "1505d438-ed72-459c-ba3f-779335abe821",
+          "tag": "establishment"
+        }
+      ],
+      "location": {
+        "lat": 41.383962,
+        "lng": 2.1761991
+      },
+      "hours": [
+        "Monday: 8:30 AM – 6:30 PM",
+        "Tuesday: 8:30 AM – 6:30 PM",
+        "Wednesday: 8:30 AM – 6:30 PM",
+        "Thursday: 8:30 AM – 6:30 PM",
+        "Friday: 8:30 AM – 6:30 PM",
+        "Saturday: 8:30 AM – 6:30 PM",
+        "Sunday: 8:30 AM – 6:30 PM"
+      ],
+      "hoursArray": [
+        {
+          "close": {
+            "day": 0,
+            "time": "1830"
+          },
+          "open": {
+            "day": 0,
+            "time": "0830"
+          }
+        },
+        {
+          "close": {
+            "day": 1,
+            "time": "1830"
+          },
+          "open": {
+            "day": 1,
+            "time": "0830"
+          }
+        },
+        {
+          "close": {
+            "day": 2,
+            "time": "1830"
+          },
+          "open": {
+            "day": 2,
+            "time": "0830"
+          }
+        },
+        {
+          "close": {
+            "day": 3,
+            "time": "1830"
+          },
+          "open": {
+            "day": 3,
+            "time": "0830"
+          }
+        },
+        {
+          "close": {
+            "day": 4,
+            "time": "1830"
+          },
+          "open": {
+            "day": 4,
+            "time": "0830"
+          }
+        },
+        {
+          "close": {
+            "day": 5,
+            "time": "1830"
+          },
+          "open": {
+            "day": 5,
+            "time": "0830"
+          }
+        },
+        {
+          "close": {
+            "day": 6,
+            "time": "1830"
+          },
+          "open": {
+            "day": 6,
+            "time": "0830"
+          }
+        }
+      ],
+      "adress": "Pla de la Seu, s/n, Ciutat Vella, 08002 Barcelona, Spain",
+      "phone_number": "+34 933 42 82 62",
+      "rating": 4.6,
+      "url": "https://maps.google.com/?cid=1654528761399433347",
+      "website": "https://catedralbcn.org/"
+    },
+    {
+      "title": "Palau de la Música Catalana",
+      "subtitle": "Carrer del Palau de la Música, 4-6, Barcelona",
+      "description": "Art nouveau concert hall known for its ornate facade & opulent auditorium with a stained-glass dome.",
+      "tags": [
+        {
+          "id": "a1cf6067-42ce-47e7-a832-f431344f95e9",
+          "tag": "tourist_attraction"
+        },
+        {
+          "id": "d115148f-73af-404b-86a0-0480069e5af5",
+          "tag": "point_of_interest"
+        },
+        {
+          "id": "55756a8c-f386-47c0-b31a-3b85c7703503",
+          "tag": "establishment"
+        }
+      ],
+      "location": {
+        "lat": 41.3875752,
+        "lng": 2.1753128
+      },
+      "adress": "C/ Palau de la Música, 4-6, Ciutat Vella, 08003 Barcelona, Spain",
+      "phone_number": "+34 932 95 72 00",
+      "rating": 4.7,
+      "url": "https://maps.google.com/?cid=9199275919195466819",
+      "website": "https://www.palaumusica.cat/"
+    },
+    {
+      "title": "Ciutadella Park",
+      "subtitle": "Barcelona",
+      "description": "Park created in late 1800s, with zoo, boating lake, ornate museums and lush walking trails.",
+      "tags": [
+        {
+          "id": "bfb4c7cf-f08b-4270-aacd-9e53bcb5a8fb",
+          "tag": "park"
+        },
+        {
+          "id": "2b7653d8-b32f-4c9e-8ab2-5c549d329429",
+          "tag": "point_of_interest"
+        },
+        {
+          "id": "1f222c8e-bcc6-4582-8fad-db91204a0720",
+          "tag": "establishment"
+        }
+      ],
+      "location": {
+        "lat": 41.388123,
+        "lng": 2.1860152
+      },
+      "hours": [
+        "Monday: 10:00 AM – 10:30 PM",
+        "Tuesday: 10:00 AM – 10:30 PM",
+        "Wednesday: 10:00 AM – 10:30 PM",
+        "Thursday: 10:00 AM – 10:30 PM",
+        "Friday: 10:00 AM – 10:30 PM",
+        "Saturday: 10:00 AM – 10:30 PM",
+        "Sunday: 10:00 AM – 10:30 PM"
+      ],
+      "hoursArray": [
+        {
+          "close": {
+            "day": 0,
+            "time": "2230"
+          },
+          "open": {
+            "day": 0,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 1,
+            "time": "2230"
+          },
+          "open": {
+            "day": 1,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 2,
+            "time": "2230"
+          },
+          "open": {
+            "day": 2,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 3,
+            "time": "2230"
+          },
+          "open": {
+            "day": 3,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 4,
+            "time": "2230"
+          },
+          "open": {
+            "day": 4,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 5,
+            "time": "2230"
+          },
+          "open": {
+            "day": 5,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 6,
+            "time": "2230"
+          },
+          "open": {
+            "day": 6,
+            "time": "1000"
+          }
+        }
+      ],
+      "adress": "Ciutat Vella, 08003 Barcelona, Spain",
+      "rating": 4.6,
+      "url": "https://maps.google.com/?cid=4771670564770823536",
+      "website": "https://www.barcelona.cat/es/que-hacer-en-bcn/parques-y-jardines/parque-de-la-ciutadella-92086011921"
+    },
+    {
+      "title": "Plaça de Gaudí",
+      "subtitle": "Carrer de Lepant, 278, Barcelona",
+      "description": "Small, square park featuring landscaped gardens & scenic views of the Basilica of Sagrada Familia.",
+      "tags": [
+        {
+          "id": "e7326ed0-de81-426c-9c5e-aa553d2d7888",
+          "tag": "park"
+        },
+        {
+          "id": "c58f1753-fdd7-49b9-a444-a6ec05c0c384",
+          "tag": "tourist_attraction"
+        },
+        {
+          "id": "10044a8a-9643-456a-8c87-39aac3df58ea",
+          "tag": "point_of_interest"
+        },
+        {
+          "id": "1fdc449d-359a-4c3a-a01a-9b5d7558b13f",
+          "tag": "establishment"
+        }
+      ],
+      "location": {
+        "lat": 41.4044039,
+        "lng": 2.1754121
+      },
+      "hours": [
+        "Monday: Open 24 hours",
+        "Tuesday: Open 24 hours",
+        "Wednesday: Open 24 hours",
+        "Thursday: Open 24 hours",
+        "Friday: Open 24 hours",
+        "Saturday: Open 24 hours",
+        "Sunday: Open 24 hours"
+      ],
+      "hoursArray": [
+        {
+          "open": {
+            "day": 0,
+            "time": "0000"
+          }
+        }
+      ],
+      "adress": "C/ de Lepant, 278, L'Eixample, 08013 Barcelona, Spain",
+      "phone_number": "+34 937 07 89 00",
+      "rating": 4.6,
+      "url": "https://maps.google.com/?cid=18176607234559116471",
+      "website": "http://www.barcelona.cat/"
+    },
+    {
+      "title": "Font Monumental del Passeig de Gràcia",
+      "subtitle": "Gran Via de les Corts Catalanes, 638, Barcelona",
+      "tags": [
+        {
+          "id": "fb59ccbe-c564-42c4-a9a1-441eef31b609",
+          "tag": "tourist_attraction"
+        },
+        {
+          "id": "ed30d09b-8acb-4275-b7c9-91e488c79a0e",
+          "tag": "point_of_interest"
+        },
+        {
+          "id": "5850cd09-1d76-4b3d-9acf-85ef75daaf5f",
+          "tag": "establishment"
+        }
+      ],
+      "location": {
+        "lat": 41.3894389,
+        "lng": 2.1683025
+      },
+      "hours": [
+        "Monday: Open 24 hours",
+        "Tuesday: Open 24 hours",
+        "Wednesday: Open 24 hours",
+        "Thursday: Open 24 hours",
+        "Friday: Open 24 hours",
+        "Saturday: Open 24 hours",
+        "Sunday: Open 24 hours"
+      ],
+      "hoursArray": [
+        {
+          "open": {
+            "day": 0,
+            "time": "0000"
+          }
+        }
+      ],
+      "adress": "Gran Via de les Corts Catalanes, 638, L'Eixample, 08007 Barcelona, Spain",
+      "rating": 4.3,
+      "url": "https://maps.google.com/?cid=17888897753313196119"
+    },
+    {
+      "title": "Barcelona Roman city walls",
+      "subtitle": "Carrer de la Tapineria, 5, 19, Barcelona",
+      "tags": [
+        {
+          "id": "f09f23ee-0e8b-456e-bd8b-8cec295381b5",
+          "tag": "tourist_attraction"
+        },
+        {
+          "id": "d0f626f4-1b0c-421a-bf69-a3f3e84b9e0a",
+          "tag": "point_of_interest"
+        },
+        {
+          "id": "3ae5972f-b5c8-47fc-9228-fd4158c30dab",
+          "tag": "establishment"
+        }
+      ],
+      "location": {
+        "lat": 41.3840711,
+        "lng": 2.1778971
+      },
+      "adress": "Carrer de la Tapineria, 5, 19, Ciutat Vella, 08002 Barcelona, Spain",
+      "rating": 4.6,
+      "url": "https://maps.google.com/?cid=15430637081817387614"
+    },
+    {
+      "title": "Aquàrium Barcelona",
+      "subtitle": "del Port Vell, Moll d'Espanya, s/n, Barcelona",
+      "description": "Tanks themed by marine habitat, including a Mediterranean ecosystem, plus scuba diving with sharks.",
+      "tags": [
+        {
+          "id": "8ddec79a-c9b9-4a4a-84e6-9256c01b5668",
+          "tag": "aquarium"
+        },
+        {
+          "id": "ccc10e30-4996-48cc-a639-d57e48700a74",
+          "tag": "tourist_attraction"
+        },
+        {
+          "id": "79c885ea-2e26-48a7-adb2-84c2dd722910",
+          "tag": "point_of_interest"
+        },
+        {
+          "id": "cad06511-c3bd-42fb-8244-b6f78a304e64",
+          "tag": "establishment"
+        }
+      ],
+      "location": {
+        "lat": 41.3768473,
+        "lng": 2.1843334
+      },
+      "hours": [
+        "Monday: 10:00 AM – 9:00 PM",
+        "Tuesday: 10:00 AM – 9:00 PM",
+        "Wednesday: 10:00 AM – 9:00 PM",
+        "Thursday: 10:00 AM – 9:00 PM",
+        "Friday: 10:00 AM – 9:00 PM",
+        "Saturday: 10:00 AM – 9:00 PM",
+        "Sunday: 10:00 AM – 9:00 PM"
+      ],
+      "hoursArray": [
+        {
+          "close": {
+            "day": 0,
+            "time": "2100"
+          },
+          "open": {
+            "day": 0,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 1,
+            "time": "2100"
+          },
+          "open": {
+            "day": 1,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 2,
+            "time": "2100"
+          },
+          "open": {
+            "day": 2,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 3,
+            "time": "2100"
+          },
+          "open": {
+            "day": 3,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 4,
+            "time": "2100"
+          },
+          "open": {
+            "day": 4,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 5,
+            "time": "2100"
+          },
+          "open": {
+            "day": 5,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 6,
+            "time": "2100"
+          },
+          "open": {
+            "day": 6,
+            "time": "1000"
+          }
+        }
+      ],
+      "adress": "del Port Vell, Moll d'Espanya, s/n, Ciutat Vella, 08039 Barcelona, Spain",
+      "phone_number": "+34 932 21 74 74",
+      "rating": 4.1,
+      "url": "https://maps.google.com/?cid=4260425396936874336",
+      "website": "https://www.aquariumbcn.com/?utm_source=googlemaps&utm_medium=organic&utm_campaign=maps"
+    },
+    {
+      "title": "Plaça de la Sagrada Família",
+      "subtitle": "Plaça Sagrada Família, s/n, Barcelona",
+      "description": "Gaudi's masterpiece of modernist cathedral design looms over a tree-lined city square with benches.",
+      "tags": [
+        {
+          "id": "64c0d458-764b-46a3-8923-9a9d75afee08",
+          "tag": "park"
+        },
+        {
+          "id": "38598f60-ad27-48d6-acc2-dff548719e60",
+          "tag": "tourist_attraction"
+        },
+        {
+          "id": "6ba0ef5f-b360-4789-bf4e-989a2c506619",
+          "tag": "point_of_interest"
+        },
+        {
+          "id": "5bfcb315-e5fc-4648-8a97-4e81b0784e0c",
+          "tag": "establishment"
+        }
+      ],
+      "location": {
+        "lat": 41.402606,
+        "lng": 2.173158
+      },
+      "hours": [
+        "Monday: 9:00 AM – 6:00 PM",
+        "Tuesday: 9:00 AM – 6:00 PM",
+        "Wednesday: 9:00 AM – 6:00 PM",
+        "Thursday: 9:00 AM – 6:00 PM",
+        "Friday: 9:00 AM – 6:00 PM",
+        "Saturday: 9:00 AM – 6:00 PM",
+        "Sunday: 9:00 AM – 6:00 PM"
+      ],
+      "hoursArray": [
+        {
+          "close": {
+            "day": 0,
+            "time": "1800"
+          },
+          "open": {
+            "day": 0,
+            "time": "0900"
+          }
+        },
+        {
+          "close": {
+            "day": 1,
+            "time": "1800"
+          },
+          "open": {
+            "day": 1,
+            "time": "0900"
+          }
+        },
+        {
+          "close": {
+            "day": 2,
+            "time": "1800"
+          },
+          "open": {
+            "day": 2,
+            "time": "0900"
+          }
+        },
+        {
+          "close": {
+            "day": 3,
+            "time": "1800"
+          },
+          "open": {
+            "day": 3,
+            "time": "0900"
+          }
+        },
+        {
+          "close": {
+            "day": 4,
+            "time": "1800"
+          },
+          "open": {
+            "day": 4,
+            "time": "0900"
+          }
+        },
+        {
+          "close": {
+            "day": 5,
+            "time": "1800"
+          },
+          "open": {
+            "day": 5,
+            "time": "0900"
+          }
+        },
+        {
+          "close": {
+            "day": 6,
+            "time": "1800"
+          },
+          "open": {
+            "day": 6,
+            "time": "0900"
+          }
+        }
+      ],
+      "adress": "Plaça Sagrada Família, s/n, L'Eixample, 08013 Barcelona, Spain",
+      "rating": 4.6,
+      "url": "https://maps.google.com/?cid=9059792985741174244",
+      "website": "http://www.barcelona.cat/resources/hu/parcs-i-jardins/ParcsIFRAMEES/w110.bcn.cat/portal/site/MediAmbient/menuitem.0d4d06202ea41e13e9c5e9c5a2ef8a0c/index0afa.html"
+    },
+    {
+      "title": "Sites of Barcelona",
+      "subtitle": "Carrer de Còrsega, 508, Barcelona",
+      "tags": [
+        {
+          "id": "a8d44a3d-fc23-4c14-a500-4ead3c17b460",
+          "tag": "tourist_attraction"
+        },
+        {
+          "id": "b671ed92-9ca8-4090-97a8-dc315f1c6e75",
+          "tag": "point_of_interest"
+        },
+        {
+          "id": "f4ff8033-7e59-49c1-970a-907642e6fb8d",
+          "tag": "establishment"
+        }
+      ],
+      "location": {
+        "lat": 41.40493250000001,
+        "lng": 2.170686700000001
+      },
+      "hours": [
+        "Monday: Open 24 hours",
+        "Tuesday: Open 24 hours",
+        "Wednesday: Open 24 hours",
+        "Thursday: Open 24 hours",
+        "Friday: Open 24 hours",
+        "Saturday: Open 24 hours",
+        "Sunday: Open 24 hours"
+      ],
+      "hoursArray": [
+        {
+          "open": {
+            "day": 0,
+            "time": "0000"
+          }
+        }
+      ],
+      "adress": "C/ de Còrsega, 508, Gràcia, 08025 Barcelona, Spain",
+      "rating": 4.8,
+      "url": "https://maps.google.com/?cid=1121662582114081381"
+    },
+    {
+      "title": "Basílica de Santa Maria del Pi",
+      "subtitle": "Plaça del Pi, 7, Barcelona",
+      "description": "Gothic church set on an elegant square, with a grand rose window & views from the bell tower.",
+      "tags": [
+        {
+          "id": "8f9432c8-842e-4ac4-83b1-92babbf4c46e",
+          "tag": "tourist_attraction"
+        },
+        {
+          "id": "43de0e1d-556f-4b48-ae3d-033033a0f1b6",
+          "tag": "church"
+        },
+        {
+          "id": "1172955f-2063-4e36-8eaf-752ad4a94ca3",
+          "tag": "place_of_worship"
+        },
+        {
+          "id": "63230037-0674-427d-83b7-df09b33b7462",
+          "tag": "point_of_interest"
+        },
+        {
+          "id": "236479f5-ff7e-4425-aa58-efa18c3507fc",
+          "tag": "establishment"
+        }
+      ],
+      "location": {
+        "lat": 41.3822413,
+        "lng": 2.1739186
+      },
+      "adress": "Plaça del Pi, 7, Ciutat Vella, 08002 Barcelona, Spain",
+      "phone_number": "+34 933 18 47 43",
+      "rating": 4.5,
+      "url": "https://maps.google.com/?cid=7905120957682706985",
+      "website": "http://basilicadelpi.com/"
+    },
+    {
+      "title": "Telefèric de Montjuïc (Barcelona Cable Car)",
+      "subtitle": "Avinguda Miramar, 30, Barcelona",
+      "description": "Cable car from Parc de Montjuïc to Castell de Montjuïc, offering panoramic city views.",
+      "tags": [
+        {
+          "id": "704bbb68-9536-42fb-9887-44fd63a7460e",
+          "tag": "tourist_attraction"
+        },
+        {
+          "id": "bc0c870f-2d53-4b17-afed-99d07da51ebb",
+          "tag": "point_of_interest"
+        },
+        {
+          "id": "482fea5b-239d-49d1-9b61-fb5d90daeadb",
+          "tag": "establishment"
+        }
+      ],
+      "location": {
+        "lat": 41.36872299999999,
+        "lng": 2.1634884
+      },
+      "hours": [
+        "Monday: 10:00 AM – 9:00 PM",
+        "Tuesday: 10:00 AM – 9:00 PM",
+        "Wednesday: 10:00 AM – 9:00 PM",
+        "Thursday: 10:00 AM – 9:00 PM",
+        "Friday: 10:00 AM – 9:00 PM",
+        "Saturday: 10:00 AM – 9:00 PM",
+        "Sunday: 10:00 AM – 9:00 PM"
+      ],
+      "hoursArray": [
+        {
+          "close": {
+            "day": 0,
+            "time": "2100"
+          },
+          "open": {
+            "day": 0,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 1,
+            "time": "2100"
+          },
+          "open": {
+            "day": 1,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 2,
+            "time": "2100"
+          },
+          "open": {
+            "day": 2,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 3,
+            "time": "2100"
+          },
+          "open": {
+            "day": 3,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 4,
+            "time": "2100"
+          },
+          "open": {
+            "day": 4,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 5,
+            "time": "2100"
+          },
+          "open": {
+            "day": 5,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 6,
+            "time": "2100"
+          },
+          "open": {
+            "day": 6,
+            "time": "1000"
+          }
+        }
+      ],
+      "adress": "Avinguda Miramar, 30, Sants-Montjuïc, 08038 Barcelona, Spain",
+      "phone_number": "+34 934 65 53 13",
+      "rating": 4.4,
+      "url": "https://maps.google.com/?cid=12510923082420349651",
+      "website": "https://www.holabarcelona.com/ca/tickets/teleferic-montjuic-barcelona?utm_source=google&utm_medium=organic&utm_campaign=GMB"
+    },
+    {
+      "title": "Passeig de Gràcia Avenue",
+      "subtitle": "Spain",
+      "tags": [
+        {
+          "id": "abf879bb-1d3c-4c21-ac3c-e264c64d1f79",
+          "tag": "tourist_attraction"
+        },
+        {
+          "id": "2059e997-4e57-4531-8f0c-59a4b6b6c541",
+          "tag": "point_of_interest"
+        },
+        {
+          "id": "fb6bbaa2-8c36-4b64-9458-2cd516d21de1",
+          "tag": "establishment"
+        }
+      ],
+      "location": {
+        "lat": 41.3953691,
+        "lng": 2.1603306
+      },
+      "hours": [
+        "Monday: Open 24 hours",
+        "Tuesday: Open 24 hours",
+        "Wednesday: Open 24 hours",
+        "Thursday: Open 24 hours",
+        "Friday: Open 24 hours",
+        "Saturday: Open 24 hours",
+        "Sunday: Open 24 hours"
+      ],
+      "hoursArray": [
+        {
+          "open": {
+            "day": 0,
+            "time": "0000"
+          }
+        }
+      ],
+      "adress": "Eixample, 08008 Barcelona, Spain",
+      "rating": 4.5,
+      "url": "https://maps.google.com/?cid=8660822218074818942"
+    },
+    {
+      "title": "Parc del Laberint d'Horta",
+      "subtitle": "Passeig dels Castanyers, 1, Barcelona",
+      "description": "Neoclassical park with a cypress tree maze, a terraced pavilion, water features and a picnic area.",
+      "tags": [
+        {
+          "id": "f740a8d3-e7b9-40ed-aacd-0218dd6ce7f6",
+          "tag": "tourist_attraction"
+        },
+        {
+          "id": "ed8b833a-84ca-4b32-be41-a351e5dbedec",
+          "tag": "city_hall"
+        },
+        {
+          "id": "a1f01e1b-2bf1-47e2-9475-79940f659568",
+          "tag": "park"
+        },
+        {
+          "id": "baef74c9-cec0-40f6-857e-96b8b6ebc364",
+          "tag": "local_government_office"
+        },
+        {
+          "id": "7250f005-c55d-42d3-832b-3df605afe73c",
+          "tag": "point_of_interest"
+        },
+        {
+          "id": "391a6b18-d4e3-4724-af76-9da623e0ee18",
+          "tag": "establishment"
+        }
+      ],
+      "location": {
+        "lat": 41.4399698,
+        "lng": 2.1455713
+      },
+      "hours": [
+        "Monday: 10:00 AM – 8:00 PM",
+        "Tuesday: 10:00 AM – 8:00 PM",
+        "Wednesday: 10:00 AM – 8:00 PM",
+        "Thursday: 10:00 AM – 8:00 PM",
+        "Friday: 10:00 AM – 8:00 PM",
+        "Saturday: 10:00 AM – 8:00 PM",
+        "Sunday: 10:00 AM – 8:00 PM"
+      ],
+      "hoursArray": [
+        {
+          "close": {
+            "day": 0,
+            "time": "2000"
+          },
+          "open": {
+            "day": 0,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 1,
+            "time": "2000"
+          },
+          "open": {
+            "day": 1,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 2,
+            "time": "2000"
+          },
+          "open": {
+            "day": 2,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 3,
+            "time": "2000"
+          },
+          "open": {
+            "day": 3,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 4,
+            "time": "2000"
+          },
+          "open": {
+            "day": 4,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 5,
+            "time": "2000"
+          },
+          "open": {
+            "day": 5,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 6,
+            "time": "2000"
+          },
+          "open": {
+            "day": 6,
+            "time": "1000"
+          }
+        }
+      ],
+      "adress": "Passeig dels Castanyers, 1, Horta-Guinardó, 08035 Barcelona, Spain",
+      "phone_number": "+34 931 53 70 10",
+      "rating": 4.4,
+      "url": "https://maps.google.com/?cid=15982484959385231875",
+      "website": "http://guia.barcelona.cat/detall/parc-del-laberint-d-horta_92086011952.html"
+    },
+    {
+      "title": "Font Pla de la Boqueria",
+      "subtitle": "Pla de la Boqueria, 3, Barcelona",
+      "tags": [
+        {
+          "id": "d3220a91-26ce-4710-b5c3-0168346fe5af",
+          "tag": "tourist_attraction"
+        },
+        {
+          "id": "421cd0df-5c95-45ba-b97a-ee9e919cab6b",
+          "tag": "point_of_interest"
+        },
+        {
+          "id": "4746d9df-e4cd-426d-a9cf-fbb9dbd687fb",
+          "tag": "establishment"
+        }
+      ],
+      "location": {
+        "lat": 41.38119849999999,
+        "lng": 2.173508
+      },
+      "hours": [
+        "Monday: Open 24 hours",
+        "Tuesday: Open 24 hours",
+        "Wednesday: Open 24 hours",
+        "Thursday: Open 24 hours",
+        "Friday: Open 24 hours",
+        "Saturday: Open 24 hours",
+        "Sunday: Open 24 hours"
+      ],
+      "hoursArray": [
+        {
+          "open": {
+            "day": 0,
+            "time": "0000"
+          }
+        }
+      ],
+      "adress": "Pla de la Boqueria, 3, Ciutat Vella, 08002 Barcelona, Spain",
+      "rating": 4.3,
+      "url": "https://maps.google.com/?cid=6982922143354870981"
+    },
+    {
+      "title": "Tower of the Virgin Mary",
+      "subtitle": "Carrer de Provença, Barcelona",
+      "tags": [
+        {
+          "id": "478766d7-c7e2-49b7-b473-f11def9133b4",
+          "tag": "tourist_attraction"
+        },
+        {
+          "id": "a69adf2e-f14a-4ce9-8c57-c288bc40263f",
+          "tag": "point_of_interest"
+        },
+        {
+          "id": "91684234-53d1-4c11-9ef3-3976140c005d",
+          "tag": "establishment"
+        }
+      ],
+      "location": {
+        "lat": 41.4039302,
+        "lng": 2.1741577
+      },
+      "hours": [
+        "Monday: 9:00 AM – 6:00 PM",
+        "Tuesday: 9:00 AM – 6:00 PM",
+        "Wednesday: 9:00 AM – 6:00 PM",
+        "Thursday: 9:00 AM – 6:00 PM",
+        "Friday: 9:00 AM – 6:00 PM",
+        "Saturday: 9:00 AM – 6:00 PM",
+        "Sunday: 9:00 AM – 6:00 PM"
+      ],
+      "hoursArray": [
+        {
+          "close": {
+            "day": 0,
+            "time": "1800"
+          },
+          "open": {
+            "day": 0,
+            "time": "0900"
+          }
+        },
+        {
+          "close": {
+            "day": 1,
+            "time": "1800"
+          },
+          "open": {
+            "day": 1,
+            "time": "0900"
+          }
+        },
+        {
+          "close": {
+            "day": 2,
+            "time": "1800"
+          },
+          "open": {
+            "day": 2,
+            "time": "0900"
+          }
+        },
+        {
+          "close": {
+            "day": 3,
+            "time": "1800"
+          },
+          "open": {
+            "day": 3,
+            "time": "0900"
+          }
+        },
+        {
+          "close": {
+            "day": 4,
+            "time": "1800"
+          },
+          "open": {
+            "day": 4,
+            "time": "0900"
+          }
+        },
+        {
+          "close": {
+            "day": 5,
+            "time": "1800"
+          },
+          "open": {
+            "day": 5,
+            "time": "0900"
+          }
+        },
+        {
+          "close": {
+            "day": 6,
+            "time": "1800"
+          },
+          "open": {
+            "day": 6,
+            "time": "0900"
+          }
+        }
+      ],
+      "adress": "C/ de Provença, L'Eixample, 08013 Barcelona, Spain",
+      "rating": 4.7,
+      "url": "https://maps.google.com/?cid=12069215653492520151",
+      "website": "https://sagradafamilia.org/-/ultim-pas-abans-de-culminar-la-torre-de-la-mare-de-deu"
+    },
+    {
+      "title": "Mercat de la Boqueria",
+      "subtitle": "La Rambla, 91, Barcelona",
+      "description": "Famous indoor public market with meat, produce, cheese & an array of other food in a bustling space.",
+      "tags": [
+        {
+          "id": "86a2c8ee-64a3-4999-9a7f-c5f7c0080e37",
+          "tag": "tourist_attraction"
+        },
+        {
+          "id": "fcdd4d09-0ed0-4509-8b2c-08218b791111",
+          "tag": "point_of_interest"
+        },
+        {
+          "id": "6c6866ba-8fc6-4193-bdfa-b27cf95b9209",
+          "tag": "establishment"
+        }
+      ],
+      "location": {
+        "lat": 41.38173990000001,
+        "lng": 2.1715853
+      },
+      "hours": [
+        "Monday: 8:00 AM – 8:30 PM",
+        "Tuesday: 8:00 AM – 8:30 PM",
+        "Wednesday: 8:00 AM – 8:30 PM",
+        "Thursday: 8:00 AM – 8:30 PM",
+        "Friday: 8:00 AM – 8:30 PM",
+        "Saturday: 8:00 AM – 8:30 PM",
+        "Sunday: Closed"
+      ],
+      "hoursArray": [
+        {
+          "close": {
+            "day": 1,
+            "time": "2030"
+          },
+          "open": {
+            "day": 1,
+            "time": "0800"
+          }
+        },
+        {
+          "close": {
+            "day": 2,
+            "time": "2030"
+          },
+          "open": {
+            "day": 2,
+            "time": "0800"
+          }
+        },
+        {
+          "close": {
+            "day": 3,
+            "time": "2030"
+          },
+          "open": {
+            "day": 3,
+            "time": "0800"
+          }
+        },
+        {
+          "close": {
+            "day": 4,
+            "time": "2030"
+          },
+          "open": {
+            "day": 4,
+            "time": "0800"
+          }
+        },
+        {
+          "close": {
+            "day": 5,
+            "time": "2030"
+          },
+          "open": {
+            "day": 5,
+            "time": "0800"
+          }
+        },
+        {
+          "close": {
+            "day": 6,
+            "time": "2030"
+          },
+          "open": {
+            "day": 6,
+            "time": "0800"
+          }
+        }
+      ],
+      "adress": "La Rambla, 91, Ciutat Vella, 08001 Barcelona, Spain",
+      "phone_number": "+34 934 13 23 03",
+      "rating": 4.5,
+      "url": "https://maps.google.com/?cid=9658750418627571157",
+      "website": "https://www.boqueria.barcelona/"
+    },
+    {
+      "title": "Plaça del Pi",
+      "subtitle": "Plaça del Pi, s/n, Barcelona",
+      "tags": [
+        {
+          "id": "b37d7b90-475e-43cc-8359-6cda8bf3a787",
+          "tag": "tourist_attraction"
+        },
+        {
+          "id": "216d4149-7bbd-4824-a9c4-641cb7a89f83",
+          "tag": "point_of_interest"
+        },
+        {
+          "id": "effd6dfb-42cd-4c2a-991a-f474eb228d51",
+          "tag": "establishment"
+        }
+      ],
+      "location": {
+        "lat": 41.3824314,
+        "lng": 2.1737077
+      },
+      "hours": [
+        "Monday: Open 24 hours",
+        "Tuesday: Open 24 hours",
+        "Wednesday: Open 24 hours",
+        "Thursday: Open 24 hours",
+        "Friday: Open 24 hours",
+        "Saturday: Open 24 hours",
+        "Sunday: Open 24 hours"
+      ],
+      "hoursArray": [
+        {
+          "open": {
+            "day": 0,
+            "time": "0000"
+          }
+        }
+      ],
+      "adress": "Plaça del Pi, s/n, Ciutat Vella, 08002 Barcelona, Spain",
+      "rating": 4.4,
+      "url": "https://maps.google.com/?cid=12889223080896374038",
+      "website": "http://ajuntament.barcelona.cat/"
+    },
+    {
+      "title": "Museu Nacional d'Art de Catalunya",
+      "subtitle": "Palau Nacional, Parc de Montjuïc, s/n, Barcelona",
+      "description": "Palatial, hilltop museum for 11th- to 20th-century Catalan art plus important Romanesque collection.",
+      "tags": [
+        {
+          "id": "020080c5-2a20-4a3f-9f59-87c8948dab70",
+          "tag": "tourist_attraction"
+        },
+        {
+          "id": "9f31aad3-0eda-4b69-98b0-f1d6051c8538",
+          "tag": "museum"
+        },
+        {
+          "id": "468ddca7-a6f5-4305-84ff-1dc6e766856a",
+          "tag": "point_of_interest"
+        },
+        {
+          "id": "da4fd018-d25c-4e91-ad15-639bd113a7a1",
+          "tag": "establishment"
+        }
+      ],
+      "location": {
+        "lat": 41.3684399,
+        "lng": 2.15357
+      },
+      "hours": [
+        "Monday: Closed",
+        "Tuesday: 10:00 AM – 6:00 PM",
+        "Wednesday: 10:00 AM – 6:00 PM",
+        "Thursday: 10:00 AM – 6:00 PM",
+        "Friday: 10:00 AM – 6:00 PM",
+        "Saturday: 10:00 AM – 6:00 PM",
+        "Sunday: 10:00 AM – 3:00 PM"
+      ],
+      "hoursArray": [
+        {
+          "close": {
+            "day": 0,
+            "time": "1500"
+          },
+          "open": {
+            "day": 0,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 2,
+            "time": "1800"
+          },
+          "open": {
+            "day": 2,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 3,
+            "time": "1800"
+          },
+          "open": {
+            "day": 3,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 4,
+            "time": "1800"
+          },
+          "open": {
+            "day": 4,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 5,
+            "time": "1800"
+          },
+          "open": {
+            "day": 5,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 6,
+            "time": "1800"
+          },
+          "open": {
+            "day": 6,
+            "time": "1000"
+          }
+        }
+      ],
+      "adress": "Palau Nacional, Parc de Montjuïc, s/n, Sants-Montjuïc, 08038 Barcelona, Spain",
+      "phone_number": "+34 936 22 03 60",
+      "rating": 4.7,
+      "url": "https://maps.google.com/?cid=9656023288704785553",
+      "website": "https://www.museunacional.cat/"
+    },
+    {
+      "title": "Park Guell - main entrance for tours",
+      "subtitle": "Carrer d'Olot, Barcelona",
+      "description": "Fairytale-inspired 1903 gatehouse by Antoni Gaudí, showing films & photos related to his designs.",
+      "tags": [
+        {
+          "id": "458cdee3-525e-4f84-aa93-dfcfe1943c52",
+          "tag": "tourist_attraction"
+        },
+        {
+          "id": "7158c50a-9aa3-4800-b958-c096df8f3e72",
+          "tag": "point_of_interest"
+        },
+        {
+          "id": "221e9406-3905-43f2-b15b-b81796826991",
+          "tag": "establishment"
+        }
+      ],
+      "location": {
+        "lat": 41.4135769,
+        "lng": 2.1532064
+      },
+      "hours": [
+        "Monday: 9:30 AM – 6:00 PM",
+        "Tuesday: 9:30 AM – 6:00 PM",
+        "Wednesday: 9:30 AM – 6:00 PM",
+        "Thursday: 9:30 AM – 6:00 PM",
+        "Friday: 9:30 AM – 6:00 PM",
+        "Saturday: 9:30 AM – 6:00 PM",
+        "Sunday: 9:30 AM – 6:00 PM"
+      ],
+      "hoursArray": [
+        {
+          "close": {
+            "day": 0,
+            "time": "1800"
+          },
+          "open": {
+            "day": 0,
+            "time": "0930"
+          }
+        },
+        {
+          "close": {
+            "day": 1,
+            "time": "1800"
+          },
+          "open": {
+            "day": 1,
+            "time": "0930"
+          }
+        },
+        {
+          "close": {
+            "day": 2,
+            "time": "1800"
+          },
+          "open": {
+            "day": 2,
+            "time": "0930"
+          }
+        },
+        {
+          "close": {
+            "day": 3,
+            "time": "1800"
+          },
+          "open": {
+            "day": 3,
+            "time": "0930"
+          }
+        },
+        {
+          "close": {
+            "day": 4,
+            "time": "1800"
+          },
+          "open": {
+            "day": 4,
+            "time": "0930"
+          }
+        },
+        {
+          "close": {
+            "day": 5,
+            "time": "1800"
+          },
+          "open": {
+            "day": 5,
+            "time": "0930"
+          }
+        },
+        {
+          "close": {
+            "day": 6,
+            "time": "1800"
+          },
+          "open": {
+            "day": 6,
+            "time": "0930"
+          }
+        }
+      ],
+      "adress": "C/ d'Olot, Gràcia, 08024 Barcelona, Spain",
+      "phone_number": "+34 934 09 18 31",
+      "rating": 4.4,
+      "url": "https://maps.google.com/?cid=15517453280771353799",
+      "website": "https://parkguell.barcelona/ca/park-historic/espais-emblematics/itinerari-biodiversitat"
+    },
+    {
+      "title": "El Gòtic (barri)",
+      "subtitle": "Carrer Ample, 54, Barcelona",
+      "tags": [
+        {
+          "id": "5a07b728-9fe4-451c-ad18-835d332c9107",
+          "tag": "tourist_attraction"
+        },
+        {
+          "id": "11fe15af-a7f9-4f7a-aa14-5939fae1626f",
+          "tag": "point_of_interest"
+        },
+        {
+          "id": "823f9ea6-3c03-4ed4-ab00-cc3aef18bab7",
+          "tag": "establishment"
+        }
+      ],
+      "location": {
+        "lat": 41.3819972,
+        "lng": 2.1772969
+      },
+      "adress": "Carrer Ample, 54, Ciutat Vella, 08002 Barcelona, Spain",
+      "rating": 4.7,
+      "url": "https://maps.google.com/?cid=5262603013132701070",
+      "website": "https://ajuntament.barcelona.cat/ciutatvella/ca/el-districte-i-els-seus-barris/el-gotic"
+    },
+    {
+      "title": "Palau Moja",
+      "subtitle": "Carrer de la Portaferrissa, 1, Barcelona",
+      "description": "18th century palace restored after fire damaged now housing government departments.",
+      "tags": [
+        {
+          "id": "3f6ee4c1-81f7-49f6-a994-55030c75ef15",
+          "tag": "tourist_attraction"
+        },
+        {
+          "id": "72a09607-e708-4358-9d45-04b480a9ae5c",
+          "tag": "point_of_interest"
+        },
+        {
+          "id": "19992d37-8680-4446-abb3-de21f5d7841d",
+          "tag": "establishment"
+        }
+      ],
+      "location": {
+        "lat": 41.38333329999999,
+        "lng": 2.1719444
+      },
+      "adress": "C/ de la Portaferrissa, 1, Ciutat Vella, 08002 Barcelona, Spain",
+      "rating": 4.3,
+      "url": "https://maps.google.com/?cid=5213832214669217933",
+      "website": "https://patrimoni.gencat.cat/ca/monuments/monuments/palau-moja"
+    },
+    {
+      "title": "Roman Towers",
+      "subtitle": "Carrer del Bisbe, 12, Barcelona",
+      "tags": [
+        {
+          "id": "f0c3619e-f970-411d-b2e4-3edf77db409c",
+          "tag": "tourist_attraction"
+        },
+        {
+          "id": "0bc21e97-c2b1-416f-8ccf-a2526e3d04ed",
+          "tag": "point_of_interest"
+        },
+        {
+          "id": "b9723a3c-0fea-4ad5-a6ac-7a2c31a1ebb8",
+          "tag": "establishment"
+        }
+      ],
+      "location": {
+        "lat": 41.3847094,
+        "lng": 2.1758933
+      },
+      "hours": [
+        "Monday: Open 24 hours",
+        "Tuesday: Open 24 hours",
+        "Wednesday: Open 24 hours",
+        "Thursday: Open 24 hours",
+        "Friday: Open 24 hours",
+        "Saturday: Open 24 hours",
+        "Sunday: Open 24 hours"
+      ],
+      "hoursArray": [
+        {
+          "open": {
+            "day": 0,
+            "time": "0000"
+          }
+        }
+      ],
+      "adress": "C. del Bisbe, 12, Ciutat Vella, 08002 Barcelona, Spain",
+      "rating": 4.5,
+      "url": "https://maps.google.com/?cid=7221122605062500933"
+    },
+    {
+      "title": "Casa Lleó Morera",
+      "subtitle": "Passeig de Gràcia, 35, Barcelona",
+      "tags": [
+        {
+          "id": "fd605901-8f2e-4d95-87f3-2b42e78c4b97",
+          "tag": "tourist_attraction"
+        },
+        {
+          "id": "90e16736-976e-458c-96ec-b7e241d6fe3f",
+          "tag": "point_of_interest"
+        },
+        {
+          "id": "6f4bc897-83fa-4048-8a07-729bbae0555b",
+          "tag": "establishment"
+        }
+      ],
+      "location": {
+        "lat": 41.3911473,
+        "lng": 2.165444
+      },
+      "adress": "Pg. de Gràcia, 35, L'Eixample, 08007 Barcelona, Spain",
+      "rating": 4.7,
+      "url": "https://maps.google.com/?cid=6169671233782764134",
+      "website": "http://www.casalleomorera.com/"
+    },
+    {
+      "title": "Museu d’Art Contemporani de Barcelona",
+      "subtitle": "Plaça dels Àngels, 1, Barcelona",
+      "description": "White, light-filled building housing art from the 1940s to the present & a large Catalan collection.",
+      "tags": [
+        {
+          "id": "c4a47da6-7494-4cd1-9b91-6d8dce47832f",
+          "tag": "tourist_attraction"
+        },
+        {
+          "id": "7ac6061c-6cb0-4819-b7eb-f701785608d3",
+          "tag": "museum"
+        },
+        {
+          "id": "c51374e6-5ea6-4c94-97bd-3475c0f08b14",
+          "tag": "point_of_interest"
+        },
+        {
+          "id": "2aae2b53-3253-48b2-a838-c4e336f3c9d6",
+          "tag": "establishment"
+        }
+      ],
+      "location": {
+        "lat": 41.3831913,
+        "lng": 2.166866799999999
+      },
+      "hours": [
+        "Monday: 11:00 AM – 7:30 PM",
+        "Tuesday: Closed",
+        "Wednesday: 11:00 AM – 7:30 PM",
+        "Thursday: 11:00 AM – 7:30 PM",
+        "Friday: 11:00 AM – 7:30 PM",
+        "Saturday: 10:00 AM – 8:00 PM",
+        "Sunday: 10:00 AM – 3:00 PM"
+      ],
+      "hoursArray": [
+        {
+          "close": {
+            "day": 0,
+            "time": "1500"
+          },
+          "open": {
+            "day": 0,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 1,
+            "time": "1930"
+          },
+          "open": {
+            "day": 1,
+            "time": "1100"
+          }
+        },
+        {
+          "close": {
+            "day": 3,
+            "time": "1930"
+          },
+          "open": {
+            "day": 3,
+            "time": "1100"
+          }
+        },
+        {
+          "close": {
+            "day": 4,
+            "time": "1930"
+          },
+          "open": {
+            "day": 4,
+            "time": "1100"
+          }
+        },
+        {
+          "close": {
+            "day": 5,
+            "time": "1930"
+          },
+          "open": {
+            "day": 5,
+            "time": "1100"
+          }
+        },
+        {
+          "close": {
+            "day": 6,
+            "time": "2000"
+          },
+          "open": {
+            "day": 6,
+            "time": "1000"
+          }
+        }
+      ],
+      "adress": "Plaça dels Àngels, 1, Ciutat Vella, 08001 Barcelona, Spain",
+      "phone_number": "+34 934 81 33 68",
+      "rating": 4.3,
+      "url": "https://maps.google.com/?cid=10303436591165373226",
+      "website": "https://www.macba.cat/ca"
+    },
+    {
+      "title": "Plaça de Ramon Berenguer el Gran",
+      "subtitle": "Plaça de Ramon Berenguer el Gran, 19, Barcelona",
+      "tags": [
+        {
+          "id": "818203f3-52cf-4bf0-80b1-a811d3d02169",
+          "tag": "tourist_attraction"
+        },
+        {
+          "id": "3d8aaacb-18ca-4c8f-8402-f435844a7519",
+          "tag": "point_of_interest"
+        },
+        {
+          "id": "a404f886-4e3e-40c0-b4fd-a832dc9e38bc",
+          "tag": "establishment"
+        }
+      ],
+      "location": {
+        "lat": 41.38438729999999,
+        "lng": 2.1776977
+      },
+      "hours": [
+        "Monday: Open 24 hours",
+        "Tuesday: Open 24 hours",
+        "Wednesday: Open 24 hours",
+        "Thursday: Open 24 hours",
+        "Friday: Open 24 hours",
+        "Saturday: Open 24 hours",
+        "Sunday: Open 24 hours"
+      ],
+      "hoursArray": [
+        {
+          "open": {
+            "day": 0,
+            "time": "0000"
+          }
+        }
+      ],
+      "adress": "Pl. de Ramon Berenguer el Gran, 19, Ciutat Vella, 08003 Barcelona, Spain",
+      "rating": 4.5,
+      "url": "https://maps.google.com/?cid=12973820104344187492"
+    },
+    {
+      "title": "Plaça Reial",
+      "subtitle": "Plaça Reial, 1, Barcelona",
+      "description": "Paved square lined with cafes & tapas bars, plus towering palm trees & a central fountain.",
+      "tags": [
+        {
+          "id": "d84ab9e5-510c-4931-a750-82e70cb187d8",
+          "tag": "tourist_attraction"
+        },
+        {
+          "id": "a5055155-af7f-40f3-bcd8-e2b15b147f5f",
+          "tag": "point_of_interest"
+        },
+        {
+          "id": "0bb10d77-6c0a-48aa-9574-7dedeea61722",
+          "tag": "establishment"
+        }
+      ],
+      "location": {
+        "lat": 41.3800086,
+        "lng": 2.1752932
+      },
+      "hours": [
+        "Monday: Open 24 hours",
+        "Tuesday: Open 24 hours",
+        "Wednesday: Open 24 hours",
+        "Thursday: Open 24 hours",
+        "Friday: Open 24 hours",
+        "Saturday: Open 24 hours",
+        "Sunday: Open 24 hours"
+      ],
+      "hoursArray": [
+        {
+          "open": {
+            "day": 0,
+            "time": "0000"
+          }
+        }
+      ],
+      "adress": "Pl. Reial, 1, Ciutat Vella, 08002 Barcelona, Spain",
+      "rating": 4.6,
+      "url": "https://maps.google.com/?cid=9741895851205800865",
+      "website": "https://www.barcelonaturisme.com/wv3/es/page/1248/placa-reial.html"
+    },
+    {
+      "title": "Casa Amatller",
+      "subtitle": "Passeig de Gràcia, 41, Barcelona",
+      "description": "Colorful modernista house fusing Catalan & Flemish styles, decorated with quirky animal sculptures.",
+      "tags": [
+        {
+          "id": "2761602c-40f9-4242-ae50-6d1745fd0c24",
+          "tag": "museum"
+        },
+        {
+          "id": "44323c5e-ba11-4049-8fd0-7cc1e049aa97",
+          "tag": "tourist_attraction"
+        },
+        {
+          "id": "50a3553b-b814-4d31-98e5-989aaf8954f1",
+          "tag": "point_of_interest"
+        },
+        {
+          "id": "d74da1e1-9865-47c9-9f36-48e08240e407",
+          "tag": "establishment"
+        }
+      ],
+      "location": {
+        "lat": 41.3914803,
+        "lng": 2.1649813
+      },
+      "hours": [
+        "Monday: 10:00 AM – 8:00 PM",
+        "Tuesday: 10:00 AM – 8:00 PM",
+        "Wednesday: 10:00 AM – 8:00 PM",
+        "Thursday: 10:00 AM – 8:00 PM",
+        "Friday: 10:00 AM – 8:00 PM",
+        "Saturday: 10:00 AM – 8:00 PM",
+        "Sunday: 10:00 AM – 8:00 PM"
+      ],
+      "hoursArray": [
+        {
+          "close": {
+            "day": 0,
+            "time": "2000"
+          },
+          "open": {
+            "day": 0,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 1,
+            "time": "2000"
+          },
+          "open": {
+            "day": 1,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 2,
+            "time": "2000"
+          },
+          "open": {
+            "day": 2,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 3,
+            "time": "2000"
+          },
+          "open": {
+            "day": 3,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 4,
+            "time": "2000"
+          },
+          "open": {
+            "day": 4,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 5,
+            "time": "2000"
+          },
+          "open": {
+            "day": 5,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 6,
+            "time": "2000"
+          },
+          "open": {
+            "day": 6,
+            "time": "1000"
+          }
+        }
+      ],
+      "adress": "Pg. de Gràcia, 41, L'Eixample, 08007 Barcelona, Spain",
+      "phone_number": "+34 934 61 74 60",
+      "rating": 4.6,
+      "url": "https://maps.google.com/?cid=2990095117329026880",
+      "website": "https://amatller.org/"
+    },
+    {
+      "title": "Monastery of Pedralbes",
+      "subtitle": "Baixada del Monestir, 9, Barcelona",
+      "description": "Gothic monastery with an elegant, 3-storey cloister & a chapel decorated by Bassa, plus a museum.",
+      "tags": [
+        {
+          "id": "c9f3b6d4-97bf-4240-8df0-9348b9a28714",
+          "tag": "museum"
+        },
+        {
+          "id": "7063d91f-c6c7-46a0-8e88-e3e3b8a8eb19",
+          "tag": "tourist_attraction"
+        },
+        {
+          "id": "06b4d8be-e269-41f0-be4c-82462de1c5d0",
+          "tag": "place_of_worship"
+        },
+        {
+          "id": "dec2edc4-218f-43a1-8696-a45b413d4352",
+          "tag": "point_of_interest"
+        },
+        {
+          "id": "a6d52e70-8c50-414e-b6a1-54e7d821a32f",
+          "tag": "establishment"
+        }
+      ],
+      "location": {
+        "lat": 41.39565880000001,
+        "lng": 2.1126372
+      },
+      "hours": [
+        "Monday: Closed",
+        "Tuesday: 10:00 AM – 5:00 PM",
+        "Wednesday: 10:00 AM – 5:00 PM",
+        "Thursday: 10:00 AM – 5:00 PM",
+        "Friday: 10:00 AM – 5:00 PM",
+        "Saturday: 10:00 AM – 7:00 PM",
+        "Sunday: 10:00 AM – 8:00 PM"
+      ],
+      "hoursArray": [
+        {
+          "close": {
+            "day": 0,
+            "time": "2000"
+          },
+          "open": {
+            "day": 0,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 2,
+            "time": "1700"
+          },
+          "open": {
+            "day": 2,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 3,
+            "time": "1700"
+          },
+          "open": {
+            "day": 3,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 4,
+            "time": "1700"
+          },
+          "open": {
+            "day": 4,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 5,
+            "time": "1700"
+          },
+          "open": {
+            "day": 5,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 6,
+            "time": "1900"
+          },
+          "open": {
+            "day": 6,
+            "time": "1000"
+          }
+        }
+      ],
+      "adress": "Baixada del Monestir, 9, Les Corts, 08034 Barcelona, Spain",
+      "phone_number": "+34 932 56 34 34",
+      "rating": 4.6,
+      "url": "https://maps.google.com/?cid=10341260782602297516",
+      "website": "https://monestirpedralbes.barcelona/"
+    },
+    {
+      "title": "Barcelona History Museum MUHBA",
+      "subtitle": "Plaça del Rei, s/n, Barcelona",
+      "description": "Barcelona's history museum in a medieval setting, featuring remains of Roman streets & buildings.",
+      "tags": [
+        {
+          "id": "999672fe-e5a9-4258-bd20-d962a839d9a1",
+          "tag": "museum"
+        },
+        {
+          "id": "3c83eba7-6293-48ba-a667-b17ffeb7b716",
+          "tag": "tourist_attraction"
+        },
+        {
+          "id": "6f53b36c-0eeb-4290-8d01-29ff96cfdfc1",
+          "tag": "point_of_interest"
+        },
+        {
+          "id": "117b7578-d76f-4b28-b550-536754780339",
+          "tag": "establishment"
+        }
+      ],
+      "location": {
+        "lat": 41.383923,
+        "lng": 2.1776677
+      },
+      "hours": [
+        "Monday: Closed",
+        "Tuesday: 10:00 AM – 7:00 PM",
+        "Wednesday: 10:00 AM – 7:00 PM",
+        "Thursday: 10:00 AM – 7:00 PM",
+        "Friday: 10:00 AM – 7:00 PM",
+        "Saturday: 10:00 AM – 7:00 PM",
+        "Sunday: 10:00 AM – 8:00 PM"
+      ],
+      "hoursArray": [
+        {
+          "close": {
+            "day": 0,
+            "time": "2000"
+          },
+          "open": {
+            "day": 0,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 2,
+            "time": "1900"
+          },
+          "open": {
+            "day": 2,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 3,
+            "time": "1900"
+          },
+          "open": {
+            "day": 3,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 4,
+            "time": "1900"
+          },
+          "open": {
+            "day": 4,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 5,
+            "time": "1900"
+          },
+          "open": {
+            "day": 5,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 6,
+            "time": "1900"
+          },
+          "open": {
+            "day": 6,
+            "time": "1000"
+          }
+        }
+      ],
+      "adress": "Pl. del Rei, s/n, Ciutat Vella, 08002 Barcelona, Spain",
+      "phone_number": "+34 932 56 21 22",
+      "rating": 4.6,
+      "url": "https://maps.google.com/?cid=1688215762654668070",
+      "website": "https://www.barcelona.cat/museuhistoria/es"
+    },
+    {
+      "title": "MUHBA El Call",
+      "subtitle": "Placeta de Manuel Ribé, 3, Barcelona",
+      "description": "Interactive displays tracing the Jewish community of medieval Barcelona, in a former weaver's home.",
+      "tags": [
+        {
+          "id": "abb99292-35d4-46dc-b78d-9eca699405ac",
+          "tag": "museum"
+        },
+        {
+          "id": "f243f870-0b9b-454d-84d0-618a49139f15",
+          "tag": "tourist_attraction"
+        },
+        {
+          "id": "e5520ec4-caab-411e-b88e-e471ea64e672",
+          "tag": "point_of_interest"
+        },
+        {
+          "id": "acae17f2-20ec-40ba-a480-76895b76de03",
+          "tag": "establishment"
+        }
+      ],
+      "location": {
+        "lat": 41.3825647,
+        "lng": 2.17536
+      },
+      "hours": [
+        "Monday: Closed",
+        "Tuesday: Closed",
+        "Wednesday: 10:00 AM – 2:00 PM",
+        "Thursday: Closed",
+        "Friday: Closed",
+        "Saturday: 11:00 AM – 3:00 PM, 4:00 – 7:00 PM",
+        "Sunday: 11:00 AM – 3:00 PM, 4:00 – 7:00 PM"
+      ],
+      "hoursArray": [
+        {
+          "close": {
+            "day": 0,
+            "time": "1500"
+          },
+          "open": {
+            "day": 0,
+            "time": "1100"
+          }
+        },
+        {
+          "close": {
+            "day": 0,
+            "time": "1900"
+          },
+          "open": {
+            "day": 0,
+            "time": "1600"
+          }
+        },
+        {
+          "close": {
+            "day": 3,
+            "time": "1400"
+          },
+          "open": {
+            "day": 3,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 6,
+            "time": "1500"
+          },
+          "open": {
+            "day": 6,
+            "time": "1100"
+          }
+        },
+        {
+          "close": {
+            "day": 6,
+            "time": "1900"
+          },
+          "open": {
+            "day": 6,
+            "time": "1600"
+          }
+        }
+      ],
+      "adress": "Placeta de Manuel Ribé, 3, Ciutat Vella, 08002 Barcelona, Spain",
+      "phone_number": "+34 933 04 26 80",
+      "rating": 4.1,
+      "url": "https://maps.google.com/?cid=9470823325781464509",
+      "website": "https://www.barcelona.cat/museuhistoria/ca/patrimonis/els-espais-del-muhba/muhba-el-call"
+    },
+    {
+      "title": "Rambla de Canaletes",
+      "subtitle": "Rambla de Canaletes, Barcelona",
+      "tags": [
+        {
+          "id": "9906998f-71b1-4b4b-9ae4-d3378288a1d4",
+          "tag": "tourist_attraction"
+        },
+        {
+          "id": "241235b1-efae-4b34-b6ef-8661ce812da2",
+          "tag": "point_of_interest"
+        },
+        {
+          "id": "dd41fb38-4f7a-4229-a41a-47d61d745d27",
+          "tag": "establishment"
+        }
+      ],
+      "location": {
+        "lat": 41.385001,
+        "lng": 2.1703855
+      },
+      "adress": "Rambla de Canaletes, Ciutat Vella, 08002 Barcelona, Spain",
+      "rating": 4.7,
+      "url": "https://maps.google.com/?cid=14834133480419861319"
+    },
+    {
+      "title": "MUHBA Temple d'August",
+      "subtitle": "Carrer del Paradís, 10, Barcelona",
+      "description": "A small courtyard surrounds these restored columns from Temple of Augustus, built 1st century BCE.",
+      "tags": [
+        {
+          "id": "3a3aefad-26c6-403d-9627-2cb7fc963a82",
+          "tag": "tourist_attraction"
+        },
+        {
+          "id": "5c3b063d-973a-4461-98e5-7e419037dba9",
+          "tag": "point_of_interest"
+        },
+        {
+          "id": "5b3bd4ec-93b4-479c-9747-460c0e990cc3",
+          "tag": "establishment"
+        }
+      ],
+      "location": {
+        "lat": 41.38339970000001,
+        "lng": 2.1771849
+      },
+      "hours": [
+        "Monday: 10:00 AM – 2:00 PM",
+        "Tuesday: 10:00 AM – 7:00 PM",
+        "Wednesday: 10:00 AM – 7:00 PM",
+        "Thursday: 10:00 AM – 7:00 PM",
+        "Friday: 10:00 AM – 7:00 PM",
+        "Saturday: 10:00 AM – 7:00 PM",
+        "Sunday: 10:00 AM – 7:00 PM"
+      ],
+      "hoursArray": [
+        {
+          "close": {
+            "day": 0,
+            "time": "1900"
+          },
+          "open": {
+            "day": 0,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 1,
+            "time": "1400"
+          },
+          "open": {
+            "day": 1,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 2,
+            "time": "1900"
+          },
+          "open": {
+            "day": 2,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 3,
+            "time": "1900"
+          },
+          "open": {
+            "day": 3,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 4,
+            "time": "1900"
+          },
+          "open": {
+            "day": 4,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 5,
+            "time": "1900"
+          },
+          "open": {
+            "day": 5,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 6,
+            "time": "1900"
+          },
+          "open": {
+            "day": 6,
+            "time": "1000"
+          }
+        }
+      ],
+      "adress": "C/ del Paradís, 10, Ciutat Vella, 08002 Barcelona, Spain",
+      "phone_number": "+34 932 56 21 22",
+      "rating": 4.6,
+      "url": "https://maps.google.com/?cid=11609673384035182722",
+      "website": "https://www.barcelona.cat/museuhistoria/ca"
+    },
+    {
+      "title": "Plaça de la Vila de Madrid",
+      "subtitle": "Plaça de la Vila de Madrid, s/n, Barcelona",
+      "description": "A burial site from the Roman city of Barcino was uncovered during building of this square.",
+      "tags": [
+        {
+          "id": "ac76b7a0-1135-4d00-b6c9-1b695903e897",
+          "tag": "tourist_attraction"
+        },
+        {
+          "id": "0f562254-c3b4-4ccc-b013-43075c9c98d0",
+          "tag": "landmark"
+        },
+        {
+          "id": "c0b37abe-a777-413d-b9b9-5e22c51d10fa",
+          "tag": "point_of_interest"
+        },
+        {
+          "id": "00758da0-a753-45be-90dd-171d6e174138",
+          "tag": "establishment"
+        }
+      ],
+      "location": {
+        "lat": 41.3844741,
+        "lng": 2.1722242
+      },
+      "hours": [
+        "Monday: Open 24 hours",
+        "Tuesday: Open 24 hours",
+        "Wednesday: Open 24 hours",
+        "Thursday: Open 24 hours",
+        "Friday: Open 24 hours",
+        "Saturday: Open 24 hours",
+        "Sunday: Open 24 hours"
+      ],
+      "hoursArray": [
+        {
+          "open": {
+            "day": 0,
+            "time": "0000"
+          }
+        }
+      ],
+      "adress": "Pl. de la Vila de Madrid, s/n, Ciutat Vella, 08002 Barcelona, Spain",
+      "phone_number": "+34 932 56 21 22",
+      "rating": 4.2,
+      "url": "https://maps.google.com/?cid=7688814635169866116",
+      "website": "http://ajuntament.barcelona.cat/museuhistoria/ca/muhba-sepulcral-romana"
+    },
+    {
+      "title": "El Cap de Barcelona",
+      "subtitle": "Passeig de Colom, s/n, Barcelona",
+      "description": "Created in 1992, the Head of Barcelona is a 64-ft. abstract statue by American Roy Lichtenstein.",
+      "tags": [
+        {
+          "id": "19bf115f-71e5-4242-b304-68016321c0fc",
+          "tag": "tourist_attraction"
+        },
+        {
+          "id": "5d097aa5-b303-4552-8090-01604a01cf48",
+          "tag": "point_of_interest"
+        },
+        {
+          "id": "1558fa65-4df1-4ae0-8c20-e53b4f350cef",
+          "tag": "establishment"
+        }
+      ],
+      "location": {
+        "lat": 41.38091370000001,
+        "lng": 2.1824679
+      },
+      "hours": [
+        "Monday: Open 24 hours",
+        "Tuesday: Open 24 hours",
+        "Wednesday: Open 24 hours",
+        "Thursday: Open 24 hours",
+        "Friday: Open 24 hours",
+        "Saturday: Open 24 hours",
+        "Sunday: Open 24 hours"
+      ],
+      "hoursArray": [
+        {
+          "open": {
+            "day": 0,
+            "time": "0000"
+          }
+        }
+      ],
+      "adress": "Pg. de Colom, s/n, Ciutat Vella, 08003 Barcelona, Spain",
+      "rating": 4.4,
+      "url": "https://maps.google.com/?cid=4459936625605193894",
+      "website": "https://www.barcelona.cat/imatges/es/20/ciutat-vella/7112/el-cap-de-barcelona-la-cara-de-barce/"
+    },
+    {
+      "title": "La Gamba",
+      "subtitle": "Ronda Litoral, Barcelona",
+      "tags": [
+        {
+          "id": "062a2e6b-fe29-4e93-9961-dd8145926686",
+          "tag": "tourist_attraction"
+        },
+        {
+          "id": "3037bfca-f0ea-41ce-bd6e-69e5a40be76c",
+          "tag": "point_of_interest"
+        },
+        {
+          "id": "e8eb2678-cc97-460a-9e3a-2c1b1d033792",
+          "tag": "establishment"
+        }
+      ],
+      "location": {
+        "lat": 41.38015879999999,
+        "lng": 2.1817142
+      },
+      "hours": [
+        "Monday: Open 24 hours",
+        "Tuesday: Open 24 hours",
+        "Wednesday: Open 24 hours",
+        "Thursday: Open 24 hours",
+        "Friday: Open 24 hours",
+        "Saturday: Open 24 hours",
+        "Sunday: Open 24 hours"
+      ],
+      "hoursArray": [
+        {
+          "open": {
+            "day": 0,
+            "time": "0000"
+          }
+        }
+      ],
+      "adress": "Ronda Litoral, Ciutat Vella, 08002 Barcelona, Spain",
+      "rating": 4.3,
+      "url": "https://maps.google.com/?cid=13875868742343298192"
+    },
+    {
+      "title": "Mosaic de Joan Miró",
+      "subtitle": "La Rambla, 71, Barcelona",
+      "description": "Large & colorful circular mosaic by famed artist Joan Miró, inlaid in the ground along La Rambla.",
+      "tags": [
+        {
+          "id": "50ec6bd4-42f7-4f70-b543-42aed2c398a9",
+          "tag": "tourist_attraction"
+        },
+        {
+          "id": "7d72b16f-1be9-48da-a2ae-8658f5a65e52",
+          "tag": "point_of_interest"
+        },
+        {
+          "id": "4f447a87-0584-44e5-ba89-09f2931af0a7",
+          "tag": "establishment"
+        }
+      ],
+      "location": {
+        "lat": 41.38117619999999,
+        "lng": 2.1732776
+      },
+      "hours": [
+        "Monday: Open 24 hours",
+        "Tuesday: Open 24 hours",
+        "Wednesday: Open 24 hours",
+        "Thursday: Open 24 hours",
+        "Friday: Open 24 hours",
+        "Saturday: Open 24 hours",
+        "Sunday: Open 24 hours"
+      ],
+      "hoursArray": [
+        {
+          "open": {
+            "day": 0,
+            "time": "0000"
+          }
+        }
+      ],
+      "adress": "La Rambla, 71, Ciutat Vella, 08002 Barcelona, Spain",
+      "rating": 4.4,
+      "url": "https://maps.google.com/?cid=16822893979844777408",
+      "website": "https://www.barcelonaturisme.com/wv3/en/page/556/pla-de-l-os.html"
+    },
+    {
+      "title": "Magic Fountain of Montjuïc",
+      "subtitle": "Plaça de Carles Buïgas, Barcelona",
+      "description": "Huge circular fountain renowned for its scheduled shows of water & light choreographed to music.",
+      "tags": [
+        {
+          "id": "99fa7e07-fba1-46d5-b6a6-86b7ffea2e88",
+          "tag": "tourist_attraction"
+        },
+        {
+          "id": "70a2b803-8998-47cc-9cd2-aa131b45012b",
+          "tag": "park"
+        },
+        {
+          "id": "108c4957-fc3c-4aa4-b96d-40e850bdaca6",
+          "tag": "point_of_interest"
+        },
+        {
+          "id": "762cbaa2-2afc-4f8e-ad93-1132d30a406e",
+          "tag": "establishment"
+        }
+      ],
+      "location": {
+        "lat": 41.3711603,
+        "lng": 2.151740199999999
+      },
+      "adress": "Pl. de Carles Buïgas, Sants-Montjuïc, 08038 Barcelona, Spain",
+      "rating": 4.6,
+      "url": "https://maps.google.com/?cid=2217520737938059626",
+      "website": "https://www.barcelona.cat/ca/que-pots-fer-a-bcn/font-magica"
+    },
+    {
+      "title": "Plaça d'Espanya",
+      "subtitle": "Plaça d'Espanya, Barcelona",
+      "description": "Famous plaza bordered by architectural landmarks, with fountain shows & shopping.",
+      "tags": [
+        {
+          "id": "7f4a7f76-6635-4bbb-9ebd-e8dfbcccf509",
+          "tag": "tourist_attraction"
+        },
+        {
+          "id": "08c0e550-f425-4303-9fbb-1c6efde35e7b",
+          "tag": "point_of_interest"
+        },
+        {
+          "id": "e3315bbe-bd3a-4cc5-954b-39615bf6a067",
+          "tag": "establishment"
+        }
+      ],
+      "location": {
+        "lat": 41.37503559999999,
+        "lng": 2.1491163
+      },
+      "adress": "Pl. d'Espanya, Sants-Montjuïc, 08014 Barcelona, Spain",
+      "rating": 4.6,
+      "url": "https://maps.google.com/?cid=14986770513138857710"
+    },
+    {
+      "title": "Turó de les Tres Creus",
+      "subtitle": "Avinguda del Coll del Portell, 72I, Barcelona",
+      "description": "Skyline views from an observation point built of loose stones & topped by 3 landmark crosses.",
+      "tags": [
+        {
+          "id": "928d80a8-0952-4139-9e37-1cfbe492665d",
+          "tag": "park"
+        },
+        {
+          "id": "7f83d535-7dde-4c81-876a-074c85707090",
+          "tag": "tourist_attraction"
+        },
+        {
+          "id": "4f9af5cd-f818-4894-a13c-0ddee7243183",
+          "tag": "point_of_interest"
+        },
+        {
+          "id": "215ab279-9e82-47e7-8610-08c40b783119",
+          "tag": "establishment"
+        }
+      ],
+      "location": {
+        "lat": 41.41240810000001,
+        "lng": 2.1511434
+      },
+      "hours": [
+        "Monday: 8:00 AM – 7:00 PM",
+        "Tuesday: 8:00 AM – 7:00 PM",
+        "Wednesday: 8:00 AM – 7:00 PM",
+        "Thursday: 8:00 AM – 7:00 PM",
+        "Friday: 8:00 AM – 7:00 PM",
+        "Saturday: 8:00 AM – 7:00 PM",
+        "Sunday: Closed"
+      ],
+      "hoursArray": [
+        {
+          "close": {
+            "day": 1,
+            "time": "1900"
+          },
+          "open": {
+            "day": 1,
+            "time": "0800"
+          }
+        },
+        {
+          "close": {
+            "day": 2,
+            "time": "1900"
+          },
+          "open": {
+            "day": 2,
+            "time": "0800"
+          }
+        },
+        {
+          "close": {
+            "day": 3,
+            "time": "1900"
+          },
+          "open": {
+            "day": 3,
+            "time": "0800"
+          }
+        },
+        {
+          "close": {
+            "day": 4,
+            "time": "1900"
+          },
+          "open": {
+            "day": 4,
+            "time": "0800"
+          }
+        },
+        {
+          "close": {
+            "day": 5,
+            "time": "1900"
+          },
+          "open": {
+            "day": 5,
+            "time": "0800"
+          }
+        },
+        {
+          "close": {
+            "day": 6,
+            "time": "1900"
+          },
+          "open": {
+            "day": 6,
+            "time": "0800"
+          }
+        }
+      ],
+      "adress": "Av. del Coll del Portell, 72I, Gràcia, 08024 Barcelona, Spain",
+      "phone_number": "+34 934 09 18 31",
+      "rating": 4.4,
+      "url": "https://maps.google.com/?cid=10778535225941764366",
+      "website": "https://parkguell.barcelona/ca/park-historic/espais-emblematics/tres-creus"
+    },
+    {
+      "title": "Font de Sant Just",
+      "subtitle": "Plaça de Sant Just, 4, B, Barcelona",
+      "tags": [
+        {
+          "id": "ae479638-3971-43e2-b20f-2cfd683a1135",
+          "tag": "tourist_attraction"
+        },
+        {
+          "id": "01ff61ba-c03e-404c-af51-74c09f6abe0e",
+          "tag": "point_of_interest"
+        },
+        {
+          "id": "562003bd-b3df-4538-b084-bd6a3886dd59",
+          "tag": "establishment"
+        }
+      ],
+      "location": {
+        "lat": 41.38291609999999,
+        "lng": 2.178490599999999
+      },
+      "hours": [
+        "Monday: Open 24 hours",
+        "Tuesday: Open 24 hours",
+        "Wednesday: Open 24 hours",
+        "Thursday: Open 24 hours",
+        "Friday: Open 24 hours",
+        "Saturday: Open 24 hours",
+        "Sunday: Open 24 hours"
+      ],
+      "hoursArray": [
+        {
+          "open": {
+            "day": 0,
+            "time": "0000"
+          }
+        }
+      ],
+      "adress": "Plaça de Sant Just, 4, B, Ciutat Vella, 08002 Barcelona, Spain",
+      "rating": 4.4,
+      "url": "https://maps.google.com/?cid=8583156435100107309"
+    },
+    {
+      "title": "Roman city wall in Barcelona",
+      "subtitle": "Carrer de la Palla, 16, Barcelona",
+      "description": "Ruins of defensive towers, aqueducts & city walls on the site of the ancient Roman city of Barcino.",
+      "tags": [
+        {
+          "id": "7e0eefd4-8a18-4702-8427-de3999e91063",
+          "tag": "tourist_attraction"
+        },
+        {
+          "id": "750fd08b-a920-4a49-9d97-694764ffa627",
+          "tag": "point_of_interest"
+        },
+        {
+          "id": "7ace24ad-dabb-4e3a-97c8-23e1ae477a49",
+          "tag": "establishment"
+        }
+      ],
+      "location": {
+        "lat": 41.3838251,
+        "lng": 2.1747863
+      },
+      "hours": [
+        "Monday: Open 24 hours",
+        "Tuesday: Open 24 hours",
+        "Wednesday: Open 24 hours",
+        "Thursday: Open 24 hours",
+        "Friday: Open 24 hours",
+        "Saturday: Open 24 hours",
+        "Sunday: Open 24 hours"
+      ],
+      "hoursArray": [
+        {
+          "open": {
+            "day": 0,
+            "time": "0000"
+          }
+        }
+      ],
+      "adress": "Carrer de la Palla, 16, Ciutat Vella, 08002 Barcelona, Spain",
+      "rating": 4.4,
+      "url": "https://maps.google.com/?cid=5858346533474930061"
+    },
+    {
+      "title": "Museum Of Wax Barcelona",
+      "subtitle": "Passatge de la Banca, 7, Barcelona",
+      "description": "Waxwork figures of historical & cultural characters & celebs, plus a cafe in a fantasy fairy forest.",
+      "tags": [
+        {
+          "id": "6fea5788-d313-4787-a800-cab5c3d36ca1",
+          "tag": "tourist_attraction"
+        },
+        {
+          "id": "da7adadd-9e44-42db-9824-c2322d630d59",
+          "tag": "museum"
+        },
+        {
+          "id": "ef531b51-a303-4c39-bbf8-373f3539a0b1",
+          "tag": "point_of_interest"
+        },
+        {
+          "id": "8fabc61d-1302-43e1-8d3a-2555449f6fe6",
+          "tag": "establishment"
+        }
+      ],
+      "location": {
+        "lat": 41.3774026,
+        "lng": 2.177357999999999
+      },
+      "hours": [
+        "Monday: 10:00 AM – 8:00 PM",
+        "Tuesday: 10:00 AM – 8:00 PM",
+        "Wednesday: 10:00 AM – 8:00 PM",
+        "Thursday: 10:00 AM – 8:00 PM",
+        "Friday: 10:00 AM – 8:00 PM",
+        "Saturday: 10:00 AM – 8:00 PM",
+        "Sunday: 10:00 AM – 8:00 PM"
+      ],
+      "hoursArray": [
+        {
+          "close": {
+            "day": 0,
+            "time": "2000"
+          },
+          "open": {
+            "day": 0,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 1,
+            "time": "2000"
+          },
+          "open": {
+            "day": 1,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 2,
+            "time": "2000"
+          },
+          "open": {
+            "day": 2,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 3,
+            "time": "2000"
+          },
+          "open": {
+            "day": 3,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 4,
+            "time": "2000"
+          },
+          "open": {
+            "day": 4,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 5,
+            "time": "2000"
+          },
+          "open": {
+            "day": 5,
+            "time": "1000"
+          }
+        },
+        {
+          "close": {
+            "day": 6,
+            "time": "2000"
+          },
+          "open": {
+            "day": 6,
+            "time": "1000"
+          }
+        }
+      ],
+      "adress": "Passatge de la Banca, 7, Ciutat Vella, 08002 Barcelona, Spain",
+      "phone_number": "+34 933 17 26 49",
+      "rating": 4.2,
+      "url": "https://maps.google.com/?cid=10987296722914307568",
+      "website": "https://www.museocerabcn.com/"
+    },
+    {
+      "title": "Plaça dels Àngels",
+      "subtitle": "Plaça dels Àngels, 1, Barcelona",
+      "tags": [
+        {
+          "id": "27dd419a-53f9-4ad1-8921-6613cfbbc3ba",
+          "tag": "tourist_attraction"
+        },
+        {
+          "id": "2de8aafd-9809-4e0e-92b1-57140f67f5d2",
+          "tag": "point_of_interest"
+        },
+        {
+          "id": "c371cdb8-fa86-4d82-ab23-31285e16eba5",
+          "tag": "establishment"
+        }
+      ],
+      "location": {
+        "lat": 41.3828372,
+        "lng": 2.1670985
+      },
+      "adress": "Plaça dels Àngels, 1, Ciutat Vella, 08001 Barcelona, Spain",
+      "rating": 4.2,
+      "url": "https://maps.google.com/?cid=183837640002171124"
+    }
+  ]
