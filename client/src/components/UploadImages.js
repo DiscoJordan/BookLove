@@ -3,7 +3,6 @@ import axios from "axios";
 import Button from "./Button";
 import { URL } from "../config";
 import { useContext } from "react";
-import { UserContext } from "../context/UserContext";
 import { PlacesContext } from "../context/PlacesContext";
 const UploadImages = ({
   content,
