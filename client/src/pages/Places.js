@@ -1,18 +1,16 @@
-import React, { useContext, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { PlacesContext } from "../context/PlacesContext";
 import { TagsContext } from "../context/TagsContext";
 import PlaceCard from "../components/PlaceCard";
 import Button from "../components/Button";
-// Import Swiper React components
+import Paginationcards from "@mui/material/Pagination";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Autoplay, Pagination } from "swiper/modules";
-
-
-
 
 function Places() {
   const { places } = useContext(PlacesContext); // getPlaces
@@ -27,6 +25,16 @@ function Places() {
     progressCircle.current.style.setProperty("--progress", 1 - progress);
     progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
   };
+  const [page, setPage] = useState(1);
+  const itemsPerPage = 12;
+
+  // Calculate the index range for the items to display
+  const startIndex = (page - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+
+  const handleChangePage = (event, value) => {
+    setPage(value);
+  };
 
   const handleCheckbox = (event) => {
     const { value, checked } = event.target;
@@ -36,6 +44,7 @@ function Places() {
     newCheckedTags[index] = checked;
     setCheckedTags(newCheckedTags);
     setIsOpen(false);
+    setPage(1);
   };
 
   const toggleCheckBox = (tagTitle) => {
@@ -47,6 +56,7 @@ function Places() {
 
   const handleSearch = (e) => {
     setSearchData(e.target.value);
+    setPage(1);
   };
 
   const filteredList = places.filter((place) => {
@@ -61,6 +71,8 @@ function Places() {
     });
     return matchesSearch && (matchesTags || !checkedTags.includes(true));
   });
+
+  const currentPlaces = filteredList.slice(startIndex, endIndex);
 
   return (
     <>
@@ -167,11 +179,22 @@ function Places() {
             </div>
           </div>
           {filteredList.length > 0 ? (
-            <div className="grid__places">
-              {filteredList.map((place) => (
-                <PlaceCard place={place} />
-              ))}
-            </div>
+            <>
+              <div className="grid__places">
+                {currentPlaces.map((place) => (
+                  <PlaceCard place={place} />
+                ))}
+              </div>
+
+              <Paginationcards
+                className="pagination"
+                count={Math.ceil(filteredList.length / itemsPerPage)}
+                page={page}
+                onChange={handleChangePage}
+                variant="outlined"
+                shape="rounded"
+              />
+            </>
           ) : (
             <h1>Nothing found for the request</h1>
           )}

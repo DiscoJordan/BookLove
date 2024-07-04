@@ -8,7 +8,7 @@ const placeSchema = new mongoose.Schema({
       default:
         "https://storage.googleapis.com/aqacentor-corporativewebs-pro--corporative-web--wp--pro--static/1/2022/08/image1-5.jpg",
     },
-    public_id: { type: String, required: false, unique: true },
+    public_id: { type: String, required: false, unique: false },
     signature: { type: String, required: false },
   },
   title: { type: String, required: true, unique: true },

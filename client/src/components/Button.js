@@ -18,6 +18,8 @@ const Button = ({ content, onClick, close, arrow,reversed }) => {
       'Update cover': "add_a_photo",
       'Add photos': "add_a_photo",
       "Delete": "delete",
+      "Send": "send",
+      "Fetch from Google": "drive_export",
 
       //////////////////// tags
       "Select tags": "shoppingmode",
@@ -40,7 +42,7 @@ const Button = ({ content, onClick, close, arrow,reversed }) => {
         )}
         {iconMap[content] === "search" ? '' :<>{content}</>}
         
-        {close ? <span className="material-symbols-outlined">close</span>: ''}
+        {close ? <span className="material-symbols-outlined">delete</span>: ''}
         {arrow==='up' ? <span className="material-symbols-outlined">keyboard_arrow_up</span>: ''}
         {arrow==='down' ? <span className="material-symbols-outlined">keyboard_arrow_down</span>: ''}
       </div>

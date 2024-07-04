@@ -577,6 +577,11 @@ textarea.form__input {
   color: black;
 }
 
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+
 .places__wrapper {
   padding: 100px 0 100px 0;
   display: flex;
@@ -929,4 +934,92 @@ textarea.form__input {
   display: flex;
   align-items: center;
   gap: 5px;
+}
+
+.blank__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.blank__wrapper .container {
+  padding: 100px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+.blank__wrapper .container .navigation__button {
+  width: -webkit-fill-available;
+  font-size: 24px;
+}
+.blank__wrapper .container .navigation__button textarea {
+  width: 100%;
+  height: 200px;
+  font-family: inherit;
+  resize: none;
+}
+.blank__wrapper input, .blank__wrapper textarea {
+  all: unset;
+}
+
+.about__cover {
+  background: url("/public/images/about.png") fixed;
+}
+
+.contacts__cover {
+  background: url("/public/images/contacts.png") fixed;
+}
+
+.terms__cover {
+  background: url("/public/images/terms.webp") fixed;
+}
+
+.about__cover, .contacts__cover, .terms__cover {
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+.about__cover h1, .contacts__cover h1, .terms__cover h1 {
+  font-size: 64px;
+  font-weight: 800;
+}
+.about__cover::before, .contacts__cover::before, .terms__cover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+.about__cover .container, .contacts__cover .container, .terms__cover .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  gap: 50px;
+  position: relative;
+  z-index: 2;
+}
+
+.mailform {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+.mailform .mailform__inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: space-between;
 }/*# sourceMappingURL=App.css.map */

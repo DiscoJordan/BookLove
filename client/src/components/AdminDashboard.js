@@ -4,9 +4,23 @@ import { Link } from "react-router-dom";
 import { useContext,useEffect } from "react";
 import { PlacesContext } from "../context/PlacesContext";
 import PlaceCard from "./PlaceCard";
+import googlePlaces from "../googlePlaces.json";
+import axios from "axios";
+import { URL } from "../config";
+
 
 function AdminDashboard() {
   const { places,getPlaces } = useContext(PlacesContext);
+
+  const getPlacesfromGoogle = async () => {
+    
+    try {
+      const response = await axios.post(`${URL}/place/fetch`,googlePlaces);
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
 
   useEffect(() => {
@@ -22,6 +36,9 @@ function AdminDashboard() {
         <Link to={"/users"}>
           <Button content={"Users"}/>
         </Link>
+        <button onClick={getPlacesfromGoogle}>
+        <Button content={"Fetch from Google"}/>
+        </button>
       </div>
       <hr />
       <div className="grid__places">

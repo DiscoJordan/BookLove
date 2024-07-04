@@ -19,6 +19,9 @@ import Places from "./pages/Places.js";
 import { UserContext } from "./context/UserContext.js";
 import ScrollToTop from "./components/ScrollToTop.js";
 import Users from "./pages/Users.js";
+import About from "./pages/About.js";
+import Contacts from "./pages/Contacts.js";
+import Terms from "./pages/Terms.js";
 
 function App() {
   const { isLoggedIn, logout, user, login, getUserData, verify_token } =
@@ -77,6 +80,9 @@ function App() {
               }
             />
             <Route path={`/`} element={<Places user={user} />} />
+            <Route path={`/about`} element={<About />} />
+            <Route path={`/contacts`} element={<Contacts />} />
+            <Route path={`/termsAndConditions`} element={<Terms />} />
       
             <Route path={`/place/:title/`} element={<CurrentPlace />} />
             <Route

@@ -52,7 +52,7 @@ function ManageButtons({ place }) {
         //       navigate(`/}`);
         //   }, 2000);
         if (location.pathname.includes("place")) {
-          navigate(-1);
+          navigate('/');
         }
       }
 

@@ -71,10 +71,7 @@ const uploadPlacePhotos = async (req, res) => {
     try {
       const foundPlace = await Places.findOne({ _id:id });
       foundPlace.photos.push(...pictures)
-      console.log(`foundPlace `+foundPlace);
       await foundPlace.save();
-      console.log(`foundPlaceSa `+foundPlace);
-
       res.json({ ok: true, result:foundPlace.photos });
     } catch (error) {
       res.json({ ok: false });

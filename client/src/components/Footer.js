@@ -8,10 +8,11 @@ function Footer() {
         <Link to={"/"}>Places</Link>
         <Link to={"/about"}>About Us</Link>
         <Link to={"/contacts"}>Contacts</Link>
+        <Link to={"/termsAndConditions"}>Terms and conditions</Link>
         </div>
         <div className="footer__email">
           <span className="material-symbols-outlined">mail</span>
-          <a href="mailto:barcelove@gmail.com">barcelove@gmail.com</a>
+          <a href="mailto:barcelove.contact@gmail.com">barcelove.contact@gmail.com</a>
         </div>
         <div className="footer__label">
           <p>MADE WITH LOVE -</p>

@@ -15,7 +15,6 @@ function AddOrEditPlace() {
     setEditTitle,
     places,
     getPlaces,
-    currentPlace,
     setCurrentPlace,
   } = useContext(PlacesContext);
   const { currentTag, setCurrentTag, tags, getTags } = useContext(TagsContext);
@@ -176,9 +175,9 @@ function AddOrEditPlace() {
     e.preventDefault()
     setPlaceData((prevState) => ({
       ...prevState,
-      photos: prevState.photos.filter((photo) => photo._id !== id),
+      photos: prevState.photos.filter((photo) => photo.public_id !== id),
     }));
-    debugger
+    
     try {
       const response = await axios.post(`${URL}/place/removePicture`, {
         public_id: id,
@@ -384,7 +383,7 @@ function AddOrEditPlace() {
             
           />
           <div className="place__images">
-            {currentPlace?.photos?.map((photo) => (
+            {placeData?.photos?.map((photo) => (
               <div className="place__image">
                 <img src={photo.photo_url} alt="photo" />
                 <button onClick={(e) => deletePhoto(photo.public_id,e)}>

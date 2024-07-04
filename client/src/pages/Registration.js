@@ -81,7 +81,7 @@ function Registration() {
               <label >
               <input name="terms"  checked={isChecked}   type="checkbox" />
               By checking the box you agree to our
-              <Link to="/terms">Terms and Conditions</Link>
+              <Link to="/termsAndConditions">Terms and Conditions</Link>
               </label>
             
             </div>
