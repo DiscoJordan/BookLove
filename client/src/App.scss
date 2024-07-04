@@ -19,9 +19,7 @@ a{
     text-decoration: none;
     font-weight: 600;
     transition: all 0.2s ease-in-out;
-    &:hover{
-        color: white;
-    }
+    
 }
 
 //Button
@@ -709,6 +707,18 @@ textarea.form__input{
     align-items: center;
     .time__day{
         text-align: center;
+    }
+}
+.place__secondary-info{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+    justify-content: space-between;
+    align-items: center;
+    .place__price,.place__location,.place__website{
+        display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
     }
 }
 .place__wrapper{

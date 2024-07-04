@@ -1,6 +1,15 @@
 
 const Places = require("../models/places");
 const Users = require("../models/users");
+const cloudinary = require("cloudinary");
+// remember to add your credentials to .env file
+cloudinary.config({
+  cloud_name: process.env.CLOUD_NAME,
+  api_key: process.env.API_KEY,
+  api_secret: process.env.API_SECRET,
+});
+
+
 
 const addPlacesFromGoogle = async (req, res) => {
   try {
@@ -9,7 +18,7 @@ const addPlacesFromGoogle = async (req, res) => {
     let places = googlePlaces.map((place)=>{
       return{
       title: place?.title,
-      cordinates:place?.location|| {},
+      coordinates:place?.location|| {},
       subtitle: place?.subtitle || "",
       description: {
         header: '',
@@ -18,7 +27,8 @@ const addPlacesFromGoogle = async (req, res) => {
       tags: place?.tags||[],
       location: place?.adress,
       price: 0,
-      website:place?.website
+      website:place?.website,
+      hours:place?.hours,
       }
     })
 
@@ -34,6 +44,18 @@ const exist  = await Places.findOne({title:place.title})
   } catch (error) {
     res.send({ ok: false, data: error.message });
     console.log(error.message);
+  }
+};
+
+const removePicture = async (req, res) => {
+  const { public_id } = req.body;
+
+  let deletePic = await cloudinary.uploader.destroy(public_id);
+  if (deletePic.result) {
+    res.status(200).json("Success");
+  } else {
+    res.status(401);
+    throw new Error("Something went wrong!");
   }
 };
 
@@ -176,5 +198,6 @@ module.exports = {
   getPlace,
   getAllPlaces,
   uploadPlacePhotos,
-  addPlacesFromGoogle
+  addPlacesFromGoogle,
+  removePicture
 };

@@ -55,7 +55,11 @@ function AddOrEditPlace() {
     tags: [],
     photos: [],
     website: "",
-    _id: 0,
+    coordinates:{
+      lat:'',
+      lng:''
+    },
+    
   });
   ////////////////////
 
@@ -74,6 +78,10 @@ function AddOrEditPlace() {
     if (e.target.name === "header" || e.target.name === "descriptionText") {
       let copy = { ...placeData };
       copy.description[e.target.name] = e.target.value;
+      setPlaceData(copy);
+    } else  if (e.target.name === "lat" || e.target.name === "lng") {
+      let copy = { ...placeData };
+      copy.coordinates[e.target.name] = e.target.value;
       setPlaceData(copy);
     } else {
       setPlaceData({ ...placeData, [e.target.name]: e.target.value });
@@ -117,7 +125,7 @@ function AddOrEditPlace() {
       if (response.data.ok) {
         setTimeout(() => {
           navigate(`/place/${placeData.title}`);
-        }, 2000);
+        }, 500);
       }
     } catch (error) {
       console.log(error);
@@ -164,11 +172,21 @@ function AddOrEditPlace() {
     }));
   };
 
-  const deletePhoto = (id) => {
+  const deletePhoto = async (id,e) => {
+    e.preventDefault()
     setPlaceData((prevState) => ({
       ...prevState,
       photos: prevState.photos.filter((photo) => photo._id !== id),
     }));
+    debugger
+    try {
+      const response = await axios.post(`${URL}/place/removePicture`, {
+        public_id: id,
+      });
+      !response.status===200&& alert("Something went wrong");
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const handleChangeHours = (e, index) => {
@@ -180,6 +198,7 @@ function AddOrEditPlace() {
       hours: newHours,
     }));
   };
+
 
   useEffect(() => {
     console.log(placeData);
@@ -218,7 +237,7 @@ function AddOrEditPlace() {
               <input
                 className="form__input"
                 placeholder="Header"
-                value={placeData?.description.header}
+                value={placeData?.description?.header}
                 name="header"
                 type="text"
               />
@@ -295,6 +314,21 @@ function AddOrEditPlace() {
                 name="6"
                 type="text"
               />
+              <h3>Coordinates</h3>
+               <input
+                className="form__input"
+                placeholder="Latitude"
+                value={placeData?.coordinates?.lat}
+                name="lat"
+                type="text"
+              />
+               <input
+                className="form__input"
+                placeholder="Longitude"
+                value={placeData?.coordinates?.lng}
+                name="lng"
+                type="text"
+              />
             </div>
             <div className="rightside__fields">
               <textarea
@@ -327,17 +361,16 @@ function AddOrEditPlace() {
           <h2>Cover image</h2>
           <div className="cover__image">
             <img
-              src={
-                currentPlace?.cover?.photo_url || placeData?.cover?.photo_url
-              }
+              src={placeData?.cover?.photo_url}
               alt=""
             />
+            
             <UploadImages
               reversed={true}
               setPlaceData={setPlaceData}
               content={"Update cover"}
               placeData={placeData}
-              id={placeData?._id}
+              id={placeData?.cover?.public_id}
             />
           </div>
           <hr width="100%" color="white" />
@@ -346,15 +379,16 @@ function AddOrEditPlace() {
             setPlaceData={setPlaceData}
             placeData={placeData}
             reversed={true}
+            idOfPlace={placeData?._id}
             content={"Add photos"}
-            id={currentPlace?._id}
+            
           />
           <div className="place__images">
             {currentPlace?.photos?.map((photo) => (
               <div className="place__image">
                 <img src={photo.photo_url} alt="photo" />
-                <button onClick={() => deletePhoto(photo._id)}>
-                  <Button reversed={true} close={true} content={"Delete"} />
+                <button onClick={(e) => deletePhoto(photo.public_id,e)}>
+                  <Button  reversed={true} close={true} content={"Delete"} />
                 </button>
               </div>
             ))}

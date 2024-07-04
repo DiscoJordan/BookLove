@@ -19,11 +19,11 @@ function Profile() {
     password: "",
     password2: "",
     about: "",
+    photo: {
+      photo_url:"",
+      public_id: "",
+    },
   });
-  console.log("user", user);
-  console.log("userData", userData);
-  console.log("newUserData", newUserData);
-
   useEffect(() => {
     getUserData();
   }, []);
@@ -35,6 +35,10 @@ function Profile() {
       password: "",
       password2: "",
       about: userData?.about,
+      photo: {
+        photo_url:userData?.photo?.photo_url,
+        public_id: userData?.photo?.public_id,
+      },
     });
   }, [userData]);
 
@@ -78,7 +82,7 @@ function Profile() {
       <div className="container">
         <div className="profile__info">
           <div className="profile__avatar">
-            <img src={userData?.photo?.photo_url} alt="default avatar" />
+            <img src={newUserData?.photo?.photo_url||userData?.photo?.photo_url} alt="default avatar" />
           </div>
           {!isEditting ? (
             <>
@@ -106,7 +110,7 @@ function Profile() {
             </>
           ) : (
             <>
-              <UploadImages content={'Update image'}/>
+              <UploadImages id={userData?.photo?.public_id} newUserData={newUserData} setNewUserData={setNewUserData} content={'Update image'}/>
               <h2>{message || "Update Profile"}</h2>
               <form
                 onChange={handleChange}

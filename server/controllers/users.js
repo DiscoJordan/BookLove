@@ -13,37 +13,7 @@ cloudinary.config({
   api_secret: process.env.API_SECRET,
 });
 
-const uploadAvatarOrPlaceCover = async (req, res) => {
-  const { file, username, id } = req.body;
-  picture = {
-    public_id: file.uploadInfo?.public_id,
-    photo_url: file.uploadInfo?.secure_url,
-  };
 
-  if (username && !id) {
-    try {
-      const foundUser = await Users.findOne({ username });
-      foundUser.photo = picture;
-      await foundUser.save();
-      res.json({ ok: true, foundUser });
-    } catch (error) {
-      res.json({ ok: false });
-    }
-  } else {
-    if (!id) {
-      // adding new
-    } else {
-      try {
-        const foundPlace = await Places.findOne({ _id: id });
-        foundPlace.cover = picture;
-        await foundPlace.save();
-        res.json({ ok: true, result: foundPlace.cover });
-      } catch (error) {
-        res.json({ ok: false });
-      }
-    }
-  }
-};
 
 const registerUser = async (req, res) => {
   const { username, email, password, password2 } = req.body;
@@ -217,7 +187,7 @@ const editPlaceList = async (req, res) => {
 const updateUser = async (req, res) => {
   try {
     const { newUserData, oldusername } = req.body;
-    const { username, email, password, password2, about, oldpassword } =
+    const { username, email, password, password2, about, oldpassword,photo } =
       newUserData;
     const uniqeUser = await Users.findOne({ username: oldusername });
     let isUserExist = false;
@@ -246,6 +216,11 @@ const updateUser = async (req, res) => {
       email: email,
       password: password ? hash : oldpassword,
       about: about,
+      photo:{
+        photo_url:photo.photo_url,
+        public_id:photo.public_id,
+      }
+
     };
 
     if (uniqeUser && !isUserExist) {
@@ -316,7 +291,7 @@ module.exports = {
   loginUser,
   verifyToken,
   editPlaceList,
-  uploadAvatarOrPlaceCover,
+  
   getAllUsers,
   toggleAdminRights,
 };

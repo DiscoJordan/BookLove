@@ -9,17 +9,16 @@ const UploadImages = ({
   content,
   setPlaceData,
   placeData,
-  fetch_pictures,
+  setNewUserData,
+  newUserData,
   id,
   reversed,
+  idOfPlace,
 }) => {
-  const { userData, getUserData } = useContext(UserContext);
-
   const { getPlaces } = useContext(PlacesContext);
   const uploadWidget = () => {
     // remember to add your credentials to the .env file
 
-    console.log(placeData);
     window.cloudinary.openUploadWidget(
       {
         cloud_name: process.env.REACT_APP_CLOUD_NAME,
@@ -42,13 +41,17 @@ const UploadImages = ({
         } else {
           if (result.event === "queues-end") {
             if (content === "Update image") {
-              uploadProfilePicture(result);
-            } else if (content === "Update cover" && id) {
-              uploadPlaceCover(result);
-            } else if (content === "Add photos" && id) {
-              uploadPlacePhotos(result);
-            }
-            if (!id) {
+              setNewUserData({
+                ...newUserData,
+                photo: {
+                  public_id: result.info.files[0]?.uploadInfo?.public_id,
+                  photo_url: result.info.files[0]?.uploadInfo?.secure_url,
+                },
+              });
+              removePicture();
+            } else if (content === "Update cover") {
+              debugger
+              removePicture();
               setPlaceData({
                 ...placeData,
                 cover: {
@@ -56,6 +59,12 @@ const UploadImages = ({
                   photo_url: result.info.files[0]?.uploadInfo?.secure_url,
                 },
               });
+              console.log(result.info.files[0]?.uploadInfo);
+              console.log(id);
+              
+            } else if (content === "Add photos") {
+              uploadPlacePhotos(result);
+              
             }
           }
         }
@@ -63,46 +72,27 @@ const UploadImages = ({
     );
   };
 
-  const uploadProfilePicture = async (result) => {
-    try {
-      const response = await axios.post(`${URL}/user/upload`, {
-        file: result.info.files[0],
-        username: userData.username,
-      });
-
-      response.data.ok ? getUserData() : alert("Something went wrong");
-    } catch (error) {
-      console.log(error);
-    }
-  };
-  const uploadPlaceCover = async (result) => {
-    debugger;
-
-    try {
-      const response = await axios.post(`${URL}/user/upload`, {
-        file: result.info.files[0],
-        id: id,
-      });
-      response.data.ok
-        ? setPlaceData({ ...placeData, cover: response.data.result })
-        : alert("Something went wrong");
-      getPlaces();
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   const uploadPlacePhotos = async (result) => {
     try {
       const response = await axios.post(`${URL}/place/uploadPhotos`, {
         files: result.info.files,
-        id: id,
+        id: idOfPlace,
       });
-      console.log(response.data.result);
       response.data.ok
         ? setPlaceData({ ...placeData, photos: response.data.result })
         : alert("Something went wrong");
       getPlaces();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  const removePicture = async () => {
+    try {
+      const response = await axios.post(`${URL}/place/removePicture`, {
+        public_id: id,
+      });
+      !response.status===200&& alert("Something went wrong");
+
     } catch (error) {
       console.log(error);
     }

@@ -23,9 +23,6 @@ a {
   font-weight: 600;
   transition: all 0.2s ease-in-out;
 }
-a:hover {
-  color: white;
-}
 
 button {
   all: unset;
@@ -685,6 +682,19 @@ textarea.form__input {
 }
 .place__time .time__day {
   text-align: center;
+}
+
+.place__secondary-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+  justify-content: space-between;
+  align-items: center;
+}
+.place__secondary-info .place__price, .place__secondary-info .place__location, .place__secondary-info .place__website {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
 }
 
 .place__wrapper {
