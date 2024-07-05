@@ -10,6 +10,7 @@ export const UserProvider = ({ children }) => {
   const [users, setUsers] = useState([]);
   const [token, setToken] = useState(JSON.parse(localStorage.getItem("token")));
   const [userData, setUserData] = useState();
+
   const verify_token = async () => {
     try {
       if (!token) {
@@ -36,6 +37,7 @@ export const UserProvider = ({ children }) => {
     localStorage.setItem("user", JSON.stringify(user));
     setIsLoggedIn(true);
     setUser(user);
+    setToken(token);
   };
 
   const logout = () => {
@@ -54,8 +56,6 @@ export const UserProvider = ({ children }) => {
     }
   };
 
-
-
   const getUsers = async () => {
     try {
       const response = await axios.get(`${URL}/user/getall`);
@@ -69,7 +69,6 @@ export const UserProvider = ({ children }) => {
     if (user) {
       getUserData();
     }
-   
   }, [user]);
 
   return (
@@ -88,7 +87,7 @@ export const UserProvider = ({ children }) => {
         verify_token,
         getUsers,
         setUsers,
-        users
+        users,
       }}
     >
       {children}

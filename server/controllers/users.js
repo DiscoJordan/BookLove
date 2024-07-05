@@ -64,7 +64,9 @@ const send_email = async (req, res) => {
       </pre></p>`,
   };
   try {
-    const success = await transport.sendMail(mailOptions) && await transport.sendMail(answerOptions);
+    const success =
+      (await transport.sendMail(mailOptions)) &&
+      (await transport.sendMail(answerOptions));
     console.log("success: ", success);
     if (success && success.response.includes("OK")) {
       return res.json({ ok: true, message: "email sent" });
@@ -76,11 +78,6 @@ const send_email = async (req, res) => {
     return res.json({ ok: false, message: err.message || err });
   }
 };
-
-
-
-
-
 
 const registerUser = async (req, res) => {
   const { username, email, password, password2 } = req.body;
@@ -149,6 +146,7 @@ const loginUser = async (req, res) => {
     res.json({ ok: false, error });
   }
 };
+
 const verifyToken = (req, res) => {
   const token = req.headers.authorization;
   jwt.verify(token, jwt_secret, (err, succ) => {
@@ -252,15 +250,14 @@ const editPlaceList = async (req, res) => {
 
 const updateUser = async (req, res) => {
   try {
-    const { newUserData, oldusername } = req.body;
-    const { username, email, password, password2, about, oldpassword,photo } =
+    const { newUserData } = req.body;
+    const { username, email, password, password2, about, oldpassword, photo } =
       newUserData;
-    const uniqeUser = await Users.findOne({ username: oldusername });
+    const uniqeUser = await Users.findById({ _id: req._id });
     let isUserExist = false;
-    if (username !== oldusername) {
+    if (username !== uniqeUser.username) {
       isUserExist = await Users.findOne({ username: username });
     }
-
     if (!username || !email) {
       return res.json({ ok: false, message: "Not all required fields filled" });
     }
@@ -282,16 +279,15 @@ const updateUser = async (req, res) => {
       email: email,
       password: password ? hash : oldpassword,
       about: about,
-      photo:{
-        photo_url:photo.photo_url,
-        public_id:photo.public_id,
-      }
-
+      photo: {
+        photo_url: photo.photo_url,
+        public_id: photo.public_id,
+      },
     };
 
     if (uniqeUser && !isUserExist) {
       const user = await Users.findOneAndUpdate(
-        { username: oldusername },
+        { _id: req._id },
         { $set: updateUser },
         { new: true, runValidators: true }
       );

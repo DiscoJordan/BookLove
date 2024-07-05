@@ -8,7 +8,8 @@ import axios from "axios";
 import UploadImages from "../components/UploadImages";
 
 function Profile() {
-  const { userData, getUserData, setUser, user } = useContext(UserContext);
+  const { userData, getUserData, setUser, user, token } =
+    useContext(UserContext);
   const [isEditting, setIsEditting] = useState(false);
 
   const [message, setMessage] = useState("");
@@ -49,6 +50,7 @@ function Profile() {
   const handleUpdate = async (e) => {
     e.preventDefault();
     try {
+      axios.defaults.headers.common["Authorization"] = token;
       const response = await axios.post(`${URL}/user/update`, {
         newUserData,
         oldusername: userData.username,
