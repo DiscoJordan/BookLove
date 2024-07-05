@@ -20,7 +20,7 @@ function Profile() {
     password2: "",
     about: "",
     photo: {
-      photo_url:"",
+      photo_url: "",
       public_id: "",
     },
   });
@@ -36,7 +36,7 @@ function Profile() {
       password2: "",
       about: userData?.about,
       photo: {
-        photo_url:userData?.photo?.photo_url,
+        photo_url: userData?.photo?.photo_url,
         public_id: userData?.photo?.public_id,
       },
     });
@@ -82,7 +82,10 @@ function Profile() {
       <div className="container">
         <div className="profile__info">
           <div className="profile__avatar">
-            <img src={newUserData?.photo?.photo_url||userData?.photo?.photo_url} alt="default avatar" />
+            <img
+              src={newUserData?.photo?.photo_url || userData?.photo?.photo_url}
+              alt="default avatar"
+            />
           </div>
           {!isEditting ? (
             <>
@@ -110,64 +113,75 @@ function Profile() {
             </>
           ) : (
             <>
-              <UploadImages id={userData?.photo?.public_id} newUserData={newUserData} setNewUserData={setNewUserData} content={'Update image'}/>
+              <UploadImages
+                id={userData?.photo?.public_id}
+                newUserData={newUserData}
+                setNewUserData={setNewUserData}
+                content={"Update image"}
+              />
               <h2>{message || "Update Profile"}</h2>
               <form
                 onChange={handleChange}
                 onSubmit={handleUpdate}
                 className="change__info"
               >
- <div className="subgrid">
-                <input
-                  className="navigation__button"
-                  type="text"
-                  name="username"
-                  placeholder="Username*"
-                  value={newUserData?.username}
-                />
-                <input
-                  className="navigation__button"
-                  type="text"
-                  name="email"
-                  placeholder="Email*"
-                  value={newUserData?.email}
-                />
-                <input
-                  className="navigation__button"
-                  type="password"
-                  name="password"
-                  value={newUserData?.password}
-                  placeholder="New password"
-                />
-                <input
-                  className="navigation__button"
-                  type="password"
-                  name="password2"
-                  value={newUserData?.password2}
-                  placeholder="Repeat password"
-                />
-               </div>
-                  <textarea
+                <div className="subgrid">
+                  <input
                     className="navigation__button"
                     type="text"
-                    name="about"
-                    placeholder="About"
-                    value={newUserData?.about}
+                    name="username"
+                    placeholder="Username*"
+                    value={newUserData?.username}
                   />
-                  <div className="profile__buttons">
-                    <button>
-                      <Button
-                        content={isEditting ? "Save Changes" : "Edit Profile"}
-                      />
-                    </button>
-                  </div>
-                
+                  <input
+                    className="navigation__button"
+                    type="text"
+                    name="email"
+                    placeholder="Email*"
+                    value={newUserData?.email}
+                  />
+                  <input
+                    className="navigation__button"
+                    type="password"
+                    name="password"
+                    value={newUserData?.password}
+                    placeholder="New password"
+                  />
+                  <input
+                    className="navigation__button"
+                    type="password"
+                    name="password2"
+                    value={newUserData?.password2}
+                    placeholder="Repeat password"
+                  />
+                </div>
+                <textarea
+                  className="navigation__button"
+                  type="text"
+                  name="about"
+                  placeholder="About"
+                  value={newUserData?.about}
+                />
+                <div className="profile__buttons">
+                  <button>
+                    <Button
+                      content={isEditting ? "Save Changes" : "Edit Profile"}
+                    />
+                  </button>
+                </div>
               </form>
             </>
           )}
         </div>
-{!isEditting?(( userData?.isAdmin) ? <AdminDashboard /> : <UserDashboard />):''}
-        
+        {!isEditting ? (
+          userData?.isAdmin ? (
+            <AdminDashboard />
+          ) : (
+            <UserDashboard />
+          )
+        ) : (
+          ""
+        )}
       </div>
     </div>
   );

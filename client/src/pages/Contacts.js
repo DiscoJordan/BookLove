@@ -25,7 +25,7 @@ function Contacts() {
             data
           );
           // response from the server
-          console.log("res: ", res);
+        //   console.log("res: ", res);
           // clearing form inputs
           name.value = "";
           email.value = "";

@@ -26,7 +26,6 @@ const Login = ({ login }) => {
       setTimeout(() => {
         setMessage("");
       }, 2000);
-      console.log(response);
       if (response.data.ok) {
         setTimeout(() => {
           login(response.data.token);

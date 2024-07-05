@@ -49,7 +49,6 @@ const UploadImages = ({
               });
               removePicture();
             } else if (content === "Update cover") {
-              debugger
               removePicture();
               setPlaceData({
                 ...placeData,
@@ -58,12 +57,9 @@ const UploadImages = ({
                   photo_url: result.info.files[0]?.uploadInfo?.secure_url,
                 },
               });
-              console.log(result.info.files[0]?.uploadInfo);
-              console.log(id);
               
             } else if (content === "Add photos") {
               uploadPlacePhotos(result);
-              
             }
           }
         }

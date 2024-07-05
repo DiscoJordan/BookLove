@@ -2,9 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import Button from "./Button";
 import { useLocation } from "react-router-dom";
-function Navbar({ isLoggedIn, logout, user }) {
+function Navbar({ isLoggedIn, logout }) {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isProfile, setIsProfile] = useState(false);
   const location = useLocation();
 
   useEffect(() => {

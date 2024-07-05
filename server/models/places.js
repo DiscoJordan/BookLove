@@ -22,7 +22,14 @@ const placeSchema = new mongoose.Schema({
       tag: { type: String, required: true },
       id: { type: String, required: false },
     },
-  ], //categories/tags
+  ], 
+  comments: [
+    {
+      userId: { type: String, required: true },
+      comment: { type: String, required: true },
+      date: { type: String, required: true },
+    },
+  ], 
   location: { type: String, required: true, unique: false },
   coordinates: {
     lat: { type: Number, required: false },

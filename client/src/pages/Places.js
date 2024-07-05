@@ -39,7 +39,6 @@ function Places() {
   const handleCheckbox = (event) => {
     const { value, checked } = event.target;
     const index = tags.findIndex((tag) => tag.tagTitle === value);
-
     const newCheckedTags = [...checkedTags];
     newCheckedTags[index] = checked;
     setCheckedTags(newCheckedTags);
@@ -117,7 +116,7 @@ function Places() {
         </SwiperSlide>
 
         <div className="autoplay-progress" slot="container-end">
-          <svg viewBox="0 0 48px 48px" ref={progressCircle}>
+          <svg viewBox="0 0 48 48" ref={progressCircle}>
             <circle cx="24" cy="24" r="20"></circle>
           </svg>
           <span ref={progressContent}></span>

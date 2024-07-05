@@ -150,7 +150,6 @@ const loginUser = async (req, res) => {
   }
 };
 const verifyToken = (req, res) => {
-  console.log(req.headers.authorization);
   const token = req.headers.authorization;
   jwt.verify(token, jwt_secret, (err, succ) => {
     err

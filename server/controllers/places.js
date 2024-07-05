@@ -1,4 +1,3 @@
-
 const Places = require("../models/places");
 const Users = require("../models/users");
 const cloudinary = require("cloudinary");
@@ -9,53 +8,102 @@ cloudinary.config({
   api_secret: process.env.API_SECRET,
 });
 
-
-
-const addPlacesFromGoogle = async (req, res) => {
+const addComment = async (req, res) => {
+ 
   try {
-    const  googlePlaces = req.body;
-    console.log(googlePlaces);
-    let places = googlePlaces.map((place)=>{
-      return{
-      title: place?.title,
-      coordinates:place?.location|| {},
-      subtitle: place?.subtitle || "",
-      description: {
-        header: '',
-        descriptionText: place?.description || ''
-      },
-      tags: place?.tags||[],
-      location: place?.adress,
-      price: 0,
-      website:place?.website,
-      hours:place?.hours,
-      }
-    })
-
-for (let place of places) {
-const exist  = await Places.findOne({title:place.title})
-  if(!exist){
-    await Places.create(place);
-  }
-  
-}
-
-    res.send({ ok: true, data: `Places was created` });
+    const { placeId, comment, date, userId } = req.body;
+    const foundPlace = await Places.findById(placeId);
+    if (foundPlace) {
+      foundPlace["comments"].unshift({
+        userId: userId,
+        comment: comment,
+        date: date,
+      });
+      await foundPlace.save();
+    }
+    res.send({
+      ok: true,
+      data: `Place '${foundPlace.title}' was commented`,
+      foundPlace,
+      userId,
+    });
   } catch (error) {
     res.send({ ok: false, data: error.message });
     console.log(error.message);
   }
 };
 
+const deleteComment = async (req, res) => {
+ 
+  try {
+    const { comment, userId, placeId } = req.body;
+    const foundPlace = await Places.findOne({_id:placeId});
+
+    console.log(foundPlace.comments);
+    console.log(comment._id);
+    if (foundPlace.comments.some(com=> com._id.equals(comment._id))) {
+      console.log(`r4r`);
+      foundPlace.comments=foundPlace.comments.filter(com=>!com._id.equals(comment._id))
+      await foundPlace.save()
+      
+    }
+
+    res.send({
+      ok: true,
+      data: `Comment '${comment.comment}' was deleted`,
+      foundPlace,
+    });
+  } catch (error) {
+    res.send({ ok: false, data: error.message });
+    console.log(error.message);
+  }
+};
+
+
+const addPlacesFromGoogle = async (req, res) => {
+  try {
+    const googlePlaces = req.body;
+    let places = googlePlaces.map((place) => {
+      return {
+        title: place?.title,
+        coordinates: place?.location || {},
+        subtitle: place?.subtitle || "",
+        description: {
+          header: "",
+          descriptionText: place?.description || "",
+        },
+        tags: place?.tags || [],
+        location: place?.adress,
+        price: 0,
+        website: place?.website,
+        hours: place?.hours,
+      };
+    });
+
+    for (let place of places) {
+      const exist = await Places.findOne({ title: place.title });
+      if (!exist) {
+        await Places.create(place);
+      }
+    }
+
+    res.send({ ok: true, data: `Places was created` });
+  } catch (error) {
+    res.send({ ok: false, data: error.message });
+  }
+};
+
 const removePicture = async (req, res) => {
   const { public_id } = req.body;
-
-  let deletePic = await cloudinary.uploader.destroy(public_id);
-  if (deletePic.result) {
-    res.status(200).json("Success");
-  } else {
-    res.status(401);
-    throw new Error("Something went wrong!");
+  try {
+    let deletePic = await cloudinary.uploader.destroy(public_id);
+    if (deletePic.result) {
+      res.status(200).json("Success");
+    } else {
+      res.status(400).json("Something goes wrong");
+    }
+  } catch (error) {
+    console.log(error);
   }
 };
 
@@ -69,15 +117,15 @@ const uploadPlacePhotos = async (req, res) => {
   });
   if (id) {
     try {
-      const foundPlace = await Places.findOne({ _id:id });
-      foundPlace.photos.push(...pictures)
+      const foundPlace = await Places.findOne({ _id: id });
+      foundPlace.photos.push(...pictures);
       await foundPlace.save();
-      res.json({ ok: true, result:foundPlace.photos });
+      res.json({ ok: true, result: foundPlace.photos });
     } catch (error) {
       res.json({ ok: false });
     }
-  } 
-}
+  }
+};
 
 const addPlace = async (req, res) => {
   try {
@@ -97,7 +145,7 @@ const addPlace = async (req, res) => {
       title: title,
       subtitle: subtitle || "",
       description: description || {},
-      tags: tags||[],
+      tags: tags || [],
       location: location,
       hours: hours,
       price: price,
@@ -113,7 +161,6 @@ const addPlace = async (req, res) => {
 const deletePlace = async (req, res) => {
   try {
     const { title } = req.body;
-    console.log(req.body);
     const placeExist = await Places.findOne({ title: title });
     if (placeExist) {
       await placeExist.deleteOne();
@@ -128,13 +175,11 @@ const deletePlace = async (req, res) => {
 };
 
 const updatePlace = async (req, res) => {
- 
   try {
     const { oldtitle } = req.params;
     const uniqePlace = await Places.findOne({ title: oldtitle });
 
     if (uniqePlace) {
-      console.log(req.body);
       const result = await Places.findOneAndUpdate(
         { title: oldtitle },
         { $set: req.body },
@@ -146,9 +191,10 @@ const updatePlace = async (req, res) => {
         result: result,
       });
     } else {
-      res
-        .status(200)
-        .send({ ok: true, data: `Title '${req.body.title}' is already taken ` });
+      res.status(200).send({
+        ok: true,
+        data: `Title '${req.body.title}' is already taken `,
+      });
     }
   } catch (error) {
     res.status(400).send({ ok: false, data: error.message });
@@ -196,5 +242,7 @@ module.exports = {
   getAllPlaces,
   uploadPlacePhotos,
   addPlacesFromGoogle,
-  removePicture
+  removePicture,
+  addComment,
+  deleteComment,
 };

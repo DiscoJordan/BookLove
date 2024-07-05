@@ -7,19 +7,17 @@ import { TagsContext } from "../context/TagsContext";
 const filter = createFilterOptions();
 
 function InputOfTags({}) {
-  const { setCurrentTag,currentTag ,tags } = useContext(TagsContext);
+  const { setCurrentTag,tags } = useContext(TagsContext);
 
   const [value, setValue] = React.useState(null);
   useEffect(() => {
     setCurrentTag(value?.tagTitle);
     }, [value]);
-    
-    console.log(currentTag);
 
   return (
     <Autocomplete
       value={value}
-      onChange={(event, newValue) => {
+      onChange={(newValue) => {
         if (typeof newValue === "string") {
           setValue({
             tagTitle: newValue,

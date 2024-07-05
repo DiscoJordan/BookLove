@@ -359,7 +359,7 @@ input {
 textarea {
   resize: none;
   width: 100%;
-  height: 300px;
+  height: 200px;
   font-family: inherit;
   padding: 20px !important;
 }
@@ -1022,4 +1022,43 @@ textarea.form__input {
   flex-direction: column;
   gap: 10px;
   justify-content: space-between;
+}
+
+.comments {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.comment__card {
+  border-radius: 20px;
+  border: 1px black solid;
+  padding: 30px;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  align-items: flex-start;
+  gap: 30px;
+}
+.comment__card .comment__user {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.comment__card .comment__info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: normal;
+}
+.comment__card .comment__photo {
+  width: 40px;
+  height: 40px;
+}
+.comment__card .comment__photo img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50px;
 }/*# sourceMappingURL=App.css.map */

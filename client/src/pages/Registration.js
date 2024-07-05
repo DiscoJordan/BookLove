@@ -19,9 +19,7 @@ function Registration() {
   }
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
-    console.log(isChecked);
   };
-
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -36,7 +34,6 @@ function Registration() {
         setTimeout(() => {
             setMessage('')
            }, 2000);
-        console.log(response)
         if (response.data.ok) {
             setTimeout(() => {
                 navigate('/login');

@@ -1,11 +1,14 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState, useMemo } from "react";
 import { useParams } from "react-router-dom";
 import { PlacesContext } from "../context/PlacesContext";
 import { UserContext } from "../context/UserContext";
 import ManageButtons from "../components/ManageButtons";
 import PlaceCard from "../components/PlaceCard";
 import Button from "../components/Button";
-import { useRef, useState } from "react";
+import { useRef } from "react";
+import axios from "axios";
+import { URL } from "../config";
+import Comment from "../components/Comment";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -13,26 +16,32 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 function CurrentPlace() {
-  const key = process.env.REACT_APP_GOOGLE_MAP
-  console.log(key);
+  const [comment, setComment] = useState("");
   const progressCircle = useRef(null);
   const progressContent = useRef(null);
-  const onAutoplayTimeLeft = (s, time, progress) => {
+  const onAutoplayTimeLeft = (time, progress) => {
     progressCircle.current.style.setProperty("--progress", 1 - progress);
     progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
   };
-  const { places, setCurrentPlace, currentPlace } = useContext(PlacesContext);
-  const { user } = useContext(UserContext);
+  const { places, setCurrentPlace, currentPlace, getPlaces } =
+    useContext(PlacesContext);
+  const { user, userData } = useContext(UserContext);
   const currentPlaceTitle = useParams().title;
   const placeInfo = places.find((place) => place.title === currentPlaceTitle);
-  const mapUrl = `https://www.google.com/maps/embed/v1/place?key=${key}
+  const mapUrl = `https://www.google.com/maps/embed/v1/place?key=${
+    process.env.REACT_APP_GOOGLE_MAP
+  }
   &q=${placeInfo?.title}
-  &zoom=${18}`;
+  &zoom=${16}`;
   const otherPlaces = places.filter(
     (place) => place.title !== currentPlaceTitle
   );
-  setCurrentPlace(places.find((place) => place.title === currentPlaceTitle));
-  const randomIndexes = otherPlaces.length >= 3 ? getRandomIndexes() : [];
+
+  // useEffect(() => {
+  //   setCurrentPlace(places.find((place) => place.title === currentPlaceTitle));
+  // }, []);
+
+  const randomIndexes = useMemo(() => otherPlaces.length >= 3 ? getRandomIndexes() : [], [otherPlaces.length]) ;
   function getRandomIndexes() {
     let indexes = [];
     for (let i = 0; indexes.length < 3; i++) {
@@ -43,10 +52,45 @@ function CurrentPlace() {
     }
     return indexes;
   }
+
+  function formatDateTime(date) {
+    const day = String(date.getDate()).padStart(2, "0");
+    const month = String(date.getMonth() + 1).padStart(2, "0"); // getMonth() returns 0-based month
+    const year = date.getFullYear();
+    const hours = String(date.getHours()).padStart(2, "0");
+    const minutes = String(date.getMinutes()).padStart(2, "0");
+
+    return `${day}.${month}.${year}, ${hours}:${minutes}`;
+  }
+
+  const commentPlace = async (e) => {
+    e.preventDefault();
+    const currentDateTime = new Date();
+    const formattedDateTime = formatDateTime(currentDateTime);
+    try {
+      const response = await axios.post(`${URL}/place/comment`, {
+        placeId: placeInfo._id,
+        comment: comment,
+        date: formattedDateTime,
+        userId: userData._id,
+      });
+
+      if (response.data.ok) {
+        getPlaces();
+        setComment("");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const handleChange = (e) => {
+    setComment(e.target.value);
+  };
   return (
     <>
       <div className="place__cover">
-        <img src={currentPlace?.cover?.photo_url} alt="default cover" />
+        <img src={placeInfo?.cover?.photo_url} alt="default cover" />
         <div className="container">
           <h1>{placeInfo?.title}</h1>
         </div>
@@ -65,7 +109,7 @@ function CurrentPlace() {
             </div>
             <hr />
             <div className="place__time">
-              <span class="material-symbols-outlined">schedule</span>
+              <span className="material-symbols-outlined">schedule</span>
               <div className="time__day">
                 <h4>Monday</h4>
                 <h4 className="orange">{placeInfo?.hours[0]}</h4>
@@ -98,7 +142,7 @@ function CurrentPlace() {
             <hr />
             <div className="place__secondary-info">
               <div className="place__price">
-                <span class="material-symbols-outlined">payments</span>
+                <span className="material-symbols-outlined">payments</span>
                 <h4>
                   {placeInfo?.price !== 0
                     ? "From " + placeInfo?.price + "€"
@@ -106,7 +150,7 @@ function CurrentPlace() {
                 </h4>
               </div>
               <div className="place__location">
-                <span class="material-symbols-outlined">pin_drop</span>
+                <span className="material-symbols-outlined">pin_drop</span>
                 <a
                   target="blank"
                   href={
@@ -118,7 +162,7 @@ function CurrentPlace() {
               </div>
               {placeInfo?.website && (
                 <div className="place__website">
-                  <span class="material-symbols-outlined">language</span>
+                  <span className="material-symbols-outlined">language</span>
                   <a target="blank" href={placeInfo?.website}>
                     Website
                   </a>
@@ -151,7 +195,7 @@ function CurrentPlace() {
               onAutoplayTimeLeft={onAutoplayTimeLeft}
               className="mySwiper"
             >
-              {currentPlace?.photos?.map((photo, index) => (
+              {placeInfo?.photos?.map((photo, index) => (
                 <SwiperSlide key={index}>
                   <img
                     src={photo.photo_url}
@@ -161,7 +205,7 @@ function CurrentPlace() {
                 </SwiperSlide>
               ))}
               <div className="autoplay-progress" slot="container-end">
-                <svg viewBox="0 0 48px 48px" ref={progressCircle}>
+                <svg viewBox="0 0 48 48" ref={progressCircle}>
                   <circle cx="24" cy="24" r="20"></circle>
                 </svg>
                 <span ref={progressContent}></span>
@@ -170,6 +214,8 @@ function CurrentPlace() {
           )}
         </div>
         <div className="container">
+          <h3>On map</h3>
+          <hr color="black" />
           <iframe
             width="100%"
             height="500px"
@@ -192,6 +238,26 @@ function CurrentPlace() {
               </div>
             </>
           ) : null}
+          <h3>Comments</h3>
+          <hr color="black" />
+          <form onSubmit={commentPlace} className="comments">
+            <textarea
+              value={comment}
+              onChange={handleChange}
+              className="navigation__button"
+            ></textarea>
+            <button>
+              <Button content={"Post comment"} />
+            </button>
+          </form>
+
+          {placeInfo?.comments.length ? (
+            placeInfo?.comments.map((comment) => {
+              return <Comment key={comment._id} comment={comment} placeId={placeInfo?._id} />;
+            })
+          ) : (
+            <h3>There is no any comments</h3>
+          )}
         </div>
       </div>
     </>

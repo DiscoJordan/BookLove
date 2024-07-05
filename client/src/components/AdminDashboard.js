@@ -16,12 +16,10 @@ function AdminDashboard() {
     
     try {
       const response = await axios.post(`${URL}/place/fetch`,googlePlaces);
-      console.log(response);
     } catch (error) {
       console.log(error);
     }
   };
-
 
   useEffect(() => {
     getPlaces();

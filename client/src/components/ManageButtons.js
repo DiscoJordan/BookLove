@@ -46,7 +46,6 @@ function ManageButtons({ place }) {
       // setTimeout(() => {
       //   setMessage("");
       // }, 2000);
-      console.log(response);
       if (response.data.ok) {
         //   setTimeout(() => {
         //       navigate(`/}`);
@@ -78,8 +77,6 @@ function ManageButtons({ place }) {
         update,
         value,
       });
-      console.log(response);
-      console.log(wishMatch);
       getUserData();
     } catch (error) {
       console.log(error);

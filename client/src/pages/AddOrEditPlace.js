@@ -7,7 +7,6 @@ import { PlacesContext } from "../context/PlacesContext";
 import { TagsContext } from "../context/TagsContext";
 import InputOfTags from "../components/InputOfTags";
 import UploadImages from "../components/UploadImages";
-import googlePlaces from "../googlePlaces.json";
 
 function AddOrEditPlace() {
   const {
@@ -61,10 +60,13 @@ function AddOrEditPlace() {
     
   });
   ////////////////////
-
+useEffect(() => {
   editTitle
     ? setCurrentPlace(places.find((place) => place.title === oldtitle))
     : setCurrentPlace(places.find((place) => place.title === placeData?.title));
+  }
+, []);
+ 
 
   useEffect(() => {
     if (beingEdited) {
@@ -91,7 +93,6 @@ function AddOrEditPlace() {
 
     try {
       const response = await axios.post(`${URL}/place/add`, placeData);
-      console.log(response);
       setMessage(response.data.data);
       setTimeout(() => {
         setMessage("");
@@ -116,11 +117,9 @@ function AddOrEditPlace() {
       );
 
       getPlaces();
-      console.log(response.data);
       setTimeout(() => {
         setMessage("");
       }, 2000);
-      console.log(response);
       if (response.data.ok) {
         setTimeout(() => {
           navigate(`/place/${placeData.title}`);
@@ -198,11 +197,6 @@ function AddOrEditPlace() {
     }));
   };
 
-
-  useEffect(() => {
-    console.log(placeData);
-  }, [placeData]);
-
   return (
     <div className="newPlace__wrapper">
       <div className="container">
@@ -221,7 +215,7 @@ function AddOrEditPlace() {
               <input
                 className="form__input"
                 placeholder="Title*"
-                value={placeData?.title}
+                value={placeData?.title|| ""}
                 name="title"
                 type="text"
               />
@@ -229,35 +223,35 @@ function AddOrEditPlace() {
               <input
                 className="form__input"
                 placeholder="Subtitle"
-                value={placeData?.subtitle}
+                value={placeData?.subtitle|| ""}
                 name="subtitle"
                 type="text"
               />
               <input
                 className="form__input"
                 placeholder="Header"
-                value={placeData?.description?.header}
+                value={placeData?.description?.header|| ""}
                 name="header"
                 type="text"
               />
               <input
                 className="form__input"
                 placeholder="Location*"
-                value={placeData?.location}
+                value={placeData?.location|| ""}
                 name="location"
                 type="text"
               />
               <input
                 className="form__input"
                 placeholder="Website"
-                value={placeData?.website}
+                value={placeData?.website|| ""}
                 name="website"
                 type="text"
               />
               <input
                 className="form__input"
                 placeholder="Price*"
-                value={placeData?.price}
+                value={placeData?.price|| ""}
                 name="price"
                 type="number"
               />
@@ -265,7 +259,7 @@ function AddOrEditPlace() {
               <input
                 className="form__input"
                 placeholder="Monday"
-                value={placeData?.hours[0]}
+                value={placeData?.hours[0]|| ""}
                 onChange={(e) => handleChangeHours(e, 0)}
                 name="0"
                 type="text"
@@ -273,42 +267,42 @@ function AddOrEditPlace() {
               <input
                 className="form__input"
                 placeholder="Tuesday"
-                value={placeData?.hours[1]}
+                value={placeData?.hours[1]|| ""}
                 onChange={(e) => handleChangeHours(e, 1)}
                 type="text"
               />
               <input
                 className="form__input"
                 placeholder="Wednesday"
-                value={placeData?.hours[2]}
+                value={placeData?.hours[2]|| ""}
                 onChange={(e) => handleChangeHours(e, 2)}
                 type="text"
               />
               <input
                 className="form__input"
                 placeholder="Thursday"
-                value={placeData?.hours[3]}
+                value={placeData?.hours[3]|| ""}
                 onChange={(e) => handleChangeHours(e, 3)}
                 type="text"
               />
               <input
                 className="form__input"
                 placeholder="Friday"
-                value={placeData?.hours[4]}
+                value={placeData?.hours[4]|| ""}
                 onChange={(e) => handleChangeHours(e, 4)}
                 type="text"
               />
               <input
                 className="form__input"
                 placeholder="Saturday"
-                value={placeData?.hours[5]}
+                value={placeData?.hours[5]|| ""}
                 onChange={(e) => handleChangeHours(e, 5)}
                 type="text"
               />
               <input
                 className="form__input"
                 placeholder="Sunday"
-                value={placeData?.hours[6]}
+                value={placeData?.hours[6]|| ""}
                 onChange={(e) => handleChangeHours(e, 6)}
                 name="6"
                 type="text"
@@ -317,14 +311,14 @@ function AddOrEditPlace() {
                <input
                 className="form__input"
                 placeholder="Latitude"
-                value={placeData?.coordinates?.lat}
+                value={placeData?.coordinates?.lat|| ""}
                 name="lat"
                 type="text"
               />
                <input
                 className="form__input"
                 placeholder="Longitude"
-                value={placeData?.coordinates?.lng}
+                value={placeData?.coordinates?.lng|| ""}
                 name="lng"
                 type="text"
               />
@@ -333,7 +327,7 @@ function AddOrEditPlace() {
               <textarea
                 className="form__input"
                 placeholder="Description"
-                value={placeData?.description.descriptionText}
+                value={placeData?.description?.descriptionText || ""}
                 name="descriptionText"
                 rows="40"
                 cols="40"
