@@ -43,7 +43,7 @@ const Comment = memo(function Comment({ comment, placeId }) {
           <h3>{ownerOFComment?.username}</h3>
         </div>
         <p>{comment.date}</p>
-        {userData?._id === comment.userId || userData.isAdmin ? (
+        {userData?._id === comment.userId || userData?.isAdmin ? (
           <button onClick={deleteComment}>
             <Button content={"Delete"} />
           </button>

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffec, useState } from "react";
 import CircleButton from "./CircleButton";
 import { Link } from "react-router-dom";
 import { URL } from "../config";
@@ -20,15 +20,18 @@ function ManageButtons({ place }) {
   const wishMatch = userData?.wishes?.some((e) => e.title === place.title);
   const visitedMatch = userData?.visited?.some((e) => e.title === place.title);
 
-  const [open, setOpen] = React.useState(false);
-  const handleClickOpen = (e) => {
+  const [open, setOpen] = useState(false);
+  const [alert, setAlert] = useState("");
+  const handleClickOpen = (e, alert) => {
     e.stopPropagation();
     setOpen(true);
+    setAlert(alert);
   };
 
   const handleClose = (e) => {
     e.stopPropagation();
     setOpen(false);
+    setAlert("");
   };
 
   const navigate = useNavigate();
@@ -51,7 +54,7 @@ function ManageButtons({ place }) {
         //       navigate(`/}`);
         //   }, 2000);
         if (location.pathname.includes("place")) {
-          navigate('/');
+          navigate("/");
         }
       }
 
@@ -89,7 +92,7 @@ function ManageButtons({ place }) {
         <button
           onClick={(e) => {
             if (!isLoggedIn) {
-              handleClickOpen(e);
+              handleClickOpen(e, "login");
             } else {
               if (wishMatch) {
                 //remove
@@ -108,7 +111,7 @@ function ManageButtons({ place }) {
         <button
           onClick={(e) => {
             if (!isLoggedIn) {
-              handleClickOpen(e);
+              handleClickOpen(e, "login");
             } else {
               if (visitedMatch) {
                 updatePreferences("visited", false, e);
@@ -128,8 +131,7 @@ function ManageButtons({ place }) {
         </button>
       )}
       {userData?.isAdmin && (
-        <button onClick={deletePlace}>
-          {" "}
+        <button onClick={(e) => handleClickOpen(e, "delete")}>
           <CircleButton content={"delete"} />
         </button>
       )}
@@ -146,13 +148,16 @@ function ManageButtons({ place }) {
         }}
       >
         <DialogTitle id="alert-dialog-title">
-          {"Want to use full functionality? "}
+          {alert === "login" && "Want to use full functionality?"}
+          {alert === "delete" && "Want to delete place?"}
         </DialogTitle>
         <hr color="#FF471F" />
 
         <DialogContent>
           <DialogContentText id="alert-dialog-description">
-            To get full access to all site features, register an account
+            {alert === "login" &&
+              "To get full access to all site features, register an account"}
+            {alert === "delete" && "Are you sure you want to delete the item?"}
           </DialogContentText>
         </DialogContent>
         <DialogActions>
@@ -171,9 +176,21 @@ function ManageButtons({ place }) {
               },
             }}
           >
-            Later
+             {alert === "login"
+                ? "Later"
+                : alert === "delete"
+                ? 'No'
+                : "/"}
           </Button>
-          <Link to={"/registration"}>
+          <Link
+            to={
+              alert === "login"
+                ? "/registration"
+                : alert === "delete"
+                ? null
+                : ""
+            }
+          >
             <Button
               sx={{
                 color: "white",
@@ -187,10 +204,14 @@ function ManageButtons({ place }) {
                   border: "1px #FF471F solid",
                 },
               }}
-              onClick={handleClose}
+              onClick={handleClose&&deletePlace}
               autoFocus
             >
-              Register
+              {alert === "login"
+                ? "Register"
+                : alert === "delete"
+                ? 'Delete'
+                : "/"}
             </Button>
           </Link>
         </DialogActions>
