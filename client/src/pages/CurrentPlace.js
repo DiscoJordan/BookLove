@@ -25,7 +25,7 @@ function CurrentPlace() {
   };
   const { places, setCurrentPlace, currentPlace, getPlaces } =
     useContext(PlacesContext);
-  const { user, userData } = useContext(UserContext);
+  const { user, userData,token } = useContext(UserContext);
   const currentPlaceTitle = useParams().title;
   const placeInfo = places.find((place) => place.title === currentPlaceTitle);
   const mapUrl = `https://www.google.com/maps/embed/v1/place?key=${
@@ -68,6 +68,7 @@ function CurrentPlace() {
     const currentDateTime = new Date();
     const formattedDateTime = formatDateTime(currentDateTime);
     try {
+      axios.defaults.headers.common["Authorization"] = token;
       const response = await axios.post(`${URL}/place/comment`, {
         placeId: placeInfo._id,
         comment: comment,

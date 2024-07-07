@@ -22,6 +22,7 @@ import Users from "./pages/Users.js";
 import About from "./pages/About.js";
 import Contacts from "./pages/Contacts.js";
 import Terms from "./pages/Terms.js";
+import NotFound from "./pages/NotFound.js";
 
 function App() {
   const { isLoggedIn, logout, user, login, getUserData, verify_token } =
@@ -91,6 +92,7 @@ function App() {
                 user?.isAdmin ? <Users /> : <Navigate to={`/`} />
               }
             />
+            <Route path={`/*`} element={<NotFound />} />
           </Routes>
           <Footer />
         </Router>

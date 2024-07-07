@@ -132,7 +132,7 @@ const loginUser = async (req, res) => {
         { userName: user.username, isAdmin: user.isAdmin, id: user._id },
         jwt_secret,
         {
-          expiresIn: "1h",
+          expiresIn: "24h",
         }
       );
       res.json({
@@ -211,9 +211,10 @@ const ObjectId = require("mongoose").Types.ObjectId;
 
 const editPlaceList = async (req, res) => {
   try {
-    const { username, placeId, update, value } = req.body;
+    const { placeId, update, value } = req.body;
     const opposite = update === "wishes" ? "visited" : "wishes";
-    const foundUser = await Users.findOne({ username });
+    const foundUser = await Users.findById({ _id: req._id });
+
     const objectPlaceId = new ObjectId(placeId);
     if (foundUser[opposite].some((e) => e._id.equals(objectPlaceId))) {
       foundUser[opposite] = foundUser[opposite].filter(

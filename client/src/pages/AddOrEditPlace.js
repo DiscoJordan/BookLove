@@ -5,18 +5,17 @@ import { useNavigate, useParams } from "react-router-dom";
 import { URL } from "../config";
 import { PlacesContext } from "../context/PlacesContext";
 import { TagsContext } from "../context/TagsContext";
+import { UserContext } from "../context/UserContext";
 import InputOfTags from "../components/InputOfTags";
 import UploadImages from "../components/UploadImages";
 
 function AddOrEditPlace() {
-  const {
-    editTitle,
-    setEditTitle,
-    places,
-    getPlaces,
-    setCurrentPlace,
-  } = useContext(PlacesContext);
-  const { currentTag, setCurrentTag, tags, getTags } = useContext(TagsContext);
+  const { editTitle, setEditTitle, places, getPlaces, setCurrentPlace } =
+    useContext(PlacesContext);
+  const { token} =
+    useContext(UserContext);
+  const { currentTag, setCurrentTag, tags, getTags } =
+    useContext(TagsContext);
 
   const { oldtitle } = useParams();
   //if  editing
@@ -53,20 +52,19 @@ function AddOrEditPlace() {
     tags: [],
     photos: [],
     website: "",
-    coordinates:{
-      lat:'',
-      lng:''
+    coordinates: {
+      lat: "",
+      lng: "",
     },
-    
   });
   ////////////////////
-useEffect(() => {
-  editTitle
-    ? setCurrentPlace(places.find((place) => place.title === oldtitle))
-    : setCurrentPlace(places.find((place) => place.title === placeData?.title));
-  }
-, []);
- 
+  useEffect(() => {
+    editTitle
+      ? setCurrentPlace(places.find((place) => place.title === oldtitle))
+      : setCurrentPlace(
+          places.find((place) => place.title === placeData?.title)
+        );
+  }, []);
 
   useEffect(() => {
     if (beingEdited) {
@@ -80,7 +78,7 @@ useEffect(() => {
       let copy = { ...placeData };
       copy.description[e.target.name] = e.target.value;
       setPlaceData(copy);
-    } else  if (e.target.name === "lat" || e.target.name === "lng") {
+    } else if (e.target.name === "lat" || e.target.name === "lng") {
       let copy = { ...placeData };
       copy.coordinates[e.target.name] = e.target.value;
       setPlaceData(copy);
@@ -92,6 +90,7 @@ useEffect(() => {
     e.preventDefault();
 
     try {
+      axios.defaults.headers.common["Authorization"] = token;
       const response = await axios.post(`${URL}/place/add`, placeData);
       setMessage(response.data.data);
       setTimeout(() => {
@@ -111,6 +110,7 @@ useEffect(() => {
   const handleUpdate = async (e) => {
     e.preventDefault();
     try {
+      axios.defaults.headers.common["Authorization"] = token;
       const response = await axios.post(
         `${URL}/place/${oldtitle}/update`,
         placeData
@@ -131,10 +131,13 @@ useEffect(() => {
   };
 
   const handleTags = async (e) => {
+    
     e.preventDefault();
     if (!currentTag) return alert("No skill specified!");
     if (!tags.some((tag) => tag.tagTitle === currentTag)) {
+      axios.defaults.headers.common["Authorization"] = token;
       try {
+      
         const response = await axios.post(`${URL}/tag/add`, {
           tagTitle: currentTag,
         });
@@ -170,18 +173,19 @@ useEffect(() => {
     }));
   };
 
-  const deletePhoto = async (id,e) => {
-    e.preventDefault()
+  const deletePhoto = async (id, e) => {
+    e.preventDefault();
     setPlaceData((prevState) => ({
       ...prevState,
       photos: prevState.photos.filter((photo) => photo.public_id !== id),
     }));
-    
+
     try {
+      axios.defaults.headers.common["Authorization"] = token;
       const response = await axios.post(`${URL}/place/removePicture`, {
         public_id: id,
       });
-      !response.status===200&& alert("Something went wrong");
+      !response.status === 200 && alert("Something went wrong");
     } catch (error) {
       console.log(error);
     }
@@ -215,7 +219,7 @@ useEffect(() => {
               <input
                 className="form__input"
                 placeholder="Title*"
-                value={placeData?.title|| ""}
+                value={placeData?.title || ""}
                 name="title"
                 type="text"
               />
@@ -223,35 +227,35 @@ useEffect(() => {
               <input
                 className="form__input"
                 placeholder="Subtitle"
-                value={placeData?.subtitle|| ""}
+                value={placeData?.subtitle || ""}
                 name="subtitle"
                 type="text"
               />
               <input
                 className="form__input"
                 placeholder="Header"
-                value={placeData?.description?.header|| ""}
+                value={placeData?.description?.header || ""}
                 name="header"
                 type="text"
               />
               <input
                 className="form__input"
                 placeholder="Location*"
-                value={placeData?.location|| ""}
+                value={placeData?.location || ""}
                 name="location"
                 type="text"
               />
               <input
                 className="form__input"
                 placeholder="Website"
-                value={placeData?.website|| ""}
+                value={placeData?.website || ""}
                 name="website"
                 type="text"
               />
               <input
                 className="form__input"
                 placeholder="Price*"
-                value={placeData?.price|| ""}
+                value={placeData?.price || ""}
                 name="price"
                 type="number"
               />
@@ -259,7 +263,7 @@ useEffect(() => {
               <input
                 className="form__input"
                 placeholder="Monday"
-                value={placeData?.hours[0]|| ""}
+                value={placeData?.hours[0] || ""}
                 onChange={(e) => handleChangeHours(e, 0)}
                 name="0"
                 type="text"
@@ -267,58 +271,58 @@ useEffect(() => {
               <input
                 className="form__input"
                 placeholder="Tuesday"
-                value={placeData?.hours[1]|| ""}
+                value={placeData?.hours[1] || ""}
                 onChange={(e) => handleChangeHours(e, 1)}
                 type="text"
               />
               <input
                 className="form__input"
                 placeholder="Wednesday"
-                value={placeData?.hours[2]|| ""}
+                value={placeData?.hours[2] || ""}
                 onChange={(e) => handleChangeHours(e, 2)}
                 type="text"
               />
               <input
                 className="form__input"
                 placeholder="Thursday"
-                value={placeData?.hours[3]|| ""}
+                value={placeData?.hours[3] || ""}
                 onChange={(e) => handleChangeHours(e, 3)}
                 type="text"
               />
               <input
                 className="form__input"
                 placeholder="Friday"
-                value={placeData?.hours[4]|| ""}
+                value={placeData?.hours[4] || ""}
                 onChange={(e) => handleChangeHours(e, 4)}
                 type="text"
               />
               <input
                 className="form__input"
                 placeholder="Saturday"
-                value={placeData?.hours[5]|| ""}
+                value={placeData?.hours[5] || ""}
                 onChange={(e) => handleChangeHours(e, 5)}
                 type="text"
               />
               <input
                 className="form__input"
                 placeholder="Sunday"
-                value={placeData?.hours[6]|| ""}
+                value={placeData?.hours[6] || ""}
                 onChange={(e) => handleChangeHours(e, 6)}
                 name="6"
                 type="text"
               />
               <h3>Coordinates</h3>
-               <input
+              <input
                 className="form__input"
                 placeholder="Latitude"
-                value={placeData?.coordinates?.lat|| ""}
+                value={placeData?.coordinates?.lat || ""}
                 name="lat"
                 type="text"
               />
-               <input
+              <input
                 className="form__input"
                 placeholder="Longitude"
-                value={placeData?.coordinates?.lng|| ""}
+                value={placeData?.coordinates?.lng || ""}
                 name="lng"
                 type="text"
               />
@@ -353,11 +357,8 @@ useEffect(() => {
           <hr width="100%" color="white" />
           <h2>Cover image</h2>
           <div className="cover__image">
-            <img
-              src={placeData?.cover?.photo_url}
-              alt=""
-            />
-            
+            <img src={placeData?.cover?.photo_url} alt="" />
+
             <UploadImages
               reversed={true}
               setPlaceData={setPlaceData}
@@ -374,14 +375,13 @@ useEffect(() => {
             reversed={true}
             idOfPlace={placeData?._id}
             content={"Add photos"}
-            
           />
           <div className="place__images">
             {placeData?.photos?.map((photo) => (
               <div className="place__image">
                 <img src={photo.photo_url} alt="photo" />
-                <button onClick={(e) => deletePhoto(photo.public_id,e)}>
-                  <Button  reversed={true} close={true} content={"Delete"} />
+                <button onClick={(e) => deletePhoto(photo.public_id, e)}>
+                  <Button reversed={true} close={true} content={"Delete"} />
                 </button>
               </div>
             ))}

@@ -1,8 +1,10 @@
-import React, {useState} from "react";
+import React, {useState,useContext} from "react";
 import Button from "../components/Button";
 import { URL } from "../config";
 import axios from "axios";
+import { UserContext } from "../context/UserContext";
 function Contacts() {
+  const {token} = useContext(UserContext);
     const [msg, setMsg] = useState('');
 
     const handleSubmit = async (event) => {
@@ -19,6 +21,7 @@ function Contacts() {
         };
         // sending request to the server
         try {
+          axios.defaults.headers.common["Authorization"] = token;
             setMsg("Checking...");
           const res = await axios.post(
             `${URL}/user/send_email`,

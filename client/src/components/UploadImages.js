@@ -3,6 +3,7 @@ import axios from "axios";
 import Button from "./Button";
 import { URL } from "../config";
 import { useContext } from "react";
+import { UserContext } from "../context/UserContext";
 import { PlacesContext } from "../context/PlacesContext";
 const UploadImages = ({
   content,
@@ -15,6 +16,7 @@ const UploadImages = ({
   idOfPlace,
 }) => {
   const { getPlaces } = useContext(PlacesContext);
+  const { token } = useContext(UserContext);
   const uploadWidget = () => {
     // remember to add your credentials to the .env file
 
@@ -69,6 +71,7 @@ const UploadImages = ({
 
   const uploadPlacePhotos = async (result) => {
     try {
+      axios.defaults.headers.common["Authorization"] = token;
       const response = await axios.post(`${URL}/place/uploadPhotos`, {
         files: result.info.files,
         id: idOfPlace,
@@ -83,6 +86,7 @@ const UploadImages = ({
   };
   const removePicture = async () => {
     try {
+      axios.defaults.headers.common["Authorization"] = token;
       const response = await axios.post(`${URL}/place/removePicture`, {
         public_id: id,
       });

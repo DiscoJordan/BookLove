@@ -13,13 +13,13 @@ const userSchema = new mongoose.Schema({
   },
   about: { type: String, required: false },
   badge: { type: Number, required: true, default:0},
-  photos: [
-    {
-      url: { type: String, required: false },
-    //   public_id: { type: String, required: false, unique: true },
-      signature: { type: String, required: false },
-    },
-  ],
+  // photos: [
+  //   {
+  //     url: { type: String, required: false },
+  //     public_id: { type: String, required: false, unique: true },
+  //     signature: { type: String, required: false },
+  //   },
+  // ],
   wishes: [{ type: mongoose.Schema.Types.ObjectId, ref: "place" }],
   visited: [{ type: mongoose.Schema.Types.ObjectId, ref: "place" }],
   //  socialmedia: [{ type: String, required: false}],

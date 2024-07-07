@@ -5,9 +5,10 @@ import { URL } from "../config";
 import Button from "./Button";
 
 function UserCard({ user }) {
-  const { getUsers } = useContext(UserContext);
+  const { getUsers,token } = useContext(UserContext);
 
   const toggleAdmin = async () => {
+    axios.defaults.headers.common["Authorization"] = token;
     try {
       const response = await axios.post(`${URL}/user/toggleAdmin`, {
         username: user.username,
@@ -19,6 +20,7 @@ function UserCard({ user }) {
   };
 
   const deleteUser = async () => {
+    axios.defaults.headers.common["Authorization"] = token;
     try {
       const response = await axios.post(`${URL}/user/delete`, {
         username: user.username,

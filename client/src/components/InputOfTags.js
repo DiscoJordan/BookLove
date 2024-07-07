@@ -17,7 +17,8 @@ function InputOfTags({}) {
   return (
     <Autocomplete
       value={value}
-      onChange={(newValue) => {
+      onChange={(event,newValue) => {
+
         if (typeof newValue === "string") {
           setValue({
             tagTitle: newValue,

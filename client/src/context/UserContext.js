@@ -48,6 +48,7 @@ export const UserProvider = ({ children }) => {
   };
 
   const getUserData = async () => {
+    axios.defaults.headers.common["Authorization"] = token;
     try {
       const response = await axios.get(`${URL}/user/get/${user.id}`);
       setUserData(response.data.data);
@@ -57,6 +58,7 @@ export const UserProvider = ({ children }) => {
   };
 
   const getUsers = async () => {
+    axios.defaults.headers.common["Authorization"] = token;
     try {
       const response = await axios.get(`${URL}/user/getall`);
       setUsers(response.data.data);

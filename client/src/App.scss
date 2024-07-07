@@ -11,7 +11,8 @@ $primary-orange: #FF471F;
     color: $primary-orange;
 }
 .container{
-    width: 1200px;
+    max-width: 1200px;
+    width: 100vw;
     padding: 0 20px;
 }
 a{
@@ -41,10 +42,6 @@ button {
   
     &.reversed{
         border: 1px white solid;
-        &:hover{
-            background-color: white;
-            color: black;
-        }
     }
     font-size: 24px;
     font-weight: 400;
@@ -57,10 +54,7 @@ button {
     border: 1px black solid;
     border-radius: 50px;
     transition: all 0.2s ease-in;
-    &:hover{
-        background-color: black;
-        color: white;
-    }
+    
   }
 
 //header
@@ -79,11 +73,16 @@ header.scrolled{
         
         border: 1px  solid black;
         color: black;
-        &:hover{
-            background-color: black;
-            color: white;
-        }
     }    
+    .burger{
+        color: black;
+    }
+}
+.burger{
+    cursor: pointer;
+    color: white;
+    span {font-size: 2em}
+    display: none;
 }
 header{
     transition: all 0.3s ease-in-out;
@@ -122,10 +121,6 @@ header{
             &.active{
                 color: $primary-orange;
             }
-            &:hover{
-                
-                color: $primary-orange;
-            }
         }
       }
       
@@ -158,9 +153,7 @@ header{
     .footer__tabs{
         a{
             color: white;
-            &:hover{
-                color: $primary-orange;
-            }
+            
         }
         display: flex;
         gap: 30px;
@@ -175,6 +168,7 @@ header{
         font-size: 40px;
         font-weight: 100;
         display: flex;
+        
         align-items: center;
         .logo{
             display: flex;
@@ -305,7 +299,7 @@ header{
       z-index: 2; 
     }
     form{
-        width: inherit;
+        width: 100%;
         align-items: center;
         display: flex;
         flex-direction: column;
@@ -313,10 +307,15 @@ header{
        
     }
     .terms label{
+        flex-wrap: wrap;
         align-items: center;
         font-size: 14px;
         display: flex;
         gap: 5px;
+        justify-content: center;
+    }
+    h1{
+        font-size: 25px;
     }
   }
 //input
@@ -428,10 +427,9 @@ textarea{
                     display: flex;
                     gap: 10px;
                     align-items: center;
+                    transition: all 0.2s ease-in-out;
                 }
-                button:hover{
-                    color: $primary-orange;
-                }
+            
                 .active{
                     color: $primary-orange;
                 }
@@ -457,7 +455,7 @@ textarea{
         display: flex;
         
         .form__sides{
-            width: inherit;
+            width: 100%;
             display: flex;
             gap: 30px;
             .leftside__fields{
@@ -479,7 +477,7 @@ textarea{
     }
 }
 textarea.form__input{
-    width: inherit;
+    width: 100%;
     height: inherit;
     padding: 30px;
     resize: none;
@@ -521,66 +519,51 @@ textarea.form__input{
             border-radius: 20px;
             overflow: hidden;
    
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.0);
-      z-index: 1;
-      transition: 0.2s all ease-in-out;
-    }
+            &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.0);
+            z-index: 1;
+            transition: 0.2s all ease-in-out;
+            }
   
-    .place__info {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        width: 100%;
-        height: 100%;
-        color: white;
-        position: relative;
-        z-index: 2; 
+            .place__info {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                width: 100%;
+                height: 100%;
+                color: white;
+                position: relative;
+                z-index: 2; 
         
-        .place__footer{
-            transition: all 0.2s ease-in-out;
-            backdrop-filter: blur(5px);
-            border-radius: 20px 20px 0 0;
-            border-top: white 1px solid;
-            padding: 16px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        height: fit-content ;
-            overflow: hidden;
-            background-color: rgba(0, 0, 0, 0.5);
-            .place__price, .place__location{
-                transition: all 0.2s ease-in-out;
-                 display: none;
-                 gap: 10px;
-                
+                .place__footer{
+                    transition: all 0.2s ease-in-out;
+                    backdrop-filter: blur(5px);
+                    border-radius: 20px 20px 0 0;
+                    border-top: white 1px solid;
+                    padding: 16px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    height: fit-content ;
+                    overflow: hidden;
+                    background-color: rgba(0, 0, 0, 0.5);
+                    .place__price, .place__location{
+                        transition: all 0.2s ease-in-out;
+                        display: none;
+                        gap: 10px;
+                        
+                    }
+                    hr{transition: all 0.2s ease-in-out;
+                        scale: 0;
+                    }
+                }
             }
-            hr{transition: all 0.2s ease-in-out;
-                scale: 0;
-            }
-        }
-    }
-    &:hover {
-        .place__footer   {
-            
-        .place__price, .place__location{
-            display: flex;
-        }
-        hr{
-            scale: 1;
-        }
-        }
-       
-        &::before {
-            background: rgba(0, 0, 0, 0.3);
-        }
-      }   
 
 
           }
@@ -649,8 +632,6 @@ textarea.form__input{
         border-radius: 20px;
         border: 1px black solid;
         .dropdown__option{
-            
-          
             label{
                 padding: 15px;
                 display: flex;
@@ -661,12 +642,7 @@ textarea.form__input{
                width: 100%;
                 &.active{
                 background-color: rgb(241, 241, 241);
-                }
-                &:hover{
-                    background-color: rgb(241, 241, 241);
-                    }
-                
-            
+                }                
             }
            
         }
@@ -707,9 +683,10 @@ textarea.form__input{
     gap: 20px;
 }
 .place__time{
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(8,1fr);
     align-items: center;
+    gap: 20px;
     .time__day{
         text-align: center;
     }
@@ -812,11 +789,7 @@ gap: 50px;
         color: black;
         background-color: white;
         transition: all 0.2s ease-in-out;
-        &:hover{
-            background-color: $primary-orange;
-            opacity: 0.9;
-            color: white
-        }
+      
         &:active{
             background-color: rgba(152, 1, 1, 0.237);
             color: white
@@ -945,10 +918,7 @@ gap: 50px;
     gap: 10px;
     justify-content: flex-start;
     transition: all 0.1s ease-in;
-    &:hover{
-        background-color: rgb(237, 237, 237);
-        
-    }
+   
     .user__image{
         width: 40px;
         height: 40px;
@@ -973,7 +943,7 @@ gap: 50px;
     justify-content: center;
     align-items: center;
     .container{
-        padding: 100px 0;
+        padding: 100px 20px;
         display: flex;
         flex-direction: column;
         gap: 50px;
@@ -996,7 +966,7 @@ gap: 50px;
    
 }
 .about__cover{
-    background: url('/public/images/about.png') 
+    background: url('/public/images/about.webp') 
     fixed;
 }
 .contacts__cover{
@@ -1071,9 +1041,9 @@ gap: 50px;
     border-radius: 20px;
     border: 1px black solid;
     padding: 30px;
-    display: grid;
+    display: flex;
     grid-template-columns: 1fr  4fr ;
-    align-items: flex-start;
+    flex-direction: column;
     gap: 30px;
     .comment__user{
         display: flex;
@@ -1083,9 +1053,9 @@ gap: 50px;
     }
     .comment__info{
         display: flex;
-        flex-direction: column;
-        gap: 10px;
-        align-items: normal;
+        flex-wrap: wrap;
+        gap: 20px;
+        align-items: center;
         
     }
     .comment__photo{
@@ -1097,6 +1067,274 @@ gap: 50px;
             object-fit: cover;
             border-radius: 50px;
         }
+    }
+    
+}
+
+.notFound{
+    height:70vh;
+    background-color: #020101;
+    color: white;
+    h1{font-size: 9em;}
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    a{
+        color: white;
+    }
+}
+
+@media (max-width:1200px) {
+    .grid__places .place__card h3{
+    font-size: 14px;
+}
+.grid__places .place__card p {
+    font-size: 12px;
+}
+.material-symbols-outlined{
+    font-size: 18px;
+}
+.grid__places .place__card .place__info .place__footer {
+    gap: 5px;
+}
+}
+
+@media (max-width:992px) {
+    header .navigation .logo {
+        width: 150px;
+        height: auto;
+    }
+
+    .burger{
+        display: flex;
+    }
+    .navigation.active {
+        .logo{
+            filter: brightness(100);
+        }
+        .navigation__button {
+            border: 1px solid white;
+            color: white;
+        }
+        .navbar{
+        position: absolute;
+        padding: 100px 0;
+        background-color: black;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: -2;
+        display: flex !important;
+        flex-direction: column !important;
+        a{
+            color: white !important;
+        }
+       
+    }
+    .burger span{
+        color: white !important;
+    }
+    }
+    header .navigation .navbar{
+        display: none;
+    }
+    .grid__places {
+        display: grid;
+        gap: 2em;
+        grid-template-columns: 1fr 1fr;
+    }
+    .footer .footer__rights {
+       font-weight: 400;
+       font-size: 10px;
+    }
+
+.footer .footer__rights .footer__logo {
+    width: 50px;
+    height: 50px;
+}
+.footer .footer__label .logo {
+    width: 100px;
+    height: 20px;
+}
+.footer .footer__label {
+    font-size: 20px;
+}
+.place__time {
+    grid-template-columns: repeat(4,1fr);
+    text-align: center;
+}
+.place__secondary-info {
+    display: grid;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+}
+.places__wrapper .container {
+    gap: 50px;
+}
+.places__wrapper, .place__wrapper {
+    padding: 50px 0;
+}
+
+}
+@media (max-width:767px) {
+  
+.footer .footer__rights {
+    flex-direction: column;
+}
+.footer .footer__tabs {
+    flex-direction: column;
+    align-items: center;
+}
+
+.filter__header {
+    flex-direction: column;
+    align-items: center;
+}
+.filter__header .navigation__button {
+    width: 310px;
+}
+.firstslide h4 {
+    font-size: 40px;
+}
+.firstslide img {
+    width: 150px;
+}
+.place__buttons .circle__button {
+    width: 30px;
+    height: 30px;
+    .material-symbols-outlined {
+        font-size: 15px;
+    }
+}
+.grid__places .place__card h3 {
+    font-size: 12px;
+}
+.grid__places .place__card .place__info .place__footer .place__price, .grid__places .place__card .place__info .place__footer .place__location {
+    display: none;
+}
+.grid__places .place__card .place__info .place__footer hr {
+    display: none;
+}
+.grid__places {
+    gap: 1em;
+}
+.navigation__button {
+    font-size: 16px;
+}
+.about__cover h1, .contacts__cover h1, .terms__cover h1, .place__cover h1 {
+    font-size: 40px;
+    text-align: center;
+}
+.place__wrapper h2 {
+    font-size: 28px;
+
+}
+.mailform {
+    flex-direction: column;
+}
+.place__time {
+    grid-template-columns: repeat(2,1fr);
+
+}
+.registration__wrapper{
+    height: auto;
+}
+.registration__wrapper .container{
+    padding: 100px 20px;
+
+}
+.about__cover,.contacts__cover, .terms__cover,.place__cover {
+height: 40vh;
+}
+.place__wrapper .container .place__subtitle {
+flex-direction: column;
+align-items: flex-start;
+}
+.blank__wrapper .container {
+    padding: 50px 20px;
+}
+.admin__buttons {
+   flex-direction: column;
+   width: fit-content;
+}
+.user__card {
+    grid-template-columns: 1fr 1fr;
+}
+.change__info, .profile__wrapper .container .profile__info{
+    width: -webkit-fill-available;
+}
+.subgrid{
+    grid-template-columns: 1fr;
+}
+.profile__wrapper .container {
+    align-items: center;
+}
+.profile__wrapper .container .profile__collections .profile__options,.newPlace__wrapper form .form__sides  {
+
+    flex-direction: column;
+}
+.cover__image {
+    flex-direction: column-reverse;
+}
+.manageTags{
+    flex-direction: column;
+}
+.newPlace__wrapper form .form__sides .leftside__fields {
+    align-items: center;
+}
+}
+@media (max-width:425px) {
+  
+
+}
+
+@media (hover: hover) {
+    header.scrolled .navigation__button:hover{
+        background-color: black;
+        color: white;
+    }
+    .user__card:hover{
+            background-color: rgb(237, 237, 237);
+            
+      }
+      .circle__button:hover{
+            background-color: $primary-orange;
+            opacity: 0.9;
+            color: white
+     }
+     .dropdown__option label:hover{
+      background-color: rgb(241, 241, 241);
+    }
+    .navigation__button.reversed:hover{
+                background-color: white;
+                color: black;
+     }
+     .navigation__button:hover{
+        background-color: black;
+        color: white;
+    }
+    .place__card:hover {
+        background-color: #FF471F !important;
+    }
+    
+    .place__card:hover .place__footer .place__price,
+    .place__card:hover .place__footer .place__location {
+        display: flex !important;
+    }
+    
+    .place__card:hover .place__footer hr {
+        scale: 1 !important;
+    }
+    
+    .place__card:hover::before {
+        background: rgba(0, 0, 0, 0.3) !important;
+    }
+    .navbar a:hover, .footer__tabs a:hover,.profile__collections .profile__options button:hover{    
+                color: $primary-orange !important; 
     }
     
 }

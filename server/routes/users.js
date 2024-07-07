@@ -13,17 +13,17 @@ const {
   toggleAdminRights,
 } = require("../controllers/users");
 
-const { verify_token } = require("../middlewares/authMiddleware");
+const { verify_token,verify_tokenAdmin } = require("../middlewares/authMiddleware");
 
-router.post("/reg", registerUser); /* trigger certain function*/
+router.post("/reg", registerUser); 
 router.post("/login", loginUser);
 router.post("/verify_token", verifyToken);
 router.post("/update", verify_token, updateUser);
-router.post("/delete", deleteUser);
+router.post("/delete", verify_tokenAdmin, deleteUser);
 router.get("/get/:id", getUser);
-router.post("/send_email", send_email);
-router.get("/getall", getAllUsers);
-router.post("/editList", editPlaceList);
-router.post("/toggleAdmin", toggleAdminRights);
+router.post("/send_email",verify_token, send_email);
+router.get("/getall",getAllUsers);
+router.post("/editList",verify_token, editPlaceList);
+router.post("/toggleAdmin",verify_tokenAdmin, toggleAdminRights);
 
 module.exports = router;

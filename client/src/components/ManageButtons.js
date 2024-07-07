@@ -14,7 +14,7 @@ import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 
 function ManageButtons({ place }) {
-  const { userData, getUserData, isLoggedIn } = useContext(UserContext);
+  const { userData, getUserData, isLoggedIn, token } = useContext(UserContext);
   const { getPlaces, setEditTitle } = useContext(PlacesContext);
 
   const wishMatch = userData?.wishes?.some((e) => e.title === place.title);
@@ -42,6 +42,7 @@ function ManageButtons({ place }) {
     e.stopPropagation();
 
     try {
+      axios.defaults.headers.common["Authorization"] = token;
       const response = await axios.post(`${URL}/place/delete`, {
         title: place.title,
       });
@@ -73,6 +74,7 @@ function ManageButtons({ place }) {
 
   const updatePreferences = async (update, value, e) => {
     e.stopPropagation();
+    axios.defaults.headers.common["Authorization"] = token;
     try {
       const response = await axios.post(`${URL}/user/editList`, {
         username: userData.username,

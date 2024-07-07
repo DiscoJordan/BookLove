@@ -4,6 +4,7 @@ import Button from "./Button";
 import { useLocation } from "react-router-dom";
 function Navbar({ isLoggedIn, logout }) {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [burger, setBurger] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -24,8 +25,15 @@ function Navbar({ isLoggedIn, logout }) {
     };
   }, []);
 
+  let toggleBurger = ()=>{
+    burger? setBurger(false): setBurger(true)
+  }
+
   let ProfileHeader = () => {
-    if (location.pathname.startsWith("/profile")|| location.pathname.startsWith("/users")) {
+    if (
+      location.pathname.startsWith("/profile") ||
+      location.pathname.startsWith("/users")
+    ) {
       return true;
     }
   };
@@ -33,12 +41,13 @@ function Navbar({ isLoggedIn, logout }) {
   return (
     <header className={ProfileHeader() || isScrolled ? "scrolled" : ""}>
       <div className="container">
-        <nav className="navigation">
+        <nav className={burger?"navigation active":"navigation"}>
           <div className="logo">
-          <NavLink to={"/"}><img src="/images/Logo.png" alt="logo" /></NavLink>
-            
+            <NavLink to={"/"}>
+              <img src="/images/Logo.png" alt="logo" />
+            </NavLink>
           </div>
-          <div className="navbar">
+          <div onClick={toggleBurger} className={"navbar"}>
             <NavLink to={"/"}>Places</NavLink>
             <NavLink to={"/about"}>About Us</NavLink>
             <NavLink to={"/contacts"}>Contacts</NavLink>
@@ -62,6 +71,9 @@ function Navbar({ isLoggedIn, logout }) {
                 <Button reversed={true} content={"Log Out"} />
               </Link>
             )}
+          </div>
+          <div onClick={toggleBurger} className={"burger"}>
+            {<span class="material-symbols-outlined">{burger?'close':"menu"}</span>}
           </div>
         </nav>
       </div>

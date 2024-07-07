@@ -6,14 +6,16 @@ import { URL } from "../config";
 import Button from "./Button";
 
 const Comment = memo(function Comment({ comment, placeId }) {
-  const { users, getUsers, userData } = useContext(UserContext);
+  const { users, getUsers, userData,token } = useContext(UserContext);
   const { getPlaces } = useContext(PlacesContext);
 
   const deleteComment = async (e) => {
     e.preventDefault();
     console.log(`1`);
     try {
-      const response = await axios.post(`${URL}/place/deletecomment`, {
+      axios.defaults.headers.common["Authorization"] = token;
+      let flag = !!userData?.isAdmin
+      const response = await axios.post(`${URL}/place/deletecomment${flag ? 'Admin' : ""}`, {
         comment: comment,
         userId: userData?._id,
         placeId: placeId,

@@ -19,6 +19,7 @@ const Button = ({ content, onClick, close, arrow,reversed }) => {
       'Add photos': "add_a_photo",
       "Delete": "delete",
       "Send": "send",
+      "To main page": "home",
       "Fetch from Google": "drive_export",
 
       //////////////////// tags
