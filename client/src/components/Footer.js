@@ -28,10 +28,13 @@ function Footer() {
         <div className="footer__rights">
           <p>Copyright © Barcelove. All Rights Reserved · 2024</p>
           <div className="footer__backlink">
+            
             <p>MADE BY</p>
+            <a target="blank" href="https://discojordan.github.io/Portfolio-page/">
             <div className="footer__logo">
               <img src="/images/djlogo.png" alt="discojordan" />
             </div>
+            </a>
           </div>
         </div>
       </div>

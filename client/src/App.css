@@ -491,7 +491,6 @@ textarea.form__input {
   align-items: center;
   justify-content: center;
   border-radius: 20px;
-  overflow: hidden;
 }
 .grid__places .place__card img {
   user-select: none;
@@ -504,6 +503,7 @@ textarea.form__input {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  border-radius: 20px;
 }
 .grid__places .place__card h3 {
   font-size: 18px;
@@ -512,17 +512,6 @@ textarea.form__input {
 .grid__places .place__card p {
   font-size: 16px;
   font-weight: 400;
-}
-.grid__places .place__card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0);
-  z-index: 1;
-  transition: 0.2s all ease-in-out;
 }
 .grid__places .place__card .place__info {
   display: flex;
@@ -538,7 +527,7 @@ textarea.form__input {
   transition: all 0.2s ease-in-out;
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
-  border-radius: 20px 20px 0 0;
+  border-radius: 20px;
   border-top: white 1px solid;
   padding: 16px;
   display: flex;
@@ -1077,6 +1066,22 @@ textarea.form__input {
   color: white;
 }
 
+.tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 7px;
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 5;
+  top: 120%;
+  left: 50%;
+  margin-left: -60px;
+}
+
 @media (max-width: 1200px) {
   .grid__places .place__card h3 {
     font-size: 14px;
@@ -1188,6 +1193,10 @@ textarea.form__input {
     width: 150px;
   }
   .place__buttons .circle__button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 30px;
     height: 30px;
   }
@@ -1281,6 +1290,9 @@ textarea.form__input {
     opacity: 0.9;
     color: white;
   }
+  .circle__button:hover .tooltiptext {
+    visibility: visible !important;
+  }
   .dropdown__option label:hover {
     background-color: rgb(241, 241, 241);
   }
@@ -1292,9 +1304,6 @@ textarea.form__input {
     background-color: black;
     color: white;
   }
-  .place__card:hover {
-    background-color: #FF471F !important;
-  }
   .place__card:hover .place__footer .place__price,
   .place__card:hover .place__footer .place__location {
     display: flex !important;
@@ -1302,8 +1311,8 @@ textarea.form__input {
   .place__card:hover .place__footer hr {
     scale: 1 !important;
   }
-  .place__card:hover::before {
-    background: rgba(0, 0, 0, 0.3) !important;
+  .place__card:hover img {
+    filter: brightness(0.8);
   }
   .navbar a:hover, .footer__tabs a:hover, .profile__collections .profile__options button:hover {
     color: #FF471F !important;

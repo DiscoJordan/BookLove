@@ -85,6 +85,7 @@ function ManageButtons({ place }) {
   return (
     <div className="place__buttons">
       {!userData?.isAdmin && (
+        <>
         <button
           onClick={(e) => {
             if (!isLoggedIn) {
@@ -102,6 +103,9 @@ function ManageButtons({ place }) {
         >
           <CircleButton content={!wishMatch ? "wish_off" : "wish"} />
         </button>
+        
+        </>
+        
       )}
       {!userData?.isAdmin && (
         <button

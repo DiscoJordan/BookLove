@@ -20,7 +20,16 @@ const CircleButton = ({ content }) => {
       }
     >
       {iconMap[content] && (
-        <span className="material-symbols-outlined">{iconMap[content]}</span>
+        <>
+          {" "}
+          <span className="material-symbols-outlined">{iconMap[content]}</span>
+          <span class="tooltiptext">
+            {iconMap[content] === "visibility_off" && "Remove from visited"}
+            {iconMap[content] === "visibility" && "Add to visited"}
+            {iconMap[content] === "favorite" && "Add to wishes"}
+            {iconMap[content] === "heart_broken" && "Remove from wishes"}
+          </span>
+        </>
       )}
     </div>
   );
