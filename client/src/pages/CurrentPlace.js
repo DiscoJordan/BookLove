@@ -9,6 +9,7 @@ import { useRef } from "react";
 import axios from "axios";
 import { URL } from "../config";
 import Comment from "../components/Comment";
+import { useNavigate } from "react-router-dom";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -19,16 +20,15 @@ function CurrentPlace() {
   const [comment, setComment] = useState("");
   const progressCircle = useRef(null);
   const progressContent = useRef(null);
+  const navigate = useNavigate()
   const onAutoplayTimeLeft = (time, progress) => {
     progressCircle.current.style.setProperty("--progress", 1 - progress);
     progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
   };
-  const { places, currentPlace, getPlaces } =
-    useContext(PlacesContext);
-  const { user, userData,token } = useContext(UserContext);
+  const { places, currentPlace } = useContext(PlacesContext);
+  const { user, userData, token } = useContext(UserContext);
   const currentPlaceTitle = useParams().title;
-
-  const [placeInfo, setPlaceInfo] = useState('');
+  const [placeInfo, setPlaceInfo] = useState("");
   const mapUrl = `https://www.google.com/maps/embed/v1/place?key=${
     process.env.REACT_APP_GOOGLE_MAP
   }
@@ -40,16 +40,23 @@ function CurrentPlace() {
   const getPlace = async () => {
     try {
       const response = await axios.get(`${URL}/place/get/${currentPlaceTitle}`);
-      setPlaceInfo(response.data.data);
+      if (response.data.data === "Place was not found") {
+        navigate('/notFound')
+      } else {
+        setPlaceInfo(response.data.data);
+      }
     } catch (error) {
       console.log(error);
     }
   };
   useEffect(() => {
-    getPlace()
+    getPlace();
   }, []);
 
-  const randomIndexes = useMemo(() => otherPlaces.length >= 3 ? getRandomIndexes() : [], [otherPlaces.length]) ;
+  const randomIndexes = useMemo(
+    () => (otherPlaces.length >= 3 ? getRandomIndexes() : []),
+    [otherPlaces.length]
+  );
   function getRandomIndexes() {
     let indexes = [];
     for (let i = 0; indexes.length < 3; i++) {
@@ -85,7 +92,7 @@ function CurrentPlace() {
       });
 
       if (response.data.ok) {
-        getPlace()
+        getPlace();
         setComment("");
       }
     } catch (error) {
@@ -121,31 +128,45 @@ function CurrentPlace() {
               <span className="material-symbols-outlined">schedule</span>
               <div className="time__day">
                 <h4>Monday</h4>
-                <h4 className="orange">{placeInfo?.hours ?placeInfo?.hours[0] :""}</h4>
+                <h4 className="orange">
+                  {placeInfo?.hours ? placeInfo?.hours[0] : ""}
+                </h4>
               </div>
               <div className="time__day">
                 <h4>Tuesday</h4>
-                <h4 className="orange">{placeInfo?.hours ?placeInfo?.hours[1] :""}</h4>
+                <h4 className="orange">
+                  {placeInfo?.hours ? placeInfo?.hours[1] : ""}
+                </h4>
               </div>
               <div className="time__day">
                 <h4>Wednesday</h4>
-                <h4 className="orange">{placeInfo?.hours ?placeInfo?.hours[2] :""}</h4>
+                <h4 className="orange">
+                  {placeInfo?.hours ? placeInfo?.hours[2] : ""}
+                </h4>
               </div>
               <div className="time__day">
                 <h4>Thursday</h4>
-                <h4 className="orange">{placeInfo?.hours ?placeInfo?.hours[3] :""}</h4>
+                <h4 className="orange">
+                  {placeInfo?.hours ? placeInfo?.hours[3] : ""}
+                </h4>
               </div>
               <div className="time__day">
                 <h4>Friday</h4>
-                <h4 className="orange">{placeInfo?.hours ?placeInfo?.hours[4] :""}</h4>
+                <h4 className="orange">
+                  {placeInfo?.hours ? placeInfo?.hours[4] : ""}
+                </h4>
               </div>
               <div className="time__day">
                 <h4>Saturday</h4>
-                <h4 className="orange">{placeInfo?.hours ?placeInfo?.hours[5] :""}</h4>
+                <h4 className="orange">
+                  {placeInfo?.hours ? placeInfo?.hours[5] : ""}
+                </h4>
               </div>
               <div className="time__day">
                 <h4>Sunday</h4>
-                <h4 className="orange">{placeInfo?.hours ?placeInfo?.hours[6] :""}</h4>
+                <h4 className="orange">
+                  {placeInfo?.hours ? placeInfo?.hours[6] : ""}
+                </h4>
               </div>
             </div>
             <hr />
@@ -262,7 +283,13 @@ function CurrentPlace() {
 
           {placeInfo?.comments?.length ? (
             placeInfo?.comments?.map((comment) => {
-              return <Comment key={comment._id} comment={comment} placeId={placeInfo?._id} />;
+              return (
+                <Comment
+                  key={comment._id}
+                  comment={comment}
+                  placeId={placeInfo?._id}
+                />
+              );
             })
           ) : (
             <h3>There is no any comments</h3>

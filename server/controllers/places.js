@@ -204,6 +204,7 @@ const updatePlace = async (req, res) => {
 
 const getPlace = async (req, res) => {
   try {
+  
     const { placetitle } = req.params;
     const uniqePlace = await Places.findOne({ title: placetitle }).populate("comments.userId")
 
@@ -212,7 +213,7 @@ const getPlace = async (req, res) => {
     } else {
       res
         .status(200)
-        .send({ ok: true, data: `Place '${title}' was not found ` });
+        .send({ ok: true, data: `Place was not found` });
     }
   } catch (error) {
     res.status(400).send({ ok: false, data: error.message });
