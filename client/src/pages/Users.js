@@ -15,7 +15,7 @@ function Users() {
         <div className="user__list">
         <h1>Users</h1>
         {otherUsers.map((user) => (
-          <UserCard user={user}/>
+          <UserCard key={user._id} user={user}/>
         ))}
       </div>
       </div>

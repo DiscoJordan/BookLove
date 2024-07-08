@@ -20,13 +20,13 @@ function CurrentPlace() {
   const [comment, setComment] = useState("");
   const progressCircle = useRef(null);
   const progressContent = useRef(null);
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const onAutoplayTimeLeft = (time, progress) => {
     progressCircle.current.style.setProperty("--progress", 1 - progress);
     progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
   };
   const { places, currentPlace } = useContext(PlacesContext);
-  const { user, userData, token } = useContext(UserContext);
+  const { user, userData, token, isLoggedIn } = useContext(UserContext);
   const currentPlaceTitle = useParams().title;
   const [placeInfo, setPlaceInfo] = useState("");
   const mapUrl = `https://www.google.com/maps/embed/v1/place?key=${
@@ -41,7 +41,7 @@ function CurrentPlace() {
     try {
       const response = await axios.get(`${URL}/place/get/${currentPlaceTitle}`);
       if (response.data.data === "Place was not found") {
-        navigate('/notFound')
+        navigate("/notFound");
       } else {
         setPlaceInfo(response.data.data);
       }
@@ -51,7 +51,7 @@ function CurrentPlace() {
   };
   useEffect(() => {
     getPlace();
-  }, []);
+  }, [placeInfo]);
 
   const randomIndexes = useMemo(
     () => (otherPlaces.length >= 3 ? getRandomIndexes() : []),
@@ -120,7 +120,7 @@ function CurrentPlace() {
           <div className="place__main__info">
             <div className="place__tags">
               {placeInfo?.tags?.map((tag) => (
-                <Button content={tag.tag} />
+                <Button key={tag._id} content={tag.tag} />
               ))}
             </div>
             <hr />
@@ -262,7 +262,7 @@ function CurrentPlace() {
               <div className="grid__places">
                 {otherPlaces.map((place, id) => {
                   if (randomIndexes.includes(id)) {
-                    return <PlaceCard user={user} place={place} />;
+                    return <PlaceCard key={place._id} user={user} place={place} />;
                   }
                 })}
               </div>
@@ -270,17 +270,22 @@ function CurrentPlace() {
           ) : null}
           <h3>Comments</h3>
           <hr color="black" />
-          <form onSubmit={commentPlace} className="comments">
-            <textarea
-              value={comment}
-              onChange={handleChange}
-              className="navigation__button"
-            ></textarea>
-            <button>
-              <Button content={"Post comment"} />
+          {isLoggedIn ? (
+            <form onSubmit={commentPlace} className="comments">
+              <textarea
+                value={comment}
+                onChange={handleChange}
+                className="navigation__button"
+              ></textarea>
+              <button>
+                <Button content={"Post comment"} />
+              </button>
+            </form>
+          ) : (
+            <button onClick={()=>navigate('/login')}>
+              <Button content={"Log In to post comments"} />
             </button>
-          </form>
-
+          )}
           {placeInfo?.comments?.length ? (
             placeInfo?.comments?.map((comment) => {
               return (

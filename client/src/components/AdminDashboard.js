@@ -41,7 +41,7 @@ function AdminDashboard() {
       <hr />
       <div className="grid__places">
         {places.map((place) => (
-          <PlaceCard place={place} />
+          <PlaceCard key={place._id} place={place} />
         ))}
       </div>
     </>

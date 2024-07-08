@@ -4,7 +4,7 @@ import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { URL } from "../config";
 
-function Registration() {
+function Registration({login}) {
   const navigate = useNavigate();
   const [message, setMessage] = useState('');
   const [isChecked, setIsChecked] = useState(false);
@@ -23,7 +23,6 @@ function Registration() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
     try {
         const response = await axios.post(`${URL}/user/reg`, {
             username: userData.username,
@@ -33,14 +32,14 @@ function Registration() {
         });
         setMessage(response.data.message);
         setTimeout(() => {
-            setMessage('')
-           }, 2000);
+          setMessage("");
+        }, 2000);
         if (response.data.ok) {
-            setTimeout(() => {
-                navigate('/login');
-            }, 2000);
+          setTimeout(() => {
+            login(response.data.token);
+            navigate(`/profile`);
+          }, 2000);
         }
-        console.log(response);
     } catch (error) {
         console.log(error);
     }
@@ -78,7 +77,7 @@ function Registration() {
             />
             <div onChange={()=>handleCheckboxChange()} className="terms">
               <label >
-              <input name="terms"  checked={isChecked}   type="checkbox" />
+              <input name="terms"  defaultChecked={isChecked}   type="checkbox" />
               By checking the box you agree to our
               <Link to="/termsAndConditions">Terms and Conditions</Link>
               </label>

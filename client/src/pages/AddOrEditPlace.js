@@ -219,7 +219,7 @@ function AddOrEditPlace() {
               <input
                 className="form__input"
                 placeholder="Title*"
-                value={placeData?.title || ""}
+                defaultValue={placeData?.title || ""}
                 name="title"
                 type="text"
               />
@@ -227,35 +227,35 @@ function AddOrEditPlace() {
               <input
                 className="form__input"
                 placeholder="Subtitle"
-                value={placeData?.subtitle || ""}
+                defaultValue={placeData?.subtitle || ""}
                 name="subtitle"
                 type="text"
               />
               <input
                 className="form__input"
                 placeholder="Header"
-                value={placeData?.description?.header || ""}
+                defaultValue={placeData?.description?.header || ""}
                 name="header"
                 type="text"
               />
               <input
                 className="form__input"
                 placeholder="Location*"
-                value={placeData?.location || ""}
+                defaultValue={placeData?.location || ""}
                 name="location"
                 type="text"
               />
               <input
                 className="form__input"
                 placeholder="Website"
-                value={placeData?.website || ""}
+                defaultValue={placeData?.website || ""}
                 name="website"
                 type="text"
               />
               <input
                 className="form__input"
                 placeholder="Price*"
-                value={placeData?.price || ""}
+                defaultValue={placeData?.price || ""}
                 name="price"
                 type="number"
               />
@@ -263,7 +263,7 @@ function AddOrEditPlace() {
               <input
                 className="form__input"
                 placeholder="Monday"
-                value={placeData?.hours[0] || ""}
+                defaultValue={placeData?.hours[0] || ""}
                 onChange={(e) => handleChangeHours(e, 0)}
                 name="0"
                 type="text"
@@ -271,42 +271,42 @@ function AddOrEditPlace() {
               <input
                 className="form__input"
                 placeholder="Tuesday"
-                value={placeData?.hours[1] || ""}
+                defaultValue={placeData?.hours[1] || ""}
                 onChange={(e) => handleChangeHours(e, 1)}
                 type="text"
               />
               <input
                 className="form__input"
                 placeholder="Wednesday"
-                value={placeData?.hours[2] || ""}
+                defaultValue={placeData?.hours[2] || ""}
                 onChange={(e) => handleChangeHours(e, 2)}
                 type="text"
               />
               <input
                 className="form__input"
                 placeholder="Thursday"
-                value={placeData?.hours[3] || ""}
+                defaultValue={placeData?.hours[3] || ""}
                 onChange={(e) => handleChangeHours(e, 3)}
                 type="text"
               />
               <input
                 className="form__input"
                 placeholder="Friday"
-                value={placeData?.hours[4] || ""}
+                defaultValue={placeData?.hours[4] || ""}
                 onChange={(e) => handleChangeHours(e, 4)}
                 type="text"
               />
               <input
                 className="form__input"
                 placeholder="Saturday"
-                value={placeData?.hours[5] || ""}
+                defaultValue={placeData?.hours[5] || ""}
                 onChange={(e) => handleChangeHours(e, 5)}
                 type="text"
               />
               <input
                 className="form__input"
                 placeholder="Sunday"
-                value={placeData?.hours[6] || ""}
+                defaultValue={placeData?.hours[6] || ""}
                 onChange={(e) => handleChangeHours(e, 6)}
                 name="6"
                 type="text"
@@ -315,14 +315,14 @@ function AddOrEditPlace() {
               <input
                 className="form__input"
                 placeholder="Latitude"
-                value={placeData?.coordinates?.lat || ""}
+                defaultValue={placeData?.coordinates?.lat || ""}
                 name="lat"
                 type="text"
               />
               <input
                 className="form__input"
                 placeholder="Longitude"
-                value={placeData?.coordinates?.lng || ""}
+                defaultValue={placeData?.coordinates?.lng || ""}
                 name="lng"
                 type="text"
               />
@@ -331,7 +331,7 @@ function AddOrEditPlace() {
               <textarea
                 className="form__input"
                 placeholder="Description"
-                value={placeData?.description?.descriptionText || ""}
+                defaultValue={placeData?.description?.descriptionText || ""}
                 name="descriptionText"
                 rows="40"
                 cols="40"
@@ -349,7 +349,7 @@ function AddOrEditPlace() {
           </div>
           <div className="tagsList">
             {placeData.tags.map((tag) => (
-              <button onClick={(e) => deleteTag(e, tag)}>
+              <button key={tag._id} onClick={(e) => deleteTag(e, tag)}>
                 <Button reversed={true} close={true} content={tag.tag} />
               </button>
             ))}
@@ -378,7 +378,7 @@ function AddOrEditPlace() {
           />
           <div className="place__images">
             {placeData?.photos?.map((photo) => (
-              <div className="place__image">
+              <div key={photo._id} className="place__image">
                 <img src={photo.photo_url} alt="photo" />
                 <button onClick={(e) => deletePhoto(photo.public_id, e)}>
                   <Button reversed={true} close={true} content={"Delete"} />

@@ -719,6 +719,13 @@ textarea.form__input {
   justify-content: space-between;
   align-items: center;
 }
+.place__wrapper .navigation__button {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.place__wrapper textarea.navigation__button {
+  width: 100%;
+}
 
 .place__cover {
   position: relative;

@@ -37,15 +37,15 @@ function UserCard({ user }) {
         <div className="user__image">
           <img src={user?.photo?.photo_url} alt="user photo" />
         </div>
-        <span class="material-symbols-outlined">person</span>
+        <span className="material-symbols-outlined">person</span>
         <h3>{user.username}</h3>
       </div>
       <div className="user__field">
-        <span class="material-symbols-outlined">mail</span>
+        <span className="material-symbols-outlined">mail</span>
         <h3>{user.email}</h3>
       </div>
       <div className="user__field">
-        <span class="material-symbols-outlined">key</span>
+        <span className="material-symbols-outlined">key</span>
         <input onChange={toggleAdmin} type="checkbox" checked={user.isAdmin} />
       </div>
       <button onClick={deleteUser}>

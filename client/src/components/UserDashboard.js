@@ -39,14 +39,14 @@ function UserDashboard() {
           (!userData?.wishes?.length ? (
             <h2>Wishes list is empty</h2>
           ) : (
-            userData.wishes?.map((place) => <PlaceCard place={place} />)
+            userData.wishes?.map((place) => <PlaceCard key={place._id} place={place} />)
           ))}
 
         {option === "visited" &&
           (!userData?.visited?.length ? (
             <h2>Visited list is empty</h2>
           ) : (
-            userData?.visited?.map((place) => <PlaceCard place={place} />)
+            userData?.visited?.map((place) => <PlaceCard key={place._id} place={place} />)
           ))}
       </div>
     </>

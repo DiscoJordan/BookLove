@@ -45,7 +45,7 @@ function App() {
             <Route
               path="/registration"
               element={
-                !isLoggedIn ? <Registration /> : <Navigate to={`/profile`} />
+                !isLoggedIn ? <Registration login={login} /> : <Navigate to={`/profile`} />
               }
             />
             <Route

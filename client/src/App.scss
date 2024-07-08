@@ -729,6 +729,12 @@ textarea.form__input{
                 align-items: center;
             }
         }
+        .navigation__button{
+            width: fit-content;
+        }
+        textarea.navigation__button{
+            width: 100%;
+        }
 }
 .place__cover{
     img{

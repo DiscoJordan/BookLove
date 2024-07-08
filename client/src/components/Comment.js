@@ -7,7 +7,7 @@ import Button from "./Button";
 
 const Comment = memo(function Comment({ comment, placeId }) {
   const { userData,token } = useContext(UserContext);
-  const { getPlaces } = useContext(PlacesContext);
+  const { getPlace } = useContext(PlacesContext);
   const deleteComment = async (e) => {
     e.preventDefault();
     try {
@@ -18,11 +18,9 @@ const Comment = memo(function Comment({ comment, placeId }) {
         userId: userData?._id,
         placeId: placeId,
       });
-      console.log(response);
-      if (response.data.ok) {
-        console.log(`2`);
-        getPlaces();
-      }
+
+      // if (response.data.ok) {
+      // }
     } catch (error) {
       console.log(error);
     }

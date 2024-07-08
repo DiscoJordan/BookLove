@@ -79,7 +79,7 @@ const send_email = async (req, res) => {
   }
 };
 
-const registerUser = async (req, res) => {
+const registerUser = async (req, res,next) => {
   const { username, email, password, password2 } = req.body;
   if (!username || !email || !password || !password2) {
     return res.json({ ok: false, message: "All fields required" });
@@ -110,7 +110,8 @@ const registerUser = async (req, res) => {
       isAdmin: false,
     };
     await Users.create(newUser);
-    res.json({ ok: true, message: "Successfully registered" });
+    // res.json({ ok: true, message: "Successfully registered" });
+    next();
   } catch (error) {
     console.log(error);
     res.json({ ok: false, error: error });
@@ -122,6 +123,7 @@ const loginUser = async (req, res) => {
   if (!username || !password) {
     return res.json({ ok: false, message: "All fields are required" });
   }
+  else{
   try {
     const user = await Users.findOne({ username: username });
     if (!user) return res.json({ ok: false, message: "Invalid user provided" });
@@ -141,10 +143,12 @@ const loginUser = async (req, res) => {
         token: token,
         user: user,
       });
+  
     } else return res.json({ ok: false, message: "Invalid data provided" });
   } catch (error) {
     res.json({ ok: false, error });
   }
+}
 };
 
 const verifyToken = (req, res) => {

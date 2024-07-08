@@ -133,27 +133,27 @@ function Profile() {
                     type="text"
                     name="username"
                     placeholder="Username*"
-                    value={newUserData?.username}
+                    defaultValue={newUserData?.username}
                   />
                   <input
                     className="navigation__button"
                     type="text"
                     name="email"
                     placeholder="Email*"
-                    value={newUserData?.email}
+                    defaultValue={newUserData?.email}
                   />
                   <input
                     className="navigation__button"
                     type="password"
                     name="password"
-                    value={newUserData?.password}
+                    defaultValue={newUserData?.password}
                     placeholder="New password"
                   />
                   <input
                     className="navigation__button"
                     type="password"
                     name="password2"
-                    value={newUserData?.password2}
+                    defaultValue={newUserData?.password2}
                     placeholder="Repeat password"
                   />
                 </div>
@@ -162,7 +162,7 @@ function Profile() {
                   type="text"
                   name="about"
                   placeholder="About"
-                  value={newUserData?.about}
+                  defaultValue={newUserData?.about}
                 />
                 <div className="profile__buttons">
                   <button>

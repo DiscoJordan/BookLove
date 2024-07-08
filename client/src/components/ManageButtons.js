@@ -23,6 +23,7 @@ function ManageButtons({ place }) {
   const [open, setOpen] = useState(false);
   const [alert, setAlert] = useState("");
   const handleClickOpen = (e, alert) => {
+    e.preventDefault();
     e.stopPropagation();
     setOpen(true);
     setAlert(alert);
@@ -30,6 +31,7 @@ function ManageButtons({ place }) {
 
   const handleClose = (e) => {
     e.stopPropagation();
+    e.preventDefault();
     setOpen(false);
     setAlert("");
   };
@@ -138,6 +140,7 @@ function ManageButtons({ place }) {
         </button>
       )}
       <Dialog
+        onClick={(e)=>e.stopPropagation()}
         open={open}
         onClose={handleClose}
         aria-labelledby="alert-dialog-title"

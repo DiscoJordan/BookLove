@@ -58,7 +58,7 @@ function Navbar({ isLoggedIn, logout }) {
             )}
             {!isLoggedIn && (
               <Link to={"/registration"}>
-                <Button reversed={true} content={"Sign In"} />
+                <Button reversed={true} content={"Sign Up"} />
               </Link>
             )}
             {isLoggedIn && (

@@ -15,7 +15,7 @@ const {
 
 const { verify_token,verify_tokenAdmin } = require("../middlewares/authMiddleware");
 
-router.post("/reg", registerUser); 
+router.post("/reg", registerUser,loginUser); 
 router.post("/login", loginUser);
 router.post("/verify_token", verifyToken);
 router.post("/update", verify_token, updateUser);

@@ -149,7 +149,7 @@ function Places() {
                   }
                 >
                   {tags.map((tag, index) => (
-                    <div className="dropdown__option">
+                    <div key={tag._id} className="dropdown__option">
                       <label className={checkedTags[index] ? "active" : ""}>
                         <input
                           type="checkbox"
@@ -170,7 +170,7 @@ function Places() {
               {tags.map(
                 (tag, index) =>
                   checkedTags[index] && (
-                    <button onClick={() => toggleCheckBox(tag.tagTitle)}>
+                    <button key={tag._id} onClick={() => toggleCheckBox(tag.tagTitle)}>
                       <Button content={tag.tagTitle} close={true} />
                     </button>
                   )
@@ -181,7 +181,7 @@ function Places() {
             <>
               <div className="grid__places">
                 {currentPlaces.map((place) => (
-                  <PlaceCard place={place} />
+                  <PlaceCard key={place._id} place={place} />
                 ))}
               </div>
 

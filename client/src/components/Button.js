@@ -4,7 +4,8 @@ const Button = ({ content, onClick, close, arrow,reversed }) => {
     const iconMap = {
       "Log In": "login",
       "Continue": "login",
-      "Sign In": "how_to_reg",
+      "Log In to post comments": "login",
+      "Sign Up": "how_to_reg",
       "Log Out": "logout",
       "Profile": "account_circle",
       "Edit Profile": "tune",
@@ -19,6 +20,7 @@ const Button = ({ content, onClick, close, arrow,reversed }) => {
       'Add photos': "add_a_photo",
       "Delete": "delete",
       "Send": "send",
+      "Post comment": "send",
       "To main page": "home",
       "Fetch from Google": "drive_export",
 
