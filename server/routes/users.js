@@ -22,7 +22,7 @@ router.post("/update", verify_token, updateUser);
 router.post("/delete", verify_tokenAdmin, deleteUser);
 router.get("/get/:id", getUser);
 router.post("/send_email",verify_token, send_email);
-router.get("/getall",getAllUsers);
+router.get("/getall",verify_tokenAdmin,getAllUsers);
 router.post("/editList",verify_token, editPlaceList);
 router.post("/toggleAdmin",verify_tokenAdmin, toggleAdminRights);
 

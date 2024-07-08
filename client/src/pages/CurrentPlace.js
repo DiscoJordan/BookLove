@@ -23,11 +23,12 @@ function CurrentPlace() {
     progressCircle.current.style.setProperty("--progress", 1 - progress);
     progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
   };
-  const { places, setCurrentPlace, currentPlace, getPlaces } =
+  const { places, currentPlace, getPlaces } =
     useContext(PlacesContext);
   const { user, userData,token } = useContext(UserContext);
   const currentPlaceTitle = useParams().title;
-  const placeInfo = places.find((place) => place.title === currentPlaceTitle);
+
+  const [placeInfo, setPlaceInfo] = useState('');
   const mapUrl = `https://www.google.com/maps/embed/v1/place?key=${
     process.env.REACT_APP_GOOGLE_MAP
   }
@@ -36,10 +37,17 @@ function CurrentPlace() {
   const otherPlaces = places.filter(
     (place) => place.title !== currentPlaceTitle
   );
-
-  // useEffect(() => {
-  //   setCurrentPlace(places.find((place) => place.title === currentPlaceTitle));
-  // }, []);
+  const getPlace = async () => {
+    try {
+      const response = await axios.get(`${URL}/place/get/${currentPlaceTitle}`);
+      setPlaceInfo(response.data.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    getPlace()
+  }, []);
 
   const randomIndexes = useMemo(() => otherPlaces.length >= 3 ? getRandomIndexes() : [], [otherPlaces.length]) ;
   function getRandomIndexes() {
@@ -77,7 +85,7 @@ function CurrentPlace() {
       });
 
       if (response.data.ok) {
-        getPlaces();
+        getPlace()
         setComment("");
       }
     } catch (error) {
@@ -104,7 +112,7 @@ function CurrentPlace() {
           </div>
           <div className="place__main__info">
             <div className="place__tags">
-              {placeInfo?.tags.map((tag) => (
+              {placeInfo?.tags?.map((tag) => (
                 <Button content={tag.tag} />
               ))}
             </div>
@@ -113,31 +121,31 @@ function CurrentPlace() {
               <span className="material-symbols-outlined">schedule</span>
               <div className="time__day">
                 <h4>Monday</h4>
-                <h4 className="orange">{placeInfo?.hours[0]}</h4>
+                <h4 className="orange">{placeInfo?.hours ?placeInfo?.hours[0] :""}</h4>
               </div>
               <div className="time__day">
                 <h4>Tuesday</h4>
-                <h4 className="orange">{placeInfo?.hours[1]}</h4>
+                <h4 className="orange">{placeInfo?.hours ?placeInfo?.hours[1] :""}</h4>
               </div>
               <div className="time__day">
                 <h4>Wednesday</h4>
-                <h4 className="orange">{placeInfo?.hours[2]}</h4>
+                <h4 className="orange">{placeInfo?.hours ?placeInfo?.hours[2] :""}</h4>
               </div>
               <div className="time__day">
                 <h4>Thursday</h4>
-                <h4 className="orange">{placeInfo?.hours[3]}</h4>
+                <h4 className="orange">{placeInfo?.hours ?placeInfo?.hours[3] :""}</h4>
               </div>
               <div className="time__day">
                 <h4>Friday</h4>
-                <h4 className="orange">{placeInfo?.hours[4]}</h4>
+                <h4 className="orange">{placeInfo?.hours ?placeInfo?.hours[4] :""}</h4>
               </div>
               <div className="time__day">
                 <h4>Saturday</h4>
-                <h4 className="orange">{placeInfo?.hours[5]}</h4>
+                <h4 className="orange">{placeInfo?.hours ?placeInfo?.hours[5] :""}</h4>
               </div>
               <div className="time__day">
                 <h4>Sunday</h4>
-                <h4 className="orange">{placeInfo?.hours[6]}</h4>
+                <h4 className="orange">{placeInfo?.hours ?placeInfo?.hours[6] :""}</h4>
               </div>
             </div>
             <hr />
@@ -252,8 +260,8 @@ function CurrentPlace() {
             </button>
           </form>
 
-          {placeInfo?.comments.length ? (
-            placeInfo?.comments.map((comment) => {
+          {placeInfo?.comments?.length ? (
+            placeInfo?.comments?.map((comment) => {
               return <Comment key={comment._id} comment={comment} placeId={placeInfo?._id} />;
             })
           ) : (

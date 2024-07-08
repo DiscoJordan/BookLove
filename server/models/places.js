@@ -25,7 +25,7 @@ const placeSchema = new mongoose.Schema({
   ], 
   comments: [
     {
-      userId: { type: String, required: true },
+      userId: { type: mongoose.Schema.Types.ObjectId, required: true, ref:"user" },
       comment: { type: String, required: true },
       date: { type: String, required: true },
     },

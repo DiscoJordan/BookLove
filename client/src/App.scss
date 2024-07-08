@@ -489,6 +489,7 @@ textarea.form__input{
         gap: 2em;
         grid-template-columns: 1fr 1fr 1fr;
         .place__card {
+            cursor: pointer;
             img{
                 user-select: none;
                 -webkit-user-drag: none;
@@ -1181,6 +1182,10 @@ gap: 50px;
 
 }
 @media (max-width:767px) {
+    .profile__wrapper .container .profile__collections .profile__options h2 {
+        font-size: 1.2em;
+        
+    }
   
 .footer .footer__rights {
     flex-direction: column;

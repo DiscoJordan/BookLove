@@ -73,7 +73,7 @@ function Navbar({ isLoggedIn, logout }) {
             )}
           </div>
           <div onClick={toggleBurger} className={"burger"}>
-            {<span class="material-symbols-outlined">{burger?'close':"menu"}</span>}
+            {<span className="material-symbols-outlined">{burger?'close':"menu"}</span>}
           </div>
         </nav>
       </div>

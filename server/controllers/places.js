@@ -204,8 +204,8 @@ const updatePlace = async (req, res) => {
 
 const getPlace = async (req, res) => {
   try {
-    const { title } = req.body;
-    const uniqePlace = await Places.findOne({ title: title });
+    const { placetitle } = req.params;
+    const uniqePlace = await Places.findOne({ title: placetitle }).populate("comments.userId")
 
     if (uniqePlace) {
       res.status(200).send({ ok: true, data: uniqePlace });
@@ -221,7 +221,7 @@ const getPlace = async (req, res) => {
 };
 const getAllPlaces = async (req, res) => {
   try {
-    let places = await Places.find({});
+    let places = await Places.find({}).populate("comments.userId");
     places = JSON.parse(JSON.stringify(places));
     if (places) {
       res.status(200).send({ ok: true, data: places });

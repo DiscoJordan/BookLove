@@ -8,7 +8,7 @@ const {verify_token,verify_tokenAdmin } = require("../middlewares/authMiddleware
 router.post('/add',verify_tokenAdmin, addPlace)  //
 router.post('/delete',verify_tokenAdmin, deletePlace) //
 router.post('/:oldtitle/update',verify_tokenAdmin, updatePlace) //
-router.get('/get', getPlace)
+router.get('/get/:placetitle', getPlace)
 router.get('/getall', getAllPlaces)
 router.post('/removePicture',verify_tokenAdmin, removePicture) //
 router.post('/comment',verify_token, addComment)

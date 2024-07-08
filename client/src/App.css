@@ -483,6 +483,7 @@ textarea.form__input {
   grid-template-columns: 1fr 1fr 1fr;
 }
 .grid__places .place__card {
+  cursor: pointer;
   aspect-ratio: 1/1;
   position: relative;
   display: flex;
@@ -1146,6 +1147,9 @@ textarea.form__input {
   }
 }
 @media (max-width: 767px) {
+  .profile__wrapper .container .profile__collections .profile__options h2 {
+    font-size: 1.2em;
+  }
   .footer .footer__rights {
     flex-direction: column;
   }

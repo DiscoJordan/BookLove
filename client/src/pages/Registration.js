@@ -23,6 +23,7 @@ function Registration() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+  
     try {
         const response = await axios.post(`${URL}/user/reg`, {
             username: userData.username,
@@ -39,6 +40,7 @@ function Registration() {
                 navigate('/login');
             }, 2000);
         }
+        console.log(response);
     } catch (error) {
         console.log(error);
     }
