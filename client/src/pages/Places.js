@@ -93,7 +93,8 @@ function Places() {
         className="mySwiper"
       >
         <SwiperSlide>
-          <div className="firstslide">
+          <div className="slide">
+            <img className="background" src="/images/firstslide.webp" alt="background" />
             <img src="/images/slidersvg.svg" alt="slide" />
             <h4>
               WELCOME TO <span className="orange"> BARCELONA</span>
@@ -104,16 +105,28 @@ function Places() {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="firstslide">
-            <img src="/images/slidersvg.svg" alt="slide" />
+          <div className="slide">
+          <img className="background" src="/images/secondslide.webp" alt="background" />
             <h4>
-              WELCOME TO <span className="orange"> BARCELONA</span>
+                  WHO <span className="orange"> WE ARE</span> ?
             </h4>
-            <Link to={"/registration"}>
-              <Button reversed={true} content={"Explore Barcelona with us"} />
+            <Link to={"/about"}>
+              <Button reversed={true} content={"About us"} />
             </Link>
           </div>
         </SwiperSlide>
+        <SwiperSlide>
+          <div className="slide">
+          <img className="background" src="/images/thirdslide.webp" alt="background" />
+            <h4>
+              CONNECT <span className="orange"> WITH US</span>
+            </h4>
+            <Link to={"/contacts"}>
+              <Button reversed={true} content={"Contacts"} />
+            </Link>
+          </div>
+        </SwiperSlide>
+
 
         <div className="autoplay-progress" slot="container-end">
           <svg viewBox="0 0 48 48" ref={progressCircle}>

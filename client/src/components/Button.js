@@ -23,6 +23,8 @@ const Button = ({ content, onClick, close, arrow, reversed }) => {
     "Post comment": "send",
     "To main page": "home",
     "Fetch from Google": "drive_export",
+    "About us": "quiz",
+    "Contacts": "contacts",
     //////////////////// tags
     "Select tags": "shoppingmode",
     Museum: "museum",

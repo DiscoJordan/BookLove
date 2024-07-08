@@ -39,7 +39,6 @@ button {
     width: 300px;
 }
 .navigation__button{
-  
     &.reversed{
         border: 1px white solid;
     }
@@ -868,9 +867,17 @@ gap: 50px;
     transform: rotate(-90deg);
   }
 
-.firstslide{
+.slide{
+    .background{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(0.2);
+        z-index: -1;
+    }
+    position: relative;
     color: white;
-    background-image:  url('/public/images/firstslide.png'); 
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -881,6 +888,7 @@ gap: 50px;
     justify-content: center;
     gap: 30px;
     align-items: center;
+    z-index: 2;
     img{
         width: 250px;
         height: auto;
@@ -896,6 +904,7 @@ gap: 50px;
     a{
         color: white;
     }
+  
 }
 
 
