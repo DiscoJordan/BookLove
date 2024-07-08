@@ -5,9 +5,8 @@ import axios from "axios";
 import { URL } from "../config";
 import Button from "./Button";
 
-const Comment = memo(function Comment({ comment, placeId }) {
+const Comment = memo(function Comment({ comment, placeId,getPlace }) {
   const { userData,token } = useContext(UserContext);
-  const { getPlace } = useContext(PlacesContext);
   const deleteComment = async (e) => {
     e.preventDefault();
     try {
@@ -18,7 +17,7 @@ const Comment = memo(function Comment({ comment, placeId }) {
         userId: userData?._id,
         placeId: placeId,
       });
-
+      getPlace()
       // if (response.data.ok) {
       // }
     } catch (error) {
