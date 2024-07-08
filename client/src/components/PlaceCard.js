@@ -19,7 +19,7 @@ function PlaceCard({ place }) {
           <hr color="#FF471F" />
           <div className="place__price">
             <span className="material-symbols-outlined">payments</span>
-            <p>{place.price == "0" ? "Free" : `From ${place.price}€`}</p>
+            <p>{place.price === 0 ? "Free" : `From ${place.price}€`}</p>
           </div>
           <div className="place__location">
             <span className="material-symbols-outlined">location_on</span>
