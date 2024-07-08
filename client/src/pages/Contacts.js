@@ -8,18 +8,15 @@ function Contacts() {
     const [msg, setMsg] = useState('');
 
     const handleSubmit = async (event) => {
-        // preventing page from reloading on submitting the form
         event.preventDefault();
-        // destructuring form elements - remember that you give properties name with "name" attribute to every each input
         const { name, email, message, subject } = event.target.elements;
-        // composing data object to end in the body of a request. As destructured elements are HTMLElements, we need to extract their values to get strings
+
         var data = {
           name: name.value,
           email: email.value,
           message: message.value,
           subject: subject.value,
         };
-        // sending request to the server
         try {
           axios.defaults.headers.common["Authorization"] = token;
             setMsg("Checking...");
@@ -27,14 +24,11 @@ function Contacts() {
             `${URL}/user/send_email`,
             data
           );
-          // response from the server
-        //   console.log("res: ", res);
-          // clearing form inputs
+
           name.value = "";
           email.value = "";
           message.value = "";
           subject.value = "";
-          // alert to the user
          
           if(res.data.ok){
             setMsg("Your message has been sent, thanks!");
@@ -46,7 +40,6 @@ function Contacts() {
             setMsg('')
           }, 2000);
         } catch (error) {
-          // logging error to the console
           console.log(error?.message || error);
         }
       };

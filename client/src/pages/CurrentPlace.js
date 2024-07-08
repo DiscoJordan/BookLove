@@ -10,12 +10,13 @@ import axios from "axios";
 import { URL } from "../config";
 import Comment from "../components/Comment";
 import { useNavigate } from "react-router-dom";
-// Import Swiper React components
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
+
 function CurrentPlace() {
   const [comment, setComment] = useState("");
   const progressCircle = useRef(null);
@@ -70,7 +71,7 @@ function CurrentPlace() {
 
   function formatDateTime(date) {
     const day = String(date.getDate()).padStart(2, "0");
-    const month = String(date.getMonth() + 1).padStart(2, "0"); // getMonth() returns 0-based month
+    const month = String(date.getMonth() + 1).padStart(2, "0");
     const year = date.getFullYear();
     const hours = String(date.getHours()).padStart(2, "0");
     const minutes = String(date.getMinutes()).padStart(2, "0");
@@ -106,7 +107,7 @@ function CurrentPlace() {
   return (
     <>
       <div className="place__cover">
-        <img src={placeInfo?.cover?.photo_url} alt="default cover" />
+        <img src={placeInfo?.cover?.photo_url} alt="default-cover" />
         <div className="container">
           <h1>{placeInfo?.title}</h1>
         </div>

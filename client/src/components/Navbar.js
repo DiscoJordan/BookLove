@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import Button from "./Button";
 import { useLocation } from "react-router-dom";
+
 function Navbar({ isLoggedIn, logout }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [burger, setBurger] = useState(false);
@@ -9,8 +10,7 @@ function Navbar({ isLoggedIn, logout }) {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollTop =
-        window.pageYOffset || document.documentElement.scrollTop;
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
       if (scrollTop > 0) {
         setIsScrolled(true);
       } else {
@@ -25,9 +25,9 @@ function Navbar({ isLoggedIn, logout }) {
     };
   }, []);
 
-  let toggleBurger = ()=>{
-    burger? setBurger(false): setBurger(true)
-  }
+  let toggleBurger = () => {
+    burger ? setBurger(false) : setBurger(true);
+  };
 
   let ProfileHeader = () => {
     if (
@@ -41,7 +41,7 @@ function Navbar({ isLoggedIn, logout }) {
   return (
     <header className={ProfileHeader() || isScrolled ? "scrolled" : ""}>
       <div className="container">
-        <nav className={burger?"navigation active":"navigation"}>
+        <nav className={burger ? "navigation active" : "navigation"}>
           <div className="logo">
             <NavLink to={"/"}>
               <img src="/images/Logo.png" alt="logo" />
@@ -73,7 +73,11 @@ function Navbar({ isLoggedIn, logout }) {
             )}
           </div>
           <div onClick={toggleBurger} className={"burger"}>
-            {<span className="material-symbols-outlined">{burger?'close':"menu"}</span>}
+            {
+              <span className="material-symbols-outlined">
+                {burger ? "close" : "menu"}
+              </span>
+            }
           </div>
         </nav>
       </div>

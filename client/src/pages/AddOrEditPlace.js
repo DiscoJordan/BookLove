@@ -16,16 +16,11 @@ function AddOrEditPlace() {
     useContext(UserContext);
   const { currentTag, setCurrentTag, tags, getTags } =
     useContext(TagsContext);
-
   const { oldtitle } = useParams();
-  //if  editing
   const beingEdited =
     oldtitle && editTitle && places.find((place) => place.title === editTitle);
-
   const navigate = useNavigate();
-
   const [message, setMessage] = useState("");
-
   const [placeData, setPlaceData] = useState({
     title: "",
     subtitle: "",
@@ -57,7 +52,7 @@ function AddOrEditPlace() {
       lng: "",
     },
   });
-  ////////////////////
+
   useEffect(() => {
     editTitle
       ? setCurrentPlace(places.find((place) => place.title === oldtitle))
@@ -100,7 +95,7 @@ function AddOrEditPlace() {
       if (response.data.ok) {
         setTimeout(() => {
           navigate(-1);
-        }, 2000);
+        }, 500);
       }
     } catch (error) {
       console.log(error);
@@ -342,7 +337,6 @@ function AddOrEditPlace() {
           <hr width="100%" color="white" />
           <div className="manageTags">
             <InputOfTags />
-
             <button onClick={handleTags}>
               <Button reversed={true} content={"Add tag"} />
             </button>
@@ -357,7 +351,7 @@ function AddOrEditPlace() {
           <hr width="100%" color="white" />
           <h2>Cover image</h2>
           <div className="cover__image">
-            <img src={placeData?.cover?.photo_url} alt="" />
+            <img src={placeData?.cover?.photo_url} alt="place" />
 
             <UploadImages
               reversed={true}

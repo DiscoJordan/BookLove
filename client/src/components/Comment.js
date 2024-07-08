@@ -1,6 +1,5 @@
-import React, { useContext, useEffect, memo } from "react";
+import React, { useContext, memo } from "react";
 import { UserContext } from "../context/UserContext";
-import { PlacesContext } from "../context/PlacesContext";
 import axios from "axios";
 import { URL } from "../config";
 import Button from "./Button";
@@ -17,22 +16,20 @@ const Comment = memo(function Comment({ comment, placeId,getPlace }) {
         userId: userData?._id,
         placeId: placeId,
       });
-      getPlace()
-      // if (response.data.ok) {
-      // }
+      if (response.data.ok) {
+        getPlace()
+      }
     } catch (error) {
       console.log(error);
     }
   };
-
-
 
   return (
     <div className="comment__card">
       <div className="comment__info">
         <div className="comment__user">
           <div className="comment__photo">
-            <img src={comment.userId?.photo?.photo_url} alt="user photo" />
+            <img src={comment.userId?.photo?.photo_url} alt="user-photo" />
           </div>
           <h3>{comment.userId?.username}</h3>
         </div>

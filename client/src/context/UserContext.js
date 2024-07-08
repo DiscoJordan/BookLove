@@ -27,7 +27,6 @@ export const UserProvider = ({ children }) => {
 
   const login = (token) => {
     let decodedToken = jose.decodeJwt(token);
-    // composing a user object based on what data we included in our token (login controller - jwt.sign() first argument)
     let user = {
       username: decodedToken.userName,
       isAdmin: decodedToken.isAdmin,

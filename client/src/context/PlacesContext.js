@@ -9,9 +9,6 @@ export const ContextProvider = ({ children }) => {
   const [currentPlace, setCurrentPlace] = useState({});
   const [currentPlaceTitle, setCurrentPlaceTitle] = useState({});
 
-  // const [userData, setUserData] = useState();
-  
-
   const getPlaces = async () => {
     try {
       const response = await axios.get(`${URL}/place/getall`);
@@ -21,15 +18,23 @@ export const ContextProvider = ({ children }) => {
     }
   };
 
-  
-
   useEffect(() => {
     getPlaces();
   }, []);
 
   return (
     <PlacesContext.Provider
-      value={{ places, getPlaces, setEditTitle,setCurrentPlace,currentPlace, editTitle,setPlaces, currentPlaceTitle,setCurrentPlaceTitle}}
+      value={{
+        places,
+        getPlaces,
+        setEditTitle,
+        setCurrentPlace,
+        currentPlace,
+        editTitle,
+        setPlaces,
+        currentPlaceTitle,
+        setCurrentPlaceTitle,
+      }}
     >
       {children}
     </PlacesContext.Provider>

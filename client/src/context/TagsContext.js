@@ -7,8 +7,6 @@ export const TagsProvider = ({ children }) => {
   const [tags, setTags] = useState([]);
   const [currentTag, setCurrentTag] = useState();
 
-  // const [userData, setUserData] = useState();
-
   const getTags = async () => {
     try {
       const response = await axios.get(`${URL}/tag/getall`);

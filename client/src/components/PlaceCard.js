@@ -4,7 +4,6 @@ import ManageButtons from "./ManageButtons";
 
 function PlaceCard({ place }) {
   const navigate = useNavigate();
-
   const navigateToPlace = (e) => {
     e.stopPropagation();
     navigate(`/place/${place.title}`);
@@ -12,7 +11,7 @@ function PlaceCard({ place }) {
   return (
     <div onClick={(e) => navigateToPlace(e)} className="place__card">
       <div className="place__info">
-        <img src={place?.cover?.photo_url}></img>
+        <img src={place?.cover?.photo_url} alt={place.title}/>
         <ManageButtons place={place} />
         <div className="place__footer">
           <h3>{place.title}</h3>

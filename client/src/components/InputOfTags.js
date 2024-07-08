@@ -1,14 +1,11 @@
 import React, { useContext, useEffect } from "react";
 import TextField from "@mui/material/TextField";
 import Autocomplete, { createFilterOptions } from "@mui/material/Autocomplete";
-
 import { TagsContext } from "../context/TagsContext";
 
 const filter = createFilterOptions();
-
 function InputOfTags({}) {
   const { setCurrentTag,tags } = useContext(TagsContext);
-
   const [value, setValue] = React.useState(null);
   useEffect(() => {
     setCurrentTag(value?.tagTitle);
@@ -24,7 +21,6 @@ function InputOfTags({}) {
             tagTitle: newValue,
           });
         } else if (newValue && newValue.inputValue) {
-          // Create a new value from the user input
           setValue({
             tagTitle: newValue.inputValue,
           });
@@ -34,9 +30,7 @@ function InputOfTags({}) {
       }}
       filterOptions={(options, params) => {
         const filtered = filter(options, params);
-
         const { inputValue } = params;
-        // Suggest the creation of a new value
         const isExisting = options.some(
           (option) => inputValue === option.tagTitle
         );
@@ -47,7 +41,6 @@ function InputOfTags({}) {
           });
           
         }
-
         return filtered;
       }}
       selectOnFocus
@@ -56,15 +49,12 @@ function InputOfTags({}) {
       id="free-solo-with-text-demo"
       options={tags}
       getOptionLabel={(option) => {
-        // Value selected with enter, right from the input
         if (typeof option === "string") {
           return option;
         }
-        // Add "xxx" option created dynamically
         if (option.inputValue) {
           return option.inputValue;
         }
-        // Regular option
         return option.tagTitle;
       }}
       renderOption={(props, option) => <li {...props}>{option.tagTitle}</li>}

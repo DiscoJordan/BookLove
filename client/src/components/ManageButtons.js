@@ -1,4 +1,4 @@
-import React, { useContext, useEffec, useState } from "react";
+import React, { useContext, useState } from "react";
 import CircleButton from "./CircleButton";
 import { Link } from "react-router-dom";
 import { URL } from "../config";
@@ -16,7 +16,6 @@ import DialogTitle from "@mui/material/DialogTitle";
 function ManageButtons({ place }) {
   const { userData, getUserData, isLoggedIn, token } = useContext(UserContext);
   const { getPlaces, setEditTitle } = useContext(PlacesContext);
-
   const wishMatch = userData?.wishes?.some((e) => e.title === place.title);
   const visitedMatch = userData?.visited?.some((e) => e.title === place.title);
 
@@ -48,20 +47,12 @@ function ManageButtons({ place }) {
       const response = await axios.post(`${URL}/place/delete`, {
         title: place.title,
       });
-      // setMessage(response.data.data);
-      // setTimeout(() => {
-      //   setMessage("");
-      // }, 2000);
       if (response.data.ok) {
-        //   setTimeout(() => {
-        //       navigate(`/}`);
-        //   }, 2000);
-        if (location.pathname.includes("place")) {
+        if (response.data.ok && location.pathname.includes("place")) {
           navigate("/");
         }
+        getPlaces();
       }
-
-      getPlaces();
     } catch (error) {
       console.log(error);
     }
@@ -84,12 +75,13 @@ function ManageButtons({ place }) {
         update,
         value,
       });
-      getUserData();
+      if (response.data.ok) {
+        getUserData();
+      }
     } catch (error) {
       console.log(error);
     }
   };
-
   return (
     <div className="place__buttons">
       {!userData?.isAdmin && (
@@ -140,7 +132,7 @@ function ManageButtons({ place }) {
         </button>
       )}
       <Dialog
-        onClick={(e)=>e.stopPropagation()}
+        onClick={(e) => e.stopPropagation()}
         open={open}
         onClose={handleClose}
         aria-labelledby="alert-dialog-title"
@@ -181,11 +173,7 @@ function ManageButtons({ place }) {
               },
             }}
           >
-             {alert === "login"
-                ? "Later"
-                : alert === "delete"
-                ? 'No'
-                : "/"}
+            {alert === "login" ? "Later" : alert === "delete" ? "No" : "/"}
           </Button>
           <Link
             to={
@@ -209,13 +197,13 @@ function ManageButtons({ place }) {
                   border: "1px #FF471F solid",
                 },
               }}
-              onClick={handleClose&&deletePlace}
+              onClick={handleClose && deletePlace}
               autoFocus
             >
               {alert === "login"
                 ? "Register"
                 : alert === "delete"
-                ? 'Delete'
+                ? "Delete"
                 : "/"}
             </Button>
           </Link>

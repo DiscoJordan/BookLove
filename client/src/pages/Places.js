@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef, useState } from "react";
+import React, { useContext, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { PlacesContext } from "../context/PlacesContext";
 import { TagsContext } from "../context/TagsContext";
@@ -13,12 +13,12 @@ import "swiper/css/navigation";
 import { Autoplay, Pagination } from "swiper/modules";
 
 function Places() {
-  const { places } = useContext(PlacesContext); // getPlaces
+  const { places } = useContext(PlacesContext);
   const { tags } = useContext(TagsContext);
   const [searchData, setSearchData] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const [checkedTags, setCheckedTags] = useState(tags.map(() => false));
-  //
+
   const progressCircle = useRef(null);
   const progressContent = useRef(null);
   const onAutoplayTimeLeft = (s, time, progress) => {
@@ -94,7 +94,7 @@ function Places() {
       >
         <SwiperSlide>
           <div className="firstslide">
-            <img src="/images/slidersvg.svg" alt="default avatar" />
+            <img src="/images/slidersvg.svg" alt="slide" />
             <h4>
               WELCOME TO <span className="orange"> BARCELONA</span>
             </h4>
@@ -105,7 +105,7 @@ function Places() {
         </SwiperSlide>
         <SwiperSlide>
           <div className="firstslide">
-            <img src="/images/slidersvg.svg" alt="default avatar" />
+            <img src="/images/slidersvg.svg" alt="slide" />
             <h4>
               WELCOME TO <span className="orange"> BARCELONA</span>
             </h4>
@@ -170,7 +170,10 @@ function Places() {
               {tags.map(
                 (tag, index) =>
                   checkedTags[index] && (
-                    <button key={tag._id} onClick={() => toggleCheckBox(tag.tagTitle)}>
+                    <button
+                      key={tag._id}
+                      onClick={() => toggleCheckBox(tag.tagTitle)}
+                    >
                       <Button content={tag.tagTitle} close={true} />
                     </button>
                   )

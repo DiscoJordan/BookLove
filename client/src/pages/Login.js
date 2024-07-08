@@ -14,12 +14,9 @@ const Login = ({ login }) => {
   let handleChange = (e) => {
     setUserData({ ...userData, [e.target.name]: e.target.value });
   };
-
   const handleSubmit = async (e) => {
-   
     e.preventDefault();
     try {
-  
       const response = await axios.post(`${URL}/user/login`, {
         username: userData.username,
         password: userData.password,
@@ -65,7 +62,7 @@ const Login = ({ login }) => {
               type="password"
             />
 
-            <button  className="longbutton">
+            <button className="longbutton">
               <Button reversed={true} content={"Continue"} />
             </button>
             <p className="terms">

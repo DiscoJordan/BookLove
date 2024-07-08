@@ -11,9 +11,7 @@ function Profile() {
   const { userData, getUserData, setUser, user, token } =
     useContext(UserContext);
   const [isEditting, setIsEditting] = useState(false);
-
   const [message, setMessage] = useState("");
-
   const [newUserData, setNewUserData] = useState({
     username: "",
     email: "",
@@ -86,7 +84,7 @@ function Profile() {
           <div className="profile__avatar">
             <img
               src={newUserData?.photo?.photo_url || userData?.photo?.photo_url}
-              alt="default avatar"
+              alt="avatar"
             />
           </div>
           {!isEditting ? (

@@ -35,7 +35,7 @@ function UserCard({ user }) {
     <div className="user__card">
       <div className="user__field">
         <div className="user__image">
-          <img src={user?.photo?.photo_url} alt="user photo" />
+          <img src={user?.photo?.photo_url} alt="userphoto" />
         </div>
         <span className="material-symbols-outlined">person</span>
         <h3>{user.username}</h3>
