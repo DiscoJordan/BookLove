@@ -3,6 +3,22 @@
   padding: 0;
   box-sizing: border-box;
 }
+* ::-moz-selection {
+  background: #FF471F;
+  color: #000000;
+}
+* ::selection {
+  background: #FF471F;
+  color: #000000;
+}
+* ::-webkit-selection {
+  background: #FF471F;
+  color: #000000;
+}
+* ::-moz-selection {
+  background: #FF471F;
+  color: #000000;
+}
 
 body {
   font-family: "Poppins", sans-serif;

@@ -22,11 +22,11 @@ function CurrentPlace() {
   const progressCircle = useRef(null);
   const progressContent = useRef(null);
   const navigate = useNavigate();
-  const onAutoplayTimeLeft = (time, progress) => {
+  const onAutoplayTimeLeft = (s,time, progress) => {
     progressCircle.current.style.setProperty("--progress", 1 - progress);
     progressContent.current.textContent = `${Math.ceil(time / 1000)}s`;
   };
-  const { places, currentPlace } = useContext(PlacesContext);
+  const { places } = useContext(PlacesContext);
   const { user, userData, token, isLoggedIn } = useContext(UserContext);
   const currentPlaceTitle = useParams().title;
   const [placeInfo, setPlaceInfo] = useState("");
@@ -206,7 +206,10 @@ function CurrentPlace() {
           <p>{placeInfo?.description?.descriptionText}</p>
         </div>
         <div className="container">
-          {currentPlace?.photos?.length > 1 && (
+          {placeInfo?.photos?.length > 1 && (
+            <>
+            <h3>Photos</h3>
+            <hr color="black" />
             <Swiper
               style={{
                 "--swiper-pagination-color": "#FF471F",
@@ -215,7 +218,7 @@ function CurrentPlace() {
               spaceBetween={0}
               centeredSlides={true}
               autoplay={{
-                delay: 2500,
+                delay: 3000,
                 disableOnInteraction: false,
               }}
               navigation={true}
@@ -242,6 +245,7 @@ function CurrentPlace() {
                 <span ref={progressContent}></span>
               </div>
             </Swiper>
+            </>
           )}
         </div>
         <div className="container">
