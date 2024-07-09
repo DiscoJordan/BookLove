@@ -39,7 +39,6 @@ function ManageButtons({ place }) {
   const location = useLocation();
 
   const deletePlace = async (e) => {
-    e.preventDefault();
     e.stopPropagation();
 
     try {
@@ -177,7 +176,7 @@ function ManageButtons({ place }) {
               },
             }}
           >
-            {alert === "login" ? "Later" : alert === "delete" ? "No" : "/"}
+            {alert === "login" ? "Later" : alert === "delete" ? "No" : ""}
           </Button>
           <Link
             to={
@@ -208,7 +207,7 @@ function ManageButtons({ place }) {
                 ? "Register"
                 : alert === "delete"
                 ? "Delete"
-                : "/"}
+                : ""}
             </Button>
           </Link>
         </DialogActions>
