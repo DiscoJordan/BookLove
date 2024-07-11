@@ -17,7 +17,7 @@ function Places() {
   const { tags } = useContext(TagsContext);
   const [searchData, setSearchData] = useState("");
   const [isOpen, setIsOpen] = useState(false);
-  const [checkedTags, setCheckedTags] = useState(tags.map(() => false));
+  const [checkedTags, setCheckedTags] = useState(tags?.map(() => false));
 
   const progressCircle = useRef(null);
   const progressContent = useRef(null);
@@ -58,7 +58,7 @@ function Places() {
     setPage(1);
   };
 
-  const filteredList = places.filter((place) => {
+  const filteredList = places?.filter((place) => {
     const matchesSearch = place.title
       .toLowerCase()
       .includes(searchData.toLowerCase());
@@ -71,7 +71,7 @@ function Places() {
     return matchesSearch && (matchesTags || !checkedTags.includes(true));
   });
 
-  const currentPlaces = filteredList.slice(startIndex, endIndex);
+  const currentPlaces = filteredList?.slice(startIndex, endIndex);
 
   return (
     <>
@@ -94,7 +94,11 @@ function Places() {
       >
         <SwiperSlide>
           <div className="slide">
-            <img className="background" src="/images/firstslide.webp" alt="background" />
+            <img
+              className="background"
+              src="/images/firstslide.webp"
+              alt="background"
+            />
             <img src="/images/slidersvg.svg" alt="slide" />
             <h4>
               WELCOME TO <span className="orange"> BARCELONA</span>
@@ -106,9 +110,13 @@ function Places() {
         </SwiperSlide>
         <SwiperSlide>
           <div className="slide">
-          <img className="background" src="/images/secondslide.webp" alt="background" />
+            <img
+              className="background"
+              src="/images/secondslide.webp"
+              alt="background"
+            />
             <h4>
-                  WHO <span className="orange"> WE ARE</span> ?
+              WHO <span className="orange"> WE ARE</span> ?
             </h4>
             <Link to={"/about"}>
               <Button reversed={true} content={"About us"} />
@@ -117,7 +125,11 @@ function Places() {
         </SwiperSlide>
         <SwiperSlide>
           <div className="slide">
-          <img className="background" src="/images/thirdslide.webp" alt="background" />
+            <img
+              className="background"
+              src="/images/thirdslide.webp"
+              alt="background"
+            />
             <h4>
               CONNECT <span className="orange"> WITH US</span>
             </h4>
@@ -126,7 +138,6 @@ function Places() {
             </Link>
           </div>
         </SwiperSlide>
-
 
         <div className="autoplay-progress" slot="container-end">
           <svg viewBox="0 0 48 48" ref={progressCircle}>
@@ -161,7 +172,7 @@ function Places() {
                     isOpen ? "dropdown__options" : "dropdown__options hide"
                   }
                 >
-                  {tags.map((tag, index) => (
+                  {tags?.map((tag, index) => (
                     <div key={tag._id} className="dropdown__option">
                       <label className={checkedTags[index] ? "active" : ""}>
                         <input
@@ -180,7 +191,7 @@ function Places() {
             </div>
             <hr />
             <div className="filter__tags">
-              {tags.map(
+              {tags?.map(
                 (tag, index) =>
                   checkedTags[index] && (
                     <button
@@ -193,7 +204,7 @@ function Places() {
               )}
             </div>
           </div>
-          {filteredList.length > 0 ? (
+          {filteredList?.length > 0 ? (
             <>
               <div className="grid__places">
                 {currentPlaces.map((place) => (
