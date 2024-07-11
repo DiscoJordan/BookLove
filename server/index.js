@@ -19,9 +19,9 @@ async function connecting() {
 }
 
 connecting();
-app.use("/place", require("./routes/places"));
-app.use("/user", require("./routes/users"));
-app.use("/tag", require("./routes/tags"));
+app.use("/server/place", require("./routes/places"));
+app.use("/server/user", require("./routes/users"));
+app.use("/server/tag", require("./routes/tags"));
 
 //serving client
 const path = require("path");
