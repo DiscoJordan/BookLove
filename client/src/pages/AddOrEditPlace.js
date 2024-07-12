@@ -25,15 +25,7 @@ function AddOrEditPlace() {
     title: "",
     subtitle: "",
     location: "",
-    hours: [
-      "01:00-20:00",
-      "02:00-20:00",
-      "03:00-20:00",
-      "04:00-20:00",
-      "05:00-20:00",
-      "06:00-20:00",
-      "07:00-20:00",
-    ],
+    hours: [],
     price: "",
     cover: {
       photo_url:
@@ -64,6 +56,7 @@ function AddOrEditPlace() {
   useEffect(() => {
     if (beingEdited) {
       setPlaceData({ ...beingEdited });
+      console.log(placeData);
     }
     setEditTitle(JSON.parse(localStorage.getItem("editTitle")) || "");
   }, [places]);
