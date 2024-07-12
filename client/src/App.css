@@ -648,6 +648,8 @@ textarea.form__input {
   height: fit-content;
 }
 .filter__header .navigation__button input {
+  width: -moz-fit-content;
+  width: fit-content;
   all: unset;
 }
 .filter__header .navigation__button input:focus {
@@ -708,6 +710,10 @@ textarea.form__input {
 }
 .place__wrapper h3 {
   font-size: 32px;
+  font-weight: 600;
+}
+.place__wrapper h4 {
+  font-size: 22px;
   font-weight: 600;
 }
 .place__wrapper p {
@@ -922,6 +928,7 @@ textarea.form__input {
 }
 .user__card .user__image {
   width: 40px;
+  min-width: 40px;
   height: 40px;
 }
 .user__card .user__image img {
@@ -933,6 +940,7 @@ textarea.form__input {
      object-fit: cover;
 }
 .user__card .user__field {
+  text-align: left;
   display: flex;
   align-items: center;
   gap: 5px;
@@ -1042,6 +1050,7 @@ textarea.form__input {
   gap: 30px;
 }
 .comment__card .comment__user {
+  flex-wrap: wrap;
   display: flex;
   gap: 10px;
   justify-content: left;
@@ -1056,6 +1065,7 @@ textarea.form__input {
 .comment__card .comment__photo {
   width: 40px;
   height: 40px;
+  min-width: 40px;
 }
 .comment__card .comment__photo img {
   width: 100%;
@@ -1113,6 +1123,12 @@ textarea.form__input {
   }
 }
 @media (max-width: 992px) {
+  .slide img {
+    width: 100px;
+  }
+  .slide h4 {
+    font-size: 32px;
+  }
   header .navigation .logo {
     width: 150px;
     height: auto;
@@ -1151,6 +1167,7 @@ textarea.form__input {
     display: grid;
     gap: 2em;
     grid-template-columns: 1fr 1fr;
+    overflow: hidden;
   }
   .footer .footer__rights {
     font-weight: 400;
@@ -1269,7 +1286,7 @@ textarea.form__input {
     width: fit-content;
   }
   .user__card {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
   .change__info, .profile__wrapper .container .profile__info {
     width: -webkit-fill-available;

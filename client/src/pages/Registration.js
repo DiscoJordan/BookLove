@@ -56,6 +56,7 @@ function Registration({login}) {
               placeholder="Username*"
               name="username"
               type="text"
+              maxLength={20}
             />
             <input
               className="form__input"

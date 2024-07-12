@@ -31,7 +31,7 @@ const Comment = memo(function Comment({ comment, placeId,getPlace }) {
           <div className="comment__photo">
             <img src={comment.userId?.photo?.photo_url} alt="user-photo" />
           </div>
-          <h3>{comment.userId?.username}</h3>
+          <h4>{comment.userId?.username}</h4>
         </div>
         <p>{comment.date}</p>
         {userData?._id === comment.userId?._id || userData?.isAdmin ? (

@@ -131,6 +131,7 @@ function Profile() {
                     type="text"
                     name="username"
                     placeholder="Username*"
+                    maxLength={20}
                     defaultValue={newUserData?.username}
                   />
                   <input

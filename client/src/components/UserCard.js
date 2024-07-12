@@ -42,7 +42,7 @@ function UserCard({ user }) {
       </div>
       <div className="user__field">
         <span className="material-symbols-outlined">mail</span>
-        <h3>{user.email}</h3>
+        <h4>{user.email}</h4>
       </div>
       <div className="user__field">
         <span className="material-symbols-outlined">key</span>
