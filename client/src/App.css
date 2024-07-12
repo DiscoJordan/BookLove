@@ -648,6 +648,7 @@ textarea.form__input {
   height: fit-content;
 }
 .filter__header .navigation__button input {
+  overflow: auto;
   width: -moz-fit-content;
   width: fit-content;
   all: unset;
