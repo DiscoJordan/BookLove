@@ -52,7 +52,7 @@ function AddOrEditPlace() {
           places.find((place) => place.title === placeData?.title)
         );
   }, []);
-
+console.log(placeData);
   useEffect(() => {
     if (beingEdited) {
       setPlaceData({ ...beingEdited });
@@ -337,7 +337,7 @@ function AddOrEditPlace() {
           <div className="tagsList">
             {placeData.tags.map((tag) => (
               <button key={tag._id} onClick={(e) => deleteTag(e, tag)}>
-                <Button reversed={true} close={true} content={tag.tag} />
+                <Button key={tag._id}  reversed={true} close={true} content={tag.tag} />
               </button>
             ))}
           </div>

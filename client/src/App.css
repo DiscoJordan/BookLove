@@ -1124,6 +1124,9 @@ textarea.form__input {
   }
 }
 @media (max-width: 992px) {
+  .terms__cover, .contacts__cover, .about__cover, .login__wrapper, .registration__wrapper, .newPlace__wrapper {
+    background-attachment: scroll;
+  }
   .slide img {
     width: 100px;
   }
