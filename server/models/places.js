@@ -36,7 +36,7 @@ const placeSchema = new mongoose.Schema({
     lng: { type: Number, required: false },
   },
   hours: [{ type: String, required: false }],
-  price: { type: Number, required: true },
+  price: { type: Number, required: true , default:0},
   website: { type: String, required: false },
   photos: [
     {
