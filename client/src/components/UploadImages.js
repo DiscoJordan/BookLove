@@ -15,7 +15,6 @@ const UploadImages = ({
   reversed,
   idOfPlace,
 }) => {
-  const { getPlaces } = useContext(PlacesContext);
   const { token } = useContext(UserContext);
   const uploadWidget = () => {
     window.cloudinary.openUploadWidget(
@@ -58,7 +57,6 @@ const UploadImages = ({
   };
 
   const uploadPlacePhotos = async (result) => {
-    debugger
     try {
       axios.defaults.headers.common["Authorization"] = token;
       const response = await axios.post(`${URL}/place/uploadPhotos`, {

@@ -26,7 +26,7 @@ function AddOrEditPlace() {
     subtitle: "",
     location: "",
     hours: [],
-    price: "",
+    price: 0,
     cover: {
       photo_url:
         "https://res.cloudinary.com/dgfkzetcg/image/upload/v1720011996/pglltfymihkpt3ev5id7.jpg",

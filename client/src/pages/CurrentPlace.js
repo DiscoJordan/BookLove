@@ -56,7 +56,7 @@ function CurrentPlace() {
 
   const randomIndexes = useMemo(
     () => (otherPlaces.length >= 3 ? getRandomIndexes() : []),
-    [otherPlaces.length]
+    [otherPlaces.length,currentPlaceTitle]
   );
   function getRandomIndexes() {
     let indexes = [];
