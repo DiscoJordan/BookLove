@@ -127,48 +127,55 @@ function CurrentPlace() {
             <hr />
             <div className="place__time">
               <span className="material-symbols-outlined">schedule</span>
-              <div className="time__day">
+            {placeInfo?.hours?.filter(day=>day!=='').filter(day=>day!=='Open 24 hours').length>0?
+            <>
+            <div className="time__day">
                 <h4>Monday</h4>
-                <h4 className="orange">
+                <h5 className="orange">
                   {placeInfo?.hours ? placeInfo?.hours[0] : ""}
-                </h4>
+                </h5>
               </div>
               <div className="time__day">
                 <h4>Tuesday</h4>
-                <h4 className="orange">
+                <h5 className="orange">
                   {placeInfo?.hours ? placeInfo?.hours[1] : ""}
-                </h4>
+                </h5>
               </div>
               <div className="time__day">
                 <h4>Wednesday</h4>
-                <h4 className="orange">
+                <h5 className="orange">
                   {placeInfo?.hours ? placeInfo?.hours[2] : ""}
-                </h4>
+                </h5>
               </div>
               <div className="time__day">
                 <h4>Thursday</h4>
-                <h4 className="orange">
+                <h5 className="orange">
                   {placeInfo?.hours ? placeInfo?.hours[3] : ""}
-                </h4>
+                </h5>
               </div>
               <div className="time__day">
                 <h4>Friday</h4>
-                <h4 className="orange">
+                <h5 className="orange">
                   {placeInfo?.hours ? placeInfo?.hours[4] : ""}
-                </h4>
+                </h5>
               </div>
               <div className="time__day">
                 <h4>Saturday</h4>
-                <h4 className="orange">
+                <h5 className="orange">
                   {placeInfo?.hours ? placeInfo?.hours[5] : ""}
-                </h4>
+                </h5>
               </div>
               <div className="time__day">
                 <h4>Sunday</h4>
-                <h4 className="orange">
+                <h5 className="orange">
                   {placeInfo?.hours ? placeInfo?.hours[6] : ""}
-                </h4>
+                </h5>
               </div>
+              </>:
+               <div className="time__day_24">
+               <h4>Open 24 hours</h4>
+             </div>
+              }
             </div>
             <hr />
             <div className="place__secondary-info">

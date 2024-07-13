@@ -697,6 +697,9 @@ textarea.form__input{
     .time__day{
         text-align: center;
     }
+    .time__day_24{
+        text-wrap: nowrap;
+    }
 }
 .place__secondary-info{
     display: grid;
@@ -916,7 +919,9 @@ gap: 50px;
   
 }
 
-
+.orange{
+    color: $primary-orange;
+}
 //Users page
 
 .users__wrapper{
