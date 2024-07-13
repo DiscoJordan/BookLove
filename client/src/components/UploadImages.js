@@ -58,6 +58,7 @@ const UploadImages = ({
   };
 
   const uploadPlacePhotos = async (result) => {
+    debugger
     try {
       axios.defaults.headers.common["Authorization"] = token;
       const response = await axios.post(`${URL}/place/uploadPhotos`, {
@@ -67,7 +68,6 @@ const UploadImages = ({
       response.data.ok
         ? setPlaceData({ ...placeData, photos: response.data.result })
         : alert("Something went wrong");
-      getPlaces();
     } catch (error) {
       console.log(error);
     }
