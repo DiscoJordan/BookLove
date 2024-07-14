@@ -37,6 +37,17 @@ const Button = ({ content, onClick, close, arrow, reversed }) => {
     Attraction: "attractions",
     Free: "savings",
     "In City": "location_city",
+
+    "Tourist attraction": "tour",
+    "Point of interest": "add_location_alt",
+    "Amusement park": "attractions",
+    "Place of worship": "mosque",
+    "Church": "church",
+    "Aquarium": "water",
+    "City hall": "account_balance",
+    "Square": "my_location",
+    "Fountain": "sprinkler",
+
   };
 
   return (
