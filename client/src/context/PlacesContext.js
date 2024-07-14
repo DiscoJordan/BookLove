@@ -6,7 +6,6 @@ export const PlacesContext = React.createContext();
 export const ContextProvider = ({ children }) => {
   const [places, setPlaces] = useState([]);
   const [editTitle, setEditTitle] = useState();
-  const [currentPlace, setCurrentPlace] = useState({});
   const [currentPlaceTitle, setCurrentPlaceTitle] = useState({});
 
   const getPlaces = async () => {
@@ -28,8 +27,6 @@ export const ContextProvider = ({ children }) => {
         places,
         getPlaces,
         setEditTitle,
-        setCurrentPlace,
-        currentPlace,
         editTitle,
         setPlaces,
         currentPlaceTitle,

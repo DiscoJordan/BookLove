@@ -10,7 +10,7 @@ import InputOfTags from "../components/InputOfTags";
 import UploadImages from "../components/UploadImages";
 
 function AddOrEditPlace() {
-  const { editTitle, setEditTitle, places, getPlaces, setCurrentPlace } =
+  const { editTitle, setEditTitle, places, getPlaces } =
     useContext(PlacesContext);
   const { token} =
     useContext(UserContext);
@@ -26,7 +26,7 @@ function AddOrEditPlace() {
     subtitle: "",
     location: "",
     hours: [],
-    price: 0,
+    price: '',
     cover: {
       photo_url:
         "https://res.cloudinary.com/dgfkzetcg/image/upload/v1720011996/pglltfymihkpt3ev5id7.jpg",
@@ -45,20 +45,14 @@ function AddOrEditPlace() {
     },
   });
 
-  useEffect(() => {
-    editTitle
-      ? setCurrentPlace(places.find((place) => place.title === oldtitle))
-      : setCurrentPlace(
-          places.find((place) => place.title === placeData?.title)
-        );
-  }, []);
-console.log(placeData);
+debugger
   useEffect(() => {
     if (beingEdited) {
       setPlaceData({ ...beingEdited });
-      console.log(placeData);
+      console.log(`2`);
     }
     setEditTitle(JSON.parse(localStorage.getItem("editTitle")) || "");
+    console.log(placeData);
   }, [places]);
 
   let handleChange = (e) => {
@@ -96,10 +90,13 @@ console.log(placeData);
   };
 
   const handleUpdate = async (e) => {
+
     e.preventDefault();
     try {
       axios.defaults.headers.common["Authorization"] = token;
+      debugger
       const response = await axios.post(
+        
         `${URL}/place/${oldtitle}/update`,
         placeData
       );
@@ -243,9 +240,9 @@ console.log(placeData);
               <input
                 className="form__input"
                 placeholder="Price*"
-                defaultValue={placeData?.price || ""}
+                defaultValue={placeData?.price || ''}
                 name="price"
-                type="number"
+                type="text"
               />
               <h3>Opening Hours</h3>
               <input
@@ -335,7 +332,7 @@ console.log(placeData);
             </button>
           </div>
           <div className="tagsList">
-            {placeData.tags.map((tag) => (
+            {placeData?.tags?.map((tag) => (
               <button key={tag._id} onClick={(e) => deleteTag(e, tag)}>
                 <Button key={tag._id}  reversed={true} close={true} content={tag.tag} />
               </button>

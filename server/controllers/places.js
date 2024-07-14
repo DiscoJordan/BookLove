@@ -97,6 +97,7 @@ const removePicture = async (req, res) => {
   const { public_id } = req.body;
   try {
     let deletePic = await cloudinary.uploader.destroy(public_id);
+    
     if (deletePic.result) {
       res.status(200).json("Success");
     } else {
