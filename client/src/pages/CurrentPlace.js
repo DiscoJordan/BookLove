@@ -52,7 +52,7 @@ function CurrentPlace() {
   };
   useEffect(() => {
     getPlace();
-  }, []);
+  }, [currentPlaceTitle]);
 
   const randomIndexes = useMemo(
     () => (otherPlaces.length >= 3 ? getRandomIndexes() : []),
