@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.170d4213.css",
-    "main.js": "/static/js/main.b3e30ecc.js",
-    "static/media/loginbg.png": "/static/media/loginbg.ef359ac2d2cbf6f07367.png",
-    "static/media/signinbg.png": "/static/media/signinbg.4c8a2c059c6b2151d1ed.png",
-    "static/media/sagrada.png": "/static/media/sagrada.fd2b07cc63272c701a6f.png",
-    "static/media/contacts.png": "/static/media/contacts.99b15fbf29f0f97e6bbe.png",
-    "static/media/terms.webp": "/static/media/terms.8fdf3db88c2348913529.webp",
-    "static/media/footer.png": "/static/media/footer.1958dc9108d1ff57a7ae.png",
-    "static/media/about.webp": "/static/media/about.a3b26199dc6498931161.webp",
+    "main.css": "/static/css/main.961b85b9.css",
+    "main.js": "/static/js/main.263f6b1b.js",
+    "static/media/sagrada.webp": "/static/media/sagrada.bee679627619618edc7a.webp",
+    "static/media/signinbg.webp": "/static/media/signinbg.b422d78be66907878f36.webp",
+    "static/media/about.webp": "/static/media/about.ad2cd8f1f9f19c2d051a.webp",
+    "static/media/loginbg.webp": "/static/media/loginbg.9e2111563a3c444fb649.webp",
+    "static/media/contacts.webp": "/static/media/contacts.91cbf1db7ef7ab22b614.webp",
+    "static/media/terms.webp": "/static/media/terms.c5b8eb576fe9bdc1667a.webp",
+    "static/media/footer.webp": "/static/media/footer.f389a10214175c06316b.webp",
     "index.html": "/index.html",
-    "main.170d4213.css.map": "/static/css/main.170d4213.css.map",
-    "main.b3e30ecc.js.map": "/static/js/main.b3e30ecc.js.map"
+    "main.961b85b9.css.map": "/static/css/main.961b85b9.css.map",
+    "main.263f6b1b.js.map": "/static/js/main.263f6b1b.js.map"
   },
   "entrypoints": [
-    "static/css/main.170d4213.css",
-    "static/js/main.b3e30ecc.js"
+    "static/css/main.961b85b9.css",
+    "static/js/main.263f6b1b.js"
   ]
 }

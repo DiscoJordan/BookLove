@@ -145,7 +145,7 @@ header{
     
     width: 100%;
     height: fit-content;
-    background-image: url('/public/images/footer.png');
+    background-image: url('/public/images/footer.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -222,7 +222,7 @@ header{
 }
 //registration, login, newPlace
 .login__wrapper {
-    background: url('/public/images/loginbg.png') fixed;
+    background: url('/public/images/loginbg.webp') fixed;
 }
 
 
@@ -274,10 +274,10 @@ header{
 }
 
 .registration__wrapper{
-    background: url('/public/images/signinbg.png') fixed;
+    background: url('/public/images/signinbg.webp') fixed;
 }
 .newPlace__wrapper{
-    background: url('/public/images/sagrada.png') fixed ;
+    background: url('/public/images/sagrada.webp') fixed ;
 }
 .registration__wrapper, .login__wrapper,.newPlace__wrapper {
     background-attachment: fixed;
@@ -1002,7 +1002,7 @@ gap: 50px;
     fixed;
 }
 .contacts__cover{
-    background: url('/public/images/contacts.png') 
+    background: url('/public/images/contacts.webp') 
     fixed;
 }
 .terms__cover{

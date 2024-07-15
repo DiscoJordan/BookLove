@@ -32,7 +32,7 @@ function Footer() {
             <p>MADE BY</p>
             <a target="blank" href="https://discojordan.github.io/Portfolio-page/">
             <div className="footer__logo">
-              <img src="/images/djlogo.png" alt="discojordan" />
+              <img src="/images/djlogo.webp" alt="discojordan" />
             </div>
             </a>
           </div>
