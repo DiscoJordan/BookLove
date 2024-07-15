@@ -30,11 +30,15 @@ function CurrentPlace() {
   const { user, userData, token, isLoggedIn } = useContext(UserContext);
   const currentPlaceTitle = useParams().title;
   const [placeInfo, setPlaceInfo] = useState("");
-  const mapUrl = `https://www.google.com/maps/embed/v1/place?key=${
-    process.env.REACT_APP_GOOGLE_MAP
-  }
-  &q=${placeInfo?.title}
-  &zoom=${16}`;
+  const mapUrl = useMemo(() => {
+    if (placeInfo?.title) {
+      return `https://www.google.com/maps/embed/v1/place?key=${
+        process.env.REACT_APP_GOOGLE_MAP
+      }
+    &q=${placeInfo?.title}
+    &zoom=${16}`;
+    }
+  }, [placeInfo]);
   const otherPlaces = places.filter(
     (place) => place.title !== currentPlaceTitle
   );
