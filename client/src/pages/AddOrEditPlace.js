@@ -45,7 +45,7 @@ function AddOrEditPlace() {
     },
   });
 
-debugger
+
   useEffect(() => {
     if (beingEdited) {
       setPlaceData({ ...beingEdited });
@@ -94,7 +94,6 @@ debugger
     e.preventDefault();
     try {
       axios.defaults.headers.common["Authorization"] = token;
-      debugger
       const response = await axios.post(
         
         `${URL}/place/${oldtitle}/update`,
