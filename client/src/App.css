@@ -978,6 +978,9 @@ textarea.form__input {
 }
 .blank__wrapper input, .blank__wrapper textarea {
   all: unset;
+  width: -moz-fit-content;
+  width: fit-content;
+  overflow: auto;
 }
 
 .about__cover {

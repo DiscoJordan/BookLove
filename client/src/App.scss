@@ -994,6 +994,8 @@ gap: 50px;
 
     input, textarea{
         all: unset;
+          width: fit-content;
+    overflow: auto;
     }
    
 }
