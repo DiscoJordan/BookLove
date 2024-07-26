@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.961b85b9.css",
+    "main.css": "/static/css/main.9b3283a5.css",
     "main.js": "/static/js/main.263f6b1b.js",
     "static/media/sagrada.webp": "/static/media/sagrada.bee679627619618edc7a.webp",
     "static/media/signinbg.webp": "/static/media/signinbg.b422d78be66907878f36.webp",
@@ -10,11 +10,11 @@
     "static/media/terms.webp": "/static/media/terms.c5b8eb576fe9bdc1667a.webp",
     "static/media/footer.webp": "/static/media/footer.f389a10214175c06316b.webp",
     "index.html": "/index.html",
-    "main.961b85b9.css.map": "/static/css/main.961b85b9.css.map",
+    "main.9b3283a5.css.map": "/static/css/main.9b3283a5.css.map",
     "main.263f6b1b.js.map": "/static/js/main.263f6b1b.js.map"
   },
   "entrypoints": [
-    "static/css/main.961b85b9.css",
+    "static/css/main.9b3283a5.css",
     "static/js/main.263f6b1b.js"
   ]
 }
