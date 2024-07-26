@@ -1295,6 +1295,7 @@ textarea.form__input {
     flex-direction: column;
     width: -moz-fit-content;
     width: fit-content;
+    overflow: auto;
   }
   .user__card {
     grid-template-columns: 1fr;
@@ -1319,6 +1320,12 @@ textarea.form__input {
   }
   .newPlace__wrapper form .form__sides .leftside__fields {
     align-items: center;
+  }
+  .filter__header .dropdown__options .dropdown__option label {
+    padding: 5px;
+  }
+  .filter__header .dropdown__options {
+    padding: 5px;
   }
 }
 @media (hover: hover) {

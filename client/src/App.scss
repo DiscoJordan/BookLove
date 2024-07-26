@@ -1331,6 +1331,7 @@ align-items: flex-start;
 .admin__buttons {
    flex-direction: column;
    width: fit-content;
+    overflow: auto;
 }
 .user__card {
     grid-template-columns: 1fr;
@@ -1356,6 +1357,12 @@ align-items: flex-start;
 }
 .newPlace__wrapper form .form__sides .leftside__fields {
     align-items: center;
+}
+.filter__header .dropdown__options .dropdown__option label {
+    padding: 5px;
+}
+.filter__header .dropdown__options {
+    padding: 5px;
 }
 
 }
