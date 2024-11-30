@@ -99,12 +99,12 @@ function Places() {
               src="/images/firstslide.webp"
               alt="background"
             />
-            <img src="/images/slidersvg.svg" alt="slide" />
+         
             <h4>
-              WELCOME TO <span className="orange"> BARCELONA</span>
+              ДОБРО ПОЖАЛОВАТЬ В <span className="orange"> BOOKLOVE</span>
             </h4>
             <Link to={"/registration"}>
-              <Button reversed={true} content={"Explore Barcelona with us"} />
+              <Button reversed={true} content={"Читай книги с нами"} />
             </Link>
           </div>
         </SwiperSlide>
@@ -116,10 +116,10 @@ function Places() {
               alt="background"
             />
             <h4>
-              WHO <span className="orange"> WE ARE</span> ?
+              КТО <span className="orange">МЫ</span> ?
             </h4>
             <Link to={"/about"}>
-              <Button reversed={true} content={"About us"} />
+              <Button reversed={true} content={"О нас"} />
             </Link>
           </div>
         </SwiperSlide>
@@ -131,10 +131,10 @@ function Places() {
               alt="background"
             />
             <h4>
-              CONNECT <span className="orange"> WITH US</span>
+              СВЯЖИСЬ <span className="orange"> С НАМИ</span>
             </h4>
             <Link to={"/contacts"}>
-              <Button reversed={true} content={"Contacts"} />
+              <Button reversed={true} content={"Контакты"} />
             </Link>
           </div>
         </SwiperSlide>
@@ -155,7 +155,7 @@ function Places() {
                 <input
                   onChange={handleSearch}
                   type="text"
-                  placeholder="Search"
+                  placeholder="Поиск"
                 />
               </div>
               <div className="dropdown">

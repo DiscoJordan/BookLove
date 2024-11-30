@@ -1,18 +1,22 @@
 const mongoose = require("mongoose");
 
 const userSchema = new mongoose.Schema({
-  
-    username: { type: String, required: true, unique: true },
-    email: { type: String, required: true, unique: true },
-    password: { type: String, required: true, unique: false },
-    isAdmin: { type: Boolean, default: false },
-    photo: {
-    photo_url: { type: String, required: false, default:'https://res.cloudinary.com/dgfkzetcg/image/upload/v1719993202/i47o97255elhd3vhiptw.jpg' },
+  username: { type: String, required: true, unique: true },
+  email: { type: String, required: true, unique: true },
+  password: { type: String, required: true, unique: false },
+  isAdmin: { type: Boolean, default: false },
+  photo: {
+    photo_url: {
+      type: String,
+      required: false,
+      default:
+        "https://res-console.cloudinary.com/dcmithcw9/media_explorer_thumbnails/1dd46ea460c13404cbe7be3b903fbaf5/detailed",
+    },
     public_id: { type: String, required: false, unique: true },
     signature: { type: String, required: false },
   },
   about: { type: String, required: false },
-  badge: { type: Number, required: true, default:0},
+  badge: { type: Number, required: true, default: 0 },
   // photos: [
   //   {
   //     url: { type: String, required: false },

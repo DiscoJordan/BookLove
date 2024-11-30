@@ -2,8 +2,8 @@ import React from "react";
 
 const CircleButton = ({ content }) => {
   const iconMap = {
-    visited_off: "visibility_off",
-    visited: "visibility",
+    visited_off: "credit_card_off",
+    visited: "credit_card",
     wish_off: "favorite",
     wish: "heart_broken",
     edit: "edit",
@@ -13,7 +13,7 @@ const CircleButton = ({ content }) => {
   return (
     <div
       className={
-        iconMap[content] === "visibility_off" ||
+        iconMap[content] === "credit_card_off" ||
         iconMap[content] === "heart_broken"
           ? "circle__button active__circle__button"
           : "circle__button "
@@ -24,12 +24,12 @@ const CircleButton = ({ content }) => {
           {" "}
           <span className="material-symbols-outlined">{iconMap[content]}</span>
           <span className="tooltiptext">
-            {iconMap[content] === "visibility_off" && "Remove from visited"}
-            {iconMap[content] === "visibility" && "Add to visited"}
-            {iconMap[content] === "favorite" && "Add to wishes"}
-            {iconMap[content] === "heart_broken" && "Remove from wishes"}
-            {iconMap[content] === "edit" && "Edit"}
-            {iconMap[content] === "delete" && "Delete"}
+            {iconMap[content] === "credit_card_off" && "Убрать из купленных"}
+            {iconMap[content] === "credit_card" && "Добавить в купленные"}
+            {iconMap[content] === "favorite" && "Добавить в список желаемого"}
+            {iconMap[content] === "heart_broken" && "Убрать из списка желаемого"}
+            {iconMap[content] === "edit" && "Изменить"}
+            {iconMap[content] === "delete" && "Удалить"}
           </span>
         </>
       )}

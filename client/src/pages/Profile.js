@@ -101,12 +101,12 @@ function Profile() {
                 )}
               </div>
               <div className="profile__about">
-                <p>{userData?.about || "No information about"}</p>
+                <p>{userData?.about || "Без информации"}</p>
               </div>
               <div className="profile__buttons">
                 <button onClick={() => setIsEditting(true)}>
                   <Button
-                    content={isEditting ? "Save Changes" : "Edit Profile"}
+                    content={isEditting ? "Сохранить изменения" : "Изменить профиль"}
                   />
                 </button>
               </div>
@@ -117,7 +117,7 @@ function Profile() {
                 id={userData?.photo?.public_id}
                 newUserData={newUserData}
                 setNewUserData={setNewUserData}
-                content={"Update image"}
+                content={"Обновить фото"}
               />
               <h2>{message || "Update Profile"}</h2>
               <form
@@ -130,7 +130,7 @@ function Profile() {
                     className="navigation__button"
                     type="text"
                     name="username"
-                    placeholder="Username*"
+                    placeholder="Имя пользователя*"
                     maxLength={20}
                     defaultValue={newUserData?.username}
                   />
@@ -146,27 +146,27 @@ function Profile() {
                     type="password"
                     name="password"
                     defaultValue={newUserData?.password}
-                    placeholder="New password"
+                    placeholder="Новый пароль"
                   />
                   <input
                     className="navigation__button"
                     type="password"
                     name="password2"
                     defaultValue={newUserData?.password2}
-                    placeholder="Repeat password"
+                    placeholder="Повторите пароль"
                   />
                 </div>
                 <textarea
                   className="navigation__button"
                   type="text"
                   name="about"
-                  placeholder="About"
+                  placeholder="Дополнительная нформация"
                   defaultValue={newUserData?.about}
                 />
                 <div className="profile__buttons">
                   <button>
                     <Button
-                      content={isEditting ? "Save Changes" : "Edit Profile"}
+                      content={isEditting ? "Сохранить изменения" : "Изменить профиль"}
                     />
                   </button>
                 </div>

@@ -30,7 +30,7 @@ const placeSchema = new mongoose.Schema({
       date: { type: String, required: true },
     },
   ], 
-  location: { type: String, required: true, unique: false },
+  location: { type: String, required: false, unique: false },
   coordinates: {
     lat: { type: Number, required: false },
     lng: { type: Number, required: false },

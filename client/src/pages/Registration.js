@@ -48,12 +48,12 @@ function Registration({login}) {
   return (
     <div className="registration__wrapper">
       <div className="container">
-        <h1 className={message ? 'message' : ''}>{message||'Get Started'}</h1>
+        <h1 className={message ? 'message' : ''}>{message||'Добро пожаловать'}</h1>
         <div className="form">
           <form onSubmit={handleSubmit} onChange={handleChange} className="form__fields" action="">
             <input
               className="form__input"
-              placeholder="Username*"
+              placeholder="Имя пользователя*"
               name="username"
               type="text"
               maxLength={20}
@@ -66,29 +66,29 @@ function Registration({login}) {
             />
             <input
               className="form__input"
-              placeholder="Password*"
+              placeholder="Пароль*"
               name="password"
               type="password"
             />
             <input
               className="form__input"
-              placeholder="Repeat Password*"
+              placeholder="Повторите пароль*"
               name="password2"
               type="password"
             />
             <div onChange={()=>handleCheckboxChange()} className="terms">
               <label >
               <input name="terms"  defaultChecked={isChecked}   type="checkbox" />
-              By checking the box you agree to our
-              <Link to="/termsAndConditions">Terms and Conditions</Link>
+              Нажимая на галочку вы соглашаетесь с
+              <Link to="/termsAndConditions">Условиями и Политикой</Link>
               </label>
             
             </div>
             <button className="longbutton" disabled={!isChecked} >
-              <Button reversed={true} content={"Continue"} />
+              <Button reversed={true} content={"Продолжить"} />
             </button>
             <p className="terms">
-              Already a member? <Link to="/login"> Log In</Link>
+              Уже есть аккаунт? <Link to="/login"> Войти</Link>
             </p>
           </form>
         </div>

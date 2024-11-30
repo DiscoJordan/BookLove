@@ -48,36 +48,27 @@ function Contacts() {
     <div className="blank__wrapper">
       <div className="contacts__cover">
         <div className="container">
-          <h1>Contacts</h1>
+          <h1>Контакты</h1>
         </div>
       </div>
       <div className="container">
-        <h2>Contact Us</h2>
+        <h2>Контакты</h2>
         <p>
-          We’re here to help you make the most out of your Barcelona experience.
-          Whether you have a question, feedback, or need assistance, our team at
-          Barcelove is always ready to assist you. We value your opinions and
-          suggestions. They help us improve our services and offer a better
-          experience to all our users. Please send your feedback using the form
-          below.
+        Мы всегда рады помочь вам найти свою следующую любимую книгу! Если у вас есть вопросы, предложения или вы хотите поделиться своими впечатлениями, свяжитесь с нами любым удобным способом.
         </p>
         <hr />
-        <h2>Get in touch</h2>
+        <h2>Мы на связи</h2>
         <p>
-          We aim to create an engaging and user-friendly platform where visitors
-          can discover, rate, and share their experiences at Barcelona's top
-          landmarks. Our detailed guides, user reviews, and interactive maps
-          make it easy for you to plan your perfect trip and make the most out
-          of your time in this incredible city.
+        Мы стараемся отвечать на все запросы в течение 24 часов. Благодарим за ваш интерес к BookLove и с нетерпением ждем ваших сообщений!
         </p>
         <form className="mailform" onSubmit={handleSubmit}>
           <div className="navigation__button">
-            <textarea name="message" type="text" placeholder="Message*" />
+            <textarea name="message" type="text" placeholder="Сообщение*" />
           </div>
           <div className="mailform__inputs">
             <div className="navigation__button">
               <span className="material-symbols-outlined">account_circle</span>
-              <input name="name" type="text" placeholder="Name*" />
+              <input name="name" type="text" placeholder="Имя*" />
             </div>
             <div className="navigation__button">
               <span className="material-symbols-outlined">email</span>
@@ -85,10 +76,10 @@ function Contacts() {
             </div>
             <div className="navigation__button">
               <span className="material-symbols-outlined">subject</span>
-              <input name="subject" type="text" placeholder="Subject*" />
+              <input name="subject" type="text" placeholder="Тема*" />
             </div>
             <button>
-            <Button content={"Send"} />
+            <Button content={"Отправить"} />
             </button>
           </div>
         </form>

@@ -39,7 +39,7 @@ const Login = ({ login }) => {
     <div className="login__wrapper">
       <div className="container">
         <h1 className={message ? "message" : ""}>
-          {message || "Welcome back"}
+          {message || "Добро пожаловать"}
         </h1>
         <div className="form">
           <form
@@ -50,24 +50,24 @@ const Login = ({ login }) => {
           >
             <input
               className="form__input"
-              placeholder="Username*"
+              placeholder="Имя*"
               name="username"
               type="text"
             />
 
             <input
               className="form__input"
-              placeholder="Password*"
+              placeholder="Пароль*"
               name="password"
               type="password"
             />
 
             <button className="longbutton">
-              <Button reversed={true} content={"Continue"} />
+              <Button reversed={true} content={"Продолжить"} />
             </button>
             <p className="terms">
-              Dont have an account?{" "}
-              <Link to="/registration"> Register now</Link>
+              Нет аккаунта?{" "}
+              <Link to="/registration"> Регистация</Link>
             </p>
           </form>
         </div>

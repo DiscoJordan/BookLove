@@ -1,22 +1,27 @@
+:root {
+  --main-bg-color: pink;
+}
+
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 * ::-moz-selection {
-  background: #FF471F;
+  background: var(--main-bg-color);
   color: #000000;
 }
 * ::selection {
-  background: #FF471F;
+  background: var(--main-bg-color);
   color: #000000;
 }
 * ::-webkit-selection {
-  background: #FF471F;
+  background: var(--main-bg-color);
   color: #000000;
 }
 * ::-moz-selection {
-  background: #FF471F;
+  background: var(--main-bg-color);
   color: #000000;
 }
 
@@ -25,7 +30,7 @@ body {
 }
 
 .message {
-  color: #FF471F;
+  color: var(--main-bg-color);
 }
 
 .container {
@@ -35,7 +40,7 @@ body {
 }
 
 a {
-  color: #FF471F;
+  color: var(--main-bg-color);
   text-decoration: none;
   font-weight: 600;
   transition: all 0.2s ease-in-out;
@@ -142,7 +147,7 @@ header .navigation .navbar a {
   transition: all 0.2s ease-in-out;
 }
 header .navigation .navbar a.active {
-  color: #FF471F;
+  color: var(--main-bg-color);
 }
 
 .footer {
@@ -341,8 +346,8 @@ header .navigation .navbar a.active {
   border-radius: 50px;
 }
 .form__input:focus {
-  color: #FF471F;
-  border: 1px solid #FF471F;
+  color: var(--main-bg-color);
+  border: 1px solid var(--main-bg-color);
   outline: none;
   background-color: rgba(0, 0, 0, 0.237);
 }
@@ -421,7 +426,7 @@ textarea {
 .profile__wrapper .container .profile__info .profile__username .profile__badge {
   color: white;
   text-align: center;
-  background-color: #FF471F;
+  background-color: var(--main-bg-color);
   width: 100px;
   border-radius: 20px;
 }
@@ -450,7 +455,7 @@ textarea {
   transition: all 0.2s ease-in-out;
 }
 .profile__wrapper .container .profile__collections .profile__options .active {
-  color: #FF471F;
+  color: var(--main-bg-color);
 }
 .profile__wrapper .container .profile__collections .profile__options .vertical-line {
   border-left: 1px solid black;
@@ -806,7 +811,7 @@ textarea.form__input {
   color: white;
 }
 .place__buttons .active__circle__button {
-  background-color: #FF471F;
+  background-color: var(--main-bg-color);
   color: white;
 }
 .place__buttons .active__circle__button .material-symbols-outlined {
@@ -845,7 +850,7 @@ textarea.form__input {
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  color: #FF471F;
+  color: var(--main-bg-color);
 }
 
 .autoplay-progress svg {
@@ -857,7 +862,7 @@ textarea.form__input {
   width: 100%;
   height: 100%;
   stroke-width: 4px;
-  stroke: #FF471F;
+  stroke: var(--main-bg-color);
   fill: none;
   stroke-dashoffset: calc(125.6px * (1 - var(--progress)));
   stroke-dasharray: 125.6;
@@ -898,14 +903,14 @@ textarea.form__input {
   color: white;
 }
 .slide .orange {
-  color: #FF471F;
+  color: var(--main-bg-color);
 }
 .slide a {
   color: white;
 }
 
 .orange {
-  color: #FF471F;
+  color: var(--main-bg-color);
 }
 
 .users__wrapper {
@@ -1340,7 +1345,7 @@ textarea.form__input {
     background-color: rgb(237, 237, 237);
   }
   .circle__button:hover {
-    background-color: #FF471F;
+    background-color: var(--main-bg-color);
     opacity: 0.9;
     color: white;
   }
@@ -1369,6 +1374,6 @@ textarea.form__input {
     filter: brightness(0.8);
   }
   .navbar a:hover, .footer__tabs a:hover, .profile__collections .profile__options button:hover {
-    color: #FF471F !important;
+    color: var(--main-bg-color) !important;
   }
 }/*# sourceMappingURL=App.css.map */

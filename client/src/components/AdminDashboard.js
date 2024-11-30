@@ -27,16 +27,16 @@ function AdminDashboard() {
       <div className="admin__buttons">
         <Link to={"/addnewplace"}>
           <Button
-            content={"Add new Place"}
+            content={"Добавить книгу"}
             onClick={() => localStorage.removeItem("editTitle")}
           />
         </Link>
         <Link to={"/users"}>
-          <Button content={"Users"} />
+          <Button content={"Пользователи"} />
         </Link>
-        <button onClick={getPlacesfromGoogle}>
+        {/* <button onClick={getPlacesfromGoogle}>
           <Button content={"Fetch from Google"} />
-        </button>
+        </button> */}
       </div>
       <hr />
       <div className="grid__places">

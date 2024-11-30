@@ -129,84 +129,22 @@ function CurrentPlace() {
               ))}
             </div>
             <hr />
-            <div className="place__time">
-              <span className="material-symbols-outlined">schedule</span>
-            {placeInfo?.hours?.filter(day=>day!=='').filter(day=>day!=='Open 24 hours').length>0?
-            <>
-            <div className="time__day">
-                <h4>Monday</h4>
-                <h5 className="orange">
-                  {placeInfo?.hours ? placeInfo?.hours[0] : ""}
-                </h5>
-              </div>
-              <div className="time__day">
-                <h4>Tuesday</h4>
-                <h5 className="orange">
-                  {placeInfo?.hours ? placeInfo?.hours[1] : ""}
-                </h5>
-              </div>
-              <div className="time__day">
-                <h4>Wednesday</h4>
-                <h5 className="orange">
-                  {placeInfo?.hours ? placeInfo?.hours[2] : ""}
-                </h5>
-              </div>
-              <div className="time__day">
-                <h4>Thursday</h4>
-                <h5 className="orange">
-                  {placeInfo?.hours ? placeInfo?.hours[3] : ""}
-                </h5>
-              </div>
-              <div className="time__day">
-                <h4>Friday</h4>
-                <h5 className="orange">
-                  {placeInfo?.hours ? placeInfo?.hours[4] : ""}
-                </h5>
-              </div>
-              <div className="time__day">
-                <h4>Saturday</h4>
-                <h5 className="orange">
-                  {placeInfo?.hours ? placeInfo?.hours[5] : ""}
-                </h5>
-              </div>
-              <div className="time__day">
-                <h4>Sunday</h4>
-                <h5 className="orange">
-                  {placeInfo?.hours ? placeInfo?.hours[6] : ""}
-                </h5>
-              </div>
-              </>:
-               <div className="time__day_24">
-               <h4>Open 24 hours</h4>
-             </div>
-              }
-            </div>
-            <hr />
+            
             <div className="place__secondary-info">
               <div className="place__price">
                 <span className="material-symbols-outlined">payments</span>
                 <h4>
                   {placeInfo?.price !== 0
-                    ? "From " + placeInfo?.price + "€"
-                    : "Free"}
+                    ? "От " + placeInfo?.price + " BYN"
+                    : "Бесплатно"}
                 </h4>
               </div>
-              <div className="place__location">
-                <span className="material-symbols-outlined">pin_drop</span>
-                <a
-                  target="blank"
-                  href={
-                    `https://www.google.com/maps/search/` + placeInfo?.location
-                  }
-                >
-                  {placeInfo?.location}
-                </a>
-              </div>
+              
               {placeInfo?.website && (
                 <div className="place__website">
                   <span className="material-symbols-outlined">language</span>
                   <a target="blank" href={placeInfo?.website}>
-                    Website
+                    Купить книгу
                   </a>
                 </div>
               )}
@@ -216,61 +154,9 @@ function CurrentPlace() {
           <h3>{placeInfo?.description?.header}</h3>
           <p>{placeInfo?.description?.descriptionText}</p>
         </div>
+        
         <div className="container">
-          {placeInfo?.photos?.length > 1 && (
-            <>
-            <h3>Photos</h3>
-            <hr color="black" />
-            <Swiper
-              style={{
-                "--swiper-pagination-color": "#FF471F",
-                "--swiper-navigation-color": "#FF471F",
-              }}
-              spaceBetween={0}
-              centeredSlides={true}
-              autoplay={{
-                delay: 3000,
-                disableOnInteraction: false,
-              }}
-              navigation={true}
-              pagination={{
-                clickable: true,
-              }}
-              modules={[Autoplay, Pagination, Navigation]}
-              onAutoplayTimeLeft={onAutoplayTimeLeft}
-              className="mySwiper"
-            >
-              {placeInfo?.photos?.map((photo, index) => (
-                <SwiperSlide key={index}>
-                  <img
-                    src={photo.photo_url}
-                    alt={`Slide ${index}`}
-                    style={{ width: "100%" }}
-                  />
-                </SwiperSlide>
-              ))}
-              <div className="autoplay-progress" slot="container-end">
-                <svg viewBox="0 0 48 48" ref={progressCircle}>
-                  <circle cx="24" cy="24" r="20"></circle>
-                </svg>
-                <span ref={progressContent}></span>
-              </div>
-            </Swiper>
-            </>
-          )}
-        </div>
-        <div className="container">
-          <h3>On map</h3>
-          <hr color="black" />
-          <iframe
-            width="100%"
-            height="500px"
-            style={{ border: 0 }}
-            src={mapUrl}
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          ></iframe>
+        
           {randomIndexes.length ? (
             <>
               <h3>You may also like</h3>
@@ -284,7 +170,7 @@ function CurrentPlace() {
               </div>
             </>
           ) : null}
-          <h3>Comments</h3>
+          <h3>Комментарии</h3>
           <hr color="black" />
           {isLoggedIn ? (
             <form onSubmit={commentPlace} className="comments">
@@ -294,12 +180,12 @@ function CurrentPlace() {
                 className="navigation__button"
               ></textarea>
               <button>
-                <Button content={"Post comment"} />
+                <Button content={"Опубликовать"} />
               </button>
             </form>
           ) : (
             <button onClick={()=>navigate('/login')}>
-              <Button content={"Log In to post comments"} />
+              <Button content={"Войдите чтобы оставлять комментарии"} />
             </button>
           )}
           {placeInfo?.comments?.length ? (
@@ -314,7 +200,7 @@ function CurrentPlace() {
               );
             })
           ) : (
-            <h3>There is no any comments</h3>
+            <h3>Тут пока нет комментарев</h3>
           )}
         </div>
       </div>

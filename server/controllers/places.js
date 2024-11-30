@@ -147,7 +147,7 @@ const addPlace = async (req, res) => {
       subtitle: subtitle || "",
       description: description || {},
       tags: tags || [],
-      location: location,
+      location: location||'',
       hours: hours,
       price: price,
       photos: photos || [],

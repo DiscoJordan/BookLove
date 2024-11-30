@@ -29,7 +29,7 @@ function AddOrEditPlace() {
     price: '',
     cover: {
       photo_url:
-        "https://res.cloudinary.com/dgfkzetcg/image/upload/v1720011996/pglltfymihkpt3ev5id7.jpg",
+        "https://res-console.cloudinary.com/dcmithcw9/media_explorer_thumbnails/1dd46ea460c13404cbe7be3b903fbaf5/detailed",
       public_id: "",
     },
     description: {
@@ -189,7 +189,7 @@ function AddOrEditPlace() {
     <div className="newPlace__wrapper">
       <div className="container">
         <h1 className={message ? "message" : ""}>
-          {message || (editTitle ? "Edit Place" : "Create new Place")}
+          {message || (editTitle ? "Изменить книгу" : "Добавить книгу")}
         </h1>
 
         <form
@@ -202,7 +202,7 @@ function AddOrEditPlace() {
             <div className="leftside__fields">
               <input
                 className="form__input"
-                placeholder="Title*"
+                placeholder="Заголовок*"
                 defaultValue={placeData?.title || ""}
                 name="title"
                 type="text"
@@ -210,40 +210,40 @@ function AddOrEditPlace() {
 
               <input
                 className="form__input"
-                placeholder="Subtitle"
+                placeholder="Подзаголовок"
                 defaultValue={placeData?.subtitle || ""}
                 name="subtitle"
                 type="text"
               />
               <input
                 className="form__input"
-                placeholder="Header"
+                placeholder="Титул"
                 defaultValue={placeData?.description?.header || ""}
                 name="header"
                 type="text"
               />
-              <input
+              {/* <input
                 className="form__input"
                 placeholder="Location*"
                 defaultValue={placeData?.location || ""}
                 name="location"
                 type="text"
-              />
+              /> */}
               <input
                 className="form__input"
-                placeholder="Website"
+                placeholder="Сайт где купить"
                 defaultValue={placeData?.website || ""}
                 name="website"
                 type="text"
               />
               <input
                 className="form__input"
-                placeholder="Price*"
+                placeholder="Цена*"
                 defaultValue={placeData?.price || ''}
                 name="price"
                 type="text"
               />
-              <h3>Opening Hours</h3>
+              {/* <h3>Opening Hours</h3>
               <input
                 className="form__input"
                 placeholder="Monday"
@@ -294,8 +294,8 @@ function AddOrEditPlace() {
                 onChange={(e) => handleChangeHours(e, 6)}
                 name="6"
                 type="text"
-              />
-              <h3>Coordinates</h3>
+              /> */}
+              {/* <h3>Coordinates</h3>
               <input
                 className="form__input"
                 placeholder="Latitude"
@@ -309,15 +309,15 @@ function AddOrEditPlace() {
                 defaultValue={placeData?.coordinates?.lng || ""}
                 name="lng"
                 type="text"
-              />
+              /> */}
             </div>
             <div className="rightside__fields">
               <textarea
                 className="form__input"
-                placeholder="Description"
+                placeholder="Описание"
                 defaultValue={placeData?.description?.descriptionText || ""}
                 name="descriptionText"
-                rows="40"
+                rows="20"
                 cols="40"
                 type="text"
               />
@@ -327,7 +327,7 @@ function AddOrEditPlace() {
           <div className="manageTags">
             <InputOfTags />
             <button onClick={handleTags}>
-              <Button reversed={true} content={"Add tag"} />
+              <Button reversed={true} content={"Добавить тег"} />
             </button>
           </div>
           <div className="tagsList">
@@ -338,7 +338,7 @@ function AddOrEditPlace() {
             ))}
           </div>
           <hr width="100%" color="white" />
-          <h2>Cover image</h2>
+          <h2>Обложка</h2>
           <div className="cover__image">
             <img src={placeData?.cover?.photo_url} alt="place" />
 
@@ -373,7 +373,7 @@ function AddOrEditPlace() {
           <button>
             <Button
               reversed={true}
-              content={editTitle ? "Update" : "Add Place"}
+              content={editTitle ? "Обновить" : "Добавить книгу"}
             />
           </button>
         </form>

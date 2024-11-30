@@ -44,31 +44,31 @@ function Navbar({ isLoggedIn, logout }) {
         <nav className={burger ? "navigation active" : "navigation"}>
           <div className="logo">
             <NavLink to={"/"}>
-              <img src="/images/Logo.png" alt="logo" />
+              <h1>BookLove</h1>
             </NavLink>
           </div>
           <div onClick={toggleBurger} className={"navbar"}>
-            <NavLink to={"/"}>Places</NavLink>
-            <NavLink to={"/about"}>About Us</NavLink>
-            <NavLink to={"/contacts"}>Contacts</NavLink>
+            <NavLink to={"/"}>Книги</NavLink>
+            <NavLink to={"/about"}>О нас</NavLink>
+            <NavLink to={"/contacts"}>Контакты</NavLink>
             {!isLoggedIn && (
               <Link to={"/login"}>
-                <Button reversed={true} content={"Log In"} />
+                <Button reversed={true} content={"Войти"} />
               </Link>
             )}
             {!isLoggedIn && (
               <Link to={"/registration"}>
-                <Button reversed={true} content={"Sign Up"} />
+                <Button reversed={true} content={"Регистация"} />
               </Link>
             )}
             {isLoggedIn && (
               <Link to={`/profile`}>
-                <Button reversed={true} content={"Profile"} />
+                <Button reversed={true} content={"Профиль"} />
               </Link>
             )}
             {isLoggedIn && (
               <Link onClick={logout} to={"/login"}>
-                <Button reversed={true} content={"Log Out"} />
+                <Button reversed={true} content={"Выйти"} />
               </Link>
             )}
           </div>
